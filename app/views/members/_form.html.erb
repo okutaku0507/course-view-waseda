@@ -4,17 +4,17 @@
 
 <div id="member_family_name">
 <p class="member_form_label">氏</p>
-<p><%= form.text_field :family_name, :class => "member_input_family_name" %></p>
+<p><%= form.text_field :family_name, :class => "member_input_family_name", :placeholder => "早稲田" %></p>
 </div>
 
 <div id="member_first_name">
 <p class="member_form_label">名</p>
-<p><%= form.text_field :first_name, :class => "member_input_first_name" %></p>
+<p><%= form.text_field :first_name, :class => "member_input_first_name", :placeholder => "太郎" %></p>
 </div>
 
 <div id="member_email">
 <p class="member_form_label">メールアドレス</p>
-<p><%= form.text_field :email, :class => "member_input" %></p>
+<p><%= form.text_field :email, :class => "member_input",:placeholder => "ex) taro@fuji.waseda.jp" %></p>
 </div>
 
 <div id="member_email_confirmation">
@@ -29,7 +29,7 @@
 
 <div id="member_subject">
 <p class="member_form_label">学科</p>
-<p><%= form.text_field :subject, :class => "member_input" %></p>
+<p><%= form.text_field :subject, :class => "member_input", :placeholder => "経済学科" %></p>
 </div>
 
 <div id="member_gender">

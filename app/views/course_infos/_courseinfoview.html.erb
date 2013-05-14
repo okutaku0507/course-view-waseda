@@ -10,7 +10,7 @@
 <% end %>
 </div>
 <% @member = Member.find_by_id(course_view.id_member) %>
-<p class="each_evaluation_rank" align="center"><% if 4 == course_view.teacher_rank %>A<sup>+</sup><% elsif 3 == course_view.teacher_rank %>A<% elsif 2 == course_view.teacher_rank %>B<% elsif 1 == course_view.teacher_rank %>C<% else 0 == course_view.teacher_rank %>F<% end %></p><p id="view_footer"><span id="create_time"><%= course_view.created_at.strftime("%Y/%m/%d") %></span><span id="writer"><%= @member.faculty %>生</span></p>
+<p id="view_footer"><span id="create_time"><%= course_view.created_at.strftime("%Y/%m/%d") %></span><span id="writer"><%= @member.faculty %>生</span></p>
 
 </div>
 <% end %>

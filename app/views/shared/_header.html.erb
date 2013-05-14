@@ -24,7 +24,7 @@
 <li class="submenu2"><%= menu_link_to "Course View", :course_infos %>
   <ul>
   <li><%= menu_link_to @current_member.family_name + @current_member.first_name, :account %></li>
-  <li><%= menu_link_to "サークル", "#" %></li>
+<!--  <li><%= menu_link_to "サークル", "#" %></li>  -->
   <li><%= link_to "ログアウト", :session, method: :delete, confirm: "ログアウトしますか？" %></li>
   </ul>
 </li>
@@ -33,14 +33,17 @@
 </div>
  <% end %>
   <% else %>
-<div id="course_view_title">
-<h1>Course View</h1><h5>@waseda</h5>
-</div>
+    <%= image_tag "rabbit.png", width: 35, :class => "rabbit_before_login" %>
+    <div id="course_view_title">
+      <h1>Course View</h1><h5>@waseda</h5>
+    </div>
 <% end %>
 
   <% if controller.kind_of?(Admin::Base) %>
 
 <div id="menu_box">
+<%= image_tag "rabbit.png", width: 35, :class => "rabbit" %>
+
 <ul id="menubutton">
 <li class="submenu1">▼</li>
 </ul>

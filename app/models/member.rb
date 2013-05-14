@@ -14,11 +14,14 @@
   has_many :take_courses, dependent: :destroy
   has_many :taked_courses, through: :take_courses, source: :course_info
 
+  has_many :teacher_ranks, dependent: :destroy
+  has_many :ranked_teacher, through: :teacher_ranks, source: :course_info
+
    attr_accessor :password, :password_confirmation, :initial_password
 
-  ACCESSIBLE_ATTRS = [ :family_name, :first_name, :administrator ,:faculty, :subject, :email, :email_confirmation, :password, :password_confirmation, :gender ]
+  ACCESSIBLE_ATTRS = [ :family_name, :first_name, :faculty, :subject, :email, :email_confirmation, :password, :password_confirmation, :gender ]
   attr_accessible *ACCESSIBLE_ATTRS
-  attr_accessible *(ACCESSIBLE_ATTRS + [  ]), as: :admin
+  attr_accessible *(ACCESSIBLE_ATTRS + [ :administrator ]), as: :admin
 
   #バリデーション
   validates :email, presence: {on: :create},
@@ -54,16 +57,23 @@
     def like_for?(course_info)
       !likes.exists?(course_info_id: course_info.id)
     end
+    
   # bad機能
+  
     def bad_for?(course_info)
       !bads.exists?(course_info_id: course_info.id)
     end
+    
   # take_course機能
     def take_course_for?(course_info)
       !take_courses.exists?(course_info_id: course_info.id)
     end
-
-
+    
+  # teacher_rank
+    def teacher_rank_for?(course_info)
+      !teacher_ranks.exists?(course_info_id: course_info.id)
+    end
+    
   private
   def check_email
     if email.present?
