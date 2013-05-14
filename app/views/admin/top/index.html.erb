@@ -2,4 +2,7 @@
 <ul>
 <li><%= link_to "ユーザー管理", :admin_members %></li>
 <li><%= link_to "講義管理", :admin_course_infos %></li>
+<p>ユーザー数<%= Member.count %>人</p>
+<p>講義<%= CourseInfo.count %>個</p>
+
 </ul>

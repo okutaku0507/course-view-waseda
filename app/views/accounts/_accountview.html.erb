@@ -2,7 +2,8 @@
 <% if @current_member == course_view.member %>
 <div id="account_view_index">
 <div id="account_view">
-<p class="view_title"><%= link_to course_view.title_of_course, course_view %></p>
+<% @course_info = CourseInfo.find_by_id(course_view.course_info_id) %>
+<p class="view_title"><%= link_to course_view.title_of_course, @course_info %></p>
 <div class="view_text">
 <span class="view_hide_<%= course_view.id %>"><%=hbr course_view.view[0..79] %></span><span class="showView view_show_<%= course_view.id %>" style="display: none"><%=hbr course_view.view[80..-1] %></span>
 <% unless course_view.view.length < 80 %>

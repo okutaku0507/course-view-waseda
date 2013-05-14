@@ -11,7 +11,6 @@
  *= require_self
  *= require_tree .
  */
-
 body {
 }
 
@@ -20,10 +19,22 @@ img.rabbit {
   position: absolute;
   margin: 0;
   padding: 0;
-  margin-left: 25px;
+  margin-left: 270px;
   margin-bottom: 5px;
 }
 img.rabbit:hover {
+  box-shadow: 1px 1px 2px 0 #000000;
+  border-radius: 100px;
+}
+
+img.rabbit_before_login {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  margin-left: 330px;
+  margin-top: -40px;
+}
+img.rabbit:rabbit_before_login {
   box-shadow: 1px 1px 2px 0 #000000;
   border-radius: 100px;
 }
@@ -53,7 +64,7 @@ div#course_view_title h5 {
 
 /* 全体の枠 */
 #container {
-  width: 860px;
+  width: 1000px;
   margin: auto;
   padding: 5px 40px;
 }
@@ -98,7 +109,8 @@ div.attention {
 
 /* ユーザーの新規登録ページ */
 div#new_member {
-  margin-left: 50px;
+  width: 780px;
+  margin-left: 80px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px 0 #000000;
   padding: 20px;
@@ -150,7 +162,7 @@ div#new_member select {
   border: solid 2px silver;
 }
 
-div#new_member input.member_input:focus {
+div#new_member input.member_input:focus, input.member_input_first_name:focus, input.member_input_family_name:focus {
   box-shadow: inset 0 0 3px 0 blue;
 }
 
@@ -322,6 +334,7 @@ div#errors ul {
 /* 講義追加ページ */
 
 div#new_course {
+  width: 800px;
   height: 400px;
   margin-left: 50px;
   border-radius: 10px;
@@ -772,9 +785,9 @@ p#course_info_new_button {
 }
 
 div.course_info_panel {
-  width: 200px;
-  margin: 10px;
-  height: 70px;
+  width: 220px;
+  margin: 20px;
+  height: 165px;
   margin-bottom: 15px;
   padding: 20px;
   box-shadow: 1px 1px 3px 0;
@@ -805,11 +818,13 @@ table#index_teacher_rank {
   padding: 15px 8px;
   box-shadow: 0 0 1px 0;
   border-radius: 5px;
+  position: absolute;
+  top: 80px;
   background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -ms-linear-gradient(top, ghostwhite 0%, deepskyblue 100%);
-  background: -webkit-linear-gradient(top, ghostwhite 0%, deepskyblue 100%);
-  background: -o-linear-gradient(top, ghostwhite 0%, deepskyblue 100%);
-  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(deepskyblue));
+  background: -ms-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -o-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff));
 
 }
 
@@ -828,13 +843,31 @@ table#index_teacher_rank td.index_point{
   text-align: center;
 }
 
+div#course_panel_title {
+  width: 200px;
+  position: absolute;
+  top: 15px;
+}
+
+div#course_panel_title a {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+div#course_panel_title p.long_title {
+  font-weight: bold;
+  font-size: 0.8em;
+}  
+
+
+
 div.panel_info {
-  width: 120px;
+  width: 150px;
   display: inline-block;
   margin-left: 10px;
   position: absolute;
   right: 20px;
-  top: 15px;
+  top: 120px;
 }
 
 div.panel_info p {
@@ -842,14 +875,7 @@ div.panel_info p {
   margin: 0;
   padding: 0;
   margin-bottom: 8px;
-}
-
-div.panel_info p.long_title {
-  font-weight: bold;
-  margin: 0;
-  margin-bottom: 8px;
-  padding: 0;
-  font-size: 0.8em;
+  color: gray;
 }
 
 
@@ -865,7 +891,8 @@ div.gpa_panel {
 /* course_infoのshow */
 
 div#course_info {
-  margin-left: 20px;
+  margin: auto;
+  width: 840px;
 }
 
 div#course_info_head {
@@ -979,6 +1006,7 @@ div#course_info_view_new p#select_rank, td#add {
   margin: 5px;
   margin-right: 30px;
   text-align: right;
+  
 }
 
 
@@ -1006,10 +1034,10 @@ table#teacher_rank {
   box-shadow: 1px 1px 3px 0;
   border-radius: 5px;
   background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -ms-linear-gradient(top, ghostwhite 0%, deepskyblue 100%);
-  background: -webkit-linear-gradient(top, ghostwhite 0%, deepskyblue 100%);
-  background: -o-linear-gradient(top, ghostwhite 0%, deepskyblue 100%);
-  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(deepskyblue));
+  background: -ms-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -o-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff));
 
 }
 
@@ -1051,7 +1079,7 @@ table#teacher_rank td.point{
   padding: 1px;
 }
 
-#course_info_view_new input {
+#course_info_view_new input#course_view_kahitu_button {
   margin: 0;
   margin-left: 10px;
   border-radius: 3px;
@@ -1062,7 +1090,24 @@ table#teacher_rank td.point{
   border: solid 1px #000000;
 }
 
-#course_info_view_new input:hover  {
+#course_info_view_new input#guest_view_add_button {
+  margin: 0;
+  margin-left: 10px;
+  border-radius: 3px;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  background-color: #ffffff;
+  border: solid 1px #000000;
+}
+
+#course_info_view_new input#course_view_kahitu_button:hover  {
+  border: none;
+  box-shadow: inset 1px 1px 3px 0 #000000;
+  padding: 6px;
+}
+
+#course_info_view_new input#guest_view_add_button:hover  {
   border: none;
   box-shadow: inset 1px 1px 3px 0 #000000;
   padding: 6px;
@@ -1086,7 +1131,7 @@ table#teacher_rank td.point{
 
 #course_info_view p#view_footer {
   display: inline;
-  padding-left: 320px;
+  padding-left: 400px;
 }
 
 div#course_view_index div.view_text {
@@ -1096,30 +1141,6 @@ div#course_view_index div.view_text {
 
 div#course_view_index p.view_body{
   display: inline;
-}
-
-div.view_evaluation_block {
-  margin-bottom: 10px;
-  text-align: right;
-}
-
-
-div#course_view_index p.each_evaluation_rank {
-  display: inline;
-  
-  font-family: DFKai-SB;
-  font-weight: 900;
-  margin-left: 15px;
-  margin-top: 20px;
-  padding: 3px 8px;
-  font-size: 1.5em;
-  box-shadow: 1px 1px 3px 0;
-  border-radius: 2px;
-  background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -ms-linear-gradient(top, ghostwhite 20%, richblue 100%);
-  background: -webkit-linear-gradient(top, ghostwhite 20%, deepskyblue 100%);
-  background: -o-linear-gradient(top, ghostwhite 20%, deepskyblue 100%);
-  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(deepskyblue));
 }
 
 /* like & take */
@@ -1145,20 +1166,22 @@ div#course_info_view_option {
 }
 div#course_info_view_option p {
   display: inline;
+  
 }
 
 div#course_info_view_option p#good_button a {
+  font-weight: bold;
   margin-right: 30px;
   color: #000000;
   font-size: 1em;
   cousor: pointer;
   padding: 4px 3px;
   border-radius: 3px;
-  background: -moz-linear-gradient(top, ghostwhite 0%, silver 100%);
-  background: -ms-linear-gradient(top, ghostwhite 0%, silver 100%);
-  background: -webkit-linear-gradient(top, ghostwhite 0%, silver 100%);
-  background: -o-linear-gradient(top, ghostwhite 0%, silver 100%);
-  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(silver));
+  background: -moz-linear-gradient(top, ghostwhite 0%, yellow 100%);
+  background: -ms-linear-gradient(top, ghostwhite 0%, yellow 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 0%, yellow 100%);
+  background: -o-linear-gradient(top, ghostwhite 0%, yellow 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(yellow));
   border-radius: 5px;
   box-shadow: 1px 1px 3px 0 #000000;
 
@@ -1166,17 +1189,18 @@ div#course_info_view_option p#good_button a {
 }
 
 div#course_info_view_option p#take_button a {
+  font-weight: bold;
   margin-right: 30px;
   color: #000000;
   font-size: 1em;
   cousor: pointer;
   padding: 4px 3px;
   border-radius: 3px;
-  background: -moz-linear-gradient(top, ghostwhite 0%, silver 100%);
-  background: -ms-linear-gradient(top, ghostwhite 0%, silver 100%);
-  background: -webkit-linear-gradient(top, ghostwhite 0%, silver 100%);
-  background: -o-linear-gradient(top, ghostwhite 0%, silver 100%);
-  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(silver));
+  background: -moz-linear-gradient(top, ghostwhite 0%, deepskyblue 100%);
+  background: -ms-linear-gradient(top, ghostwhite 0%, deepskyblue 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 0%, deepskyblue 100%);
+  background: -o-linear-gradient(top, ghostwhite 0%, deepskyblue 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(deepskyblue));
   border-radius: 5px;
   box-shadow: 1px 1px 3px 0 #000000;
 
@@ -1186,11 +1210,11 @@ div#course_info_view_option p#take_button a {
 div#course_info_view_option p#good_button a:hover {
   cousor: pointer;
   box-shadow: inset 1px 1px 3px 0;
-  background: -moz-linear-gradient(bottom, ghostwhite 0%, silver 100%);
-  background: -ms-linear-gradient(bottom, ghostwhite 0%, silver 100%);
-  background: -webkit-linear-gradient(bottom, ghostwhite 0%, silver 100%);
-  background: -o-linear-gradient(bottom, ghostwhite 0%, silver 100%);
-  background: -webkit-gradient(linear, bottom, top, from(ghostwhite), to(silver));
+  background: -moz-linear-gradient(bottom, ghostwhite 0%, yellow 100%);
+  background: -ms-linear-gradient(bottom, ghostwhite 0%, yellow 100%);
+  background: -webkit-linear-gradient(bottom, ghostwhite 0%, yellow 100%);
+  background: -o-linear-gradient(bottom, ghostwhite 0%, yellow 100%);
+  background: -webkit-gradient(linear, bottom, top, from(ghostwhite), to(yellow));
   border-radius: 5px;
   box-shadow: 1px 1px 3px 0 #000000;
 
@@ -1200,11 +1224,11 @@ div#course_info_view_option p#good_button a:hover {
 div#course_info_view_option p#take_button a:hover {
   cousor: pointer;
   box-shadow: inset 1px 1px 3px 0;
-  background: -moz-linear-gradient(bottom, ghostwhite 0%, silver 100%);
-  background: -ms-linear-gradient(bottom, ghostwhite 0%, silver 100%);
-  background: -webkit-linear-gradient(bottom, ghostwhite 0%, silver 100%);
-  background: -o-linear-gradient(bottom, ghostwhite 0%, silver 100%);
-  background: -webkit-gradient(linear, bottom, top, from(ghostwhite), to(silver));
+  background: -moz-linear-gradient(bottom, ghostwhite 0%, deepskyblue 100%);
+  background: -ms-linear-gradient(bottom, ghostwhite 0%, deepskyblue 100%);
+  background: -webkit-linear-gradient(bottom, ghostwhite 0%, deepskyblue 100%);
+  background: -o-linear-gradient(bottom, ghostwhite 0%, deepskyblue 100%);
+  background: -webkit-gradient(linear, bottom, top, from(ghostwhite), to(deepskyblue));
   border-radius: 5px;
   box-shadow: 1px 1px 3px 0 #000000;
 
@@ -1459,7 +1483,7 @@ div#account_menu_box li li a {
 div.pagination {
   position: absolute;
   clear: both;
-  margin-top: 430px;
+  margin-top: 480px;
 }
 
 div.pagination a, em {
@@ -1483,7 +1507,7 @@ div.pagination a.next_page {
   font-size: 4em;
   position: absolute;
   padding: 20px;
-  margin-left: 800px;
+  margin-left: 900px;
   margin-top: -300px;
 }
 
@@ -1498,37 +1522,58 @@ div.pagination a.next_page:hover {
 /* accountの時間割 */
 
 div#mypage {
-  width: 950px;
+  width: 900px;
   margin: 0;
+  margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px 0 #000000;
+  
 }
 
-
-
-table#account_schedule td.account_title {
-  border-radius: 5px 5px 0 0;
-  margin: 0;
+table#account_schedule td {
+  text-align: center;
 }
 
-table#account_schedule td.account_title p {
+div#mypage a {
+  color: #000000;
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: bold;
+}
+
+table#account_schedule {
+  background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -ms-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
+  background: -o-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff));
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 1px 0 blue;
+}
+
+table#account_head td.account_title p {
   display: inline;
-  margin: 0;
 }
 
-table#account_schedule td.account_title p#account_name {
+table#account_head {
+ margin: 10px;
+}
+
+table#account_head td.account_title p#account_name {
   font-size: 1.5em;
 }
 
-table#account_schedule td.account_title p.account_info {
+table#account_head td.account_title p.account_info {
   font-size: 0.9em;
   margin-left: 10px;;
 }
 
 td.schedule_label {
-  width: 50px;
-  padding: 10px;
+  font-size: 0.8em;
+  width: 30px;
+  padding: 3px;
   margin: 0;
   text-align: center;
 }
@@ -1541,6 +1586,132 @@ td.schedule_time_week {
 }
 
 td.schedule_detail {
-  width: 100px;
-  border: solid 1px #000000;
+  width: 140px;
+  height: 40px;
+  text-align: center;
 }
+
+div.schedule_panel {
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px 5px;
+}
+
+div.schedule_panel:hover {
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 3px 0 blue;
+
+}
+
+p.take_course_detail_close_button {
+  font-weight: bold;
+  color: #ffffff;
+  width: 18px;
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  background-color: deepskyblue;
+  cursor: pointer;
+}
+
+/* teacher_rankのフォーム */
+p#teacher_rank_open_button {
+  font-weight: bold;
+  margin-right: 30px;
+  font-size: 1em;
+  cousor: pointer;
+  padding: 4px 3px;
+  border-radius: 3px;
+  background: -moz-linear-gradient(top, ghostwhite 0%, red 100%);
+  background: -ms-linear-gradient(top, ghostwhite 0%, red 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 0%, red 100%);
+  background: -o-linear-gradient(top, ghostwhite 0%, red 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(red));
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 0 #000000;
+  cursor: pointer;
+}
+
+p#teacher_rank_open_button:hover {
+  background: -moz-linear-gradient(bottom, ghostwhite 0%, red 100%);
+  background: -ms-linear-gradient(bottom, ghostwhite 0%, red 100%);
+  background: -webkit-linear-gradient(bottom, ghostwhite 0%, red 100%);
+  background: -o-linear-gradient(bottom, ghostwhite 0%, red 100%);
+  background: -webkit-gradient(linear, bottom, top, from(ghostwhite), to(red));
+}
+
+a#teacher_rank_button {
+  color: #000000;
+  margin-right: 30px;
+  font-size: 0.9em;
+  cousor: pointer;
+  padding: 4px 3px;
+  border-radius: 3px;
+  background: -moz-linear-gradient(top, ghostwhite 0%, red 100%);
+  background: -ms-linear-gradient(top, ghostwhite 0%, red 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 0%, red 100%);
+  background: -o-linear-gradient(top, ghostwhite 0%, red 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(red));
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 0 #000000;
+}
+
+a#teacher_rank_button:hover {
+  background: -moz-linear-gradient(bottom, ghostwhite 0%, red 100%);
+  background: -ms-linear-gradient(bottom, ghostwhite 0%, red 100%);
+  background: -webkit-linear-gradient(bottom, ghostwhite 0%, red 100%);
+  background: -o-linear-gradient(bottom, ghostwhite 0%, red 100%);
+  background: -webkit-gradient(linear, bottom, top, from(ghostwhite), to(red));
+}
+
+
+div#teacher_rank_form p.each_evaluation_rank {
+  position: absolute;
+  margin-top: -40px;
+  display: inline;
+  font-family: DFKai-SB;
+  font-weight: 900;
+  padding: 1px 8px;
+  font-size: 1.5em;
+  box-shadow: 1px 1px 3px 0;
+  border-radius: 2px;
+  background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -ms-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
+  background: -o-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff));
+}
+
+div#teacher_rank_prompt {
+  margin: auto;
+  display: none;
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: solid 1px;
+}
+
+p#teacher_rank_colse_button {
+  text-align: center;
+  width: 20px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #000000;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+div#cover {
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  width: 10000px;
+  height: 20000px;
+  position: absolute;
+  left: -5000px;
+  top: -5000px;
+}
+
+

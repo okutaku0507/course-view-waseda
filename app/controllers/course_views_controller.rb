@@ -6,9 +6,6 @@
   end
 
   def show
-    @course_view = CourseView.find(params[:id])
-    @course_info = CourseInfo.find_by_id(@course_view.id_course)
-    redirect_to @course_info
   end
 
   def new
@@ -18,8 +15,6 @@
 
   def create
     
-
-
     @course_view = CourseView.new(params[:course_view])
     @course_view.member = @current_member
     @course_info = CourseInfo.find_by_id(session[:course_info_id])
@@ -35,7 +30,8 @@
   end
 
   def edit
-    @course_view = @current_member.course_views.find(params[:id])
+    @course_view = CourseView.find(params[:id])
+    @course_info = CourseInfo.find_by_id(@course_view.course_info_id)
   end
 
   def update

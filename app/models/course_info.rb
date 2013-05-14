@@ -12,6 +12,9 @@
   has_many :take_courses, dependent: :destroy
   has_many :take_course_members, through: :take_courses, source: :member
 
+  has_many :teacher_ranks, dependent: :destroy
+  has_many :teacher_rank_members, through: :teacher_ranks, source: :member
+
    attr_accessible :title, :teacher, :open_faculty, :day_of_the_week, :open_time, :open_term, :test_existence
 
   validates :title, presence: true

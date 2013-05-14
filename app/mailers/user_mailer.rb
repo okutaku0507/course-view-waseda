@@ -13,4 +13,5 @@ class UserMailer < ActionMailer::Base
     @member = member
     mail(:to => member.email, :subject => "Waseda Course Viewからパスワードをお知らせします")
   end
+  
 end

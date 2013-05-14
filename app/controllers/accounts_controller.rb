@@ -26,5 +26,7 @@ class AccountsController < ApplicationController
     end
   end
 
+  def take_course_update
+  end
 
 end
