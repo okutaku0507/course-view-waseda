@@ -67,9 +67,15 @@ module Course
      config.action_mailer.smtp_settings = {
        :address => 'smtp.mail.yahoo.co.jp',
        :port => 587,
-       :authentication => :login,
        :user_name => 'okutaku0507',
-       :password => 'monsterg'
+       :password => 'monsterg',
+       :authentication => :login
+#       :pop3_auth => {
+#         :server => 'rabbit-network.sakura.ne.jp',
+#         :user_name => 't.okuhara@rabbit-network.sakura.ne.jp',
+#         :password => 'monster2g',
+#         :authentication => :login
+#       }
      }
   end
 end

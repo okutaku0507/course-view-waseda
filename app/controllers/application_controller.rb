@@ -36,7 +36,8 @@
   end
 
   def rescue_500(exception)
-    render "errors/internal_server_error", status: 500, layout: "error"
+    raise exception
+    #render "errors/internal_server_error", status: 500, layout: "error"
   end
 
 
