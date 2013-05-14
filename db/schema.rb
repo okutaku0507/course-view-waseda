@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429111648) do
+ActiveRecord::Schema.define(:version => 20130509010055) do
 
   create_table "bads", :force => true do |t|
     t.integer  "member_id",      :null => false
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(:version => 20130429111648) do
     t.integer  "course_info_id",  :null => false
     t.string   "title_of_course", :null => false
     t.text     "view",            :null => false
-    t.integer  "teacher_rank",    :null => false
     t.integer  "id_course",       :null => false
     t.integer  "id_member",       :null => false
     t.datetime "created_at",      :null => false
@@ -74,17 +73,31 @@ ActiveRecord::Schema.define(:version => 20130429111648) do
   end
 
   create_table "take_courses", :force => true do |t|
-    t.integer  "member_id",             :null => false
-    t.integer  "course_info_id",        :null => false
-    t.string   "take_course_title",     :null => false
-    t.string   "take_course_open_week", :null => false
-    t.integer  "take_course_open_time", :null => false
-    t.integer  "id_of_take_course",     :null => false
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.integer  "member_id",                :null => false
+    t.integer  "course_info_id",           :null => false
+    t.string   "take_course_title",        :null => false
+    t.string   "take_course_open_week",    :null => false
+    t.integer  "take_course_open_time",    :null => false
+    t.integer  "id_of_take_course",        :null => false
+    t.integer  "take_course_late_point",   :null => false
+    t.integer  "take_course_absent_point", :null => false
+    t.text     "take_course_note",         :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   add_index "take_courses", ["course_info_id"], :name => "index_take_courses_on_course_info_id"
   add_index "take_courses", ["member_id"], :name => "index_take_courses_on_member_id"
+
+  create_table "teacher_ranks", :force => true do |t|
+    t.integer  "member_id",      :null => false
+    t.integer  "course_info_id", :null => false
+    t.integer  "teacher_rank",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "teacher_ranks", ["course_info_id"], :name => "index_teacher_ranks_on_course_info_id"
+  add_index "teacher_ranks", ["member_id"], :name => "index_teacher_ranks_on_member_id"
 
 end
