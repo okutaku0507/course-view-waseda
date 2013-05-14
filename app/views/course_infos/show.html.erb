@@ -1,0 +1,77 @@
+﻿<div id="course_info">
+
+  <% if flash.notice %>
+    <p class="info_notice"><%= flash.notice %></p>
+  <% end %>
+<%= render "shared/errors", obj: @course_view %>
+
+<div id="course_info_head">
+  <div id="course_info_detail">
+
+  <table id="teacher_rank">
+  <tr>
+      <td class="label">GPA</td>
+  </tr>
+  <tr>
+      <% if @course_info.course_views.exists? %>
+      <td class="point"><%= number_with_precision(@average_teacher_rank, :precision => 1) %></td>
+      <% else %>
+      <td class="point">-</td>
+      <% end %>
+  </tr>
+  </table>
+
+
+  <% if @current_member %>
+
+    <% if (like_count = @course_info.likes.count) > 0 %>
+      <p id="like">good!&nbsp;<%= like_count %></p>
+    <% else %>
+      <p id="like">good!&nbsp;0</p>
+    <% end %>
+
+ <% end %>
+
+  </div>
+
+<div id="course_info_view_new">
+<% if @course_info.title.length <= 7 %>
+    <h1><%= @course_info.title %></h1>
+    <h3><%= @course_info.teacher %></h3>
+    <h3><%= @course_info.open_faculty %></h3>
+
+<% else %>
+    <h1 class="long_title"><%= @course_info.title %></h1>
+    <p class="long_title">&nbsp;&nbsp;&nbsp;&nbsp;<%= @course_info.teacher %>&nbsp;&nbsp;<%= @course_info.open_faculty %></p>
+
+<% end %>
+<% if @current_member %>
+<%= form_for @course_view do |form| %>
+
+  <%= form.text_area :view, rows: 8, cols: 50, :placeholder => "この講義どうだった？" %>
+    <div id="course_info_view_option">
+       <p id="good_button">
+       <% if @current_member.like_for?(@course_info) %>
+         <%= link_to "good!", [:like, @course_info], method: :put, class: "button" %>
+       <% else %>
+          <%= link_to "×good!", [:unlike, @course_info], method: :put %>
+       <% end %>
+       </p>
+       <p id="take_button">
+       <% if @current_member.take_course_for?(@course_info) %>
+          <%= link_to "履修!", [:take, @course_info], method: :put %>
+       <% else %>
+          <%= link_to "×履修", [:not_take, @course_info], method: :put %>
+       <% end %>
+       </p>
+       <p>教授&nbsp;RANK&nbsp;：&nbsp;<%= form.select :teacher_rank, [["A+", 4], [ "A", 3], ["B", 2], ["C", 1], ["F", 0]] %>
+       <%= form.submit "加筆" %></p>
+  </div>
+<% end %>
+<% end %>
+</div>
+</div>
+
+<%= render "courseinfoview" %>
+
+</div>

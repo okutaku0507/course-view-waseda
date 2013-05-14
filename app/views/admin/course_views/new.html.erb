@@ -1,0 +1,9 @@
+﻿<% @page_title = @course_info.title + "に加筆" %>
+
+<h1><%= @page_title %></h1>
+
+
+<%= form_for [:admin, @course_view] do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>

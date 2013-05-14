@@ -1,0 +1,12 @@
+﻿<% @page_title = "ユーザー新規登録" %>
+<div id="new_member">
+<h1 id="title">Course Viewに参加！</h1>
+<div id="user_form">
+<%= form_for @member do |form| %>
+<%= render "form", form: form%>
+<div id="member_new_button">
+<p><%= form.submit "Join！", :id => "button_member_new", :disabled => "true" %></p>
+</div>
+<% end %>
+</div>
+</div>

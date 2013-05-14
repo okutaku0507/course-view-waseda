@@ -1,0 +1,46 @@
+﻿<% @page_title = @course_info.title %>
+
+<h1><%= @page_title %></h1>
+  <% if @current_member.try(:administrator?) %>
+<p><%= link_to "この講義を削除", [:admin, :course_info], method: :delete, confirm: "本当に削除しますか？" %></p>
+  <% end %>
+  <% if flash.notice %>
+    <p class="info_notice"><%= flash.notice %></p>
+  <% end %>
+
+<table>
+  <tr>
+    <th><%= @course_info.title %></th>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td><%= @course_info.teacher %></td>
+    <td><%= @course_info.open_time %></td>
+  </tr>
+
+  <tr>
+    <td><%= @course_info.open_faculty %></td>
+    <td><%= @course_info.open_term %></td>
+  </tr>
+
+  <tr>
+    <td><%= @course_info.day_of_the_week %></td>
+    <td><%= @course_info.test_existence %></td>
+  </tr>
+  <tr>
+  <% if @current_member.try(:administrator?) %>
+    <td><%= link_to "基本内容の変更", [:edit, :admin, @course_info] %></td>
+  <% end %>
+    <td><%= link_to "＋加筆", [:new, :admin, :course_view] %></td>
+  </tr>
+</table>
+<ul>
+<% @course_info.course_views.each do |course_view| %>
+<li><%= course_view.view %></li>
+<% if @current_member.try(:administrator?) %>
+<%= link_to "削除", [:admin, course_view], method: :delete, confirm: "本当に削除しますか？" %>
+<%= link_to "編集", [:edit, :admin, course_view], confirm: "本当に編集しますか？"  %>
+<% end %>
+<% end %>
+</ul>

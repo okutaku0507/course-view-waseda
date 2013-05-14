@@ -1,0 +1,32 @@
+﻿<div class="footer">
+
+<hr>
+<p align="center">Copyright &copy; 2013 <%= link_to "Rabbit Network", "http://rabbit-network.com/" %> All rights reserved.
+
+  <%= link_to "利用規約", use_policy_path %> | 
+<%= link_to "プライバシーポリシー", privacy_path %> 
+<% if @current_member %>
+<% if @current_member.try(:administrator?) %> | 
+  <%= menu_link_to "管理者", :admin_root %></p>
+  <% else %>
+</p>
+<div id="account_menu_box">
+
+  <ul id="account_menu_button">
+    <li class="account_menu1">アカウント設定</li>
+  </ul>
+
+
+  <ul id="account_menu_button">
+    <li class="account_menu2">
+      <ul>
+      <li><%= link_to "パスワード変更", :edit_account %></li>
+      <li><%= link_to "退会", @current_member, method: :delete, confirm: "本当に退会しますか？"%></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  <% end %>
+  <% end %>
+</div>
+                                             

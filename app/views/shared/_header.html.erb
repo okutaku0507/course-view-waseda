@@ -1,0 +1,64 @@
+﻿<% unless @current_member %>
+    <div>
+      <%= render "shared/sidebar" %>
+    </div>
+  <% else %>
+    <div id="search">
+      <%= form_tag :search_course_infos, method: :get do %>
+      <p id="search_str"><%= text_field_tag "q", params[:q] %></p>
+      <p id="search_button"><%= submit_tag "検索" %></p>
+<% end %>
+</div>
+  <% end %>
+
+<% if @current_member %>
+  <% unless controller.kind_of?(Admin::Base) %>
+<div id="menu_box">
+<%= image_tag "rabbit.png", width: 35, :class => "rabbit" %>
+
+<ul id="menubutton">
+<li class="submenu1">▼
+  </li>
+</ul>
+<ul id="menubutton">
+<li class="submenu2"><%= menu_link_to "Course View", :course_infos %>
+  <ul>
+  <li><%= menu_link_to @current_member.family_name + @current_member.first_name, :account %></li>
+  <li><%= menu_link_to "サークル", "#" %></li>
+  <li><%= link_to "ログアウト", :session, method: :delete, confirm: "ログアウトしますか？" %></li>
+  </ul>
+</li>
+</ul>
+
+</div>
+ <% end %>
+  <% else %>
+<div id="course_view_title">
+<h1>Course View</h1><h5>@waseda</h5>
+</div>
+<% end %>
+
+  <% if controller.kind_of?(Admin::Base) %>
+
+<div id="menu_box">
+<ul id="menubutton">
+<li class="submenu1">▼</li>
+</ul>
+
+<ul id="menubutton">
+<li class="submenu2"><%= menu_link_to "Course View", :course_infos %>
+  <ul>
+  <li class="first_menu"><%= menu_link_to "一般モード", root_path %></li>
+  <li><%= menu_link_to "管理トップ", :admin_root %></li>
+  <li><%= menu_link_to "ユーザー管理", :admin_members %></li>
+  <li><%= menu_link_to "講義管理", :admin_course_infos %></li>
+  <li><%= menu_link_to "サークル管理", "#" %></li>
+  </ul>
+</li>
+</ul>
+
+</div>
+
+<% end %>
+
+

@@ -1,0 +1,52 @@
+﻿
+<div style="clear: both">
+  <% if @current_member %>
+      <p id="course_info_new_button"><%= menu_link_to "Add Course",  :new_course_info %></p>
+  <% else %>
+      <p id="course_info_new_button"><%= menu_link_to "Join!",  :new_member %></p>
+  <% end %>
+</div>
+  <% if flash.notice %>
+    <p class="info_notice"><%= flash.notice %></p>
+  <% end %>
+ <div id="course_index">
+
+<% if @course_infos.present? %>
+ <% @course_infos.each do |course_info| %>
+
+<div class="course_info_panel" data-num="<%= course_info.id %>">
+  <% @average_teacher_rank = CourseView.where(course_info_id: course_info.id).average(:teacher_rank) %>
+  <% @course_views = CourseView.find_by_id_course(course_info.id) %>
+  <div class="gpa_panel">
+    <table id="index_teacher_rank">
+  <tr>
+      <td class="index_label">GPA</td>
+  </tr>
+  <tr>
+      <% if course_info.course_views.exists? %>
+      <td class="index_point"><%= number_with_precision(@average_teacher_rank, :precision => 1) %></td>
+      <% else %>
+      <td class="index_point">-</td>
+      <% end %>
+  </tr>
+  </table>
+  </div>
+  
+  <div class="panel_info">
+<% if course_info.title.length <= 7 %>
+  <p><%= link_to course_info.title, course_info %></p>
+<% else %>
+  <p class="long_title"><%= link_to course_info.title, course_info %></p>
+<% end %>
+  <p><%= course_info.teacher %></p>
+  <p><%= course_info.open_faculty %></p>
+  </div>
+</div>
+  <% end %>
+<%= will_paginate @course_infos %>
+</div>
+
+<% else %>
+<p>お探しの講義が見つかりません。</p>
+<% end %>
+    

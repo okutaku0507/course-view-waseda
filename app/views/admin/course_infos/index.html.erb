@@ -1,0 +1,28 @@
+﻿<% if @current_member %>
+<%= link_to "講義新規作成", :new_admin_course_info %>
+<% end %>
+  <% if flash.notice %>
+    <p class="info_notice"><%= flash.notice %></p>
+  <% end %>
+<% if @course_infos.present? %>
+<table class="course_index">
+  <tr>
+    <th>講義名</th>
+    <th>教職員</th>
+    <th>内容</th>
+    <th>単位</th>
+  </tr>
+  <% @course_infos.each do |course_info| %>
+  <tr>
+    <td><%= link_to course_info.title, [:admin, course_info] %></td>
+    <td><%= course_info.teacher %></td>
+    <td>ここに内容の平均</td>
+    <td>ここに単位の平均</td>
+  </tr>
+
+  <% end %>
+</table>
+<% else %>
+<p>お探しの講義が見つかりません。</p>
+<% end %>
+    

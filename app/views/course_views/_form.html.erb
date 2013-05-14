@@ -1,0 +1,29 @@
+﻿<%= render "shared/errors", obj: @course_view %>
+
+<table>
+
+  <tr>
+    <th><%= form.label :evaluation, "内容評価"%></th>
+    <%= form.select :evaluation, [1, 2 , 3, 4, 5, 6, 7, 8, 9, 10] %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :evaluation_credit, "単位の取得難易度"%></th>
+    <%= form.select :evaluation_credit, [1, 2 , 3, 4, 5, 6, 7, 8, 9, 10] %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :teacher_rank, "教授の単位"%></th>
+    <%= form.select :teacher_rank, [["A+", 4], [ "A", 3], ["B", 2], ["C", 1], ["F", 0]] %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :view_title, "Viewのタイトル"%></th>
+    <td><%= form.text_field :view_title, size: 50 %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :view, "本文" %></th>
+    <td><%= form.text_area :view, rows: 10, cols: 45 %></td>
+  </tr>
+</table>

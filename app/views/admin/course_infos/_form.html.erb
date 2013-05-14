@@ -1,0 +1,43 @@
+﻿<%= render "shared/errors", obj: @course_info %>
+
+<table>
+  <tr>
+    <th><%= form.label :title %></th>
+    <td><%= form.text_field :title, size: 50 %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :teacher %></th>
+    <td><%= form.text_field :teacher, size: 50 %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :open_faculty %></th>
+<td><%= form.select :open_faculty, 
+["政経", "法学", "一文", "二文", "教育", "商学", "理工", "社学", "人科", "スポーツ", "国際教養", "文構", "文",
+ "人通", "基幹", "創造", "先進", "政研", "経研", "法研", "文研", "商研", "教研", "人研", "社学研", "アジア研",
+ "国情研", "日研", "情シス研", "公共研", "ファイナンス研", "法務研", "会計研", "スポーツ研", "基幹研", "創造研",
+ "先進研", "環エネ研", "教職研", "国際コミ研", "ＭＮＣ", "日本語", "留学", "オープン教育"] %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :day_of_the_week %></th>
+    <td><%= form.select :day_of_the_week, ["月", "火", "水", "木", "金", "土", "日", "無"] %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :open_time %></th>
+    <td><%= form.select :open_time, ["1時限", "2時限", "3時限", "4時限", "5時限", "6時限", "7時限", 
+                                     "フルオンデマンド", "その他"] %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :open_term %></th>
+    <td><%= form.select :open_term, ["通年", "春期", "秋期", "その他"] %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :test_existence %></th>
+    <td><%= form.select :test_existence, ["末", "中", "無・小", "無", "中・末", "末・小", "中・末・小", "その他"] %></td>
+  </tr>
+</table>

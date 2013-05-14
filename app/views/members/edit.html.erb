@@ -1,0 +1,25 @@
+﻿<% @page_title = "パスワードの変更" %>
+
+<h1 id="title"><%= @page_title %></h1>
+<p class="back_edit"><%= link_to "ユーザー詳細に戻る", @member %></p>
+<% unless @member.new_record? %>
+<p>※パスワードを更新しないときは、ブラウザの戻るボタンか上記の"ユーザー詳細に戻る"でお戻りください。</p>
+<% end %>
+<%= render "shared/errors", obj: @member %>
+<%= form_for @member do |form| %>
+<table class="user">
+  <tr>
+    <th class="label"><%= form.label :password, "パスワード(8桁-16桁の半角英数字)" %></th>
+    <td class="detail"><%= form.password_field :password, size: 20 %></td>
+  </tr>
+  <tr>
+    <th class="label"><%= form.label :password_confirmation, "パスワード確認" %></th>
+    <td class="detail"><%= form.password_field :password_confirmation, size: 20 %></td>
+  </tr>
+
+
+
+</table>
+
+<p><%= form.submit %></p>
+<% end %>

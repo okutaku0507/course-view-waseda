@@ -1,0 +1,45 @@
+﻿<%= render "shared/errors", obj: @member %>
+<table class="user">
+  <tr>
+    <th class="label"><%= form.label :full_name, "本名" %></th>
+    <div id="name">
+    <td class="detail_family_name">&nbsp;氏:</td><td class="name_form"><%= form.text_field :family_name, size: 6 %></td>
+    <td class="detail_first_name">&nbsp;名:</td><td class="name_form"><%= form.text_field :first_name, size: 6 %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <th class="label"><%= form.label :email, "メールアドレス(@xxx.waseda.jpを含む)" %></th>
+    <td class="detail" colspan=4><%= form.text_field :email, size: 20 %></td>
+  </tr>
+
+  <tr>
+    <th class="label"><%= form.label :email_confirmation, "メールアドレス確認" %></th>
+    <td class="detail" colspan=4><%= form.text_field :email_confirmation, size: 20 %></td>
+  </tr>
+
+
+
+  <tr>
+    <th class="label"><%= form.label :faculty, "在学・卒業学部" %></th>
+    <td class="detail" colspan=4><%= form.select :faculty, 
+["政治経済学部", "法学部", "第一文学部", "第二文学部", "文化構想学部", "文学部", "教育学部",
+ "商学部", "基幹理工学部", "創造理工学部", "先進理工学部", "社会科学部", "人間科学部", "スポーツ科学部", "国際教養学部", "その他(下欄に入力)"] %></td>
+  </tr>
+
+  <tr>
+    <th class="label"><%= form.label :subject, "学科・大学院・その他" %></th>
+    <td class="detail" colspan=4><%= form.text_field :subject, size: 20 %></td>
+  </tr>
+
+  <tr>
+    <th class="label">性別</th>
+      <td class="detail" colspan=4>
+        <%= form.radio_button :gender, 0 %>
+        <%= form.label :gender_0, "男" %>
+        <%= form.radio_button :gender, 1 %>
+        <%= form.label :gender_1, "女" %>
+      </td>
+  </tr>
+</table>
+

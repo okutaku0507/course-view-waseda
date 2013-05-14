@@ -1,0 +1,17 @@
+﻿<table>
+
+  <tr>
+    <th><%= form.label :evaluation, "内容評価"%></th>
+    <td><%= form.select :evaluation, [1, 2 , 3, 4, 5, 6, 7, 8, 9, 10] %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :teacher_rank, "教授の単位"%></th>
+    <td><%= form.select :teacher_rank, [["A+", 4], [ "A", 3], ["B", 2], ["C", 1], ["F", 0]] %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :view, "本文" %></th>
+    <td><%= form.text_area :view, rows: 5, cols: 20 %></td>
+  </tr>
+</table>

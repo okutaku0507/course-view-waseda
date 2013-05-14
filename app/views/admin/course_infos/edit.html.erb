@@ -1,0 +1,9 @@
+﻿<% @page_title = @course_info.title + "の編集" %>
+<h1><%= @page_title %></h1>
+
+<p><%= link_to "講義に戻る", @course_info %></p>
+
+<%= form_for [:admin, @course_info] do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>

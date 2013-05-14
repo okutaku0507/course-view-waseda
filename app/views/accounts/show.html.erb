@@ -1,0 +1,363 @@
+﻿
+
+  <% if flash.notice %>
+    <p class="info_notice"><%= flash.notice %></p>
+  <% end %>
+<div id="account_head">
+</div>
+<div id="mypage">
+<table id="account_schedule">
+
+
+<tr>
+<td colspan="7" class="account_title">
+  <p id="account_name"><%= @current_member.family_name + @current_member.first_name %></p>
+  <p class="account_info"><%= @member.faculty %></p>
+  <p class="account_info"><%= @member.subject %></p>
+</td>
+
+</tr>
+
+
+
+<tr>
+<td class="schedule_time_week">時限/曜日</td>
+<td>月</td>
+<td>火</td>
+<td>水</td>
+<td>木</td>
+<td>金</td>
+<td>土</td>
+</tr>
+<tr>
+<td class="schedule_label">1時限</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "月" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "火" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "水" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "木" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "金" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "土" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+</tr>
+
+<tr>
+<td class="schedule_label">2時限</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "月" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "火" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "水" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "木" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "金" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "土" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+</tr>
+
+<tr>
+<td class="schedule_label">3時限</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "月" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "火" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "水" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "木" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "金" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "土" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+</tr>
+
+<tr>
+<td class="schedule_label">4時限</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "月" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "火" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "水" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "木" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "金" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "土" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+</tr>
+
+<tr>
+<td class="schedule_label">5時限</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "月" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "火" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "水" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "木" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "金" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "土" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+</tr>
+
+<tr>
+<td class="schedule_label">6時限</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "月" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "火" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "水" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "木" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "金" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "土" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+</tr>
+
+<tr>
+<td class="schedule_label">7時限</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "月" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "火" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "水" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "木" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "金" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+<td class="schedule_detail">
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "土" %>
+      <%= take_course.take_course_title %>
+    <% end %>
+  <% end %>
+</td>
+</tr>
+
+</table>
+
+
+
+
+<% if @current_member.try(:administrator?) %>
+<p class="edit"><%= link_to "パスワード変更", :edit_account %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to "退会", @current_member, method: :delete, confirm: "本当に退会しますか？"%></p>
+<% end %>
+<%= render "accountview" %>
+</div>

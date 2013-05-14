@@ -1,0 +1,23 @@
+﻿
+  <% if flash.notice %>
+    <p class="notice"><%= flash.notice %></p>
+    <p class="notice_top" align=center><%= link_to "トップページ(ログインフォーム)へ", root_path %></p>
+<% else %>
+
+
+<div id="content">
+<h1>Waseda Course Viewについて</h1>
+<p>このサイトは早稲田生により、早稲田での大学生活をより快適にする目的のために作られました。</p>
+<p>初めにお詫びを申し上げます。</p>
+<p>このサイトの利用価値は皆さんの手によって高めてもらうしかありません。</p>
+<p>在学生、卒業生は問いません。皆さんが過去に履修した、もしくは現在履修している講義について詳しく加筆してください。</p>
+<p>他の書籍からの転記は一切お止めください。</p>
+<p>早稲田生の"自由"にお任せします。</p>
+<% unless @current_member %>
+<div class="new" align=center>
+<p class="new_user"><%= link_to "Course Viewに参加", :new_member %></p>
+</div>
+<% end %>
+</div>
+
+ <% end %>

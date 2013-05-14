@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title><%= page_title %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag '/rabbit-icon.ico' %>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+<%= render "shared/header" %>
+  </div>
+
+
+<%= yield %>
+
+
+  <div id="footer">
+<%= render "shared/footer" %>
+  </div>
+</div>
+
+</body>
+</html>

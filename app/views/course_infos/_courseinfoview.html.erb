@@ -1,0 +1,18 @@
+﻿<div id="course_view_index">
+<% @course_info.course_views.each do |course_view| %>
+<div id="course_info_view">
+<div class="view_text">
+<span class="view_hide_<%= course_view.id %>"><%=hbr course_view.view[0..79] %></span><span class="view_show_<%= course_view.id %>" style="display: none"><%=hbr course_view.view[80..-1] %></span>
+<% unless course_view.view.length < 80 %>
+<span class="show_dod_<%= course_view.id %>">...</span>
+<p id="tuduki"><span class="show" data-num="<%= course_view.id %>">続きを読む</span></p>
+
+<% end %>
+</div>
+<% @member = Member.find_by_id(course_view.id_member) %>
+<p class="each_evaluation_rank" align="center"><% if 4 == course_view.teacher_rank %>A<sup>+</sup><% elsif 3 == course_view.teacher_rank %>A<% elsif 2 == course_view.teacher_rank %>B<% elsif 1 == course_view.teacher_rank %>C<% else 0 == course_view.teacher_rank %>F<% end %></p><p id="view_footer"><span id="create_time"><%= course_view.created_at.strftime("%Y/%m/%d") %></span><span id="writer"><%= @member.faculty %>生</span></p>
+
+</div>
+<% end %>
+
+</div>

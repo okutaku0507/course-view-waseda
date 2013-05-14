@@ -1,0 +1,53 @@
+﻿
+<% @page_title = "ユーザーの詳細" %>
+
+<h1 id="title"><%= @page_title %></h1>
+  <% if flash.notice %>
+    <p class="info_notice"><%= flash.notice %></p>
+  <% end %>
+
+<table class="user">
+<tr>
+<th class="label">本名</th>
+<td class="detail"><%= @member.family_name %>&nbsp;&nbsp;<%= @member.first_name %></td>
+</tr>
+
+<tr>
+<th class="label">メールアドレス(ID)</th>
+<td class="detail"><%= @member.email %></td>
+</tr>
+
+<tr>
+<th class="label">在学・卒業学部</th>
+<td class="detail"><%= @member.faculty %></td>
+</tr>
+
+<tr>
+<th class="label">学科</th>
+<td class="detail"><%= @member.subject %></td>
+</tr>
+
+<tr>
+<th class="label">性別</th>
+<td class="detail"><%= @member.gender == 0 ? "男" : "女" %></td>
+</tr>
+
+<% if @current_member = @member || @current_member.try(:administrator?) %>
+
+<tr>
+<td class="edit" colspan=2><p class="edit"><%= link_to "パスワードの変更", [:edit, :admin, @member] %>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                 <%= link_to "アカウントの削除", [:admin, @member], method: :delete, confirm: "本当に削除しますか？もう元には戻せませんよ・・・？"%></p></td>
+</tr>
+<% end %>
+
+</table>
+<ul>
+<% @current_member.course_views.each do |course_view| %>
+<% if @current_member == course_view.member %>
+<p><%= link_to course_view.title_of_course, [:admin, course_view] %></p>
+<li><%= course_view.view %></li>
+<%= link_to "削除", [:admin, course_view], method: :delete, confirm: "本当に削除しますか？" %>
+<%= link_to "編集", [:edit, :admin, course_view], confirm: "本当に編集しますか？"  %>
+<% end %>
+<% end %>
+</ul>

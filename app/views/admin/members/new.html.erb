@@ -1,0 +1,11 @@
+﻿<% @page_title = "ユーザー新規登録" %>
+
+<h1 id="title"><%= @page_title %></h1>
+<div class="attention">
+<h3>※注意</h3>
+<p><strong>ユーザー情報は信憑性の高めるため、後に変更することはできません。慎重に入力してください。</strong></p>
+</div>
+<%= form_for @member do |form| %>
+<%= render "form", form: form%>
+<p><%= form.submit %></p>
+<% end %>
