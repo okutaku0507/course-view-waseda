@@ -63,19 +63,23 @@ module Course
     config.assets.version = '1.0'
 
       # :smtpモードを利用する設定
-     config.action_mailer.delivery_method = :smtp
-     config.action_mailer.smtp_settings = {
-       :address => 'smtp.mail.yahoo.co.jp',
-       :port => 587,
-       :user_name => 'okutaku0507',
-       :password => 'monsterg',
-       :authentication => :login
+#     config.action_mailer.delivery_method = :smtp
+#     config.action_mailer.raise_delivery_errors = true
+#     config.action_mailer.smtp_settings = {
+#       :address => 'www5179ug.sakura.ne.jp',
+#       :port => 25,
+#       :domain => 'course-view.com',
+#       :user_name => 'rails',
+#       :password => '20130503',
+#       :authentication => :plain,
+#       :tls  => true,
+#       :enable_starttls_auto => true
 #       :pop3_auth => {
 #         :server => 'rabbit-network.sakura.ne.jp',
 #         :user_name => 't.okuhara@rabbit-network.sakura.ne.jp',
 #         :password => 'monster2g',
 #         :authentication => :login
 #       }
-     }
+#     }
   end
 end
