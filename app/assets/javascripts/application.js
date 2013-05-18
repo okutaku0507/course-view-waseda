@@ -31,35 +31,31 @@ $(document).ready(function(){
 
 
 // headerのメニューばー
-  $(function() {
-    $('li.submenu1').click(function() {
-      if ($('li.submenu2').hasClass('click')) {
-        $('li.submenu2').removeClass('click');
-      }
-      else {
-        $('.click').removeClass('click');
-        $('li.submenu2').addClass('click');
-      }
-    });
-    $('li.submenu1 ul li').hover(
-      function() { $('li.submenu2').addClass('hover'); },
-      function() { $('li.submenu2').removeClass('hover'); });
-  });
 
-//  $(function() {
-//    $('li.submenu2').click(function() {
-//      if ($(this).hasClass('click')) {
-//        $(this).removeClass('click');
-//      }
-//      else {
-//        $('.click').removeClass('click');
-//        $(this).addClass('click');
-//      }
-//    });
-//    $('li.submenu2 ul li').hover(
-//      function() { $(this).addClass('hover'); },
-//      function() { $(this).removeClass('hover'); });
-//  });
+
+$(document).ready(function(){
+    $('span.pulldown_menu_open').click(function() {
+    $('div.menu_box_label').show();
+    $(this).hide();
+    $('span.pulldown_menu_close').show();
+  });
+});
+
+$(document).ready(function(){
+    $('span.pulldown_menu_close').click(function() {
+    $('div.menu_box_label').hide();
+    $(this).hide();
+    $('span.pulldown_menu_open').show();
+    $('div.account_setting').hide();
+  });
+});
+
+$(document).ready(function(){
+    $('p.account_button').click(function() {
+    $('div.account_setting').slideDown();
+  });
+});
+
 
 // footerのアカウント設定
   $(function() {

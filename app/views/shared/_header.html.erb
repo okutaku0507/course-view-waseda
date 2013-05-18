@@ -13,24 +13,23 @@
 
 <% if @current_member %>
   <% unless controller.kind_of?(Admin::Base) %>
+  
 <div id="menu_box">
 <%= image_tag "rabbit.png", width: 35, :class => "rabbit" %>
+<p class="top_menu"><span class="course_view_link"><%= menu_link_to "Course View", :course_infos %></span><span class="pulldown_menu_open">▼</span><span class="pulldown_menu_close">▼</span><p>
 
-<ul id="menubutton">
-<li class="submenu1">▼
-  </li>
-</ul>
-<ul id="menubutton">
-<li class="submenu2"><%= menu_link_to "Course View", :course_infos %>
-  <ul>
-  <li><%= menu_link_to @current_member.family_name + @current_member.first_name, :account %></li>
-<!--  <li><%= menu_link_to "サークル", "#" %></li>  -->
-  <li><%= link_to "ログアウト", :session, method: :delete, confirm: "ログアウトしますか？" %></li>
-  </ul>
-</li>
-</ul>
-
+<div class="menu_box_label">
+  <p class="top_menu_label"><%= menu_link_to @current_member.family_name + @current_member.first_name, :account %></p>
+  <p class="account_button">アカウント設定</p>
+<!--  <p><%= menu_link_to "サークル", "#" %></p> -->
+  <p class="bottom_menu_label"><%= link_to "ログアウト", :session, method: :delete, confirm: "ログアウトしますか？" %></p>
+  </div>
+    <div class="account_setting">
+      <p class="top_menu_label"><%= link_to "パスワード変更", :edit_account %></p>
+      <p class="bottom_menu_label"><%= link_to "退会", @current_member, method: :delete, confirm: "本当に退会しますか？"%></p>
+    </div>
 </div>
+
  <% end %>
   <% else %>
     <%= image_tag "rabbit.png", width: 35, :class => "rabbit_before_login" %>

@@ -37,9 +37,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+        <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -66,9 +66,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -94,9 +94,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -122,9 +122,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
+        
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -150,9 +151,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -178,9 +179,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -210,9 +211,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
+        
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -238,9 +240,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -266,9 +268,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
+        
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -294,9 +297,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -322,9 +325,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
+         
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -350,9 +354,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
+        
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -382,9 +387,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -410,9 +415,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -438,9 +443,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
+         
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -466,9 +472,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -494,9 +500,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
+        
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -522,9 +529,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -554,9 +561,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -582,9 +589,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
+         
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -610,9 +618,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -638,9 +646,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -666,9 +674,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -694,9 +702,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
+        
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -727,9 +736,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -755,9 +764,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -783,9 +792,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -811,9 +820,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
+        
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -839,9 +849,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -867,9 +877,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
+         
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -901,9 +912,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
+        
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -929,9 +941,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -957,9 +969,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -985,9 +997,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
+        
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -1013,9 +1026,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -1041,9 +1054,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
+         
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -1075,9 +1089,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -1103,9 +1117,10 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
+        
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -1131,9 +1146,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -1159,9 +1174,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -1187,9 +1202,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
@@ -1215,9 +1230,9 @@
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
       <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
+        <%= truncate(take_course.take_course_title, :length => 11) %>
      <% else %>
-         <%= link_to take_course.take_course_title, @course_info %>
+         <%= take_course.take_course_title %>
       <% end %>
     </div>
     <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
