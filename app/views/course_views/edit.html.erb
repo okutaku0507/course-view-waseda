@@ -3,6 +3,6 @@
 <%= form_for @course_view do |form| %>
 <p><%= link_to @course_view.title_of_course, @course_info %></p>
 <%= render "form", form: form %>
-<p><%= form.submit "更新", :id => "button_view_form" %></p>
+<p　align="right"><%= form.submit "保存", :id => "button_view_form" %></p>
 <% end %>
 </div>

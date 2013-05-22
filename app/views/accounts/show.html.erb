@@ -9,8 +9,8 @@
   <p id="account_name"><%= @current_member.family_name + @current_member.first_name %></p>
   <p class="account_info"><%= @member.faculty %></p>
   <p class="account_info"><%= @member.subject %></p>
-  <p id="account_view_add_button">加筆した講義▼</p>
-  <p id="account_schedule_add_button">時間割▼</p>
+  <p id="account_view_add_button">コメント</p>
+  <p id="account_schedule_add_button">時間割</p>
 </td>
 
 </table>
@@ -559,9 +559,8 @@ v    <% end %>
           <%= form.select :take_course_late_point, points %></p>
           <p class="take_course_detail_label">欠席
           <%= form.select :take_course_absent_point, points %></p>
-          <p>メモ</p>
           <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義のことをメモしよう！" %>
-          <p align="right"><%= form.submit "更新", :class => "take_course_detail_button"%></p>
+          <p align="right"><%= form.submit "保存", :class => "take_course_detail_button"%></p>
         <% end %>
       </div>
   <% end %>

@@ -13,7 +13,7 @@
     @take_course.take_course_late_point = 0
     @take_course.take_course_absent_point = 0
       if !@current_member.take_courses.where(take_course_open_time: @course_info.open_time, take_course_open_week: @course_info.day_of_the_week).exists? && @take_course.save
-          redirect_to @course_info
+          redirect_to @course_info, notice: @take_course.take_course_title + "が時間割に追加されました。"
       else
         redirect_to @course_info, notice: "すでにこの時限・曜日の講義を履修しています"
       end
