@@ -343,7 +343,7 @@ div#notice {
   background: -webkit-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
   background: -o-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
   background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff)); */
-  background-color: orangered;
+  background: rgba(255, 0, 0, 0.5);
   text-align: center;
   clear: both;
 }
@@ -1179,7 +1179,10 @@ div#account_head p.account_info {
 
 div#account_view_top {
   padding: 0 20px;
-  border: solid 1px #000000;
+  border-bottom: solid 2px silver;
+  border-left: solid 2px silver;
+  border-right: solid 2px silver;
+  border-top: solid 2px silver;
   margin: auto;
   width: 600px;
   border-radius: 8px 8px 0 0;
@@ -1194,9 +1197,9 @@ div#account_view_top p {
 
 div#account_view {
   padding: 10px 20px;
-  border-bottom: solid 1px #000000;
-  border-left: solid 1px #000000;
-  border-right: solid 1px #000000;
+  border-bottom: solid 2px silver;
+  border-left: solid 2px silver;
+  border-right: solid 2px silver;
   margin: auto;
   width: 600px;
 }
@@ -1263,6 +1266,7 @@ div#account_view_index {
   height: 500px;
   overflow: scroll;
   overflow-x: hidden;
+  border: solid 3px silver;
 }
 
 div#account_view div.view_text {
@@ -1393,7 +1397,7 @@ div#account_schedule {
   top: 50px;
   padding: 50px;
   border-radius: 5px;
-  box-shadow: 1px 1px 3px 0 #000000;
+  border: solid 3px silver;
   background-color: #ffffff;
   display: none;
   position: absolute;
@@ -1493,7 +1497,7 @@ div.take_course_detail textarea {
 }
 
 div.take_course_detail p {
-  margin: 10px 0 0 0;
+  margin: 10px 0;
 }
 
 p.take_course_detail_label {
@@ -1503,6 +1507,8 @@ p.take_course_detail_label {
 
 p.take_course_detail_title {
   font-weight: bold;
+  padding-bottom: 2px;
+  border-bottom: solid 1px silver;
 }
 
 input.take_course_detail_button {
@@ -1649,7 +1655,7 @@ div#cover {
 }
 
 
-
+/* viewのedit */
 div#view_form {
   width: 780px;
   margin-left: 80px;
@@ -1680,7 +1686,7 @@ div#view_form textarea {
 }
 
 input#button_view_form {
-  margin-left: 300px;
+  margin-left: 595px;
   border-radius: 5px;
   font-size: 1.5em;
   outline: medium none;
