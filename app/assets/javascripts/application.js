@@ -52,7 +52,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $('p.account_button').click(function() {
-    $('div.account_setting').slideDown('fast');
+    $('div.account_setting').slideDown();
   });
 });
 
@@ -109,12 +109,7 @@ $(document).ready(function(){
 // 教授評価がprompt風に出てくる仕組み
 $(document).ready(function(){
   $("#teacher_rank_open_button").click(function(){
-     $("#cover")
-     .css({
-       'width': $(window).width(),
-       'height': $('#container').height()
-     })
-     .show();
+     $("#cover").show();
     $("#teacher_rank_prompt")
     .css({
       'position': 'absolute',
@@ -132,6 +127,21 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+   if($('#container').height() > $(window).height()){
+     $("#cover")
+     .css({
+       'width': $(window).width(),
+       'height': $('#container').height()
+     });
+    }else{
+         $("#cover")
+     .css({
+       'width': $(window).width(),
+       'height': $(window).height()
+     });
+    }
+});
 
 
 /* 時間割の講義の詳細が出る仕組み 
@@ -162,12 +172,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#account_view_add_button").click(function(){
-     $("#account_view_cover")
-     .css({
-       'width': $(window).width(),
-       'height': $('#container').height()
-     })
-     .show();
+     $("#account_view_cover").show();
     $("#account_view_index").css({
       'position': 'absolute',
       'top': $(window).scrollTop() + 50 + 'px'
@@ -192,12 +197,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#account_schedule_add_button").click(function(){
-     $("#account_view_cover")
-     .css({
-       'width': $(window).width(),
-       'height': $('#container').height()
-     })
-     .show();
+     $("#account_view_cover").show();
     $("#account_view_index").css({
       'position': 'absolute',
       'top': $(window).scrollTop() + 50 + 'px'
@@ -218,6 +218,21 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+   if($('#container').height() > $(window).height()){
+     $("#account_view_cover")
+     .css({
+       'width': $(window).width(),
+       'height': $('#container').height() + 30 + 'px'
+     });
+    }else{
+         $("#account_view_cover")
+     .css({
+       'width': $(window).width(),
+       'height': $(window).height()
+     });
+    }
+});
 
 // noticeの表示
 $(document).ready(function(){
