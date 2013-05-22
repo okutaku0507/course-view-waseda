@@ -52,7 +52,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $('p.account_button').click(function() {
-    $('div.account_setting').slideDown();
+    $('div.account_setting').slideDown('fast');
   });
 });
 
