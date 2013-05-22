@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     else
       flash.alert = "※メールアドレスとパスワードが一致しません"
     end
-    redirect_to params[:from] || :course_infos
+    redirect_to params[:from] || :account
   end
 
   def destroy

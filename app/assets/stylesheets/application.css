@@ -1262,6 +1262,7 @@ div#account_view_index {
   padding: 30px;
   height: 500px;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 div#account_view div.view_text {
@@ -1483,7 +1484,7 @@ div.take_course_detail {
   margin: 15px 15px;
   padding: 15px;
   border-radius: 5px;
-  box-shadow: 1px 1px 2px 0 #000000;
+  box-shadow: 1px 1px 3px 0 #000000;
 }
 
 div.take_course_detail textarea {
@@ -1621,7 +1622,6 @@ input#teacher_rank_button {
   border-radius: 5px;
   font-size: 0.8em;
   border: solid 1px #ffffff;
-  background-color: ;
   padding: 6px;
   background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
   background: -ms-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);

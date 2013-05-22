@@ -555,9 +555,9 @@ v    <% end %>
       <div class="take_course_detail" >
         <p class="take_course_detail_title"><%= take_course.take_course_title %></p>
         <%= form_for take_course do |form| %>
-          <p class="take_course_detail_label">遅刻回数
+          <p class="take_course_detail_label">遅刻
           <%= form.select :take_course_late_point, points %></p>
-          <p class="take_course_detail_label">欠席回数
+          <p class="take_course_detail_label">欠席
           <%= form.select :take_course_absent_point, points %></p>
           <p>メモ</p>
           <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義のことをメモしよう！" %>
