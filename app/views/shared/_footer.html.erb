@@ -13,4 +13,9 @@
   <% end %>
   <% end %>
 </div>
+  <% if flash.notice %>
+    <div id="notice" style="display: none">
+      <p class="notice"><%= flash.notice %></p>
+    </div>
+  <% end %>
                                              

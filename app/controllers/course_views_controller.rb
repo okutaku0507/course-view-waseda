@@ -23,9 +23,9 @@
     @course_view.course_info = @course_info
     @course_view.id_member = @current_member.id
     if @course_view.save
-      redirect_to @course_info, notice: "Viewを追加しました"
+      redirect_to @course_info, notice: "コメントを追加しました"
     else
-      redirect_to @course_info, notice: "viewに誤りがあります"
+      redirect_to @course_info, notice: "コメントに誤りがあります"
     end
   end
 
@@ -40,7 +40,7 @@
     @course_view.assign_attributes(params[:course_view])
 
     if @course_view.save
-      redirect_to @course_info, notice: "Viewを更新しました"
+      redirect_to @course_info, notice: "コメントを更新しました"
     else
       render "edit"
     end
@@ -51,7 +51,7 @@
     @course_info = @course_view.course_info
     @course_view.destroy
 
-    redirect_to @course_info, notice: "Viewを削除しました"
+    redirect_to @course_info, notice: "コメントを削除しました"
   end
 
 end

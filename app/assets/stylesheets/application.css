@@ -64,7 +64,7 @@ div#course_view_title h5 {
 
 /* 全体の枠 */
 #container {
-  width: 1000px;
+  width: 1000px;;
   margin: auto;
   padding: 5px 40px;
 }
@@ -332,21 +332,26 @@ p.alert {
 }
 
 /* フラッシュ */
-p.notice {
-  border: 1px solid blue;
-  padding: 3px;
-  background-color: #ccf;
-  margin: 150px 150px 0 0;
-  font-size: 1.5em;
+
+div#notice {
+  position: absolute;
+  margin: auto;
+  padding: 5px;
+  width: 600px;
+ /* background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -ms-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -o-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff)); */
+  background-color: orangered;
+  text-align: center;
+  clear: both;
 }
 
-p.info_notice {
-  width: 700px;
-  border: 1px solid blue;
-  padding: 3px;
-  background-color: #ccf;
-  margin: 10px;
-  font-size: 1em;
+p.notice {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin: 0;
 }
 
 /* エラー表示 */
@@ -870,7 +875,7 @@ div#course_info div#course_info_view_new h3 {
 
 div#course_info div#course_info_view_new h1.long_title {
   margin-left: 10px;
-   margin-right: 10px;
+  margin-right: 10px;
   font-size: 1.4em;
 }
 
@@ -914,8 +919,7 @@ div#course_info_view_new p#select_rank, td#add {
   text-align: right;
 }
 
-#account_view span.show
-{
+#account_view span.show {
   cursor: pointer;
   color: blue;
   width: 20px;
@@ -925,7 +929,6 @@ div#course_info_view_new p#select_rank, td#add {
   margin: 5px;
   margin-right: 30px;
   text-align: right;
-  
 }
 
 
@@ -1173,20 +1176,106 @@ div#account_head p#account_name {
 div#account_head p.account_info {
    margin-right: 10px;
 }
+
+div#account_view_top {
+  padding: 0 20px;
+  border: solid 1px #000000;
+  margin: auto;
+  width: 600px;
+  border-radius: 8px 8px 0 0;
+}
+
+div#account_view_top p {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+
 div#account_view {
   padding: 10px 20px;
-  box-shadow: 1px 1px 3px 0 #000000;
-  border-radius: 10px;
-  margin-bottom: 30px;
+  border-bottom: solid 1px #000000;
+  border-left: solid 1px #000000;
+  border-right: solid 1px #000000;
+  margin: auto;
+  width: 600px;
+}
+
+div#account_view:hover {
+  box-shadow: inset 1px 1px 2px 0 #000000;
+  padding: 10px 20px;
+
+}
+
+
+p#account_view_add_button {
+  font-size: 0.8em;
+  padding: 3px;
+  box-shadow: 0 0 2px 0 #000000;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+p#account_view_delete_button {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 3px;
+  box-shadow: 0 0 2px 0 #000000;
+  cursor: pointer;
+  margin: 0 5px;
+  display: none;
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  text-align: center;
+}
+
+p#account_schedule_add_button {
+  font-size: 0.8em;
+  padding: 3px;
+  box-shadow: 0 0 2px 0 #000000;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+p#account_schedule_delete_button {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 3px;
+  box-shadow: 0 0 2px 0 #000000;
+  cursor: pointer;
+  margin: 0 5px;
+  display: none;
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  text-align: center;
 }
 
 div#account_view_index {
-  width: 70%;
+  margin: auto;
+  display: none;
+  background-color: #ffffff;
+  width: 860px;
+  padding: 30px;
+  height: 500px;
+  overflow: scroll;
 }
 
 div#account_view div.view_text {
   margin-bottom: 10px;
 }
+
+div#account_view_cover {
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
 
 div#account_view p.view_title a {
   text-decoration: none;
@@ -1289,17 +1378,34 @@ div.pagination a.next_page:hover {
 /* accountの時間割 */
 
 div#mypage {
-  width: 900px;
+  width: 1000px;
   margin: 0;
-  margin-top: 10px;
+  margin-top: 50px;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px 0 #000000;
   
 }
 
+div#account_schedule {
+  width: 1000px;
+  top: 50px;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 0 #000000;
+  background-color: #ffffff;
+  display: none;
+  position: absolute;
+}
+
+div#account_schedule a {
+  color: #000000;
+  cursor: pointer;
+}
+
 table#account_schedule td {
   text-align: center;
+  border: solid 1px silver;
 }
 
 div#mypage a {
@@ -1310,14 +1416,15 @@ div#mypage a {
 }
 
 table#account_schedule {
-  background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+/*  background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
   background: -ms-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
   background: -webkit-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
   background: -o-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
-  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff));
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff)); */
+  width: 1000px;
   padding: 10px;
-  border-radius: 10px;
   box-shadow: 0 0 1px 0 blue;
+  border-collapse: collapse;
 }
 
 table#account_head td.account_title p {
@@ -1325,7 +1432,7 @@ table#account_head td.account_title p {
 }
 
 table#account_head {
- margin: 10px;
+  margin: 10px;
 }
 
 table#account_head td.account_title p#account_name {
@@ -1339,7 +1446,7 @@ table#account_head td.account_title p.account_info {
 
 td.schedule_label {
   font-size: 0.8em;
-  width: 30px;
+  width: 20px;
   padding: 3px;
   margin: 0;
   text-align: center;
@@ -1353,32 +1460,52 @@ td.schedule_time_week {
 }
 
 td.schedule_detail {
-  width: 140px;
-  height: 40px;
+  width: 160px;
+  height: 80px;
   text-align: center;
+  vertical-align: middle;
 }
 
 div.schedule_panel {
-  height: 30px;
-  border-radius: 5px;
-  padding: 10px 5px;
+  width: 160px;
+  height: 80px;
 }
 
+
 div.schedule_panel:hover {
-  border-radius: 5px;
   box-shadow: inset 1px 1px 3px 0 blue;
 
 }
 
-p.take_course_detail_close_button {
+div.take_course_detail {
+  width: 260px;
+  float: left;
+  margin: 15px 15px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 0 #000000;
+}
+
+div.take_course_detail textarea {
+  resize: none;
+  overflow: auto;
+}
+
+div.take_course_detail p {
+  margin: 10px 0 0 0;
+}
+
+p.take_course_detail_label {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+p.take_course_detail_title {
   font-weight: bold;
-  color: #ffffff;
-  width: 18px;
-  position: absolute;
-  top: -5px;
-  right: 10px;
-  background-color: deepskyblue;
-  cursor: pointer;
+}
+
+input.take_course_detail_button {
+  margin-right: 25px;
 }
 
 /* teacher_rankのフォーム */
@@ -1450,35 +1577,75 @@ div#teacher_rank_form p.each_evaluation_rank {
 }
 
 div#teacher_rank_prompt {
-  margin: auto;
+  margin: 0;
   display: none;
   padding: 50px;
   background-color: #ffffff;
   border-radius: 5px;
   border: solid 1px;
+  position: absolute;
+}
+
+div#teacher_rank_prompt select {
+  border-radius: 5px;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: DFKai-SB;
 }
 
 p#teacher_rank_colse_button {
+  font-family: DFKai-SB;
+  font-weight: bold;
   text-align: center;
+  font-size: 1em;
   width: 20px;
   cursor: pointer;
-  color: #ffffff;
-  background-color: #000000;
+  color: #000000;
   position: absolute;
   right: 0;
   top: 0;
   margin-right: 5px;
   margin-top: 5px;
+  border-radius: 5px;
 }
+
+p#teacher_rank_text {
+  font-weight: bold;
+  font-size: 1em;
+  margin: 0;
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+
+input#teacher_rank_button {
+  border-radius: 5px;
+  font-size: 0.8em;
+  border: solid 1px #ffffff;
+  background-color: ;
+  padding: 6px;
+  background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -ms-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
+  background: -o-linear-gradient(top, ghostwhite 20%, #e0ffff 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff));
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+input#teacher_rank_button:hover {
+  border: none;
+  box-shadow: inset 1px 1px 3px 0 #000000;
+  padding: 7px;
+}
+
 
 div#cover {
   background: rgba(0, 0, 0, 0.5);
   display: none;
-  width: 10000px;
-  height: 20000px;
   position: absolute;
-  left: -5000px;
-  top: -5000px;
+  left: 0px;
+  top: 0px;
 }
 
 

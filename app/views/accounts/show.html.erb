@@ -1,8 +1,5 @@
-﻿
+﻿<div id="account_view_cover"></div>
 
-  <% if flash.notice %>
-    <p class="info_notice"><%= flash.notice %></p>
-  <% end %>
 <div id="mypage">
 <table id="account_head">
 
@@ -12,15 +9,17 @@
   <p id="account_name"><%= @current_member.family_name + @current_member.first_name %></p>
   <p class="account_info"><%= @member.faculty %></p>
   <p class="account_info"><%= @member.subject %></p>
+  <p id="account_view_add_button">加筆した講義▼</p>
+  <p id="account_schedule_add_button">時間割▼</p>
 </td>
 
 </table>
-
-</tr>
-
+</div>
+<div id="account_schedule">
+  <p id="account_schedule_delete_button" style="display: none">×</p>
 <table id="account_schedule">
 <tr>
-<td class="schedule_time_week">時限/曜日</td>
+<td class="schedule_time_week"></td>
 <td>月</td>
 <td>火</td>
 <td>水</td>
@@ -30,32 +29,16 @@
 </tr>
 
 <tr>
-<td class="schedule_label">1時限</td>
+<td class="schedule_label">1</td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-        <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -64,27 +47,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -92,27 +59,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -120,28 +71,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-        
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -149,27 +83,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -177,60 +95,27 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
 </tr>
 
 <tr>
-<td class="schedule_label">2時限</td>
+<td class="schedule_label">2</td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-        
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -238,27 +123,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -266,28 +135,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-        
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -295,27 +147,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -323,28 +159,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
-         
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -352,60 +171,22 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-        
-     <% else %>
-         <%= take_course.take_course_title %>
-      <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
 </tr>
 
 <tr>
-<td class="schedule_label">3時限</td>
+<td class="schedule_label">3</td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -413,27 +194,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -441,28 +206,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
-         
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -470,27 +218,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -498,88 +230,34 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-        
-     <% else %>
-         <%= take_course.take_course_title %>
-      <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
-    <% end %>
+v    <% end %>
   <% end %>
 </td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
 </tr>
 
 <tr>
-<td class="schedule_label">4時限</td>
+<td class="schedule_label">4</td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -587,28 +265,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
-         
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -616,55 +277,18 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-     <% else %>
-         <%= take_course.take_course_title %>
-      <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
-    <% end %>
+v    <% end %>
   <% end %>
 </td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -672,27 +296,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -700,28 +308,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-        
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -729,32 +320,16 @@
 
 <% if @current_member.take_courses.where(take_course_open_time: 5).exists? %>
 <tr>
-<td class="schedule_label">5時限</td>
+<td class="schedule_label">5</td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -762,27 +337,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -790,27 +349,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -818,28 +361,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-        
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -847,27 +373,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -875,28 +385,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
-         
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -905,33 +398,16 @@
 
 <% if @current_member.take_courses.where(take_course_open_time: 6).exists? %>
 <tr>
-<td class="schedule_label">6時限</td>
+<td class="schedule_label">6</td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-        
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -939,27 +415,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -967,27 +427,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -995,28 +439,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-        
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -1024,27 +451,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -1052,28 +463,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
-         
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -1082,32 +476,16 @@
 
 <% if @current_member.take_courses.where(take_course_open_time: 7).exists? %>
 <tr>
-<td class="schedule_label">7時限</td>
+<td class="schedule_label">7</td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -1115,28 +493,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-        
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -1144,27 +505,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -1172,27 +517,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -1200,27 +529,11 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
       <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
+        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
      <% else %>
-         <%= take_course.take_course_title %>
+        <%= link_to take_course.take_course_title, @course_info %>
       <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
     <% end %>
   <% end %>
 </td>
@@ -1228,37 +541,31 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <div class="schedule_panel" data-num="<%= take_course.id %>">
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= truncate(take_course.take_course_title, :length => 11) %>
-     <% else %>
-         <%= take_course.take_course_title %>
-      <% end %>
-    </div>
-    <div id="take_course_detail_<%= take_course.id %>" style="display: none" >
-    <p class="take_course_detail_close_button" data-num="<%= take_course.id %>">×</p>
-    <p><%= take_course.take_course_title %></p>
-    <%= form_for take_course do |form| %>
-      <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
-      <p class="take_course_detail_label">遅刻回数
-      <%= form.select :take_course_late_point, points %></p>
-      <p class="take_course_detail_label">欠席回数
-      <%= form.select :take_course_absent_point, points %></p>
-      <p>メモ</p>
-      <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義であったことをメモしよう！" %>
-      <p><%= form.submit %></p>
-    <% end %>
-    </div>
-    <% end %>
+v    <% end %>
   <% end %>
 </td>
 </tr>
 <% end %>
 
 </table>
-
-
 </div>
+  <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+      <div class="take_course_detail" >
+        <p class="take_course_detail_title"><%= take_course.take_course_title %></p>
+        <%= form_for take_course do |form| %>
+          <p class="take_course_detail_label">遅刻回数
+          <%= form.select :take_course_late_point, points %></p>
+          <p class="take_course_detail_label">欠席回数
+          <%= form.select :take_course_absent_point, points %></p>
+          <p>メモ</p>
+          <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義のことをメモしよう！" %>
+          <p align="right"><%= form.submit "更新", :class => "take_course_detail_button"%></p>
+        <% end %>
+      </div>
+  <% end %>
+
 
 <% if @current_member.try(:administrator?) %>
 <p class="edit"><%= link_to "パスワード変更", :edit_account %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to "退会", @current_member, method: :delete, confirm: "本当に退会しますか？"%></p>

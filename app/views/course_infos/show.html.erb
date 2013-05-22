@@ -1,8 +1,6 @@
-﻿<div id="course_info">
+﻿
+<div id="course_info">
 
-  <% if flash.notice %>
-    <p class="info_notice"><%= flash.notice %></p>
-  <% end %>
 <%= render "shared/errors", obj: @course_view %>
 <div id="course_info_head">
   <div id="course_info_detail">
@@ -50,7 +48,6 @@
 
     <%= form.text_area :view, rows: 8, cols: 50, :placeholder => "この講義どうだった？" %>
       <div id="course_info_view_option">
-      
          <% if @current_member.teacher_rank_for?(@course_info) %>
            <p id="teacher_rank_open_button">教授</p>
          <% else %>
@@ -73,7 +70,6 @@
          <%= form.submit "加筆", :id => "course_view_kahitu_button" %>
     </div>
   <% end %>
-    <div id="cover"></div>
   <div id="teacher_rank_form">
       <% if @current_member.teacher_ranks.where(course_info_id: @course_info.id, member_id: @current_member.id).exists? %>
         <%  @teacher_rank_point = TeacherRank.find_by_course_info_id(@course_info.id) %>
@@ -89,18 +85,10 @@
             <% end %>
         <% end %>
       <% else %>
-    <div id="teacher_rank_prompt">
-      <p id="teacher_rank_colse_button">×</p>
-      <%= form_for @teacher_rank do |form| %>
-      <p><%= form.select :teacher_rank, [["A+", 4], [ "A", 3], ["B", 2], ["C", 1], ["F", 0]] %>
-      <%= form.submit "教授を評価!" %></p>
-      <% end %>
-    </div>
 
   <% end %>
   </div>
 <% else %>
-
     <textarea rows="8" cols="50" placeholder="Course Viewに参加すると講義について自由に加筆できます！" ></textarea>
       <div id="course_info_view_option">
          <p id="good_button">
@@ -119,3 +107,14 @@
 <%= render "courseinfoview" %>
 
 </div>
+
+    <div id="cover"></div>
+    <div id="teacher_rank_prompt">
+      <p id="teacher_rank_colse_button">×</p>
+      <p id="teacher_rank_text"><%= @course_info.teacher %>教授を評価しよう！</p>
+      <%= form_for @teacher_rank do |form| %>
+      <p align="center"><%= form.select :teacher_rank, [["A+", 4], [ "A", 3], ["B", 2], ["C", 1], ["F", 0]] %></p>
+      <%= form.submit "評価する!", :id => "teacher_rank_button" %>
+      <% end %>
+    </div>
+

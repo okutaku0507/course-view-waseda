@@ -1,7 +1,9 @@
-﻿<% @current_member.course_views.each do |course_view| %>
+﻿<div id="account_view_index">
+<p id="account_view_delete_button">×</p>
+<div id="account_view_top"><p>コメント</p></div>
+<% @current_member.course_views.each do |course_view| %>
 <% if @current_member == course_view.member %>
-<div id="account_view_index">
-<div id="account_view">
+<div id="account_view" data-num="<%= course_view.id %>">
 <% @course_info = CourseInfo.find_by_id(course_view.course_info_id) %>
 <p class="view_title"><%= link_to course_view.title_of_course, @course_info %></p>
 <div class="view_text">
@@ -16,6 +18,6 @@
 <%= link_to "削除", course_view, method: :delete, confirm: "本当に削除しますか？" %></p>
 </div>
 </div>
+<% end %>
+<% end %>
 </div>
-<% end %>
-<% end %>

@@ -109,11 +109,17 @@ $(document).ready(function(){
 // 教授評価がprompt風に出てくる仕組み
 $(document).ready(function(){
   $("#teacher_rank_open_button").click(function(){
-    $("#cover").show();
+     $("#cover")
+     .css({
+       'width': $(window).width(),
+       'height': $('#container').height()
+     })
+     .show();
     $("#teacher_rank_prompt")
     .css({
       'position': 'absolute',
-      'top': $(window).scrollTop() + 100 + 'px'
+      'top': $(window).scrollTop() + 200 + 'px',
+      'left': $(window).width() / 2 - 100 + 'px',
     })
     .show();
   });
@@ -128,7 +134,7 @@ $(document).ready(function(){
 
 
 
-/* 時間割の講義の詳細が出る仕組み */
+/* 時間割の講義の詳細が出る仕組み 
 $(document).ready(function(){
   $(".schedule_panel").click(function(){
     var TakeCourseId = $(this).data('num');
@@ -150,12 +156,80 @@ $(document).ready(function(){
     var TakeCourseId = $(this).data('num');
     $("#take_course_detail_" + TakeCourseId).slideUp();
   });
+});*/
+
+// アカウントのviewの加・消
+
+$(document).ready(function(){
+  $("#account_view_add_button").click(function(){
+     $("#account_view_cover")
+     .css({
+       'width': $(window).width(),
+       'height': $('#container').height()
+     })
+     .show();
+    $("#account_view_index").css({
+      'position': 'absolute',
+      'top': $(window).scrollTop() + 50 + 'px'
+    });
+    $("#account_view_index").slideDown('fast');
+    $("#account_view_delete_button").show();
+    $("#account_view_add_button").hide();
+  });
+});
+
+$(document).ready(function(){
+  $("#account_view_delete_button").click(function(){
+    $("#account_view_index").hide();
+    $("#account_view_delete_button").hide();
+    $("#account_view_add_button").show();
+     $("#account_view_cover").hide();
+  });
 });
 
 
+/* 時間割が表示される仕組み */
+
+$(document).ready(function(){
+  $("#account_schedule_add_button").click(function(){
+     $("#account_view_cover")
+     .css({
+       'width': $(window).width(),
+       'height': $('#container').height()
+     })
+     .show();
+    $("#account_view_index").css({
+      'position': 'absolute',
+      'top': $(window).scrollTop() + 50 + 'px'
+    });
+
+    $("div#account_schedule").slideDown('fast');
+    $("#account_schedule_delete_button").show();
+    $("#account_schedule_add_button").hide();
+  });
+});
+
+$(document).ready(function(){
+  $("#account_schedule_delete_button").click(function(){
+    $("div#account_schedule").hide();
+    $("#account_schedule_delete_button").hide();
+    $("#account_schedule_add_button").show();
+    $("#account_view_cover").hide();
+  });
+});
 
 
-
+// noticeの表示
+$(document).ready(function(){
+  $("#notice").css({
+      'left': $(window).width() / 2 - 350 + 'px',
+      'top': $(window).scrollTop() + 70 + 'px'
+  })
+  $("#notice")
+  .show()
+  .delay(2000)
+  .slideUp('fast');
+});
 
 
 //  likeの非同期通信
