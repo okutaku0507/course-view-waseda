@@ -131,14 +131,14 @@ $(document).ready(function(){
    if($('#container').height() > $(window).height()){
      $("#cover")
      .css({
-       'width': $(window).width(),
-       'height': $('#container').height()
+       'width': "100%",
+       'height': $('#container').height() + 30 + 'px'
      });
     }else{
          $("#cover")
      .css({
-       'width': $(window).width(),
-       'height': $(window).height()
+       'width': "100%",
+       'height': $(window).height() + 30 + 'px'
      });
     }
 });
@@ -222,14 +222,14 @@ $(document).ready(function(){
    if($('#container').height() > $(window).height()){
      $("#account_view_cover")
      .css({
-       'width': $(window).width(),
+       'width': "100%",
        'height': $('#container').height() + 30 + 'px'
      });
     }else{
          $("#account_view_cover")
      .css({
-       'width': $(window).width(),
-       'height': $(window).height()
+       'width': "100%",
+       'height': $(window).height() + 30 + 'px'
      });
     }
 });
