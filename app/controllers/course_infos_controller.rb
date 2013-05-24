@@ -60,7 +60,7 @@
 
   def search
     @course_infos = CourseInfo.search(params[:q])
-          .paginate(page: params[:page], per_page: 9)
+          .paginate(page: params[:page], per_page: 6)
     render "index"
 
   end

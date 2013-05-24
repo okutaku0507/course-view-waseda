@@ -899,12 +899,30 @@ div#course_info_view_new p#select_rank, td#add {
 /* viewのクリックする仕組み */
 #course_info_view {
   width: 600px;
-  margin: 20px;
-  margin-left: 50px;
-  padding: 10px 20px;
-  box-shadow: 1px 1px 3px 0 #000000;
-  border-radius: 3px;
+  margin: 0;
+  padding: 20px 20px;
+  border-left: solid 2px silver;
+  border-right: solid 2px silver;
+  border-bottom: solid 2px silver;
 }
+
+#course_info_view_index_top {
+  width: 600px;
+  margin: 0;
+  padding: 0 20px;
+  border-bottom: solid 2px silver;
+  border-left: solid 2px silver;
+  border-right: solid 2px silver;
+  border-top: solid 2px silver;
+  border-radius: 8px 8px 0 0;
+}
+
+#course_info_view_index_top p {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
 
 #course_info_view span.show
 {
@@ -1039,9 +1057,11 @@ table#teacher_rank td.point{
   padding: 6px;
 }
 
-#course_view_index {
+#course_info_view_index {
   padding: 10px;
   clear: both;
+  margin-left: 70px;
+  margin-top: 50px;
 }
 
 #course_info_view span#writer {
@@ -1060,12 +1080,12 @@ table#teacher_rank td.point{
   padding-left: 400px;
 }
 
-div#course_view_index div.view_text {
+div#course_info_view_index div.view_text {
   border-bottom: solid 1px silver;
   margin-bottom: 4px;
 }
 
-div#course_view_index p.view_body{
+div#course_info_view_index p.view_body{
   display: inline;
 }
 
@@ -1387,9 +1407,7 @@ div#mypage {
   margin: 0;
   margin-top: 50px;
   padding: 10px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 3px 0 #000000;
-  
+  border-bottom: solid 1px silver;  
 }
 
 div#account_schedule {
