@@ -132,7 +132,7 @@ $(document).ready(function(){
      $("#cover")
      .css({
        'width': "100%",
-       'height': "100%"
+       'height': $('#container').height() + 40 + 'px'
      });
     }else{
          $("#cover")
@@ -223,7 +223,7 @@ $(document).ready(function(){
      $("#account_view_cover")
      .css({
        'width': "100%",
-       'height': "100%"
+       'height': $('#container').height() + 40 + 'px'
      });
     }else{
          $("#account_view_cover")
@@ -244,6 +244,17 @@ $(document).ready(function(){
   .show()
   .delay(2000)
   .slideUp('fast');
+});
+
+
+// 履修の編集が出る仕組み
+
+$(document).ready(function(){
+  $("span.take_course_edit_button").click(function(){
+    var TakeCourseId = $(this).data('num');
+    $(".take_course_detail_edit_hide_" + TakeCourseId).show();
+    $(".take_course_detail_open_" + TakeCourseId).hide();
+  });
 });
 
 

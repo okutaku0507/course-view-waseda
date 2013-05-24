@@ -1500,6 +1500,42 @@ div.schedule_panel:hover {
 
 }
 
+div.take_course_detail_edit {
+  width: 260px;
+  float: left;
+  margin: 15px 15px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 0 #000000;
+  height: 280px;
+}
+
+div.take_course_detail_edit a {
+  color: #000000;
+}
+
+div.take_course_detail_edit textarea {
+  resize: none;
+  overflow: auto;
+}
+
+p.take_course_detail_label {
+  display: inline-block;
+  padding-right: 5px;
+  margin: 10px 0;
+}
+
+p.take_course_detail_title {
+  font-weight: bold;
+  padding-bottom: 2px;
+  border-bottom: solid 1px silver;
+  margin: 10px 0;
+}
+
+input.take_course_detail_button {
+  margin-right: 25px;
+}
+
 div.take_course_detail {
   width: 260px;
   float: left;
@@ -1507,30 +1543,45 @@ div.take_course_detail {
   padding: 15px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px 0 #000000;
+  height: 280px;
 }
 
-div.take_course_detail textarea {
-  resize: none;
-  overflow: auto;
+div.take_course_detail a {
+  color: #000000;
 }
 
-div.take_course_detail p {
-  margin: 10px 0;
+div.take_course_note_block_over {
+  width: 240px;
+  height: 160px;
+  padding: 10px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
-p.take_course_detail_label {
-  display: inline-block;
-  padding-right: 5px;
+div.take_course_note_block {
+  width: 240px;
+  height: 160px;
+  padding: 10px;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
-p.take_course_detail_title {
-  font-weight: bold;
-  padding-bottom: 2px;
-  border-bottom: solid 1px silver;
+p.take_course_note {
+  margin: 0;
 }
 
-input.take_course_detail_button {
-  margin-right: 25px;
+span.take_course_edit_button {
+  font-size: 0.8em;
+  padding: 3px;
+  width: 30px;
+  border-radius: 5px;
+  border: solid 1px silver;
+  cursor: pointer;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 220px;
+  text-align: center;
 }
 
 /* teacher_rankのフォーム */
@@ -1718,3 +1769,4 @@ input#button_view_form:hover {
   box-shadow: inset 1px 1px 3px 0 #000000;
   padding: 6px;
 }
+
