@@ -1,4 +1,14 @@
-﻿<div id="course_view_index">
+﻿<div id="course_info_view_index">
+<% if @course_info.course_views.exists? %>
+  <div id="course_info_view_index_top">
+    <% if @course_info.course_views.count == 1 %>
+      <p>Comment</p>
+    <% else %>
+      <p>Comments</p>
+    <% end %>
+  </div>
+<% end %>
+
 <% @course_info.course_views.each do |course_view| %>
 <div id="course_info_view">
 <div class="view_text">

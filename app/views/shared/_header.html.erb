@@ -1,16 +1,23 @@
 ﻿  
 <% unless @current_member %>
-    <div>
-      <%= render "shared/sidebar" %>
-    </div>
-  <% else %>
-    <div id="search">
-      <%= form_tag :search_course_infos, method: :get do %>
+  <div>
+    <%= render "shared/sidebar" %>
+  </div>
+<% else %>
+  <div id="search">
+    <%= form_tag :search_course_infos, method: :get do %>
       <p id="search_str"><%= text_field_tag "q", params[:q] %></p>
       <p id="search_button"><%= submit_tag "検索" %></p>
+      <div id="add_search">
+        <p><%= text_field_tag "" %></p>
+        <p>学部内<%= check_box_tag "in_faculty", {:checked => true} %></p>
+        <p>学部外<%= check_box_tag "out_faculty" %></p>
+        <p><%= select_tag "select_time", options_for_select([1, 2, 3, 4, 5, 6, 7, ["オンデマンド", 8], ["その他", 9]]) %></p>
+        <p><%= select_tag "select_week", options_for_select(["月", "火", "水", "木", "金", "土"]) %></p>
+      </div>
+    <% end %>
+  </div>
 <% end %>
-</div>
-  <% end %>
 
 <% if @current_member %>
   <% unless controller.kind_of?(Admin::Base) %>
