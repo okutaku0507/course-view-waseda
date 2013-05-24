@@ -132,13 +132,13 @@ $(document).ready(function(){
      $("#cover")
      .css({
        'width': "100%",
-       'height': $('#container').height() + 30 + 'px'
+       'height': "100%"
      });
     }else{
          $("#cover")
      .css({
        'width': "100%",
-       'height': $(window).height() + 30 + 'px'
+       'height': "100%"
      });
     }
 });
@@ -223,13 +223,13 @@ $(document).ready(function(){
      $("#account_view_cover")
      .css({
        'width': "100%",
-       'height': $('#container').height() + 30 + 'px'
+       'height': "100%"
      });
     }else{
          $("#account_view_cover")
      .css({
        'width': "100%",
-       'height': $(window).height() + 30 + 'px'
+       'height': "100%"
      });
     }
 });
