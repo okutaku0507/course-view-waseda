@@ -44,7 +44,7 @@
 
   <% end %>
 <% if @current_member %>
-  <%= form_for @course_view do |form| %>
+  <%= form_for @course_view, :url => { :action => "view_create" }  do |form| %>
 
     <%= form.text_area :view, rows: 8, cols: 50, :placeholder => "この講義どうだった？" %>
       <div id="course_info_view_option">
@@ -62,7 +62,7 @@
          </p>
          <p id="take_button" data-num="<%= @course_info.id %>">
          <% if @current_member.take_course_for?(@course_info) %>
-            <%= link_to "履修!", take_courses_path, method: :post %>
+            <%= link_to "履修!", [:take_course_create, @course_info], method: :post %>
          <% else %>
             <%= link_to "×履修", [:not_take, @course_info], method: :put %>
          <% end %>
@@ -112,7 +112,7 @@
     <div id="teacher_rank_prompt">
       <p id="teacher_rank_colse_button">×</p>
       <p id="teacher_rank_text"><%= @course_info.teacher %>教授を評価しよう！</p>
-      <%= form_for @teacher_rank do |form| %>
+      <%= form_for @teacher_rank, :url => { :action => "teacher_rank_create" } do |form| %>
       <p align="center"><%= form.select :teacher_rank, [["A+", 4], [ "A", 3], ["B", 2], ["C", 1], ["F", 0]] %></p>
       <%= form.submit "評価する!", :id => "teacher_rank_button" %>
       <% end %>
