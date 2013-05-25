@@ -8,7 +8,7 @@
     <%= form_tag :search_course_infos, method: :get do %>
       <p id="search_str"><%= text_field_tag "q", params[:q] %></p>
       <p id="search_button"><%= submit_tag "検索" %></p>
-      <div id="add_search">
+      <div id="add_search" style="display: none">
         <p><%= text_field_tag "" %></p>
         <p>学部内<%= check_box_tag "in_faculty", {:checked => true} %></p>
         <p>学部外<%= check_box_tag "out_faculty" %></p>
