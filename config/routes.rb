@@ -9,9 +9,9 @@
 
   resources :course_infos do
     collection { get "search" }
-
     resources :course_views
-    member { put "like", "unlike", "bad", "no_bad", "take", "not_take", "not_teacher_rank" }
+    member { put "like", "unlike", "bad", "no_bad", "take", "not_take", "not_teacher_rank"}
+    member { post "view_create", "take_course_create", "teacher_rank_create" }
     collection { get "voted", "taked", "ranked" }
   end
 

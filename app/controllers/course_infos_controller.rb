@@ -13,10 +13,8 @@
     @course_info = CourseInfo.find(params[:id])
     @course_views = @course_info.course_views
     @average_teacher_rank = TeacherRank.where(course_info_id: @course_info.id).average(:teacher_rank)
-    session[:course_info_id] = @course_info.id
     @course_view = CourseView.new
     @take_course = TakeCourse.new
-    @course_info = CourseInfo.find_by_id(session[:course_info_id])
     @teacher_rank = TeacherRank.new
     @take_course = TakeCourse.new
   end
@@ -93,7 +91,7 @@
 
   def take
     @take_course = TakeCourse.new
-    @course_info = CourseInfo.find_by_id(session[:course_info_id])
+    @course_info = CourseInfo.find(params[:id])
     @take_course.member = @current_member
     @take_course.take_course_title = @course_info.title
     @take_course.take_course_open_week = @course_info.day_of_the_week
@@ -136,6 +134,52 @@
     @current_member.ranked_teacher.delete(CourseInfo.find(params[:id]))
     @course_info = CourseInfo.find(params[:id])
     redirect_to @course_info
+  end
+  
+  def view_create
+    @course_view = CourseView.new(params[:course_view])
+    @course_view.member = @current_member
+    @course_info = CourseInfo.find(params[:id])
+    @course_view.title_of_course = @course_info.title
+    @course_view.id_course = @course_info.id
+    @course_view.course_info = @course_info
+    @course_view.id_member = @current_member.id
+    if @course_view.save
+      redirect_to @course_info, notice: "コメントを追加しました"
+    else
+      redirect_to @course_info, notice: "コメントに誤りがあります"
+    end
+  end
+  
+  def take_course_create
+    @take_course = TakeCourse.new
+    @course_info = CourseInfo.find(params[:id])
+    @take_course.course_info = @course_info
+    @take_course.member = @current_member
+    @take_course.take_course_title = @course_info.title
+    @take_course.take_course_open_week = @course_info.day_of_the_week
+    @take_course.take_course_open_time = @course_info.open_time
+    @take_course.id_of_take_course = @course_info.id
+    @take_course.take_course_note = ""
+    @take_course.take_course_late_point = 0
+    @take_course.take_course_absent_point = 0
+      if !@current_member.take_courses.where(take_course_open_time: @course_info.open_time, take_course_open_week: @course_info.day_of_the_week).exists? && @take_course.save
+          redirect_to @course_info, notice: @take_course.take_course_title + "が時間割に追加されました。"
+      else
+        redirect_to @course_info, notice: "すでにこの時限・曜日の講義を履修しています"
+      end
+  end
+  
+  def teacher_rank_create
+    @teacher_rank = TeacherRank.new(params[:teacher_rank])
+    @teacher_rank.member = @current_member
+    @course_info = CourseInfo.find(params[:id])
+    @teacher_rank.course_info = @course_info
+    if @teacher_rank.save
+      redirect_to @course_info, notice: "教授を評価しました！"
+    else
+      redirect_to @course_info, notice: "教授評価に失敗しました..."
+    end
   end
   
 end
