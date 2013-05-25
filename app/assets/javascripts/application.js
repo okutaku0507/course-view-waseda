@@ -122,8 +122,9 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#teacher_rank_colse_button").click(function(){
-    $("#teacher_rank_prompt").hide();
-    $("#cover").hide();
+    $("#teacher_rank_prompt").fadeOut('fast', function() {
+    $("#cover").fadeOut('fast');
+    });
   });
 });
 
@@ -172,23 +173,27 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#account_view_add_button").click(function(){
-     $("#account_view_cover").show();
+     $("#account_view_cover").fadeIn('fast', function(){
+    $("#account_view_index")
+    .delay(100)
+    .slideDown('fast');     
+     });
     $("#account_view_index").css({
       'position': 'absolute',
       'top': $(window).scrollTop() + 50 + 'px'
     });
-    $("#account_view_index").slideDown('fast');
     $("#account_view_delete_button").show();
-    $("#account_view_add_button").hide();
   });
 });
 
 $(document).ready(function(){
   $("#account_view_delete_button").click(function(){
-    $("#account_view_index").hide();
+    $("#account_view_index").slideUp('fast', function() {
+    $("#account_view_cover")
+    .delay(200)
+    .fadeOut('fast')
+    });
     $("#account_view_delete_button").hide();
-    $("#account_view_add_button").show();
-     $("#account_view_cover").hide();
   });
 });
 
@@ -197,24 +202,28 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#account_schedule_add_button").click(function(){
-     $("#account_view_cover").show();
+     $("#account_view_cover").fadeIn('fast', function(){
+    $("div#account_schedule")
+    .delay(100)
+    .slideDown('fast');     
+     });
     $("#account_view_index").css({
       'position': 'absolute',
       'top': $(window).scrollTop() + 50 + 'px'
     });
 
-    $("div#account_schedule").slideDown('fast');
     $("#account_schedule_delete_button").show();
-    $("#account_schedule_add_button").hide();
   });
 });
 
 $(document).ready(function(){
   $("#account_schedule_delete_button").click(function(){
-    $("div#account_schedule").hide();
+    $("div#account_schedule").slideUp('fast', function() {
+    $("#account_view_cover")
+    .delay(200)
+    .fadeOut('fast')
+    });
     $("#account_schedule_delete_button").hide();
-    $("#account_schedule_add_button").show();
-    $("#account_view_cover").hide();
   });
 });
 
