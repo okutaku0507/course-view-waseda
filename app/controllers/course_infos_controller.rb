@@ -33,10 +33,14 @@
 
   def create
     @course_info = CourseInfo.new(params[:course_info])
-    if @course_info.save
-      redirect_to @course_info, notice: "講義を新規追加しました！"
+    if !CourseInfo.where(title: @course_info.title, teacher: @course_info.teacher, day_of_the_week: @course_info.day_of_the_week, open_time: @course_info.open_time, open_term: @course_info.open_term, open_faculty: @course_info.open_faculty).exists?
+      if @course_info.save
+        redirect_to @course_info, notice: "講義を新規追加しました！"
+      else
+        render "new"
+      end
     else
-      render "new"
+      redirect_to :new_course_info, notice: "その講義はすでに存在しています"
     end
   end
 
@@ -163,8 +167,12 @@
     @take_course.take_course_note = ""
     @take_course.take_course_late_point = 0
     @take_course.take_course_absent_point = 0
-      if !@current_member.take_courses.where(take_course_open_time: @course_info.open_time, take_course_open_week: @course_info.day_of_the_week).exists? && @take_course.save
-          redirect_to @course_info, notice: @take_course.take_course_title + "が時間割に追加されました。"
+      if !@current_member.take_courses.where(take_course_open_time: @course_info.open_time, take_course_open_week: @course_info.day_of_the_week).exists?
+          if @take_course.save
+             redirect_to @course_info, notice: @take_course.take_course_title + "が時間割に追加されました。"
+          else
+             redirect_to @course_info, notice: @take_course.take_course_title + "を時間割に追加が失敗しました..."
+          end
       else
         redirect_to @course_info, notice: "すでにこの時限・曜日の講義を履修しています"
       end
