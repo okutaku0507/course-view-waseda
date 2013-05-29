@@ -9,15 +9,20 @@
 
   resources :course_infos do
     collection { get "search" }
-    resources :course_views
+    resources :course_views do
+      resources :responses
+    end
     member { put "like", "unlike", "bad", "no_bad", "take", "not_take", "not_teacher_rank"}
     member { post "view_create", "take_course_create", "teacher_rank_create" }
     collection { get "voted", "taked", "ranked" }
   end
 
-  resources :course_views
+  resources :course_views do
+    resources :responses
+  end
+  
   resources :teacher_ranks
-
+  resources :responses
   resources :take_courses
   resource :session, only: [:create, :destroy]
   resource :account do 

@@ -1,7 +1,7 @@
 ﻿class CourseInfosController < ApplicationController
   def index
     if @current_member
-      @course_infos = CourseInfo.order("id").
+      @course_infos = CourseInfo.limit(5).order("id").
                  paginate(page: params[:page], per_page: 6)
       params[:faculty] =  @current_member.faculty
       @course_infos = @course_infos.search(params)

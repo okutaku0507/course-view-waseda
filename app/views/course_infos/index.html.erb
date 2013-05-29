@@ -18,7 +18,7 @@
 <div class="course_info_panel" data-num="<%= course_info.id %>">
   <% @average_teacher_rank = TeacherRank.where(course_info_id: course_info.id).average(:teacher_rank) %>
   <% @course_views = CourseView.find_by_course_info_id(course_info.id) %>
-  <div class="gpa_panel">
+<!--  <div class="gpa_panel">
     <table id="index_teacher_rank">
   <tr>
       <td class="index_label">GPA</td>
@@ -31,18 +31,28 @@
       <% end %>
   </tr>
   </table>
-  </div>
+  </div> -->
   <div id="course_panel_title">
-    <% if course_info.title.length <= 7 %>
+    <% if course_info.title.length <= 11 %>
       <p><%= link_to course_info.title, course_info %></p>
     <% else %>
-      <p class="long_title"><%= link_to course_info.title, course_info %></p>
+      <p class="long_title"><%= link_to  truncate(course_info.title, :length => 20), course_info %></p>
     <% end %>
   </div>
 
   <div class="panel_info">
-  <p><%= course_info.teacher %></p>
-  <p><%= course_info.open_faculty %></p>
+    <p><%= course_info.teacher %></p>
+    <p><%= course_info.open_faculty %></p>
+  </div>
+  <div class="panel_info_option">
+    <p><%= course_info.day_of_the_week %></p>
+    <% if course_info.open_time == 8 %>
+      <p>オンデマンド</p>
+    <% elsif course_info.open_time == 9 %>
+      <p>その他</p>
+    <% else %>
+      <p><%= course_info.open_time %></p>
+    <% end %>
   </div>
 </div>
   <% end %>

@@ -64,20 +64,42 @@ div#course_view_title h5 {
 
 /* 全体の枠 */
 #container {
-  width: 1000px;;
+  width: 1000px;
   margin: auto;
   padding: 5px 40px;
 }
 
+/* ヘッダー */
+
+#header {
+  margin-top: 10px;
+}
+
+#header_back {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  margin: 0;
+  height: 100px;
+  background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -ms-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -webkit-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -o-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
+  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff));
+  z-index: -1;
+}
+
 /* 左の枠(コンテンツ) */
 div#content {
-  margin: auto;
+  margin-top: 70px;
   padding: 10px 10px 10px 0;
   box-shadow: 1px 1px 5px 0 #000000;
   background-color: #ffffff;
   padding: 50px;
   border-radius: 10px;
   clear: both;
+  border: solid 1px silver;
 }
 
 /* 右の枠(サイドバー) */
@@ -535,6 +557,7 @@ div.menu_box_label {
   margin-top: -24px;
   margin-left: 10px;
   display: none;
+  z-index: 1;
 }
 
 p.top_menu {
@@ -729,6 +752,7 @@ div.course_info_panel {
   cursor: pointer;
   float: left;
   position: relative;
+  border: solid 1px silver;
 
 }
 
@@ -743,9 +767,10 @@ div#course_index  a {
 }
 
 div#course_index {
-  margin-left: 50px;
+  margin: auto;
   margin-top: 35px;
-  height: 430px;
+  height: 500px;
+  width: 1000px;
 }
 
 table#index_teacher_rank {
@@ -793,15 +818,13 @@ div#course_panel_title p.long_title {
   font-size: 0.8em;
 }  
 
-
-
 div.panel_info {
   width: 150px;
   display: inline-block;
   margin-left: 10px;
   position: absolute;
-  right: 20px;
-  top: 120px;
+  left: 20px;
+  top: 80px;
 }
 
 div.panel_info p {
@@ -812,15 +835,27 @@ div.panel_info p {
   color: gray;
 }
 
+div.panel_info_option {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+div.panel_info_option p {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: gray;
+  display: inline;
+}
+
 
 div.gpa_panel {
   left: 15px;
   top: 10px;
   width: 50px;
- display: inline-block;
+  display: inline-block;
   position: absolute;
-
-
 }
 /* course_infoのshow */
 
@@ -914,6 +949,10 @@ div#course_info_view_new p#select_rank, td#add {
   border-left: solid 2px silver;
   border-right: solid 2px silver;
   border-bottom: solid 2px silver;
+}
+
+#course_info_view:hover {
+  box-shadow: inset 1px 1px 3px 0 #000000;
 }
 
 #course_info_view_index_top {
@@ -1436,7 +1475,7 @@ div.pagination a.previous_page {
   position: absolute;
   font-family: SimSun;
   padding: 20px;
-  margin-left: -150px;
+  margin-left: -100px;
   margin-top: -300px;
 }
 div.pagination a.next_page {
@@ -1444,7 +1483,7 @@ div.pagination a.next_page {
   font-size: 4em;
   position: absolute;
   padding: 20px;
-  margin-left: 900px;
+  margin-left: 950px;
   margin-top: -300px;
 }
 

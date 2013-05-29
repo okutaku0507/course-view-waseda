@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509010055) do
+ActiveRecord::Schema.define(:version => 20130529144450) do
 
   create_table "bads", :force => true do |t|
     t.integer  "member_id",      :null => false
@@ -71,6 +71,17 @@ ActiveRecord::Schema.define(:version => 20130509010055) do
     t.datetime "updated_at",                            :null => false
     t.string   "hashed_password"
   end
+
+  create_table "responses", :force => true do |t|
+    t.integer  "member_id",      :null => false
+    t.integer  "course_view_id", :null => false
+    t.text     "view_response",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "responses", ["course_view_id"], :name => "index_responses_on_course_view_id"
+  add_index "responses", ["member_id"], :name => "index_responses_on_member_id"
 
   create_table "take_courses", :force => true do |t|
     t.integer  "member_id",                :null => false
