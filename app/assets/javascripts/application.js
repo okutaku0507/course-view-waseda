@@ -51,6 +51,15 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+  $('div#menu_box').skOuterClick(function() {
+    $('div.menu_box_label').hide();
+    $('div.account_setting').hide();
+    $('span.pulldown_menu_close').hide();
+    $('span.pulldown_menu_open').show();
+  });
+});
+
+$(document).ready(function(){
     $('p.account_button').click(function() {
     $('div.account_setting').slideDown();
   });
@@ -266,6 +275,31 @@ $(document).ready(function(){
   });
 });
 
+// 講義more検索
+$(document).ready(function(){
+  $("#add_search_open_button").click(function(){
+    $("#add_search").slideDown('fast');
+    $(this).hide();
+    $("#add_search_close_button").show();
+  });
+});
+
+$(document).ready(function(){
+  $("#add_search_close_button").click(function(){
+    $("#add_search").slideUp('fast');
+    $(this).hide();
+    $("#add_search_open_button").show();
+  });
+});
+
+$(document).ready(function(){
+  $('div#search').skOuterClick(function() {
+    $("#add_search").slideUp('fast');
+    $("#add_search_close_button").hide();
+    $("#add_search_open_button").show();
+  });
+});
+
 
 //  likeの非同期通信
   
@@ -296,3 +330,5 @@ $(document).ready(function(){
 //    });
 //  });
 //});
+
+

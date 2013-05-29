@@ -17,11 +17,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -30,11 +26,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -42,11 +34,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -54,11 +42,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -66,11 +50,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -78,11 +58,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -94,11 +70,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -106,11 +78,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -118,11 +86,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -130,11 +94,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -142,11 +102,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -154,6 +110,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+        <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
 </td>
@@ -165,11 +122,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -177,11 +130,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -189,11 +138,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -201,11 +146,7 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -213,18 +154,15 @@
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-v    <% end %>
+        <%= link_to take_course.take_course_title, @course_info %>
+    <% end %>
   <% end %>
 </td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -236,11 +174,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -248,11 +182,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -260,18 +190,15 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-v    <% end %>
+        <%= link_to take_course.take_course_title, @course_info %>
+    <% end %>
   <% end %>
 </td>
 <td class="schedule_detail">
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -279,11 +206,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -291,11 +214,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -308,11 +227,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -320,11 +235,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -332,11 +243,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -344,11 +251,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -356,11 +259,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -368,11 +267,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -386,11 +281,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -398,11 +289,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -410,11 +297,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -422,11 +305,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -434,11 +313,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -446,11 +321,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -464,11 +335,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -476,11 +343,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -488,11 +351,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -500,11 +359,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -512,11 +367,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-      <% if take_course.take_course_title.length >= 10 %>
-        <%= link_to truncate(take_course.take_course_title, :length => 11), @course_info %>
-     <% else %>
         <%= link_to take_course.take_course_title, @course_info %>
-      <% end %>
     <% end %>
   <% end %>
 </td>
@@ -524,6 +375,7 @@ v    <% end %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+        <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
 </td>
