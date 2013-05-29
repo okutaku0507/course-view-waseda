@@ -15,5 +15,21 @@
     target = html_escape(target)
     target.gsub(/\r\n|\r|\n/, "<br />").html_safe
   end
-
+  
+  def translate_field_name(form, field)
+    t(field, scope: [ :activerecord, :attributes, form.object.class.to_s.underscore ])
+  end
+  
+  def format_error_message(model, field, form) 
+    messages = model.errors[field]
+    messages = [ messages ].flatten
+    text = raw('')
+    messages.each do |message|
+      text << content_tag(:p,
+        translate_field_name(form, field) + ' ' + message,
+        class: "error_message")
+    end
+    text
+  end
+  
 end

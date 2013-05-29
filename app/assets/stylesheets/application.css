@@ -374,6 +374,16 @@ div#errors h2 {
 div#errors ul {
   margin: 0;
 }
+
+p.error_message {
+  color: red;
+  margin: 0;
+  padding: 0;
+  margin-top: -10px;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+
 /* 講義追加ページ */
 
 div#new_course {
