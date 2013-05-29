@@ -247,7 +247,7 @@ $(document).ready(function(){
          $("#account_view_cover")
      .css({
        'width': "100%",
-       'height': '100%'
+       'height': "100%"
      });
     }
 });
