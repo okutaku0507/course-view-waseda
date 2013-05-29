@@ -29,7 +29,7 @@
     @take_course.take_course_open_time = @course_info.open_time
     @take_course.id_of_take_course = @course_info.id
     if @take_course.save
-      redirect_to :account, notice: "更新できました！"
+      redirect_to :account, notice: @take_course.take_course_title + "が更新できました！"
     else
       redirect_to :account, notice: "更新できません"
     end

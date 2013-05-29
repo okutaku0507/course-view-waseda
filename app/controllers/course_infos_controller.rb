@@ -3,6 +3,8 @@
     if @current_member
       @course_infos = CourseInfo.order("id").
                  paginate(page: params[:page], per_page: 6)
+      params[:faculty] =  @current_member.faculty
+      @course_infos = @course_infos.search(params)
     else
       @course_infos = CourseInfo.order("id").
                  paginate(page: 1, per_page: 6)
@@ -61,10 +63,10 @@
   end
 
   def search
-    @course_infos = CourseInfo.search(params[:q])
+    params[:faculty] =  @current_member.faculty
+    @course_infos = CourseInfo.search(params)
           .paginate(page: params[:page], per_page: 6)
     render "index"
-
   end
 
   # like,bad機能
