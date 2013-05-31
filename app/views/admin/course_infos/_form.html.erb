@@ -1,43 +1,33 @@
-﻿<%= render "shared/errors", obj: @course_info %>
+﻿<div id="course_new_form">
 
-<table>
-  <tr>
-    <th><%= form.label :title %></th>
-    <td><%= form.text_field :title, size: 50 %></td>
-  </tr>
+<div id="course_title">
+<p class="course_form_label">講義名</p>
+<p><%= form.text_field :title, :class => "course_input" %></p>
+<%= format_error_message(@course_info, :title, form).html_safe %>
+</div>
 
-  <tr>
-    <th><%= form.label :teacher %></th>
-    <td><%= form.text_field :teacher, size: 50 %></td>
-  </tr>
+<div id="course_teacher">
+<p class="course_form_label">教員名</p>
+<p><%= form.text_field :teacher, :class => "course_input" %></p>
+<%= format_error_message(@course_info, :teacher, form).html_safe %>
+</div>
 
-  <tr>
-    <th><%= form.label :open_faculty %></th>
-<td><%= form.select :open_faculty, 
-["政経", "法学", "一文", "二文", "教育", "商学", "理工", "社学", "人科", "スポーツ", "国際教養", "文構", "文",
- "人通", "基幹", "創造", "先進", "政研", "経研", "法研", "文研", "商研", "教研", "人研", "社学研", "アジア研",
- "国情研", "日研", "情シス研", "公共研", "ファイナンス研", "法務研", "会計研", "スポーツ研", "基幹研", "創造研",
- "先進研", "環エネ研", "教職研", "国際コミ研", "ＭＮＣ", "日本語", "留学", "オープン教育"] %></td>
-  </tr>
+<div id="course_open_faculty">
+<p><%= form.select :open_faculty, 
+["政治経済学部", "法学部", "第一文学部", "第二文学部", "教育学部", "商学部", "社会科学部", "人間科学部", "スポーツ科学部", "国際教養学部", "文化構想学部", "文学部",
+ "基幹理工学部", "創造理工学部", "先進理工学部", "諸研究科" "ＭＮＣ", "日本語", "留学", "オープン教育", "その他"] %></p>
+</div>
 
-  <tr>
-    <th><%= form.label :day_of_the_week %></th>
-    <td><%= form.select :day_of_the_week, ["月", "火", "水", "木", "金", "土", "日", "無"] %></td>
-  </tr>
+<div id="course_day_of_the_week">
+<p><%= form.select :day_of_the_week, ["月", "火", "水", "木", "金", "土", "日", "無"] %></p>
+</div>
 
-  <tr>
-    <th><%= form.label :open_time %></th>
-    <td><%= form.select :open_time, ["1時限", "2時限", "3時限", "4時限", "5時限", "6時限", "7時限", 
-                                     "フルオンデマンド", "その他"] %></td>
-  </tr>
+<div id="course_open_time">
+<p><%= form.select :open_time, [["1時限", 1], ["2時限", 2], ["3時限", 3], ["4時限", 4], ["5時限", 5], ["6時限", 6], ["7時限", 7], ["フルオンデマンド", 8], ["その他", 9]] %></p>
+</div>
 
-  <tr>
-    <th><%= form.label :open_term %></th>
-    <td><%= form.select :open_term, ["通年", "春期", "秋期", "その他"] %></td>
-  </tr>
+<div id="course_open_term">
+<p><%= form.select :open_term, ["春期", "秋期", "通年", "その他"] %></p>
+</div>
 
-  <tr>
-    <th><%= form.label :test_existence %></th>
-    <td><%= form.select :test_existence, ["末", "中", "無・小", "無", "中・末", "末・小", "中・末・小", "その他"] %></td>
-  </tr>
-</table>
+</div>

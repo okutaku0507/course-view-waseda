@@ -1,21 +1,5 @@
-﻿class Admin::MembersController < Admin::Base
+﻿class MembersController < ApplicationController
 
-
-  # 管理者だけが見れる会員一覧
-  def index
-    @members = Member.order("id")
-  end
-
-  # 検索
-  def search
-    @members = Member.search(params[:q])
-    render "index"
-  end
-
-  # ユーザーの詳細
-  def show
-    @member = Member.find(params[:id])
-  end
 
   def new
     @member = Member.new
@@ -31,8 +15,9 @@
 
     if @member.save
       UserMailer.welcome_email(@member).deliver
-      redirect_to :admin_members,
-        notice: "管理者によりユーザーの登録が完了しました。"
+      redirect_to :course_infos,
+        notice: "ユーザーの登録が完了しました。
+                \n登録されたメールアドレスに仮パスワードをお送りします。"
     else
       render "new"
     end
@@ -43,7 +28,7 @@
     @member = Member.find(params[:id])
     @member.assign_attributes(params[:member])
     if @member.save
-      redirect_to [:admin, @member], notice: "管理者がパスワードを更新しました。"
+      redirect_to :account, notice: "パスワードを更新しました。"
     else
       render "edit"
     end
@@ -53,10 +38,9 @@
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to :admin_members, notice: "管理者がユーザーアカウントを削除しました。"
+    redirect_to :course_infos, notice: "ユーザーアカウントを削除しました。今までご利用ありがとうございました。(´；ω；｀)"
   end
 
-  private
 
 
 

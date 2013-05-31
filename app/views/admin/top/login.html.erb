@@ -1,0 +1,26 @@
+﻿
+
+  <% if flash.notice %>
+  <p class="notice"><%= flash.notice %></p>
+  <p class="notice_top" align=center><%= link_to "トップページ(ログインフォーム)へ", root_path %></p>
+<% else %>
+
+
+<div id="login_content">
+<%= image_tag("rogo.png") %>
+  <% unless @current_member %>
+  <div class="new">
+  <p class="new_user"><%= link_to "Course Viewに参加", :new_member %></p>
+  </div>
+  <% end %>
+
+  <div>
+  <% unless @current_member %>
+  <%= render "shared/sidebar" %>
+  <% end %>
+  </div>
+</div>
+
+ <% end %>
+
+

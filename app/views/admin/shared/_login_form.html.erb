@@ -1,0 +1,22 @@
+﻿<div id="sidebar">
+
+<%= form_tag :session do %>
+<table id="login_form">
+<tr>
+<td class="login_label">メールアドレス</td>
+<td class="login_label">パスワード</td>
+<td></td>
+</tr>
+<tr>
+<td><%= text_field_tag "email", "", style: "width: 120px" %></td>
+<td><%= password_field_tag "password", "", style: "width: 120px" %></td>
+<td id="bottun"><%= submit_tag "login" %></td>
+</tr>
+</table>
+<%= hidden_field_tag "form", request.path %>
+<% end %>
+<% if flash.alert %>
+<p class="alert"><%= flash.alert %></p>
+<% end %>
+
+</div>

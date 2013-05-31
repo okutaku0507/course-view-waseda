@@ -1,11 +1,12 @@
 ﻿<% @page_title = "ユーザー新規登録" %>
-
-<h1 id="title"><%= @page_title %></h1>
-<div class="attention">
-<h3>※注意</h3>
-<p><strong>ユーザー情報は信憑性の高めるため、後に変更することはできません。慎重に入力してください。</strong></p>
-</div>
+<div id="new_member">
+<h1 id="title">Course Viewに参加！</h1>
+<div id="user_form">
 <%= form_for @member do |form| %>
 <%= render "form", form: form%>
-<p><%= form.submit %></p>
+<div id="member_new_button">
+<p><%= form.submit "Join！", :id => "button_member_new", :disabled => "true" %></p>
+</div>
 <% end %>
+</div>
+</div>

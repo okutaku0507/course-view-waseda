@@ -1,9 +1,8 @@
-﻿<% @page_title = @course_view.view_title + "を変更" %>
-<h1><%= @page_title %></h1>
-
-<p><%= link_to "講義に戻る", @course_info %></p>
-
-<%= form_for [:admin, @course_view] do |form| %>
+﻿
+<div id="view_form">
+<%= form_for @course_view do |form| %>
+<p><%= link_to @course_view.title_of_course, @course_info %></p>
 <%= render "form", form: form %>
-<p><%= form.submit %></p>
+<p　align="right"><%= form.submit "保存", :id => "button_view_form" %></p>
 <% end %>
+</div>

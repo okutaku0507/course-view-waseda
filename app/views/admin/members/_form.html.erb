@@ -1,45 +1,53 @@
-﻿<%= render "shared/errors", obj: @member %>
-<table class="user">
-  <tr>
-    <th class="label"><%= form.label :full_name, "本名" %></th>
-    <div id="name">
-    <td class="detail_family_name">&nbsp;氏:</td><td class="name_form"><%= form.text_field :family_name, size: 6 %></td>
-    <td class="detail_first_name">&nbsp;名:</td><td class="name_form"><%= form.text_field :first_name, size: 6 %></td>
-    </div>
-  </tr>
+﻿
+<div id="member_new_form">
 
-  <tr>
-    <th class="label"><%= form.label :email, "メールアドレス(@xxx.waseda.jpを含む)" %></th>
-    <td class="detail" colspan=4><%= form.text_field :email, size: 20 %></td>
-  </tr>
+<div id="member_family_name">
+<p class="member_form_label">氏</p>
+<p><%= form.text_field :family_name, :class => "member_input_family_name", :placeholder => "早稲田" %></p>
+<%= format_error_message(@member, :family_name, form).html_safe %>
+</div>
 
-  <tr>
-    <th class="label"><%= form.label :email_confirmation, "メールアドレス確認" %></th>
-    <td class="detail" colspan=4><%= form.text_field :email_confirmation, size: 20 %></td>
-  </tr>
+<div id="member_first_name">
+<p class="member_form_label">名</p>
+<p><%= form.text_field :first_name, :class => "member_input_first_name", :placeholder => "太郎" %></p>
+<%= format_error_message(@member, :first_name, form).html_safe %>
+</div>
 
+<div id="member_email">
+<p class="member_form_label">メールアドレス</p>
+<p><%= form.text_field :email, :class => "member_input",:placeholder => "ex) taro@fuji.waseda.jp" %></p>
+<%= format_error_message(@member, :email, form).html_safe %>
+</div>
 
+<div id="member_email_confirmation">
+<p class="member_form_label">メールアドレス確認</p>
+<p><%= form.text_field :email_confirmation, :class => "member_input" %></p>
+<%= format_error_message(@member, :email_confirmation, form).html_safe %>
+</div>
 
-  <tr>
-    <th class="label"><%= form.label :faculty, "在学・卒業学部" %></th>
-    <td class="detail" colspan=4><%= form.select :faculty, 
-["政治経済学部", "法学部", "第一文学部", "第二文学部", "文化構想学部", "文学部", "教育学部",
- "商学部", "基幹理工学部", "創造理工学部", "先進理工学部", "社会科学部", "人間科学部", "スポーツ科学部", "国際教養学部", "その他(下欄に入力)"] %></td>
-  </tr>
+<div id="member_faculty">
+<p class="member_form_label">学部</p>
+<p><%= form.select :faculty, ["政治経済学部", "法学部", "第一文学部", "第二文学部", "文化構想学部", "文学部", "教育学部", "商学部", "基幹理工学部", "創造理工学部", "先進理工学部", "社会科学部", "人間科学部", "スポーツ科学部", "国際教養学部", "その他"] %></p>
+</div>
 
-  <tr>
-    <th class="label"><%= form.label :subject, "学科・大学院・その他" %></th>
-    <td class="detail" colspan=4><%= form.text_field :subject, size: 20 %></td>
-  </tr>
+<div id="member_subject">
+<p class="member_form_label">学科</p>
+<p><%= form.text_field :subject, :class => "member_input", :placeholder => "経済学科" %></p>
+</div>
 
-  <tr>
-    <th class="label">性別</th>
-      <td class="detail" colspan=4>
+<div id="member_gender">
+<p>
         <%= form.radio_button :gender, 0 %>
         <%= form.label :gender_0, "男" %>
         <%= form.radio_button :gender, 1 %>
         <%= form.label :gender_1, "女" %>
-      </td>
-  </tr>
-</table>
+</p>
+</div>
 
+<div id="member_check">
+<p><input type="checkbox" id="check">&nbsp;&nbsp;<%= link_to "利用規約", use_policy_path %>
+/<%= link_to "プライバシーポリシー", privacy_path %>に同意する。
+</p>
+</div>
+
+</div>

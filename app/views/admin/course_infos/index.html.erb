@@ -1,28 +1,63 @@
-﻿<% if @current_member %>
-<%= link_to "講義新規作成", :new_admin_course_info %>
-<% end %>
-  <% if flash.notice %>
-    <p class="info_notice"><%= flash.notice %></p>
+﻿
+<div style="clear: both">
+  <% if @current_member %>
+      <p id="course_info_new_button"><%= menu_link_to "Add Course",  :new_course_info %></p>
+  <% else %>
+      <p id="course_info_new_button"><%= menu_link_to "Join!",  :new_member %></p>
   <% end %>
+</div>
 <% if @course_infos.present? %>
-<table class="course_index">
-  <tr>
-    <th>講義名</th>
-    <th>教職員</th>
-    <th>内容</th>
-    <th>単位</th>
-  </tr>
-  <% @course_infos.each do |course_info| %>
-  <tr>
-    <td><%= link_to course_info.title, [:admin, course_info] %></td>
-    <td><%= course_info.teacher %></td>
-    <td>ここに内容の平均</td>
-    <td>ここに単位の平均</td>
-  </tr>
+ <div id="course_index">
 
+ <% @course_infos.each do |course_info| %>
+
+<div class="course_info_panel" data-num="<%= course_info.id %>">
+  <% @average_teacher_rank = TeacherRank.where(course_info_id: course_info.id).average(:teacher_rank) %>
+  <% @course_views = CourseView.find_by_course_info_id(course_info.id) %>
+<!--  <div class="gpa_panel">
+    <table id="index_teacher_rank">
+  <tr>
+      <td class="index_label">GPA</td>
+  </tr>
+  <tr>
+      <% if course_info.teacher_ranks.exists? %>
+      <td class="index_point"><%= number_with_precision(@average_teacher_rank, :precision => 1) %></td>
+      <% else %>
+      <td class="index_point">-</td>
+      <% end %>
+  </tr>
+  </table>
+  </div> -->
+  <div id="course_panel_title">
+    <% if course_info.title.length <= 11 %>
+      <p><%= link_to course_info.title, course_info %></p>
+    <% else %>
+      <p class="long_title"><%= link_to  truncate(course_info.title, :length => 20), course_info %></p>
+    <% end %>
+  </div>
+
+  <div class="panel_info">
+    <p><%= course_info.teacher %></p>
+    <p><%= course_info.open_faculty %></p>
+  </div>
+  <div class="panel_info_option">
+    <p><%= course_info.day_of_the_week %></p>
+    <% if course_info.open_time == 8 %>
+      <p>オンデマンド</p>
+    <% elsif course_info.open_time == 9 %>
+      <p>その他</p>
+    <% else %>
+      <p><%= course_info.open_time %></p>
+    <% end %>
+  </div>
+</div>
   <% end %>
-</table>
+    <%= will_paginate @course_infos %>
+</div>
+
 <% else %>
+<div>
 <p>お探しの講義が見つかりません。</p>
+</div>
 <% end %>
     

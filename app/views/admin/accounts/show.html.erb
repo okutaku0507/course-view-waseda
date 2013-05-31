@@ -1,0 +1,70 @@
+﻿<div id="mypage">
+<table id="account_head">
+  <tr>
+  <td colspan="7" class="account_title">
+    <p id="account_name"><%= @current_member.family_name + @current_member.first_name %></p>
+    <p class="account_info"><%= @member.faculty %></p>
+    <p class="account_info"><%= @member.subject %></p>
+    <p id="account_view_add_button">コメント</p>
+    <p id="account_schedule_add_button">時間割</p>
+  </td>
+</table>
+</div>
+
+  <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+      <div class="take_course_detail_edit_hide_<%= take_course.id %>" style="display: none">
+      <div class="take_course_detail_edit" >
+        <% if take_course.take_course_title.length >= 15 %>
+          <p class="take_course_detail_title"><%= link_to truncate(take_course.take_course_title, :length => 16), @course_info %></p>
+        <% else %>
+          <p class="take_course_detail_title"><%= link_to take_course.take_course_title, @course_info %></p>
+        <% end %>
+
+        <%= form_for take_course do |form| %>
+          <p class="take_course_detail_label">遅刻
+          <%= form.select :take_course_late_point, points %></p>
+          <p class="take_course_detail_label">欠席
+          <%= form.select :take_course_absent_point, points %></p>
+          <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義のことをメモしよう！" %>
+          <p align="right"><%= form.submit "保存", :class => "take_course_detail_button"%></p>
+        <% end %>
+      </div>
+      </div>
+      <div class="take_course_detail_open_<%= take_course.id %>">
+      <div class="take_course_detail">
+        <% if take_course.take_course_title.length >= 15 %>
+          <p class="take_course_detail_title"><%= link_to truncate(take_course.take_course_title, :length => 16), @course_info %></p>
+        <% else %>
+          <p class="take_course_detail_title"><%= link_to take_course.take_course_title, @course_info %></p>
+        <% end %>
+      <p class="take_course_detail_label">遅刻&nbsp;&nbsp;<%= take_course.take_course_late_point %></p>
+      <p class="take_course_detail_label">欠席&nbsp;&nbsp;<%= take_course.take_course_absent_point %></p>
+      <% unless take_course.take_course_note == "" %>
+        <% if take_course.take_course_note.length > 154 %>
+        <div class="take_course_note_block_over">
+          <p class="take_course_note"><%= take_course.take_course_note %></p>
+        </div>
+        <% else %>
+        <div class="take_course_note_block">
+          <p class="take_course_note"><%= take_course.take_course_note %></p>
+        </div>
+        <% end %>
+        <% else %>
+        <div class="take_course_note_block">
+          <p>特に何もありません。</p>
+        </div>
+        <% end %>
+        <span class="take_course_edit_button" data-num="<%= take_course.id %>">編集</span>
+      </div>
+      </div>
+  <% end %>
+
+
+<% if @current_member.try(:administrator?) %>
+<p class="edit"><%= link_to "パスワード変更", :edit_account %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to "退会", @current_member, method: :delete, confirm: "本当に退会しますか？"%></p>
+<% end %>
+<div id="account_view_cover"></div>
+<%= render "accountview" %>
+<%= render "accountschedule" %>

@@ -1,0 +1,10 @@
+﻿<p>
+<% if @current_member %>
+<% if @like.current_member.like? %>
+<%= link_to "like!", [:like, @course_info], method: :put, class: "button %>
+<% else %>
+<%= link_to "like!・を取り消す", [:unlike, @course_info], method: :put, class: "button" %>
+<% end %>
+<% end %>
+
+</p>
