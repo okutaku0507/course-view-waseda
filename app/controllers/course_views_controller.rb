@@ -6,6 +6,8 @@
   end
 
   def show
+    @course_view = CourseView.find(params[:id])
+    @response = Response.new
   end
 
   def new
@@ -50,6 +52,21 @@
     @course_view.destroy
 
     redirect_to @course_info, notice: "コメントを削除しました"
+  end
+
+  def response_create
+    @response = Response.new(params[:response])
+    @response.member = @current_member
+    @course_view = CourseView.find(params[:id])
+    @response.course_view = @course_view
+    @course_info = @course_view.course_info
+    @member = Member.find(@course_view.member_id)
+    if @response.save
+      UserMailer.response_email(@response).deliver
+      redirect_to @course_view, notice: "コメントを追加しました"
+    else
+      redirect_to @course_view, notice: "コメントに誤りがあります"
+    end
   end
 
 end

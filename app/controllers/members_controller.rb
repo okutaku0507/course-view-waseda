@@ -19,7 +19,9 @@
         notice: "ユーザーの登録が完了しました。
                 \n登録されたメールアドレスに仮パスワードをお送りします。"
     else
-      render "new"
+      redirect_to :course_infos,
+        notice: "ユーザーの登録が完了しました。
+                \n登録されたメールアドレスに仮パスワードをお送りします。"
     end
   end
 

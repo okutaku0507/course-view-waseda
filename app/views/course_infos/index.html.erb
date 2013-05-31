@@ -6,10 +6,6 @@
       <p id="course_info_new_button"><%= menu_link_to "Join!",  :new_member %></p>
   <% end %>
 </div>
-  <% if flash.notice %>
-    <p class="info_notice"><%= flash.notice %></p>
-  <% end %>
-
 <% if @course_infos.present? %>
  <div id="course_index">
 

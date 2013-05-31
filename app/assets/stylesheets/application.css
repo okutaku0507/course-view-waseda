@@ -31,8 +31,8 @@ img.rabbit_before_login {
   position: absolute;
   margin: 0;
   padding: 0;
-  margin-left: 330px;
-  margin-top: -40px;
+  margin-left: -45px;
+  margin-top: -45px;
 }
 img.rabbit:rabbit_before_login {
   box-shadow: 1px 1px 2px 0 #000000;
@@ -45,14 +45,14 @@ div#course_view_title {
   float: left;
   margin: 0;
   padding: 0;
-  margin-left: 50px;
+  margin-left: 110px;
   margin-top: -30px;
-  margin-bottom: -60px;
+  margin-bottom: 5px;
   cursor: pointer;
 }
 
 div#course_view_title h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   display: inline;
 }
 
@@ -72,7 +72,8 @@ div#course_view_title h5 {
 /* ヘッダー */
 
 #header {
-  margin-top: 10px;
+  margin: 0;
+  height: 70px;
 }
 
 #header_back {
@@ -356,17 +357,16 @@ p.alert {
 /* フラッシュ */
 
 div#notice {
-  position: absolute;
-  margin: auto;
+  margin-top: -100px;
+  margin-left: 170px;
   padding: 5px;
   width: 600px;
- /* background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -ms-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -webkit-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -o-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff)); */
   background: rgba(255, 0, 0, 0.5);
   text-align: center;
+  clear: both;
+  border-right: solid 1px #e0ffff;
+  border-left: solid 1px #e0ffff;
+  border-bottom: solid 1px #e0ffff;
   clear: both;
 }
 
@@ -646,6 +646,7 @@ span.pulldown_menu_open {
   padding: 5px 10px;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
+  background-color: #ffffff;
 }
 
 span.pulldown_menu_open:hover {
@@ -660,7 +661,8 @@ span.pulldown_menu_close {
   padding: 5px 10px;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
-  display: none
+  display: none;
+  background-color: #ffffff;
 }
 
 span.pulldown_menu_close:hover {
@@ -673,6 +675,7 @@ span.course_view_link {
   border: solid 1px #000000;
   padding: 5px 10px;
   border-radius: 5px 0 0 5px;
+  background-color: #ffffff;
 }
 
 /* login画面 */
@@ -769,8 +772,9 @@ div#course_index  a {
 div#course_index {
   margin: auto;
   margin-top: 35px;
+  padding: 0;
   height: 500px;
-  width: 1000px;
+  width: 920px;
 }
 
 table#index_teacher_rank {
@@ -1113,11 +1117,12 @@ table#teacher_rank td.point{
   margin-top: 50px;
 }
 
-#course_info_view span#writer {
+span#writer {
   font-size: 0.8em;
 }
 
-#course_info_view span#create_time {
+span#create_time {
+  margin-left: 350px;
   margin-right: 15px;
   font-size: 0.8em;
 
@@ -1126,10 +1131,9 @@ table#teacher_rank td.point{
 
 #course_info_view p#view_footer {
   display: inline;
-  padding-left: 400px;
 }
 
-div#course_info_view_index div.view_text {
+div.view_text {
   border-bottom: solid 1px silver;
   margin-bottom: 4px;
 }
@@ -1412,6 +1416,7 @@ p#add_search_open_button {
   border-radius: 5px;
   box-shadow: 0 0 1px 0 #000000;
   cursor: pointer;
+  background-color: #ffffff;
 }
 
 p#add_search_open_button:hover {
@@ -1425,6 +1430,7 @@ p#add_search_close_button {
   box-shadow: 0 0 1px 0 #000000;
   cursor: pointer;
   display: inline;
+  background-color: #ffffff;
 }
 
 p#add_search_close_button:hover {
@@ -1483,7 +1489,7 @@ div.pagination a.next_page {
   font-size: 4em;
   position: absolute;
   padding: 20px;
-  margin-left: 950px;
+  margin-left: 870px;
   margin-top: -300px;
 }
 
@@ -1863,5 +1869,77 @@ input#button_view_form:hover {
   border: none;
   box-shadow: inset 1px 1px 3px 0 #000000;
   padding: 6px;
+}
+
+/* レスポンスの仕組み */
+div.response_add {
+  width: 600px;
+  margin: 0;
+  padding: 0 37px 0 3px;
+  border-left: solid 2px skyblue;
+  border-right: solid 2px skyblue;
+  border-bottom: solid 2px skyblue;
+  display: none;
+}
+
+div.response_add textarea {
+  resize: vertical;
+  overflow: auto;
+  border-radius: 5px;
+  border: solid 1px silver;
+  padding: 5px;
+}
+
+input.response_create_button {
+  border: solid 1px silver;
+  margin: 0;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  padding: 2px 3px;
+  display: inline;
+}
+
+span.response_add_button {
+  font-size: 0.8em;
+  margin-right: 5px;
+  cursor: pointer;
+  color: blue;
+}
+
+span.response_add_button:hover {
+  color: red;
+}
+
+/* viewのshow */
+
+div#course_view_show {
+  margin: auto;
+  width: 650px;
+  padding: 20px;
+}
+
+div#course_view_text {
+  width: 600px;
+  margin: 0;
+  border: solid 2px silver;
+  padding: 20px;
+}
+
+div#course_view_text span#create_time {
+  margin-left: 450px;
+}
+
+div.view_show_response {
+  width: 600px;
+  margin: 0;
+  border-left: solid 2px skyblue;
+  border-right: solid 2px skyblue;
+  border-bottom: solid 2px skyblue;
+  padding: 10px 20px 0 20px;
+}
+
+span.response_create_time {
+  margin-left: 500px;
+  font-size: 0.8em;
 }
 

@@ -254,10 +254,6 @@ $(document).ready(function(){
 
 // noticeの表示
 $(document).ready(function(){
-  $("#notice").css({
-      'left': $(window).width() / 2 - 350 + 'px',
-      'top': $(window).scrollTop() + 70 + 'px'
-  })
   $("#notice")
   .show()
   .delay(2000)
@@ -300,6 +296,14 @@ $(document).ready(function(){
   });
 });
 
+// レスポンスがプルダウン
+
+$(document).ready(function(){
+  $(".response_add_button").click(function(){
+    var CourseViewId = $(this).data('num');
+    $("#response_add_" + CourseViewId).slideDown('fast');
+  });
+});
 
 //  likeの非同期通信
   

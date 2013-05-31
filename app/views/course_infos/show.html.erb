@@ -91,6 +91,7 @@
 <% else %>
     <textarea rows="8" cols="50" placeholder="Course Viewに参加すると講義について自由に加筆できます！" ></textarea>
       <div id="course_info_view_option">
+         <p id="teacher_rank_open_button">教授</p>
          <p id="good_button">
            <a class="biutton" href="#">good!</a>
          </p>
@@ -109,6 +110,7 @@
 </div>
 
     <div id="cover"></div>
+    <% if @current_member %>
     <div id="teacher_rank_prompt">
       <p id="teacher_rank_colse_button">×</p>
       <p id="teacher_rank_text"><%= @course_info.teacher %>教授を評価しよう！</p>
@@ -117,4 +119,18 @@
       <%= form.submit "評価する!", :id => "teacher_rank_button" %>
       <% end %>
     </div>
+    <% else %>
+    <div id="teacher_rank_prompt">
+      <p id="teacher_rank_colse_button">×</p>
+      <p id="teacher_rank_text"><%= @course_info.teacher %>教授を評価しよう！</p>
+      <p align="center"><select id="teacher_rank_teacher_rank">
+      <option value="4">A+</option>
+      <option value="3">A</option>
+      <option value="2">B</option>
+      <option value="1">C</option>
+      <option value="0">F</option></select></p>
+      <input id="teacher_rank_button" type="button" value="評価する!" />
+    </div>
+    <% end %>
+
 

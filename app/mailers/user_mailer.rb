@@ -1,7 +1,7 @@
 ﻿# coding: utf-8
 
 class UserMailer < ActionMailer::Base
-  default :from => "rails@course-view.com"
+  default :from => "no-reply@course-view.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -14,5 +14,12 @@ class UserMailer < ActionMailer::Base
     mail(:to => member.email, :subject => "Waseda Course Viewからパスワードをお知らせします")
   end
   
+  def response_email(response)
+    @response = response
+    @course_view = @response.course_view
+    @responsed_member = @course_view.member
+    @course_info = @course_view.course_info
+    mail(:to => @responsed_member.email, :subject => "あなたの記事にコメントがつきました。")
+  end
 end
 

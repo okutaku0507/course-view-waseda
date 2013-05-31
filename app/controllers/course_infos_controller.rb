@@ -1,7 +1,7 @@
 ﻿class CourseInfosController < ApplicationController
   def index
     if @current_member
-      @course_infos = CourseInfo.limit(5).order("id").
+      @course_infos = CourseInfo.order("id").
                  paginate(page: params[:page], per_page: 6)
       params[:faculty] =  @current_member.faculty
       @course_infos = @course_infos.search(params)
@@ -19,6 +19,7 @@
     @take_course = TakeCourse.new
     @teacher_rank = TeacherRank.new
     @take_course = TakeCourse.new
+    @response = Response.new
   end
 
   def new
@@ -129,7 +130,7 @@
     @take_course.take_course_title = @course_info.title
     
     if @current_member.techer_ranks << @take_course
-      link_to @course_info, notice: "教授を評価しました！"
+      link_to @course_info, notice: @course_info.teacher + "教授を評価しました！"
     else
       redirect_to @course_info, notice: "教授を評価に失敗しました..."
     end
@@ -186,10 +187,11 @@
     @course_info = CourseInfo.find(params[:id])
     @teacher_rank.course_info = @course_info
     if @teacher_rank.save
-      redirect_to @course_info, notice: "教授を評価しました！"
+      redirect_to @course_info, notice:  @course_info.teacher + "教授を評価しました！"
     else
       redirect_to @course_info, notice: "教授評価に失敗しました..."
     end
   end
+  
   
 end
