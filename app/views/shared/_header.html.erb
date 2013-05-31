@@ -49,33 +49,20 @@
 
   <% if controller.kind_of?(Admin::Base) %>
 
+
 <div id="menu_box">
 <%= image_tag "rabbit.png", width: 35, :class => "rabbit" %>
+<p class="top_menu"><span class="course_view_link"><%= menu_link_to "Course View", :course_infos %></span><span class="pulldown_menu_open">▼</span><span class="pulldown_menu_close">▼</span><p>
 
-<ul id="menubutton">
-<li class="submenu1">▼</li>
-</ul>
-
-<ul id="menubutton">
-<li class="submenu2"><%= menu_link_to "Course View", :course_infos %>
-  <ul>
-  <li class="first_menu"><%= menu_link_to "一般モード", root_path %></li>
-  <li><%= menu_link_to "管理トップ", :admin_root %></li>
-  <li><%= menu_link_to "ユーザー管理", :admin_members %></li>
-  <li><%= menu_link_to "講義管理", :admin_course_infos %></li>
-  <li><%= menu_link_to "サークル管理", "#" %></li>
-  </ul>
-</li>
-</ul>
-
+<div class="menu_box_label" style="border-top: solid 1px #000000">
+<p class="admin_menu_label"><%= menu_link_to "一般モード", root_path %></p>
+<p class="admin_menu_label"><%= menu_link_to "管理トップ", :admin_root %></p>
+<p class="admin_menu_label"><%= menu_link_to "ユーザー管理", :admin_members %></p>
+<p class="admin_menu_label"><%= menu_link_to "講義管理", :admin_course_infos %></p>
+<p class="admin_menu_label" style="border-bottom: solid 1px #000000"><%= menu_link_to "サークル管理", "#" %></p>
 </div>
-
+</div>
 <% end %>
-  <% if flash.notice %>
-    <div id="notice" style="display: none">
-      <p class="notice"><%= flash.notice %></p>
-    </div>
-  <% end %>
 
 
 

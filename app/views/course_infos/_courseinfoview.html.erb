@@ -16,7 +16,8 @@
 <% end %>
 </div>
 <% @writer_member = Member.find_by_id(course_view.member_id) %>
-<p id="view_footer"><span class="response_add_button" data-num="<%= course_view.id %>">返信</span><span id="create_time"><%= course_view.created_at.strftime("%Y/%m/%d") %></span><span id="writer"><%= @writer_member.faculty %>生</span></p>
+<p id="view_footer"><span class="response_add_button" data-num="<%= course_view.id %>">返信</span><span class="response_comment"><%= link_to 'コメント', course_view %><span style="font-size: 0.8em">(<%= Response.where(course_view_id: course_view.id).count %>)</span></span>
+<span id="create_time"><%= course_view.created_at.strftime("%Y/%m/%d") %></span><span id="writer"><%= @writer_member.faculty %>生</span></p>
 </div>
   <div class="response_add" id="response_add_<%= course_view.id %>">
     <%= form_for @response , :url => [:response_create, @course_info, course_view]  do |form| %>

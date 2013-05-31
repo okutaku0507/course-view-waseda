@@ -1,7 +1,7 @@
 ﻿<div id="course_view_show">
 <div id="course_view_text">
   <%=hbr @course_view.view %>
-  <p id="view_footer" style="border-top: solid 1px silver"><span class="response_add_button" data-num="<%= @course_view.id %>">返信</span><span id="create_time"><%= @course_view.created_at.strftime("%Y/%m/%d") %></span></p>
+  <p id="view_footer" style="border-top: solid 1px silver"><span class="show_response_add_button" data-num="<%= @course_view.id %>">返信</span><span id="create_time"><%= @course_view.created_at.strftime("%Y/%m/%d") %></span></p>
 </div>
 <div class="response_add" id="response_add_<%= @course_view.id %>">
   <%= form_for @response , :url => { :action => "response_create", :controller => "course_views" }  do |form| %>

@@ -305,6 +305,14 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+  $(".show_response_add_button").click(function(){
+    var CourseViewId = $(this).data('num');
+    $("#response_add_" + CourseViewId).slideDown('fast');
+  });
+});
+
+
 //  likeの非同期通信
   
 //$(document).ready(function(){

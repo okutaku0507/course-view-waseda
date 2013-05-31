@@ -678,6 +678,10 @@ span.course_view_link {
   background-color: #ffffff;
 }
 
+p.admin_menu_label {
+  font-size: 0.7em;
+}
+
 /* login画面 */
 
 input#email {
@@ -1122,7 +1126,7 @@ span#writer {
 }
 
 span#create_time {
-  margin-left: 350px;
+  margin-left: 15px;
   margin-right: 15px;
   font-size: 0.8em;
 
@@ -1876,37 +1880,69 @@ div.response_add {
   width: 600px;
   margin: 0;
   padding: 0 37px 0 3px;
-  border-left: solid 2px skyblue;
-  border-right: solid 2px skyblue;
-  border-bottom: solid 2px skyblue;
+  border-left: solid 2px silver;
+  border-right: solid 2px silver;
+  border-bottom: solid 2px silver;
   display: none;
 }
 
 div.response_add textarea {
   resize: vertical;
   overflow: auto;
+  margin-left: 30px;
+  margin-top: 5px;
   border-radius: 5px;
-  border: solid 1px silver;
+  border: solid 2px skyblue;
   padding: 5px;
 }
 
 input.response_create_button {
   border: solid 1px silver;
   margin: 0;
-  margin-left: 20px;
+  margin-left: 500px;
   margin-bottom: 5px;
   padding: 2px 3px;
-  display: inline;
 }
 
 span.response_add_button {
   font-size: 0.8em;
-  margin-right: 5px;
+  margin-left: 300px;
   cursor: pointer;
   color: blue;
 }
 
 span.response_add_button:hover {
+  color: red;
+}
+
+span.response_comment a {
+  margin-left: 15px;
+  font-size: 0.8em;
+  cursor: pointer;
+  color: blue;
+}
+
+span.response_comment a:hover {
+  color: red;
+}
+
+span.response_comment {
+  cursor: pointer;
+  color: blue;
+}
+
+span.response_comment:hover {
+  color: red;
+}
+
+span.show_response_add_button {
+  font-size: 0.8em;
+  margin-left: 400px;
+  cursor: pointer;
+  color: blue;
+}
+
+span.show_response_add_button:hover {
   color: red;
 }
 
@@ -1926,7 +1962,7 @@ div#course_view_text {
 }
 
 div#course_view_text span#create_time {
-  margin-left: 450px;
+  margin-left: 30px;
 }
 
 div.view_show_response {
