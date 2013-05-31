@@ -2,12 +2,12 @@
 <div id="member_password_edit">
 
 <h1 id="title">パスワードの変更</h1>
-<%= render "shared/errors", obj: @member %>
 <%= form_for @member, url: :account do |form| %>
 <div id="password_edit_input">
-    <p class="member_password_label"><%= form.label :password, "パスワード(8桁-16桁の半角英数字)" %></p>
+    <p class="member_password_label">パスワード(8桁-16桁の半角英数字)</p>
     <p class="member_password"><%= form.password_field :password, :class => "member_password_input" %></p>
-    <p class="member_password_label"><%= form.label :password_confirmation, "パスワード確認" %></p>
+    <%= format_error_message(@member, :password, form).html_safe %>
+    <p class="member_password_label">パスワード確認</p>
     <p class="member_password"><%= form.password_field :password_confirmation, :class => "member_password_input" %></p>
 <p><%= form.submit "更新", :id => "button_member_password_edit" %></p>
 </div>

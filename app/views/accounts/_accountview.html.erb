@@ -1,6 +1,13 @@
 ﻿<div id="account_view_index">
 <p id="account_view_delete_button">×</p>
 <div id="account_view_top"><p>コメント</p></div>
+<% unless @current_member.course_views.exists? %>
+<div id="account_view">
+<div class="view_text">
+<p>まだコメントをしていません。</p>
+</div>
+</div>
+<% end %>
 <% @current_member.course_views.each do |course_view| %>
 <% if @current_member == course_view.member %>
 <div id="account_view" data-num="<%= course_view.id %>">
