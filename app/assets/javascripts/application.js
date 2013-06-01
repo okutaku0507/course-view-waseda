@@ -313,6 +313,33 @@ $(document).ready(function(){
 });
 
 
+/* コメントのタイムライン */
+
+$(document).ready(function(){
+  $("#comment_log_add_button").click(function(){
+    $("#comment_log_panel").slideDown('fast', function() {
+    if($('#comment_log_panel').height() < 320){
+    $("#comment_log_index").css({
+       'overflow': 'scroll',
+       'overflow-x': 'hidden',
+       'height': 290 + "px"
+    });
+    $("#comment_log_panel").css({
+       'height': 310 + "px"
+    });
+    }
+    
+    });
+  });
+});
+
+$(document).ready(function(){
+  $('div#account_head').skOuterClick(function() {
+    $("#comment_log_panel").slideUp('fast');
+  });
+});
+
+
 //  likeの非同期通信
   
 //$(document).ready(function(){

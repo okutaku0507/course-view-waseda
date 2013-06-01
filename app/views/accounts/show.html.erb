@@ -1,14 +1,22 @@
 ﻿<div id="mypage">
-<table id="account_head">
-  <tr>
-  <td colspan="7" class="account_title">
-    <p id="account_name"><%= @current_member.family_name + @current_member.first_name %></p>
+<div id="account_head">
+    <p id="account_name"><%= @member.family_name + @member.first_name %></p>
     <p class="account_info"><%= @member.faculty %></p>
     <p class="account_info"><%= @member.subject %></p>
     <p id="account_view_add_button">コメント</p>
     <p id="account_schedule_add_button">時間割</p>
-  </td>
-</table>
+    <p id="comment_log_add_button">ログ</p>
+    <div id="comment_log_panel">
+    <p id="comment_log_top">タイムライン</p>
+    <div id="comment_log_index">
+    <% @current_member.responses.each do |response| %>
+    <% @course_view = response.course_view %>
+    <% @course_info = @course_view.course_info %>    
+    <p class="comment_log_label"><%= link_to "これ", @course_view %>にコメントしました。(<%= response.created_at.strftime("%Y/%m/%d") %>)</p>
+    <% end %>
+    </div>
+    </div>
+</div>
 </div>
 
   <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>

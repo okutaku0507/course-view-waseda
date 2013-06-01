@@ -1239,7 +1239,6 @@ div#course_info_view_option p#take_button a:hover {
 
 /* accountのshow */
 div#account_head {
-  margin-bottom: 100px;
 }
 
 div#account_head p {
@@ -1374,6 +1373,60 @@ div#account_view p.view_title {
 
 div.account_view_footer p {
   text-align: right;
+}
+
+p#comment_log_add_button {
+  margin-left: 530px;
+  font-size: 0.8em;
+  padding: 3px;
+  box-shadow: 0 0 2px 0 #000000;
+  cursor: pointer;
+}
+
+p#comment_log_top {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 0.9em;
+  display: block;
+}
+
+div#comment_log_panel p.comment_log_label {
+  display: block;
+  margin: 0;
+  padding: 10px;
+}
+
+div#comment_log_panel p.comment_log_label:hover {
+  background-color: skyblue;
+}
+
+div#comment_log_panel a {
+  margin: 0 3px;
+  color: red;
+  font-size: 1.1em;
+}
+
+div#comment_log_panel {
+  position: absolute;
+  padding: 10px 0;
+  box-shadow: 0 0 5px 0 #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  z-index: 1;
+  margin-left: 720px;
+  margin-top: 35px;
+  height: 310px;
+  display: none;
+}
+
+div#comment_log_panel:after {
+  content: '';
+  position: absolute;
+  border-bottom: 20px solid rbga(0, 0, 0, 0.1);
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  top: -20px;
+  right: 2px;
 }
 
 /* 検索 */
@@ -1877,13 +1930,14 @@ input#button_view_form:hover {
 
 /* レスポンスの仕組み */
 div.response_add {
-  width: 600px;
+  width: 598px;
   margin: 0;
   padding: 0 37px 0 3px;
   border-left: solid 2px silver;
   border-right: solid 2px silver;
   border-bottom: solid 2px silver;
   display: none;
+  margin-left: 1px;
 }
 
 div.response_add textarea {
@@ -1937,7 +1991,8 @@ span.response_comment:hover {
 
 span.show_response_add_button {
   font-size: 0.8em;
-  margin-left: 400px;
+  margin-left: 350px;
+  margin-right: 15px;
   cursor: pointer;
   color: blue;
 }
@@ -1949,7 +2004,7 @@ span.show_response_add_button:hover {
 /* viewのshow */
 
 div#course_view_show {
-  margin: auto;
+  margin-left: 128px;
   width: 650px;
   padding: 20px;
 }
@@ -1957,25 +2012,43 @@ div#course_view_show {
 div#course_view_text {
   width: 600px;
   margin: 0;
-  border: solid 2px silver;
-  padding: 20px;
+  padding: 22px;
+  border-radius: 5px 5px 0 0;
+  background: rgba(0, 0, 0, 0.01);
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
+  border: solid 1px silver;
 }
 
 div#course_view_text span#create_time {
-  margin-left: 30px;
+  margin-left: 15px;
 }
 
 div.view_show_response {
-  width: 600px;
+  width: 598px;
   margin: 0;
-  border-left: solid 2px skyblue;
-  border-right: solid 2px skyblue;
-  border-bottom: solid 2px skyblue;
+  border-left: solid 2px silver;
+  border-right: solid 2px silver;
+  border-bottom: solid 2px silver;
   padding: 10px 20px 0 20px;
+  margin-left: 1px;
+}
+
+div.view_show_response:hover {
+  box-shadow: inset 1px 1px 3px 0 #000000;
 }
 
 span.response_create_time {
-  margin-left: 500px;
+  margin-left: 400px;
+  margin-right: 15px;
   font-size: 0.8em;
+}
+
+span.response_delete {
+  margin-right: 15px;
+  font-size: 0.8em;
+  color: red;
+  position: absolute;
+  margin-left: 365px;
+  margin-top: 2px;
 }
 
