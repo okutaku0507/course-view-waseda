@@ -318,7 +318,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#comment_log_add_button").click(function(){
     $("#comment_log_panel").slideDown('fast', function() {
-    if($('#comment_log_panel').height() < 320){
+    if($('#comment_log_panel').height() > 320){
     $("#comment_log_index").css({
        'overflow': 'scroll',
        'overflow-x': 'hidden',

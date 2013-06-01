@@ -1400,10 +1400,21 @@ div#comment_log_panel p.comment_log_label:hover {
   background-color: skyblue;
 }
 
+p.none_comment_log {
+  display: block;
+  padding-right: 110px;
+  padding-left: 10px;
+  margin-top:20px;
+}
+
 div#comment_log_panel a {
   margin: 0 3px;
-  color: red;
+  color: blue;
   font-size: 1.1em;
+}
+
+div#comment_log_panel a:hover {
+  color: #ffffff;
 }
 
 div#comment_log_panel {
@@ -1415,11 +1426,10 @@ div#comment_log_panel {
   z-index: 1;
   margin-left: 720px;
   margin-top: 35px;
-  height: 310px;
   display: none;
 }
 
-div#comment_log_panel:after {
+/*div#comment_log_panel:after {
   content: '';
   position: absolute;
   border-bottom: 20px solid rbga(0, 0, 0, 0.1);
@@ -1427,7 +1437,7 @@ div#comment_log_panel:after {
   border-left: 20px solid transparent;
   top: -20px;
   right: 2px;
-}
+}*/
 
 /* 検索 */
 div#search {
@@ -1590,7 +1600,6 @@ table#account_schedule td {
 }
 
 div#mypage a {
-  color: #000000;
   font-size: 0.9em;
   text-align: center;
   font-weight: bold;

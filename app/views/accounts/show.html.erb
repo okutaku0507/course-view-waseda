@@ -9,10 +9,14 @@
     <div id="comment_log_panel">
     <p id="comment_log_top">タイムライン</p>
     <div id="comment_log_index">
+    <% if @current_member.responses.exists? %>
     <% @current_member.responses.each do |response| %>
     <% @course_view = response.course_view %>
-    <% @course_info = @course_view.course_info %>    
+    <% @course_info = @course_view.course_info %>
     <p class="comment_log_label"><%= link_to "これ", @course_view %>にコメントしました。(<%= response.created_at.strftime("%Y/%m/%d") %>)</p>
+    <% end %>
+    <% else %>
+    <p class="none_comment_log">まだログがありません。</p>
     <% end %>
     </div>
     </div>
