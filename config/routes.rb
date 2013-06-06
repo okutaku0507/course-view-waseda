@@ -36,8 +36,17 @@
     resources :members do
       collection { get "search" }
     end
-    resources :course_infos
+    resources :course_infos do
+      collection { get "search" }
+      member { post "view_create", "take_course_create", "teacher_rank_create", "response_create" }
+      member { put "like", "unlike", "take", "not_take", "not_teacher_rank"}
+    end
+      resources :course_views do
+    end
     resources :course_views
+    resources :teacher_ranks
+    resources :responses
+    resources :take_courses
   end
 
   match "use_policy" => "top#use_policy", as: "use_policy"

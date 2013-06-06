@@ -51,20 +51,20 @@
          <% if @current_member.teacher_rank_for?(@course_info) %>
            <p id="teacher_rank_open_button">教授</p>
          <% else %>
-           <%= link_to "×教授", [:not_teacher_rank, @course_info], method: :put, id: "teacher_rank_button" %>
+           <%= link_to "×教授", [:not_teacher_rank, :admin, @course_info], method: :put, id: "teacher_rank_button" %>
          <% end %>
          <p id="good_button">
          <% if @current_member.like_for?(@course_info) %>
-           <%= link_to "good!", [:like, @course_info], method: :put, class: "button" %>
+           <%= link_to "good!", [:like, :admin, @course_info], method: :put, class: "button" %>
          <% else %>
-            <%= link_to "×good!", [:unlike, @course_info], method: :put %>
+            <%= link_to "×good!", [:unlike, :admin, @course_info], method: :put %>
          <% end %>
          </p>
          <p id="take_button" data-num="<%= @course_info.id %>">
          <% if @current_member.take_course_for?(@course_info) %>
-            <%= link_to "履修!", [:take_course_create, @course_info], method: :post %>
+            <%= link_to "履修!", [:take_course_create, :admin, @course_info], method: :post %>
          <% else %>
-            <%= link_to "×履修", [:not_take, @course_info], method: :put %>
+            <%= link_to "×履修", [:not_take, :admin, @course_info], method: :put %>
          <% end %>
          </p>
          <%= form.submit "加筆", :id => "course_view_kahitu_button" %>

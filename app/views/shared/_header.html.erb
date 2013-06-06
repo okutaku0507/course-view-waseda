@@ -4,6 +4,7 @@
     <%= render "shared/sidebar" %>
   </div>
 <% else %>
+  <% unless controller.kind_of?(Admin::Base) %>
   <div id="search">
     <%= form_tag :search_course_infos, method: :get do %>
       <p id="add_search_open_button">＋</p>
@@ -14,10 +15,26 @@
         <p><%= text_field_tag "teacher", params[:teacher], :placeholder => "教授名" %></p>
         <p>全講義<%= check_box_tag "all_course", params[:all_course] %></p>
         <p><%= select_tag "time", options_for_select([["時限", nil], 1, 2, 3, 4, 5, 6, 7, ["オンデマンド", 8], ["その他", 9]], params[:time]) %></p>
-        <p><%= select_tag "week", options_for_select([["曜日", nil], "月", "火", "水", "木", "金", "土"], params[:week]) %></p>
+        <p><%= select_tag "week", options_for_select([["曜日", nil], "月", "火", "水", "木", "金", "土", "日", "無"], params[:week]) %></p>
       </div>
     <% end %>
   </div>
+  <% else %>
+  <div id="search">
+    <%= form_tag :search_admin_course_infos, method: :get do %>
+      <p id="add_search_open_button">＋</p>
+      <p id="add_search_close_button" style="display: none">－</p>
+      <p id="search_str"><%= text_field_tag :course, params[:course], :placeholder => "講義名" %></p>
+      <p id="search_button"><%= submit_tag "検索" %></p>
+      <div id="add_search">
+        <p><%= text_field_tag "teacher", params[:teacher], :placeholder => "教授名" %></p>
+        <p>全講義<%= check_box_tag "all_course", params[:all_course] %></p>
+        <p><%= select_tag "time", options_for_select([["時限", nil], 1, 2, 3, 4, 5, 6, 7, ["オンデマンド", 8], ["その他", 9]], params[:time]) %></p>
+        <p><%= select_tag "week", options_for_select([["曜日", nil], "月", "火", "水", "木", "金", "土", "日", "無"], params[:week]) %></p>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
 <% end %>
 
 <% if @current_member %>
@@ -52,7 +69,7 @@
 
 <div id="menu_box">
 <%= image_tag "rabbit.png", width: 35, :class => "rabbit" %>
-<p class="top_menu"><span class="course_view_link"><%= menu_link_to "Course View", :course_infos %></span><span class="pulldown_menu_open">▼</span><span class="pulldown_menu_close">▼</span><p>
+<p class="top_menu"><span class="course_view_link"><%= menu_link_to "Course View", [:admin, :course_infos] %></span><span class="pulldown_menu_open">▼</span><span class="pulldown_menu_close">▼</span><p>
 
 <div class="menu_box_label" style="border-top: solid 1px #000000">
 <p class="admin_menu_label"><%= menu_link_to "一般モード", root_path %></p>

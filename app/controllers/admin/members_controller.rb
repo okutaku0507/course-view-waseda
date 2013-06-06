@@ -1,8 +1,22 @@
-﻿class MembersController < ApplicationController
+﻿class Admin::MembersController < Admin::Base
 
+  def index
+    @members = Member.order("id")
+  end
+
+  # 検索
+  def search
+    @members = Member.search(params[:q])
+    render "index"
+  end
+  
+  def show
+    @member = Member.find(params[:id])
+    @course_views = @member.course_views
+    @take_courses = @member.take_courses
+  end
 
   def new
-    @member = Member.new
   end
 
   def edit
@@ -11,16 +25,6 @@
 
   # ユーザーの新規登録
   def create
-    @member = Member.new(params[:member])
-
-    if @member.save
-      UserMailer.welcome_email(@member).deliver
-      redirect_to :course_infos,
-        notice: "ユーザーの登録が完了しました。
-                \n登録されたメールアドレスに仮パスワードをお送りします。"
-    else
-      render "new"
-    end
   end
 
   # ユーザーの登録内容の更新
@@ -28,7 +32,7 @@
     @member = Member.find(params[:id])
     @member.assign_attributes(params[:member])
     if @member.save
-      redirect_to :account, notice: "パスワードを更新しました。"
+      redirect_to [:admin, @member], notice: "管理者がパスワードを更新しました。"
     else
       render "edit"
     end
@@ -38,7 +42,7 @@
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to :course_infos, notice: "ユーザーアカウントを削除しました。今までご利用ありがとうございました。(´；ω；｀)"
+    redirect_to :admin_course_infos, notice: "管理者が削除しました。"
   end
 
 

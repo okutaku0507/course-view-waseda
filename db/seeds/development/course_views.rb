@@ -15,7 +15,6 @@ course_info = CourseInfo.find_by_title(title)
              \n授業のはじめに出席カードが一人一人配られるので代返をすることはできない。\n単位は出席してい
              れば一応くるが期待できない。",
     title_of_course: "生物",
-    teacher_rank: 3,
     id_course: 1,
     id_member: 1,
     member_id: 1

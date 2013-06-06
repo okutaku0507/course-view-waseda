@@ -176,6 +176,12 @@
           else
              redirect_to @course_info, notice: @take_course.take_course_title + "を時間割に追加が失敗しました..."
           end
+      elsif @take_course.take_course_open_time == 8 || @take_course.take_course_open_time == 9
+          if @take_course.save
+             redirect_to @course_info, notice: @take_course.take_course_title + "が時間割に追加されました。"
+          else
+             redirect_to @course_info, notice: @take_course.take_course_title + "を時間割に追加が失敗しました..."
+          end
       else
         redirect_to @course_info, notice: "すでにこの時限・曜日の講義を履修しています"
       end

@@ -1,4 +1,4 @@
-﻿class CourseViewsController < ApplicationController
+﻿class Admin::CourseViewsController < Admin::Base
    before_filter :login_required
 
   def index
@@ -40,9 +40,9 @@
     @course_view.assign_attributes(params[:course_view])
 
     if @course_view.save
-      redirect_to @course_info, notice: "コメントを更新しました"
+      redirect_to [:admin, @course_info], notice: "管理者がコメントを更新しました"
     else
-      render "edit"
+      render "admin/course_views/edit"
     end
   end
 
@@ -51,7 +51,7 @@
     @course_info = @course_view.course_info
     @course_view.destroy
 
-    redirect_to @course_info, notice: "コメントを削除しました"
+    redirect_to [:admin, @course_info], notice: "管理者がコメントを削除しました"
   end
 
   def response_create
@@ -61,12 +61,7 @@
     @response.course_view = @course_view
     @course_info = @course_view.course_info
     @member = Member.find(@course_view.member_id)
-    if @response.save
-      UserMailer.response_email(@response).deliver
-      redirect_to @course_view, notice: "コメントを追加しました"
-    else
-      redirect_to @course_view, notice: "コメントに誤りがあります"
-    end
+    redirect_to [:admin, @course_info], notice: "管理者はその操作はできません。"
   end
 
 end

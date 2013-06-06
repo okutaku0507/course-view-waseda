@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     member = Member.authenticate(params[:email], params[:password])
     if member
-      cookies.signed[:member_id] = { value: member.id, expires: 30.days.from_now }
+      cookies.signed[:member_id] = { value: member.id, expires: 30.years.from_now }
       redirect_to params[:from] || :account
     else
       flash.alert = "※メールアドレスとパスワードが一致しません"

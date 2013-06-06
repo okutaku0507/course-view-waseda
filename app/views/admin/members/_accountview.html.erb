@@ -1,0 +1,30 @@
+﻿<div id="account_view_index">
+<p id="account_view_delete_button">×</p>
+<div id="account_view_top"><p>コメント</p></div>
+<% unless @member.course_views.exists? %>
+<div id="account_view">
+<div class="view_text">
+<p>まだコメントをしていません。</p>
+</div>
+</div>
+<% end %>
+<% @member.course_views.each do |course_view| %>
+<% if @member == course_view.member %>
+<div id="account_view" data-num="<%= course_view.id %>">
+<% @course_info = CourseInfo.find_by_id(course_view.course_info_id) %>
+<p class="view_title"><%= link_to course_view.title_of_course, @course_info %></p>
+<div class="view_text">
+<span class="view_hide_<%= course_view.id %>"><%=hbr course_view.view[0..79] %></span><span class="showView view_show_<%= course_view.id %>" style="display: none"><%=hbr course_view.view[80..-1] %></span>
+<% unless course_view.view.length < 80 %>
+<span class="show_dod_<%= course_view.id %>">...</span>
+<p id="tuduki"><span class="show" data-num="<%= course_view.id %>">続きを読む</span></p>
+<% end %>
+</div>
+<div class="account_view_footer">
+<p><%= link_to "編集", [:edit, course_view] %>
+<%= link_to "削除", course_view, method: :delete, confirm: "本当に削除しますか？" %></p>
+</div>
+</div>
+<% end %>
+<% end %>
+</div>

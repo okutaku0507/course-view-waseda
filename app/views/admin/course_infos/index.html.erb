@@ -1,7 +1,7 @@
 ﻿
 <div style="clear: both">
   <% if @current_member %>
-      <p id="course_info_new_button"><%= menu_link_to "Add Course",  :new_course_info %></p>
+      <p id="course_info_new_button"><%= menu_link_to "Add Course",  :new_admin_course_info %></p>
   <% else %>
       <p id="course_info_new_button"><%= menu_link_to "Join!",  :new_member %></p>
   <% end %>
@@ -11,7 +11,7 @@
 
  <% @course_infos.each do |course_info| %>
 
-<div class="course_info_panel" data-num="<%= course_info.id %>">
+<div class="admin_course_info_panel" data-num="<%= course_info.id %>">
   <% @average_teacher_rank = TeacherRank.where(course_info_id: course_info.id).average(:teacher_rank) %>
   <% @course_views = CourseView.find_by_course_info_id(course_info.id) %>
 <!--  <div class="gpa_panel">

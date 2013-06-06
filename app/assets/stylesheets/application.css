@@ -1420,7 +1420,7 @@ div#comment_log_panel a:hover {
 div#comment_log_panel {
   position: absolute;
   padding: 10px 0;
-  box-shadow: 0 0 5px 0 #000000;
+  box-shadow: 1px 1px 3px 0 #000000;
   border-radius: 5px;
   background-color: #ffffff;
   z-index: 1;
@@ -1751,6 +1751,50 @@ span.take_course_edit_button {
   text-align: center;
 }
 
+#other_schedule_detail {
+}
+
+div#other_schedule_index {
+  display: none;
+  border: solid 2px silver;
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: -10px;
+  width: 300px;
+  margin-left: 650px;
+  border-radius: 3px;
+}
+
+p#other_schedule_index_open_button {
+  border: solid 2px silver;
+  border-radius: 5px;
+  width: 200px;
+  padding: 5px;
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  bottom: -5px;
+}
+
+p.other_schedule_detail_label {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+}
+
+p.other_schedule_detail_link {
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-left: 15px;
+  margin: 0;
+  padding: 3px 0;
+  text-align: center;
+}
+
 /* teacher_rankのフォーム */
 p#teacher_rank_open_button {
   font-weight: bold;
@@ -2061,3 +2105,22 @@ span.response_delete {
   margin-top: 2px;
 }
 
+/* 管理者レイアウト用 */
+div.admin_course_info_panel {
+  width: 220px;
+  margin: 20px;
+  height: 165px;
+  margin-bottom: 15px;
+  padding: 20px;
+  box-shadow: 1px 1px 3px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  float: left;
+  position: relative;
+  border: solid 1px silver;
+
+}
+
+div.admin_course_info_panel:hover {
+  box-shadow: inset 1px 1px 3px 0;
+}

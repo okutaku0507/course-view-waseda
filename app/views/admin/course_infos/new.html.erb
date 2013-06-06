@@ -3,7 +3,7 @@
 <div id="new_course">
 <h1>講義追加</h1>
 
-<%= form_for @course_info do |form| %>
+<%= form_for [:admin, @course_info] do |form| %>
 <%= render "form", form: form %>
 <div id="course_new_button">
 <p><%= form.submit "Add！" %></p>

@@ -18,6 +18,13 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+  $(".admin_course_info_panel").click(function(){
+    var infoId = $(this).data('num');
+    window.location = "/admin/course_infos/" + infoId;
+  });
+});
+
 
 // 続きを読む
 $(document).ready(function(){
@@ -250,6 +257,13 @@ $(document).ready(function(){
        'height': "100%"
      });
     }
+});
+
+$(document).ready(function(){
+  $("#other_schedule_index_open_button").click(function(){
+    $("div#other_schedule_index").slideDown();
+    $(this).hide();
+  });
 });
 
 // noticeの表示

@@ -1,4 +1,4 @@
-﻿class TakeCoursesController < ApplicationController
+﻿class Admin::TakeCoursesController < Admin::Base
 
 #  def create
 #    @take_course = TakeCourse.new
@@ -20,7 +20,8 @@
 # end
   
   def update
-    @take_course = @current_member.take_courses.find(params[:id])
+    @member = Member.find(params[:id])
+    @take_course = @member.take_courses.find(params[:id])
     @course_info = @take_course.course_info
     @take_course.assign_attributes(params[:take_course])
     @take_course.course_info = @course_info
@@ -28,11 +29,7 @@
     @take_course.take_course_open_week = @course_info.day_of_the_week
     @take_course.take_course_open_time = @course_info.open_time
     @take_course.id_of_take_course = @course_info.id
-    if @take_course.save
-      redirect_to :account, notice: @take_course.take_course_title + "が更新できました！"
-    else
-      redirect_to :account, notice: "更新できません"
-    end
+    redirect_to @member, notice: @take_course.take_course_title + "が更新できました！"
   end
 
 end
