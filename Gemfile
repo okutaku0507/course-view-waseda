@@ -1,4 +1,4 @@
-﻿source 'http://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.12'
 
@@ -8,7 +8,7 @@ gem 'rails', '3.2.12'
 gem 'mysql2'
 gem 'rails-i18n'
 gem 'will_paginate', '~> 3.0'
-
+gem 'turbo-sprockets-rails3'
 
 
 # Gems used only for assets and not required
