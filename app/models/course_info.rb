@@ -22,7 +22,7 @@ class CourseInfo < ActiveRecord::Base
   validates :teacher_first_name, presence: true
   
   def full_name
-      [ teacher_family_name, teacher_first_name ].compact.join
+    [ teacher_family_name, teacher_first_name ].compact.join
   end
 
   scope :search, lambda { |params|

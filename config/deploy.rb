@@ -1,4 +1,7 @@
 require "bundler/capistrano"
+set :stages, %w(production staging)
+set :default_stage, "staging"
+require 'capistrano/ext/multistage'
 
 set :application, "course-view-waseda"
 set :rails_env, "production"

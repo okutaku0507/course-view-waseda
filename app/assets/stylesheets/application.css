@@ -1389,7 +1389,7 @@ div.account_view_footer p {
 }
 
 p#comment_log_add_button {
-  margin-left: 530px;
+  margin-left: 10px;
   font-size: 0.8em;
   padding: 3px;
   box-shadow: 0 0 2px 0 #000000;
