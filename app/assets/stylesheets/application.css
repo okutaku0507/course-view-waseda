@@ -449,6 +449,19 @@ div#new_course input.course_input:focus {
   box-shadow: inset 0 0 3px 0 blue;
 }
 
+div#new_course input.course_teacher_input {
+  font-size: 1.2em;
+  font-weight: 600;
+  width: 125px;
+  padding: 5px;
+  border-radius: 8px;
+  border: solid 2px silver;
+}
+
+div#new_course input.course_teacher_input:focus {
+  box-shadow: inset 0 0 3px 0 blue;
+}
+
 p.course_form_label {
   text-align: left;
   font-size: 0.8em;

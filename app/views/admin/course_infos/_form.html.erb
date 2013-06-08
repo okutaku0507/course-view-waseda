@@ -8,8 +8,14 @@
 
 <div id="course_teacher">
 <p class="course_form_label">教員名</p>
-<p><%= form.text_field :teacher, :class => "course_input" %></p>
-<%= format_error_message(@course_info, :teacher, form).html_safe %>
+<p><%= form.text_field :teacher_family_name, :class => "course_input" %></p>
+<%= format_error_message(@course_info, :teacher_family_name, form).html_safe %>
+</div>
+  
+<div id="course_teacher">
+<p class="course_form_label">教員名</p>
+<p><%= form.text_field :teacher_first_name, :class => "course_input" %></p>
+<%= format_error_message(@course_info, :teacher_first_name, form).html_safe %>
 </div>
 
 <div id="course_open_faculty">

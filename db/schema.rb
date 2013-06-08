@@ -24,14 +24,15 @@ ActiveRecord::Schema.define(:version => 20130529144450) do
   add_index "bads", ["member_id"], :name => "index_bads_on_member_id"
 
   create_table "course_infos", :force => true do |t|
-    t.string   "title",           :null => false
-    t.string   "teacher",         :null => false
-    t.string   "open_faculty",    :null => false
-    t.string   "day_of_the_week", :null => false
-    t.integer  "open_time",       :null => false
-    t.string   "open_term",       :null => false
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "title",               :null => false
+    t.string   "teacher_family_name", :null => false
+    t.string   "teacher_first_name",  :null => false
+    t.string   "open_faculty",        :null => false
+    t.string   "day_of_the_week",     :null => false
+    t.integer  "open_time",           :null => false
+    t.string   "open_term",           :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "course_views", :force => true do |t|

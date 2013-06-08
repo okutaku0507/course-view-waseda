@@ -1,4 +1,4 @@
-﻿# coding: utf-8
+# coding: utf-8
 
 course_names = %w(数学基礎 応用化学概論 政治経済 卓球基礎 生物の適応能力 教職概論 ヨーロッパ文化近代システム誕生の地 ConceptBuildingAndDiscussion 数学基礎 応用化学概論 政治経済 卓球基礎 生物の適応能力 教職概論 ヨーロッパ文化近代システム誕生の地 ConceptBuildingAndDiscussion 数学基礎 応用化学概論 政治経済 卓球基礎 生物の適応能力 教職概論 ヨーロッパ文化近代システム誕生の地 ConceptBuildingAndDiscussion 数学基礎 応用化学概論 政治経済 卓球基礎 生物の適応能力 教職概論 ヨーロッパ文化近代システム誕生の地 ConceptBuildingAndDiscussion 数学基礎 応用化学概論 政治経済 卓球基礎 生物の適応能力 教職概論 ヨーロッパ文化近代システム誕生の地 ConceptBuildingAndDiscussion 数学基礎 応用化学概論 政治経済 卓球基礎 生物の適応能力 教職概論 ヨーロッパ文化近代システム誕生の地 ConceptBuildingAndDiscussion)
 teacher_names = %w(清水太郎 門間忠文 菅原敏弘 細川清十郎 馬場百合 ジョウ・ウィリー マナロ・エマニュエル 清水太郎 門間忠文 菅原敏弘 細川清十郎 馬場百合 ジョウ・ウィリー マナロ・エマニュエル 清水太郎 門間忠文 菅原敏弘 細川清十郎 馬場百合 ジョウ・ウィリー マナロ・エマニュエル 清水太郎 門間忠文 菅原敏弘 細川清十郎 馬場百合 ジョウ・ウィリー マナロ・エマニュエル 清水太郎 門間忠文 菅原敏弘 細川清十郎 馬場百合 ジョウ・ウィリー マナロ・エマニュエル 清水太郎 門間忠文 菅原敏弘 細川清十郎 馬場百合 ジョウ・ウィリー マナロ・エマニュエル)
@@ -9,7 +9,8 @@ terms = %w(通年 春期 秋期 その他 通年 春期 秋期 その他 通年 
 0.upto(41) do |idx|
   CourseInfo.create( {
     title: "#{course_names[idx]}",
-    teacher: "#{teacher_names[idx]}",
+    teacher_family_name: "田中",
+    teacher_first_name: "太郎",
     open_faculty: "#{faculties[idx]}",
     day_of_the_week: "#{weeks[idx]}",
     open_time: "#{times[idx]}",

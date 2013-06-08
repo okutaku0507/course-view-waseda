@@ -35,7 +35,7 @@
 <div id="course_info_view_new">
   <% if @course_info.title.length <= 7 %>
     <h1><%= @course_info.title %></h1>
-    <h3><%= @course_info.teacher %></h3>
+    <h3><%= @course_info.teacher_family_name %><%= @course_info.teacher_first_name %></h3>
     <h3><%= @course_info.open_faculty %></h3>
 
   <% else %>
@@ -115,7 +115,7 @@
     <% if @current_member %>
     <div id="teacher_rank_prompt">
       <p id="teacher_rank_colse_button">×</p>
-      <p id="teacher_rank_text"><%= @course_info.teacher %>教授を評価しよう！</p>
+      <p id="teacher_rank_text"><%= @course_info.teacher_family_name %>教授を評価しよう！</p>
       <%= form_for @teacher_rank, :url => { :action => "teacher_rank_create" } do |form| %>
       <p align="center"><%= form.select :teacher_rank, [["A+", 4], [ "A", 3], ["B", 2], ["C", 1], ["F", 0]] %></p>
       <%= form.submit "評価する!", :id => "teacher_rank_button" %>

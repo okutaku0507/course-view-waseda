@@ -1,4 +1,4 @@
-﻿class Member < ActiveRecord::Base
+class Member < ActiveRecord::Base
   include EmailAddressChecker
   include PasswordChecker
 

@@ -1,4 +1,4 @@
-﻿class CourseInfo < ActiveRecord::Base
+class CourseInfo < ActiveRecord::Base
 
   has_many :course_views, dependent: :destroy
   has_many :members, through: :course_views, source: :member
@@ -15,10 +15,11 @@
   has_many :teacher_ranks, dependent: :destroy
   has_many :teacher_rank_members, through: :teacher_ranks, source: :member
 
-   attr_accessible :title, :teacher, :open_faculty, :day_of_the_week, :open_time, :open_term, :test_existence
+   attr_accessible :title, :teacher_family_name, :teacher_first_name, :open_faculty, :day_of_the_week, :open_time, :open_term, :test_existence
 
   validates :title, presence: true
-  validates :teacher, presence: true
+  validates :teacher_family_name, presence: true
+  validates :teacher_first_name, presence: true
 
   scope :search, lambda { |params|
     rel = order("open_time")

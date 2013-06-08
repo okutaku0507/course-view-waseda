@@ -1,4 +1,4 @@
-﻿class TakeCoursesController < ApplicationController
+class TakeCoursesController < ApplicationController
 
 #  def create
 #    @take_course = TakeCourse.new
