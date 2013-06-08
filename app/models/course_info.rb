@@ -20,6 +20,10 @@ class CourseInfo < ActiveRecord::Base
   validates :title, presence: true
   validates :teacher_family_name, presence: true
   validates :teacher_first_name, presence: true
+  
+  def full_name
+      [ teacher_family_name, teacher_first_name ].compact.join
+  end
 
   scope :search, lambda { |params|
     rel = order("open_time")

@@ -40,7 +40,7 @@
 
   <% else %>
     <h1 class="long_title"><%= @course_info.title %></h1>
-    <p class="long_title">&nbsp;&nbsp;&nbsp;&nbsp;<%= @course_info.teacher %>&nbsp;&nbsp;<%= @course_info.open_faculty %></p>
+    <p class="long_title">&nbsp;&nbsp;&nbsp;&nbsp;<%= @course_info.teacher_family_name %><%= @course_info.teacher_first_name %>&nbsp;&nbsp;<%= @course_info.open_faculty %></p>
 
   <% end %>
 <% if @current_member %>
