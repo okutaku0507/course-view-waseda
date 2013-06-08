@@ -48,7 +48,12 @@
     resources :responses
     resources :take_courses
   end
-
+  
+  resource :password, only: [] do
+      get :forgot, :send_mail
+      post :start_resetting
+  end
+    
   match "use_policy" => "top#use_policy", as: "use_policy"
   match "privacy" => "top#privacy", as: "privacy"
   match "rabbit" => "top#rabbit", as: "rabbit"

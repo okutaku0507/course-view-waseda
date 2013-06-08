@@ -1,0 +1,24 @@
+﻿<div id="course_info_view_index">
+<% if @course_info.course_views.exists? %>
+  <div id="course_info_view_index_top">
+      <p>コメント</p>
+  </div>
+<% end %>
+
+<% @course_info.course_views.each do |course_view| %>
+<div id="course_info_view">
+<div class="view_text">
+<span class="view_hide_<%= course_view.id %>"><%=hbr course_view.view[0..79] %></span><span class="view_show_<%= course_view.id %>" style="display: none"><%=hbr course_view.view[80..-1] %></span>
+<% unless course_view.view.length < 80 %>
+<span class="show_dod_<%= course_view.id %>">...</span>
+<p id="tuduki"><span class="show" data-num="<%= course_view.id %>">続きを読む</span></p>
+
+<% end %>
+</div>
+<% @writer_member = Member.find_by_id(course_view.member_id) %>
+<p id="view_footer">
+<span id="create_time" style="margin-left: 350px"><%= course_view.created_at.strftime("%Y/%m/%d") %></span>
+<span id="writer"><%= @writer_member.faculty %>生</span></p>
+</div>
+<% end %>
+</div>

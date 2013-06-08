@@ -104,9 +104,11 @@
 <% end %>
 </div>
 </div>
-
-<%= render "courseinfoview" %>
-
+<% if @current_member %>
+  <%= render "courseinfoview" %>
+<% else %>
+  <%= render "courseinfoview_before_login" %>
+<% end %>
 </div>
 
     <div id="cover"></div>
