@@ -18,3 +18,11 @@ ssh_options[:forward_agent] = true
 after "deploy:update", roles: :app do
   run "bin/cp #{shared_path}/config/database.yml #{release_path}/config/"
 end
+
+namespace :deploy do
+  desc "Restarts your application."
+  task :restart do
+    run "mkdir -p #{shared_path}/tmp"
+    run "touch #{shared_path}/tmp/restart.txt"
+  end
+end
