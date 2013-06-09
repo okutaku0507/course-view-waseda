@@ -9,8 +9,7 @@ terms = %w(通年 春期 秋期 その他 通年 春期 秋期 その他 通年 
 0.upto(41) do |idx|
   CourseInfo.create( {
     title: "#{course_names[idx]}",
-    teacher_family_name: "田中",
-    teacher_first_name: "太郎",
+    teacher: "#{teacher_names[idx]}",
     open_faculty: "#{faculties[idx]}",
     day_of_the_week: "#{weeks[idx]}",
     open_time: "#{times[idx]}",

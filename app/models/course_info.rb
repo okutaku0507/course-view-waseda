@@ -15,15 +15,10 @@ class CourseInfo < ActiveRecord::Base
   has_many :teacher_ranks, dependent: :destroy
   has_many :teacher_rank_members, through: :teacher_ranks, source: :member
 
-   attr_accessible :title, :teacher_family_name, :teacher_first_name, :open_faculty, :day_of_the_week, :open_time, :open_term, :test_existence
+   attr_accessible :title, :teacher, :open_faculty, :day_of_the_week, :open_time, :open_term, :test_existence
 
   validates :title, presence: true
-  validates :teacher_family_name, presence: true
-  validates :teacher_first_name, presence: true
-  
-  def full_name
-    [ teacher_family_name, teacher_first_name ].compact.join
-  end
+  validates :teacher, presence: true
 
   scope :search, lambda { |params|
     rel = order("open_time")

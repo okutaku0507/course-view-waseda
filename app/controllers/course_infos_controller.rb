@@ -37,7 +37,7 @@ class CourseInfosController < ApplicationController
 
   def create
     @course_info = CourseInfo.new(params[:course_info])
-    if !CourseInfo.where(title: @course_info.title, teacher_family_name: @course_info.teacher_family_name, teacher_first_name: @course_info.teacher_first_name, day_of_the_week: @course_info.day_of_the_week, open_time: @course_info.open_time, open_term: @course_info.open_term, open_faculty: @course_info.open_faculty).exists?
+    if !CourseInfo.where(title: @course_info.title, teacher: @course_info.teacher, day_of_the_week: @course_info.day_of_the_week, open_time: @course_info.open_time, open_term: @course_info.open_term, open_faculty: @course_info.open_faculty).exists?
       if @course_info.save
         redirect_to @course_info, notice: "講義を新規追加しました！"
       else
