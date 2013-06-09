@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -1600,6 +1600,7 @@ div#account_schedule {
   background-color: #ffffff;
   display: none;
   position: absolute;
+  z-index: 1;
 }
 
 div#account_schedule a {

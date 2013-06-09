@@ -1,4 +1,4 @@
-﻿class Bad < ActiveRecord::Base
+class Bad < ActiveRecord::Base
   attr_accessible :course_info_id
   
   belongs_to :member
