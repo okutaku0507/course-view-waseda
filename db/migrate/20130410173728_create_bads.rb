@@ -1,4 +1,4 @@
-﻿class CreateBads < ActiveRecord::Migration
+class CreateBads < ActiveRecord::Migration
   def change
     create_table :bads do |t|
       t.references :member, null: false             # memberの外部キー

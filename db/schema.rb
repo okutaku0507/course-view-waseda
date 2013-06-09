@@ -61,10 +61,12 @@ ActiveRecord::Schema.define(:version => 20130529144450) do
   create_table "members", :force => true do |t|
     t.string   "family_name",                           :null => false
     t.string   "first_name",                            :null => false
+    t.string   "full_name",                             :null => false
     t.string   "email",                                 :null => false
     t.string   "email_confirmation"
     t.string   "faculty",                               :null => false
-    t.string   "subject"
+    t.string   "subject",                               :null => false
+    t.integer  "university",                            :null => false
     t.integer  "gender",             :default => 0,     :null => false
     t.boolean  "administrator",      :default => false, :null => false
     t.datetime "created_at",                            :null => false

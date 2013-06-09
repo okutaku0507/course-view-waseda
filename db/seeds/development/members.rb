@@ -1,4 +1,4 @@
-﻿# coding: utf-8
+# coding: utf-8
 
 names = %w(Taro Jiro Hana John Mike Sophy Bill Alex Mary Tom)
 fnames = ["奥原", "鈴木", "高橋", "田中"]
@@ -7,8 +7,10 @@ gnames = ["拓也", "次郎", "花子"]
   Member.create(
   { family_name: "#{fnames[idx % 4]}",
     first_name: "#{gnames[idx % 3]}",
+    full_name: "#{fnames[idx % 4]}#{gnames[idx % 3]}",
     email: "#{names[idx]}@fuji.waseda.jp",
     email_confirmation: "#{names[idx]}@fuji.waseda.jp",
+    university: 1,
     faculty: "先進理工学部",
     subject: "#{names[idx]}学科",
     gender: [0, 0, 1][idx % 3],
