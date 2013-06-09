@@ -4,9 +4,6 @@ set :default_stage, "staging"
 require 'capistrano/ext/multistage'
 
 set :application, "course-view-waseda"
-set :rails_env, "production"
-
-server "course-view.com", :web, :app, :db, primary: true
 
 set :repository, "git@bitbucket.org:suzukiokuhara/course-view-waseda.git"
 set :scm, :git
