@@ -74,6 +74,7 @@ div#course_view_title h5 {
 #header {
   margin: 0;
   height: 70px;
+  padding-bottom: 30px;
 }
 
 #header_back {
