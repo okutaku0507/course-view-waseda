@@ -32,6 +32,7 @@ class Member < ActiveRecord::Base
 
   validates :family_name, presence: {on: :create}, length: { maximum: 20 }
   validates :first_name, presence: {on: :create}, length: { maximum: 20 }
+  validates :subject, presence: true
 
   validates :password,  presence: {on: :update},confirmation: { allow_blank: true, on: :update}, length: { minimum: 8, maximum: 16, on: :update}
 
