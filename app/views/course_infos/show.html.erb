@@ -69,24 +69,6 @@
          <%= form.submit "加筆", :id => "course_view_kahitu_button" %>
     </div>
   <% end %>
-  <div id="teacher_rank_form">
-      <% if @current_member.teacher_ranks.where(course_info_id: @course_info.id, member_id: @current_member.id).exists? %>
-        <%  @teacher_rank_point = TeacherRank.find_by_course_info_id(@course_info.id) %>
-          <% @current_member.teacher_ranks.where(course_info_id: @course_info.id, member_id: @current_member.id).each do |teacher_rank| %>
-            <% if @teacher_rank_point.member_id = @current_member.id %>
-              <p class="each_evaluation_rank" align="center">
-              <% if 4 == @teacher_rank_point.teacher_rank %>A<sup>+</sup>
-                <% elsif 3 == @teacher_rank_point.teacher_rank %>A
-                <% elsif 2 == @teacher_rank_point.teacher_rank %>B
-                <% elsif 1 == @teacher_rank_point.teacher_rank %>C
-                <% else %>F
-              <% end %></p>
-            <% end %>
-        <% end %>
-      <% else %>
-
-  <% end %>
-  </div>
 <% else %>
     <textarea rows="8" cols="50" placeholder="Course Viewに参加すると講義について自由に加筆できます！" ></textarea>
       <div id="course_info_view_option">
