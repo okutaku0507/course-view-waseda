@@ -84,11 +84,7 @@ div#course_view_title h5 {
   right: 0;
   margin: 0;
   height: 100px;
-  background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -ms-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -webkit-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -o-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff));
+  background-color: #e0ffff;
   z-index: -1;
 }
 
@@ -1048,11 +1044,7 @@ table#teacher_rank {
   padding: 10px;
   box-shadow: 1px 1px 3px 0;
   border-radius: 5px;
-  background: -moz-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -ms-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -webkit-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -o-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
-  background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff));
+  background-color: #e0ffff;
 
 }
 
@@ -1357,6 +1349,7 @@ div#account_view_index {
   overflow: scroll;
   overflow-x: hidden;
   border: solid 3px silver;
+  z-index: 1;
 }
 
 div#account_view div.view_text {
