@@ -16,7 +16,7 @@ set :copy_cache, true
 ssh_options[:forward_agent] = true
 
 after "deploy:update", roles: :app do
-  run "bin/rm #{shared_path}/config/database.yml"
+  run "bin/rm #{release_path}/config/"
   run "bin/cp #{shared_path}/config/database.yml #{release_path}/config/"
 end
 
