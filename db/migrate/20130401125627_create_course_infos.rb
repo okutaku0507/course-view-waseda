@@ -9,6 +9,8 @@ class CreateCourseInfos < ActiveRecord::Migration
       t.string :day_of_the_week, null: false       # 開設曜日
       t.integer :open_time, null: false            # 時限
       t.string :open_term, null: false             # 開設学期
+      t.string :text_for_search, null: false       # 検索用のカラム　教授名 + タイトル
+       
       t.timestamps
     end
   end

@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130529144450) do
     t.string   "day_of_the_week", :null => false
     t.integer  "open_time",       :null => false
     t.string   "open_term",       :null => false
+    t.string   "text_for_search", :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

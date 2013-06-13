@@ -14,5 +14,6 @@ terms = %w(通年 春期 秋期 その他 通年 春期 秋期 その他 通年 
     day_of_the_week: "#{weeks[idx]}",
     open_time: "#{times[idx]}",
     open_term: "#{terms[idx]}",
+    text_for_search: "#{course_names[idx]} #{teacher_names[idx]}",
  }, without_protection: true)
 end

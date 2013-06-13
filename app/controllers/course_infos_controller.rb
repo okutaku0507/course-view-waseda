@@ -37,6 +37,7 @@ class CourseInfosController < ApplicationController
 
   def create
     @course_info = CourseInfo.new(params[:course_info])
+    @course_info.text_for_search = @course_info.title + " " + @course_info.teacher
     if !CourseInfo.where(title: @course_info.title, teacher: @course_info.teacher, day_of_the_week: @course_info.day_of_the_week, open_time: @course_info.open_time, open_term: @course_info.open_term, open_faculty: @course_info.open_faculty).exists?
       if @course_info.save
         redirect_to @course_info, notice: "講義を新規追加しました！"
@@ -51,6 +52,7 @@ class CourseInfosController < ApplicationController
   def update
     @course_info = CourseInfo.find(params[:id])
     @course_info.assign_attributes(params[:course_info])
+    @course_info.text_for_search = @course_info.title + " " + @course_info.teacher
     if @course_info.save
       redirect_to @course_info, notice: "講義情報を更新しました。"
     else
@@ -66,6 +68,7 @@ class CourseInfosController < ApplicationController
 
   def search
     params[:faculty] =  @current_member.faculty
+    params[:course_and_teacher] = params[:course_and_teacher].gsub("　", " ")
     @course_infos = CourseInfo.search(params)
           .paginate(page: params[:page], per_page: 6)
     render "index"

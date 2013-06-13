@@ -1,5 +1,5 @@
 <div id="course_info">
-
+<h1 id="course_info_title">「<%= @course_info.title %>」</h1>
 <%= render "shared/errors", obj: @course_view %>
 <div id="course_info_head">
   <div id="course_info_detail">
@@ -32,20 +32,10 @@
   </div>
 
 <div id="course_info_view_new">
-  <% if @course_info.title.length <= 7 %>
-    <h1><%= @course_info.title %></h1>
-    <h3><%= @course_info.teacher %></h3>
-    <h3><%= @course_info.open_faculty %></h3>
-
-  <% else %>
-    <h1 class="long_title"><%= @course_info.title %></h1>
-    <p class="long_title">&nbsp;&nbsp;&nbsp;&nbsp;<%= @course_info.teacher %>&nbsp;&nbsp;<%= @course_info.open_faculty %></p>
-
-  <% end %>
 <% if @current_member %>
   <%= form_for @course_view, :url => { :action => "view_create" }  do |form| %>
 
-    <%= form.text_area :view, rows: 8, cols: 50, :placeholder => "この講義どうだった？" %>
+    <%= form.text_area :view, :placeholder => "この講義どうだった？" %>
       <div id="course_info_view_option">
          <% if @current_member.teacher_rank_for?(@course_info) %>
            <p id="teacher_rank_open_button">教授</p>

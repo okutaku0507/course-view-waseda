@@ -9,14 +9,15 @@
     <%= form_tag :search_course_infos, method: :get do %>
       <p id="add_search_open_button">＋</p>
       <p id="add_search_close_button" style="display: none">－</p>
-      <p id="search_str"><%= text_field_tag :course, params[:course], :placeholder => "講義名" %></p>
+<!--      <p id="search_str"><%= text_field_tag :course, params[:course], :placeholder => "講義名" %></p> -->
+      <p id="search_str"><%= text_field_tag :course_and_teacher, params[:course_and_teacher], :placeholder => "検索" %></p>
       <p id="search_button"><%= submit_tag "検索" %></p>
-      <div id="add_search">
-        <p><%= text_field_tag "teacher", params[:teacher], :placeholder => "教授名" %></p>
+<!--      <div id="add_search">
+         <p><%= text_field_tag "teacher", params[:teacher], :placeholder => "教授名" %></p>
         <p>全講義<%= check_box_tag "all_course", params[:all_course] %></p>
-        <p><%= select_tag "time", options_for_select([["時限", nil], 1, 2, 3, 4, 5, 6, 7, ["オンデマンド", 8], ["その他", 9]], params[:time]) %></p>
+       <p><%= select_tag "time", options_for_select([["時限", nil], 1, 2, 3, 4, 5, 6, 7, ["オンデマンド", 8], ["その他", 9]], params[:time]) %></p>
         <p><%= select_tag "week", options_for_select([["曜日", nil], "月", "火", "水", "木", "金", "土", "日", "無"], params[:week]) %></p>
-      </div>
+      </div> -->
     <% end %>
   </div>
   <% else %>

@@ -26,13 +26,30 @@
 
 <div id="member_faculty">
 <p class="member_form_label">学部</p>
-<p><%= form.select :faculty, ["政治経済学部", "法学部", "第一文学部", "第二文学部", "文化構想学部", "文学部", "教育学部", "商学部", "基幹理工学部", "創造理工学部", "先進理工学部", "社会科学部", "人間科学部", "スポーツ科学部", "国際教養学部", "その他"] %></p>
+<p><%= form.select :faculty, [nil, "政治経済学部", "法学部", "第一文学部", "第二文学部", "文化構想学部", "文学部", "教育学部", "商学部", "基幹理工学部", "創造理工学部", "先進理工学部", "社会科学部", "人間科学部", "スポーツ科学部", "国際教養学部", "その他"] %></p>
 </div>
 
 <div id="member_subject">
 <p class="member_form_label">学科</p>
-<p><%= form.text_field :subject, :class => "member_input", :placeholder => "経済学科" %></p>
+<p id="default_faculty" class="member_subject"><%= form.text_field :subject, :class => "member_input", :disabled => "disabled"%></p>
 <%= format_error_message(@member, :subject, form).html_safe %>
+<p id="political_economy" style="display: none" class="member_subject"><%= form.select :subject, ["政治学科", "経済学科", "国際政治経済学科"]%></p>
+<p id="law" style="display: none" class="member_subject" class="member_subject"><%= form.select :subject, ["―"] %></p>
+<p id="literature_1" style="display: none" class="member_subject"><%= form.select :subject, ["―"] %></p>
+<p id="literature_2" style="display: none" class="member_subject"><%= form.select :subject, ["―"] %></p>
+<p id="school_culture" style="display: none" class="member_subject"><%= form.select :subject, ["―"] %></p>
+<p id="literature" style="display: none" class="member_subject"><%= form.select :subject, ["―"] %></p>
+<p id="education" style="display: none" class="member_subject"><%= form.select :subject, ["教育学専修", "生涯教育学専修", "教育心理学専修", "初等教育学専攻", "国語国文学科", "英語英文学科", "地理歴史専修",
+  "社会科学専修", "生物学専修", "地球科学専修", "数学科", "複合文化学科"] %></p>
+<p id="commercial_science" style="display: none" class="member_subject"><%= form.select :subject, ["―"] %></p>
+<p id="science_fundamental" style="display: none" class="member_subject"><%= form.select :subject, ["無し", "数学科", "応用数理学科", "情報理工学科", "機械科学・航空学科", "電子光システム学科", "表現工学科"] %></p>
+<p id="creative_science" style="display: none" class="member_subject"><%= form.select :subject, ["建築学科", "総合機械工学科", "経営システム工学科", "社会環境工学科", "環境資源工学科"] %></p>
+<p id="advanced_science" style="display: none" class="member_subject"><%= form.select :subject, ["物理学科", "応用物理学科", "化学・生命化学", "応用化学科", "生命医科学科", "電気・情報生命工学科"] %></p>
+<p id="social_science" style="display: none" class="member_subject"><%= form.select :subject, ["―"] %></p>
+<p id="human_science" style="display: none" class="member_subject"><%= form.select :subject, ["人間環境科学科", "健康福祉科学科", "人間情報科学科"] %></p>
+<p id="sports_science" style="display: none" class="member_subject"><%= form.select :subject, ["―"] %></p>
+<p id="international" style="display: none" class="member_subject"><%= form.select :subject, ["―"] %></p>
+<p id="other" style="display: none" class="member_subject"><%= form.select :subject, ["その他"] %></p>
 </div>
 
 <div id="member_gender">
