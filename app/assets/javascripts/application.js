@@ -1,4 +1,4 @@
-﻿
+
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
@@ -353,30 +353,6 @@ $(document).ready(function(){
   });
 });
 
-/* 学科が出る仕組み */
-$(document).ready(function(){
-  $('#member_faculty').change(function() {
-    var faculty = $('#member_faculty option:selected').val();
-    $("p.member_subject").hide();
-    if(faculty === "政治経済学部"){ $("#political_economy").show();
-    } else if(faculty === "法学部"){ $("#law").show();
-    } else if(faculty === "第一文学部") { $("#literature_1").show();
-    } else if(faculty === "第二文学部") { $("#literature_2").show();
-    } else if(faculty === "文化構想学部") { $("#school_culture").show();
-    } else if(faculty === "文学部") { $("#literature").show();
-    } else if(faculty === "教育学部") { $("#education").show();
-    } else if(faculty === "商学部") { $("#commercial_science").show();
-    } else if(faculty === "基幹理工学部") { $("#science_fundamental").show();
-    } else if(faculty === "創造理工学部") { $("#creative_science").show();
-    } else if(faculty === "先進理工学部") { $("#advanced_science").show();
-    } else if(faculty === "社会科学部") { $("#social_science").show();
-    } else if(faculty === "人間科学部") { $("#human_science").show();
-    } else if(faculty === "スポーツ科学部") { $("#sports_science").show();
-    } else if(faculty === "国際教養学部") { $("#international").show();
-    } else if(faculty === "その他") { $("#other").show();
-    } else { $("#default_faculty").show(); }
-  });
-});
 
 //  likeの非同期通信
   

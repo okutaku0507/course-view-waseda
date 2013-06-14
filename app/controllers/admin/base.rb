@@ -1,4 +1,4 @@
-﻿# coding: utf-8
+# coding: utf-8
 
 class Admin::Base < ApplicationController
   before_filter :admin_login_required

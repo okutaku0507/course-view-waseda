@@ -15,9 +15,11 @@
 </table>
 <%= hidden_field_tag "form", request.path %>
 <% end %>
+<% unless controller.kind_of?(MembersController) %>
 <% if flash.alert %>
 <p class="alert"><%= flash.alert %></p>
 <p class="alert"><%= link_to "パスワードを忘れてしまった場合", :forgot_password %></p>
+<% end %>
 <% end %>
 
 </div>

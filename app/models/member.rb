@@ -1,3 +1,4 @@
+#coding: utf-8
 class Member < ActiveRecord::Base
   include EmailAddressChecker
   include PasswordChecker
@@ -54,7 +55,7 @@ class Member < ActiveRecord::Base
     self.initial_password = random_password
     self.hashed_password = BCrypt::Password.create(initial_password)
   end
-
+  
  before_create :before_create  
 
   # like機能

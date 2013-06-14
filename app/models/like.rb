@@ -1,4 +1,4 @@
-﻿class Like < ActiveRecord::Base
+class Like < ActiveRecord::Base
 
   attr_accessible :course_info_id
   
