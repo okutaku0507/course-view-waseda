@@ -64,7 +64,7 @@
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-  config.action_mailer.default_url_options = { :host => "paglloidea.com" }
+  config.action_mailer.default_url_options = { :host => "st.course-view.com" }
   config.action_mailer.smtp_settings = { :enable_starttls_auto => false }
   config.action_mailer.perform_deliveries = false
 
