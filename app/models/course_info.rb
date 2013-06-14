@@ -25,14 +25,9 @@ class CourseInfo < ActiveRecord::Base
     rel = order("open_time")
     if params[:course_and_teacher].present?
       course = params[:course_and_teacher]
-     # rel = rel.where("title like ?", "%#{course}%")
        words = course.split(/ +/)
         words.each do |word|
-          if rel.where("title like ?", "%#{word}%").exists?
-            rel = rel.where("title like ?", "%#{word}%")
-          elsif rel.where("teacher like ?", "%#{word}%").exists?
-            rel = rel.where("teacher like ?", "%#{word}%")
-          end
+            rel = rel.where("text_for_search like ?", "%#{word}%")
         end
     end
     

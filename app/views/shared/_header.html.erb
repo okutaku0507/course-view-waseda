@@ -7,9 +7,9 @@
   <% unless controller.kind_of?(Admin::Base) %>
   <div id="search">
     <%= form_tag :search_course_infos, method: :get do %>
-      <p id="add_search_open_button">＋</p>
+<!--       <p id="add_search_open_button">＋</p>
       <p id="add_search_close_button" style="display: none">－</p>
-<!--      <p id="search_str"><%= text_field_tag :course, params[:course], :placeholder => "講義名" %></p> -->
+     <p id="search_str"><%= text_field_tag :course, params[:course], :placeholder => "講義名" %></p> -->
       <p id="search_str"><%= text_field_tag :course_and_teacher, params[:course_and_teacher], :placeholder => "検索" %></p>
       <p id="search_button"><%= submit_tag "検索" %></p>
 <!--      <div id="add_search">
