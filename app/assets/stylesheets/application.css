@@ -490,6 +490,10 @@ div#course_teacher {
   margin-left: 20px;
   display: inline-block;
 }
+div#course_teacher .field_with_errors {
+  height: 45px;
+  padding-top: -10px;
+}
 
 div#course_open_faculty {
   display: inline-block;
