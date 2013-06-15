@@ -37,6 +37,8 @@ class CourseInfosController < ApplicationController
 
   def create
     @course_info = CourseInfo.new(params[:course_info])
+    @course_info.teacher = @course_info.teacher.gsub("　", " ")
+    @course_info.teacher = @course_info.teacher.gsub(" ", "")
     @course_info.text_for_search = @course_info.title + " " + @course_info.teacher
     if !CourseInfo.where(title: @course_info.title, teacher: @course_info.teacher, day_of_the_week: @course_info.day_of_the_week, open_time: @course_info.open_time, open_term: @course_info.open_term, open_faculty: @course_info.open_faculty).exists?
       if @course_info.save
