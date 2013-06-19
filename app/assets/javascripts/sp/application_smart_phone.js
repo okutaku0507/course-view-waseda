@@ -1,7 +1,4 @@
-
-//= require jquery
-//= require jquery_ujs
-
+// application_smart_phone.js
 // ゲストのタイトルがcourse_infoに飛ぶ
 $(document).ready(function(){
   $("#course_view_title").click(function(){

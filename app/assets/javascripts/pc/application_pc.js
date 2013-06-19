@@ -1,7 +1,4 @@
-
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+// application_pc.js
 
 // ゲストのタイトルがcourse_infoに飛ぶ
 $(document).ready(function(){
