@@ -13,209 +13,311 @@
 
 <tr>
 <td class="schedule_label">1</td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Mon1">
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "月").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 1}, :title => "講義を検索しよう！", :class => "Mon1" %>
+  <% end %>
+  
 </td>
 
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Tue1">
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "火").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 1}, :title => "講義を検索しよう！", :class => "Tue1" %>
+  <% end %>
+ 
 </td>
-<td class="schedule_detail">
-  <% @current_member.take_courses.each do |take_course| %>
+<td class="schedule_detail" data-num="Wed1">
+   <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "水").exists? %>
+   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 1}, :title => "講義を検索しよう！", :class => "Wed1" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+
+<td class="schedule_detail" data-num="Thu1">
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "木").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 1}, :title => "講義を検索しよう！", :class => "Thu1" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+
+<td class="schedule_detail" data-num="Fri1">
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "金").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 1}, :title => "講義を検索しよう！", :class => "Fri1" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+
+<td class="schedule_detail" data-num="Sat1">
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "土").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 1}, :title => "講義を検索しよう！", :class => "Sat1" %>
+  <% end %>
 </td>
 </tr>
 
 <tr>
 <td class="schedule_label">2</td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Mon2">
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "月").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
-  <% end %>
+    <% end %>
+   <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 2}, :title => "講義を検索しよう！", :class => "Mon2" %>
+   <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Tue2">
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "火").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 2}, :title => "講義を検索しよう！", :class => "Tue2" %>
+   <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Wed2">
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "水").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 2}, :title => "講義を検索しよう！", :class => "Wed2" %>
+   <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="">
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "木").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 2}, :title => "講義を検索しよう！", :class => "Thu2" %>
+   <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Fri2">
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "金").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 2}, :title => "講義を検索しよう！", :class => "Fri2" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+
+<td class="schedule_detail" data-num="Sat2">
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "土").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 2}, :title => "講義を検索しよう！", :class => "Sat2" %>
+  <% end %>
 </td>
 </tr>
 
 <tr>
 <td class="schedule_label">3</td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Mon3">
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "月").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 3}, :title => "講義を検索しよう！", :class => "Mon3" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Tue3">
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "火").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 3}, :title => "講義を検索しよう！", :class => "Tue3" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Wed3">
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "水").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 3}, :title => "講義を検索しよう！", :class => "Wed3" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Thu3">
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "木").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 3}, :title => "講義を検索しよう！", :class => "Thu3" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Fri3">
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "金").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 3}, :title => "講義を検索しよう！", :class => "Fri3" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Sat3">
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "土").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 3}, :title => "講義を検索しよう！", :class => "Sat3" %>
+  <% end %>
 </td>
 </tr>
 
 <tr>
 <td class="schedule_label">4</td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Mon4">
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "月").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 4}, :title => "講義を検索しよう！", :class => "Mon4" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Tue4">
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "火").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 4}, :title => "講義を検索しよう！", :class => "Tue4" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Wed4">
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "水").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 4}, :title => "講義を検索しよう！", :class => "Wed4" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Thu4">
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "木").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 4}, :title => "講義を検索しよう！", :class => "Thu4" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Fri4">
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "金").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+    <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 4}, :title => "講義を検索しよう！", :class => "Fri4" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Sat4">
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "土").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
+  <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 4}, :title => "講義を検索しよう！", :class => "Sat4" %>
   <% end %>
 </td>
 </tr>
@@ -223,52 +325,76 @@
 <% if @current_member.take_courses.where(take_course_open_time: 5).exists? %>
 <tr>
 <td class="schedule_label">5</td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Mon5">
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "月").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 5}, :title => "講義を検索しよう！", :class => "Mon5" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Tue5">
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "火").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+    <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 5}, :title => "講義を検索しよう！", :class => "Tue5" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Wed5">
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "水").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 5}, :title => "講義を検索しよう！", :class => "Wed5" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Thu5">
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "木").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 5}, :title => "講義を検索しよう！", :class => "Thu5" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Fri5">
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "金").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 5}, :title => "講義を検索しよう！", :class => "Fri5" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Sat5">
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "土").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
+  <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 5}, :title => "講義を検索しよう！", :class => "Sat5" %>
   <% end %>
 </td>
 </tr>
@@ -277,52 +403,76 @@
 <% if @current_member.take_courses.where(take_course_open_time: 6).exists? %>
 <tr>
 <td class="schedule_label">6</td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Mon6">
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "月").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 6}, :title => "講義を検索しよう！", :class => "Mon6" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Tue6">
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "火").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 6}, :title => "講義を検索しよう！", :class => "Tue6" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Wed6">
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "水").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 6}, :title => "講義を検索しよう！", :class => "Wed6" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Thu6">
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "木").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 6}, :title => "講義を検索しよう！", :class => "Thu6" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Fri6">
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "金").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 6}, :title => "講義を検索しよう！", :class => "Fri6" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Sat6">
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "土").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
+  <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 6}, :title => "講義を検索しよう！", :class => "Sat6" %>
   <% end %>
 </td>
 </tr>
@@ -331,52 +481,76 @@
 <% if @current_member.take_courses.where(take_course_open_time: 7).exists? %>
 <tr>
 <td class="schedule_label">7</td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Mon7">
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "月").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "月" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 7}, :title => "講義を検索しよう！", :class => "Mon7" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Tue7">
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "火").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "火" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 7}, :title => "講義を検索しよう！", :class => "Tue7" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Wed7">
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "水").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "水" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 7}, :title => "講義を検索しよう！", :class => "Wed7" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Thu7">
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "木").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "木" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 7}, :title => "講義を検索しよう！", :class => "Thu7" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Fri7">
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "金").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "金" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
   <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 7}, :title => "講義を検索しよう！", :class => "Fri7" %>
+  <% end %>
 </td>
-<td class="schedule_detail">
+<td class="schedule_detail" data-num="Sat7">
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "土").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "土" %>
       <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <%= link_to take_course.take_course_title, @course_info %>
     <% end %>
+  <% end %>
+  <% else %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 7}, :title => "講義を検索しよう！", :class => "Sat7" %>
   <% end %>
 </td>
 </tr>

@@ -3,9 +3,14 @@
     <p id="account_name"><%= @member.family_name + @member.first_name %></p>
     <p class="account_info"><%= @member.faculty %></p>
     <p class="account_info"><%= @member.subject %></p>
-    <p id="account_view_add_button">コメント</p>
-    <p id="account_schedule_add_button">時間割</p>
-    <p id="comment_log_add_button">ログ</p>
+</div>
+</div>
+<div id="mypage_buttons">
+    <p id="account_view_add_button"><%= image_tag("comment.png", :size => "100x37", :id => "search_loupe") %></p>
+    <p id="account_schedule_add_button"><%= image_tag("schedule.png", :size => "100x37", :id => "search_loupe") %></p>
+    <p id="comment_log_add_button"><%= image_tag("log.png", :size => "100x37", :id => "search_loupe") %></p>
+    <p id="comment_log_add_button"><%= image_tag("setting.png", :size => "100x37", :id => "search_loupe") %></p>
+    
     <div id="comment_log_panel">
     <p id="comment_log_top">タイムライン</p>
     <div id="comment_log_index">
@@ -20,7 +25,7 @@
     <% end %>
     </div>
     </div>
-</div>
+
 </div>
 
   <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
@@ -39,8 +44,8 @@
           <%= form.select :take_course_late_point, points %></p>
           <p class="take_course_detail_label">欠席
           <%= form.select :take_course_absent_point, points %></p>
-          <%= form.text_area :take_course_note, rows: 8, cols: 25, :placeholder => "この講義のことをメモしよう！" %>
-          <p align="right"><%= form.submit "保存", :class => "take_course_detail_button"%></p>
+          <%= form.text_area :take_course_note, rows: 6, cols: 20, :placeholder => "この講義のことをメモしよう！" %>
+          <p align="right" style="margin-top: 5px;"><%= form.submit "保存", :class => "take_course_detail_button"%></p>
         <% end %>
       </div>
       </div>

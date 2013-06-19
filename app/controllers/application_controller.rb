@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authorize
+  include Jpmobile::ViewSelector
 
   class Forbidden < StandardError; end
   class NotFound < StandardError; end

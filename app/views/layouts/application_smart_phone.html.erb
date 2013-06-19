@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title><%= page_title %></title>
+  <%= stylesheet_link_tag "application_smart_phone" %>
+  <%= javascript_include_tag "application_smart_phone" %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'rabbit-icon.ico' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <%= render "shared/header" %>
+  </div>
+
+
+  <%= yield %>
+
+
+  <div id="footer">
+    <%= render "shared/footer" %>
+  </div>
+</div>
+
+</body>
+</html>
+

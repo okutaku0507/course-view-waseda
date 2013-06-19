@@ -70,7 +70,9 @@ class CourseInfosController < ApplicationController
 
   def search
     params[:faculty] =  @current_member.faculty
-    params[:course_and_teacher] = params[:course_and_teacher].gsub("　", " ")
+    if params[:course_and_teacher].present?
+      params[:course_and_teacher] = params[:course_and_teacher].gsub("　", " ")
+    end
     @course_infos = CourseInfo.search(params)
           .paginate(page: params[:page], per_page: 6)
     render "index"

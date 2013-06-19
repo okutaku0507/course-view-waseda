@@ -1,75 +1,26 @@
-<div id="header_back"></div>  
+<div id="header_back"></div>
+<div id="header_title"><%= image_tag "title.png", :class => "course_view_title" %></div>
 <% unless @current_member %>
-<div style="padding-top: 30px">
+  <div>
     <%= render "shared/sidebar" %>
   </div>
 <% else %>
   <% unless controller.kind_of?(Admin::Base) %>
   <div id="search">
     <%= form_tag :search_course_infos, method: :get do %>
-<!--       <p id="add_search_open_button">＋</p>
-      <p id="add_search_close_button" style="display: none">－</p>
-     <p id="search_str"><%= text_field_tag :course, params[:course], :placeholder => "講義名" %></p> -->
-      <p id="search_str"><%= text_field_tag :course_and_teacher, params[:course_and_teacher], :placeholder => "検索" %></p>
-      <p id="search_button"><%= submit_tag "検索" %></p>
-<!--      <div id="add_search">
-         <p><%= text_field_tag "teacher", params[:teacher], :placeholder => "教授名" %></p>
-        <p>全講義<%= check_box_tag "all_course", params[:all_course] %></p>
-       <p><%= select_tag "time", options_for_select([["時限", nil], 1, 2, 3, 4, 5, 6, 7, ["オンデマンド", 8], ["その他", 9]], params[:time]) %></p>
-        <p><%= select_tag "week", options_for_select([["曜日", nil], "月", "火", "水", "木", "金", "土", "日", "無"], params[:week]) %></p>
-      </div> -->
+      <p id="header_rabbit"><%= image_tag "rabbit.png", width: 30, :class => "rabbit" %></p>
+     <p id="search_str"><%= text_field_tag :course_and_teacher, params[:course_and_teacher], :placeholder => "講義/教授" %>
+      <p id="search_button"><%= image_submit_tag("loupe.png") %></p>
     <% end %>
   </div>
   <% else %>
-  <div id="search">
-    <%= form_tag :search_admin_course_infos, method: :get do %>
-      <p id="add_search_open_button">＋</p>
-      <p id="add_search_close_button" style="display: none">－</p>
-      <p id="search_str"><%= text_field_tag :course, params[:course], :placeholder => "講義名" %></p>
-      <p id="search_button"><%= submit_tag "検索" %></p>
-      <div id="add_search">
-        <p><%= text_field_tag "teacher", params[:teacher], :placeholder => "教授名" %></p>
-        <p>全講義<%= check_box_tag "all_course", params[:all_course] %></p>
-        <p><%= select_tag "time", options_for_select([["時限", nil], 1, 2, 3, 4, 5, 6, 7, ["オンデマンド", 8], ["その他", 9]], params[:time]) %></p>
-        <p><%= select_tag "week", options_for_select([["曜日", nil], "月", "火", "水", "木", "金", "土", "日", "無"], params[:week]) %></p>
-      </div>
-    <% end %>
-  </div>
   <% end %>
 <% end %>
-
-<% if @current_member %>
-  <% unless controller.kind_of?(Admin::Base) %>
-  
-<div id="menu_box">
-<%= image_tag "rabbit.png", width: 35, :class => "rabbit" %>
-<p class="top_menu"><span class="course_view_link"><%= menu_link_to "Course View", :course_infos %></span><span class="pulldown_menu_open">▼</span><span class="pulldown_menu_close">▼</span><p>
-
-<div class="menu_box_label">
-  <p class="top_menu_label"><%= menu_link_to @current_member.family_name + @current_member.first_name, :account %></p>
-  <p class="account_button">アカウント設定</p>
-<!--  <p><%= menu_link_to "サークル", "#" %></p> -->
-  <p class="bottom_menu_label"><%= link_to "ログアウト", :session, method: :delete, confirm: "ログアウトしますか？" %></p>
-  </div>
-    <div class="account_setting">
-      <p class="top_menu_label"><%= link_to "パスワード変更", :edit_account %></p>
-      <p class="bottom_menu_label"><%= link_to "退会", @current_member, method: :delete, confirm: "本当に退会しますか？"%></p>
-    </div>
-</div>
-
- <% end %>
-  <% else %>
-    <div id="course_view_title">
-      <%= image_tag "rabbit.png", width: 35, :class => "rabbit_before_login" %>
-      <h1>Course View</h1><h5>@waseda</h5>
-    </div>
-<% end %>
-
-  <% if controller.kind_of?(Admin::Base) %>
+<% if controller.kind_of?(Admin::Base) %>
 
 
 <div id="menu_box">
-<%= image_tag "rabbit.png", width: 35, :class => "rabbit" %>
+<%= image_tag "rabbit.png", :class => "rabbit" %>
 <p class="top_menu"><span class="course_view_link"><%= menu_link_to "Course View", [:admin, :course_infos] %></span><span class="pulldown_menu_open">▼</span><span class="pulldown_menu_close">▼</span><p>
 
 <div class="menu_box_label" style="border-top: solid 1px #000000">
