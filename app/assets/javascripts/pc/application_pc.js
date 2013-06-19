@@ -362,19 +362,6 @@ $(document).ready(function(){
   });
 });
 
-$(function() {
-     $("#header_title")
-     .css({
-       'margin-left': "40%"
-     });
-});
-
-$(function() {
-     $("#menu_icons")
-     .css({
-       'margin-left': "39%"
-     });
-});
 
 
 //  likeの非同期通信
