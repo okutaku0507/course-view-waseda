@@ -74,7 +74,7 @@ div#course_view_title h5 {
 }
 
 div#header_title {
-  margin-left: 30px;
+  margin-left: 10px;
   float: left;
   margin-top: 10px;
 }
@@ -117,7 +117,7 @@ div#footer {
 }
 
 div#menu_icons {
-  margin-left: 10px;
+  margin-left: 15px;
   margin-top:  5px;
 }
 
@@ -1321,7 +1321,7 @@ div#search {
 }
 
 input#course_and_teacher {
-  height: 20px;
+  height: 30px;
   width: 100px;
 }
 
