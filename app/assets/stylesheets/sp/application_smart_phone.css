@@ -119,7 +119,6 @@ div#footer {
 div#menu_icons {
   margin-left: 10px;
   margin-top:  5px;
-  width: 300px;
 }
 
 div#menu_icons img {
@@ -1415,7 +1414,7 @@ div.pagination a.next_page {
 /* accountの時間割 */
 
 div#mypage {
-  width: 100% - 10px;
+  width: 97%;
   margin: 0;
   margin-top: 50px;
   padding: 10px;
