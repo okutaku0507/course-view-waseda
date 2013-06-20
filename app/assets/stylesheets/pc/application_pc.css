@@ -103,12 +103,9 @@ div#content {
 }
 
 /* 右の枠(サイドバー) */
-div#sidebar {
+div#login_form {
   float: right;
   margin-right: 120px;
-  padding-bottom: -50px;
-  margin-bottom: -30px;
-  margin-top: -15px;
 }
 
 /*　下(フッター) */

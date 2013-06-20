@@ -2,7 +2,7 @@
 <div id="header_title"><%= image_tag "title.png", :class => "course_view_title" %></div>
 <% unless @current_member %>
   <div>
-    <%= render "shared/sidebar" %>
+    <%= render "shared/login_form" %>
   </div>
 <% else %>
   <% unless controller.kind_of?(Admin::Base) %>

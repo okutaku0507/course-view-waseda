@@ -1,11 +1,14 @@
+<% if @current_member %>
 <div id="menu_icons">
   <%= link_to image_tag("home.png", :size => "35x64"), :account %>
   <%= link_to image_tag("course.png", :size => "35x64"), :course_infos %>
   <%= link_to image_tag("schedule.png", :size => "35x64") %>
   <%= link_to image_tag("comment.png", :size => "35x64") %>
   <%= link_to image_tag("log.png", :size => "35x64") %>
-  <%= link_to image_tag("setting.png", :size => "35x64") %>
+  <%= link_to image_tag("setting.png", :size => "35x64"), :session, method: :delete, confirm: "ログアウトしますか？" %>
 </div>
+<% end %>
+
 <div id="footer">
   <hr>
   <p align="center">Copyright &copy; 2013 <%= link_to "Rabbit Network", "http://rabbit-network.com/" %> All rights reserved.
