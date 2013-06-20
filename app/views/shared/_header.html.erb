@@ -9,8 +9,12 @@
   <div id="search">
     <%= form_tag :search_course_infos, method: :get do %>
       <p id="header_rabbit"><%= image_tag "rabbit.png", width: 30, :class => "rabbit" %></p>
-     <p id="search_str"><%= text_field_tag :course_and_teacher, params[:course_and_teacher], :placeholder => "講義/教授" %>
+      <% if request.smart_phone? %>
+      <p id="search_str"><%= text_field_tag :course_and_teacher, params[:course_and_teacher], :type => "search" %>
+      <% else %>
+      <p id="search_str"><%= text_field_tag :course_and_teacher, params[:course_and_teacher], :placeholder => "講義/教授" %>
       <p id="search_button"><%= image_submit_tag("loupe.png") %></p>
+      <% end %>
     <% end %>
   </div>
   <% else %>

@@ -117,13 +117,15 @@ div#footer {
 }
 
 div#menu_icons {
-  margin-left: 30%;
+  margin-left: 10px;
   margin-top:  5px;
   width: 300px;
 }
 
-div#footer img {
+div#menu_icons img {
   border: none;
+  width: 50px;
+  height: 79px;
 }
 
 /* 注意 */
@@ -1316,7 +1318,7 @@ div#search {
   top: 0;
   right: 0;
   margin-top: 10px;
-  margin-right: 30px;
+  margin-right: 10px;
 }
 
 input#course_and_teacher {
@@ -1413,7 +1415,7 @@ div.pagination a.next_page {
 /* accountの時間割 */
 
 div#mypage {
-  width: 100%;
+  width: 100% - 10px;
   margin: 0;
   margin-top: 50px;
   padding: 10px;
