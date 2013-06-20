@@ -117,8 +117,9 @@ div#footer {
 }
 
 div#menu_icons {
-  margin-left: 33%;
+  margin-left: 30%;
   margin-top:  5px;
+  width: 300px;
 }
 
 div#footer img {

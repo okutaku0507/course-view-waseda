@@ -113,6 +113,11 @@ div#sidebar {
 
 /*　下(フッター) */
 div#footer {
+  margin-top: 30px;
+  clear: both;
+}
+
+div#menu_icons {
   clear: both;
   position: fixed;
   bottom: 0;
@@ -120,9 +125,6 @@ div#footer {
   width: 100%;
   z-index: 1;
   height: 67px;
-}
-
-div#menu_icons {
   margin-left: 39%;
   margin-top:  5px;
 }

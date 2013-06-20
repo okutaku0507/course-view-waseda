@@ -1,12 +1,11 @@
-﻿Course::Application.routes.draw do
+Course::Application.routes.draw do
   root to: "top#index"
 
-  resources :members do
-    collection { get "search" }
+  resources :members, only: [ :new, :create, :edit, :update, :destroy ] do
     resources :course_views
   end
 
-  resources :course_infos do
+  resources :course_infos, only: [ :new, :create, :show, :index ] do
     collection { get "search" }
     resources :course_views do
       resources :responses
