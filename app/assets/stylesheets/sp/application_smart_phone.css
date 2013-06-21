@@ -152,6 +152,8 @@ div#member_new_form {
 
 div#new_member h1#title {
   margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.7em;
 }
 
 div#new_member input.member_input {
@@ -232,11 +234,11 @@ div#member_subject {
 
 div#member_gender {
   margin: 0;
-  margin-left: 50px;
+  margin-left: 100px;
 }
 
 div#member_new_button {
-  margin-left: 50px;
+  margin-left: 100px;
 }
 
 
