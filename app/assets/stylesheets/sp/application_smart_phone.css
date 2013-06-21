@@ -141,8 +141,6 @@ div.attention {
 
 /* ユーザーの新規登録ページ */
 div#new_member {
-  width: 780px;
-  margin-left: 80px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px 0 #000000;
   padding: 20px;
@@ -150,12 +148,10 @@ div#new_member {
 }
 
 div#member_new_form {
-  margin-left: 230px;
 }
 
 div#new_member h1#title {
-  text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 div#new_member input.member_input {
@@ -200,7 +196,6 @@ div#new_member input.member_input:focus, input.member_input_first_name:focus, in
 }
 
 p.member_form_label {
-  text-align: left;
   font-size: 0.8em;
   margin: 0;
   padding: 0;
@@ -236,13 +231,12 @@ div#member_subject {
 }
 
 div#member_gender {
-  text-align: center;
   margin: 0;
-  margin-right: 220px;
+  margin-left: 50px;
 }
 
 div#member_new_button {
-  text-align: center;
+  margin-left: 50px;
 }
 
 
@@ -256,7 +250,6 @@ div#member_new_button input {
 }
 
 div#member_check {
-  margin-right: 40px;
 }
 
 div#member_check a {
