@@ -12,7 +12,6 @@
     <%= format_error_message(@member, :password, form).html_safe %>
     <p class="member_password_label">パスワード確認</p>
     <p class="member_password"><%= form.password_field :password_confirmation, :class => "member_password_input" %></p>
-    <%= form.check_box :administrator %>
 <p><%= form.submit "更新", :id => "button_member_password_edit" %></p>
 </div>
 <% end %>
