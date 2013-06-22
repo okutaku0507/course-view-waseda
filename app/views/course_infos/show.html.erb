@@ -6,11 +6,20 @@
   <div id="course_info_detail">
     <div class="course_info_show_option">
         <span>GPA</span>
+      <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
+      <% if @course_info.teacher_ranks.exists? %>
+        <span class="teacher_rank_point" style="font-size: 3em;"><%= number_with_precision(@average_teacher_rank, :precision => 1) %></span>
+      <% else %>
+        <span class="teacher_rank_point" style="font-size: 3em;">-</span>
+      <% end %>
+      <% else %>
       <% if @course_info.teacher_ranks.exists? %>
         <span class="teacher_rank_point" style="font-size: 3.3em;"><%= number_with_precision(@average_teacher_rank, :precision => 1) %></span>
       <% else %>
         <span class="teacher_rank_point" style="font-size: 3.3em;">-</span>
-<% end %><span class="teacher_rank_prompt" style="font-size: 1.4em; border: 2px solid silver; padding: 3px; border-radius: 5px;">評価</span>
+      <% end %>
+      <% end %>
+        <span class="teacher_rank_prompt" style="font-size: 1.4em; border: 2px solid silver; padding: 3px; border-radius: 5px;">評価</span>
 
 
       <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
