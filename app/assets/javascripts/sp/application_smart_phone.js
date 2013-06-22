@@ -125,8 +125,8 @@ $(document).ready(function(){
     $("#teacher_rank_prompt")
     .css({
       'position': 'absolute',
-      'top': $(window).scrollTop() + 200 + 'px',
-      'left': $(window).width() / 2 - 100 + 'px',
+      'top': $(window).scrollTop() + 100 + 'px',
+      'left': $(window).width() / 2 - 200+ 'px',
     })
     .show();
   });
