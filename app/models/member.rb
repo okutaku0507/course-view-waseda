@@ -23,9 +23,9 @@ class Member < ActiveRecord::Base
 
    attr_accessor :password, :password_confirmation, :initial_password
 
-  ACCESSIBLE_ATTRS = [ :family_name, :first_name, :full_name, :university, :faculty, :subject, :email, :email_confirmation, :password, :password_confirmation, :gender ]
+  ACCESSIBLE_ATTRS = [ :family_name, :first_name, :administrator, :full_name, :university, :faculty, :subject, :email, :email_confirmation, :password, :password_confirmation, :gender ]
   attr_accessible *ACCESSIBLE_ATTRS
-  attr_accessible *(ACCESSIBLE_ATTRS + [ :administrator ]), as: :admin
+  attr_accessible *(ACCESSIBLE_ATTRS + [  ]), as: :admin
 
   #バリデーション
   validates :email, presence: {on: :create},

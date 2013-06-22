@@ -27,24 +27,23 @@
   <%= link_to image_tag("timeline2.png", :size => "43x66", :class => "after_icon_timeline"), :timeline_account %>
   <%= link_to image_tag("setting.png", :size => "43x66", :class => "before_icon_setting"), :setting_account %>
   <%= link_to image_tag("setting2.png", :size => "43x66", :class => "after_icon_setting"), :setting_account %>
-
   </div>
 <% end %>
 </div>
 <% end %>
 <% unless request.smart_phone? %>
 <div id="footer">
-  <hr>
-  <p align="center">Copyright &copy; 2013 <%= link_to "Rabbit Network", "http://rabbit-network.com/" %> All rights reserved.
-
-  <%= link_to "利用規約", use_policy_path %> | 
-  <%= link_to "プライバシーポリシー", privacy_path %> 
+  <div id="agreement">
+  <p><%= link_to "利用規約", use_policy_path %> | 
+  <%= link_to "プライバシーポリシー", privacy_path %>
   <% if @current_member %>
   <% if @current_member.try(:administrator?) %> | 
   <%= menu_link_to "管理者", :admin_root %></p>
   <% else %>
   </p>
   <% end %>
+  <p align="center">Copyright &copy; 2013 <%= link_to "Rabbit Network", "http://rabbit-network.com/" %> All rights reserved.</p>
+  </div>
   <% end %>
 </div>
 <% end %>

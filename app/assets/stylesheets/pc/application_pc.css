@@ -152,6 +152,25 @@ img.before_icon_setting {
   display: none;
 }
 
+div#agreement {
+  clear: both;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+}
+
+div#agreement p {
+  margin: 0;
+  margin-bottom: 3px;
+  margin-right: 3px;
+  text-align: right
+}
+
+div#agreement a {
+  color: blue;
+}
+
 /* 注意 */
 div.attention p {
   font-size: 0.85em;
