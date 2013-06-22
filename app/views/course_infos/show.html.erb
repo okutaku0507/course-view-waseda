@@ -30,9 +30,8 @@
 <div id="course_info_view_new">
 <% if @current_member %>
   <%= form_for @course_view, :url => { :action => "view_create" }  do |form| %>
-
     <%= form.text_area :view, :placeholder => "この講義どうだった？" %>
-      <div id="course_info_view_option">
+    <div id="course_info_view_option">
          <%= form.submit "加筆", :id => "course_view_kahitu_button" %>
     </div>
   <% end %>

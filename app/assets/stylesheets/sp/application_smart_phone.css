@@ -833,7 +833,6 @@ div#course_info {
 
 div#course_info_head {
   height: 250px;
-  position: relative;
   width: 98%;
 }
 
@@ -914,6 +913,7 @@ div#course_info_view_new p#select_rank, td#add {
 
 div.course_info_show_option {
   width: 90%;
+  margin: 0;
 }
 
 div.course_info_show_option span {
@@ -924,12 +924,12 @@ div.course_info_show_option img {
   height: 62px;
   width: 50px;
   margin-left: 10px;
-  display: inline-block;
+  display: inline;
 }
 
 /* viewのクリックする仕組み */
 #course_info_view {
-  width: 500px;
+  width: 90%;
   margin: 0;
   padding: 20px 20px;
   border-left: solid 2px silver;
@@ -940,7 +940,7 @@ div.course_info_show_option img {
 
 
 #course_info_view_index_top {
-  width: 500px;
+  width: 90%;
   margin: 0;
   padding: 0 20px;
   border-bottom: solid 2px silver;
