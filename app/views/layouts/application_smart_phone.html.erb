@@ -18,7 +18,9 @@
 
   <%= yield %>
 
-
+  <% if request.smart_phone? %>
+    <div id="sp_footer"></div>
+  <% end %>
   <div id="footer">
     <%= render "shared/footer" %>
   </div>

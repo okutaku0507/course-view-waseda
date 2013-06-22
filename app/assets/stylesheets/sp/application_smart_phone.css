@@ -126,12 +126,11 @@ div#sp_footer {
   clear: both;
   width: 100%;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
 }
 
 div#menu_icons {
   width: 100%;
-  margin-top:  5px;
   background-color: #ffffff;
   z-index: 1;
   text-align: center;
@@ -1800,11 +1799,7 @@ div#cover {
 
 /* viewのedit */
 div#view_form {
-  width: 780px;
-  margin-left: 80px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 3px 0 #000000;
-  padding: 20px;
+  width: 98%;
   margin-top: 20px;
 }
 
@@ -1818,7 +1813,7 @@ div#view_form a {
 
 div#view_form textarea {
   border-radius: 5px;
-  margin: 10px 100px;
+  margin: 10px 5px;
 /*  box-shadow: 1px 1px 3px 0 #000000; */
   border: solid 1px #000000;
   padding: 13px;
@@ -1826,10 +1821,11 @@ div#view_form textarea {
   font-weight: bold;
   resize: none;
   overflow: auto;
+  width: 90%;
 }
 
 input#button_view_form {
-  margin-left: 595px;
+  margin-left: 200px;
   border-radius: 5px;
   font-size: 1.5em;
   outline: medium none;
