@@ -1850,6 +1850,17 @@ div.response_add textarea {
   width: 80%;
 }
 
+div.show_response_add {
+  width: 87%;
+  margin: 0;
+  padding: 0 37px 0 3px;
+  border-left: solid 2px silver;
+  border-right: solid 2px silver;
+  border-bottom: solid 2px silver;
+  display: none;
+  margin-left: 1px;
+}
+
 input.response_create_button {
   border: solid 1px silver;
   margin: 0;
@@ -1892,7 +1903,6 @@ span.show_response_add_button {
 div#course_view_show {
   margin-left: 5px;
   width: 98%;
-  padding: 20px;
 }
 
 div#course_view_text {
@@ -1920,7 +1930,7 @@ div.view_show_response {
 }
 
 span.response_create_time {
-  margin-left: 400px;
+  margin-left: 10px;
   margin-right: 15px;
   font-size: 0.8em;
 }
