@@ -353,17 +353,14 @@ p.alert {
 /* フラッシュ */
 
 div#notice {
-  margin-top: -100px;
-  margin-left: 170px;
   padding: 5px;
-  width: 600px;
+  width: 98%;
   background: rgba(255, 0, 0, 0.5);
   text-align: center;
   clear: both;
   border-right: solid 1px #e0ffff;
   border-left: solid 1px #e0ffff;
   border-bottom: solid 1px #e0ffff;
-  clear: both;
 }
 
 p.notice {
@@ -1076,11 +1073,9 @@ span#writer {
 }
 
 span#create_time {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
   font-size: 0.8em;
-
-
 }
 
 #course_info_view p#view_footer {
@@ -1120,7 +1115,7 @@ p#like a {
 div#course_info_view_option {
   text-align: right;
   margin-bottom: 10px;
-  width: 85%;
+  width: 90%;
 }
 div#course_info_view_option p {
   display: inline;
@@ -1844,7 +1839,7 @@ span.response_add_button {
 
 
 span.response_comment a {
-  margin-left: 15px;
+  margin-left: 5px;
   font-size: 0.8em;
   cursor: pointer;
   color: blue;
