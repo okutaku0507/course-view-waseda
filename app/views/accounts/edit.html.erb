@@ -3,7 +3,7 @@
 <h1 id="title">パスワードの変更</h1>
 <%= form_for @member, url: :account do |form| %>
 <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
-<div id="password_edit_input" style="margin-left: 10px;">
+<div id="password_edit_input" style="margin-left: 0;">
 <% else %>
 <div id="password_edit_input">
 <% end %>
