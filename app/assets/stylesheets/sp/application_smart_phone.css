@@ -1458,10 +1458,23 @@ div.all_schedule_sp {
   display: none;
 }
 
+div.all_schedule_sp a {
+  color: #000000;
+}
+
+div.all_schedule_sp table {
+  border-collapse: collapse;
+}
+
+div.all_schedule_sp td {
+  border: 1px solid #44220f;
+  padding: 5px;
+  font-weight: bold;
+}
+
 div#account_schedule_sp {
   width: 90%;
   margin-left: 20px;
-  text-align: center;
   box-shadow: 0 0 0 10px #44220f;
 }
 
@@ -1472,6 +1485,7 @@ p.schedule_sp_add_button {
   font-size: 1.2em;
   font-family: serif;
   margin: 0;
+  text-align: center;
 }
 
 div.schedule_panel {

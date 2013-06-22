@@ -586,94 +586,510 @@
 <div id="account_schedule_sp">
   <p class="schedule_sp_add_button" data-num="monday">Monday</p>
   <div id="monday" class="all_schedule_sp">
-    <% if @current_member.take_courses.where(take_course_open_week: "月").exists? %>
-    <% @current_member.take_courses.each do |take_course| %>
-      <% if take_course.take_course_open_week == "月" %>
-        <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-          <%= link_to take_course.take_course_title, @course_info %>
-        <% end %>
-      <% end %>
-    <% else %>
-    <p>まだ、ありません。</p>
+  <table>
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "月").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "月" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>1</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
     <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>1</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "月").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "月" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>2</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>2</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "月").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "月" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>3</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>3</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "月").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "月" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>4</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>4</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "月").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "月" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>5</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>5</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "月").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "月" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>6</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>6</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "月").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "月" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>7</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>7</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  </table>
   </div>
+  
   <p class="schedule_sp_add_button" data-num="tuesday">Tuesday</p>
   <div id="tuesday" class="all_schedule_sp">
-    <% if @current_member.take_courses.where(take_course_open_week: "火").exists? %>
-    <% @current_member.take_courses.each do |take_course| %>
-      <% if take_course.take_course_open_week == "火" %>
-        <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-          <%= link_to take_course.take_course_title, @course_info %>
-        <% end %>
-      <% end %>
-    <% else %>
-    <p>まだ、ありません。</p>
+  <table>
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "火").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "火" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>1</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
     <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>1</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "火").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "火" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>2</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>2</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "火").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "火" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>3</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>3</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "火").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "火" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>4</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>4</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "火").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "火" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>5</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>5</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "火").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "火" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>6</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>6</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "火").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "火" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>7</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>7</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  </table>
   </div>
+  
   <p class="schedule_sp_add_button" data-num="wednesday">Wednesday</p>
   <div id="wednesday" class="all_schedule_sp">
-    <% if @current_member.take_courses.where(take_course_open_week: "水").exists? %>
-    <% @current_member.take_courses.each do |take_course| %>
-      <% if take_course.take_course_open_week == "水" %>
-        <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-          <%= link_to take_course.take_course_title, @course_info %>
-        <% end %>
-      <% end %>
-    <% else %>
-    <p>まだ、ありません。</p>
+  <table>
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "水").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "水" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>1</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
     <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>1</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "水").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "水" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>2</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>2</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "水").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "水" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>3</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>3</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "水").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "水" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>4</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>4</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "水").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "水" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>5</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>5</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "水").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "水" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>6</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>6</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "水").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "水" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>7</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>7</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  </table>
   </div>
+  
   <p class="schedule_sp_add_button" data-num="thursday">Thursday</p>
   <div id="thursday" class="all_schedule_sp">
-    <% if @current_member.take_courses.where(take_course_open_week: "木").exists? %>
-    <% @current_member.take_courses.each do |take_course| %>
-      <% if take_course.take_course_open_week == "木" %>
-        <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-          <%= link_to take_course.take_course_title, @course_info %>
-        <% end %>
-      <% end %>
-    <% else %>
-    <p>まだ、ありません。</p>
+  <table>
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "木").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "木" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>1</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
     <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>1</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "木").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "木" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>2</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>2</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "木").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "木" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>3</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>3</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "木").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "木" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>4</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>4</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "木").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "木" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>5</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>5</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "木").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "木" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>6</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>6</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "木").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "木" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>7</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>7</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  </table>
   </div>
+  
   <p class="schedule_sp_add_button" data-num="friday">Friday</p>
   <div id="friday" class="all_schedule_sp">
-    <% if @current_member.take_courses.where(take_course_open_week: "金").exists? %>
-    <% @current_member.take_courses.each do |take_course| %>
-      <% if take_course.take_course_open_week == "金" %>
-        <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-          <%= link_to take_course.take_course_title, @course_info %>
-        <% end %>
-      <% end %>
-    <% else %>
-    <p>まだ、ありません。</p>
+  <table>
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "金").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "金" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>1</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
     <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>1</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "金").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "金" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>2</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>2</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "金").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "金" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>3</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>3</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "金").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "金" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>4</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>4</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "金").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "金" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>5</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>5</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "金").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "金" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>6</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>6</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "金").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "金" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>7</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>7</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  </table>
   </div>
+  
   <p class="schedule_sp_add_button" data-num="saturday">Saturday</p>
   <div id="saturday" class="all_schedule_sp">
-    <% if @current_member.take_courses.where(take_course_open_week: "土").exists? %>
-    <% @current_member.take_courses.each do |take_course| %>
-      <% if take_course.take_course_open_week == "土" %>
-        <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-          <%= link_to take_course.take_course_title, @course_info %>
-        <% end %>
-      <% end %>
-    <% else %>
-    <p>まだ、ありません。</p>
+  <table>
+  <% if @current_member.take_courses.where(take_course_open_time: 1, take_course_open_week: "土").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 1 && take_course.take_course_open_week == "土" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>1</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
     <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>1</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "土").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "土" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>2</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>2</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  
+  <% if @current_member.take_courses.where(take_course_open_time: 3, take_course_open_week: "土").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 3 && take_course.take_course_open_week == "土" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>3</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>3</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 4, take_course_open_week: "土").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 4 && take_course.take_course_open_week == "土" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>4</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>4</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 5, take_course_open_week: "土").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 5 && take_course.take_course_open_week == "土" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>5</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>5</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 6, take_course_open_week: "土").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 6 && take_course.take_course_open_week == "土" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>6</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>6</td><td style="width: 100%;"></td></tr>
+  <% end %>
+    
+  <% if @current_member.take_courses.where(take_course_open_time: 7, take_course_open_week: "土").exists? %>
+  <% @current_member.take_courses.each do |take_course| %>
+    <% if take_course.take_course_open_time == 7 && take_course.take_course_open_week == "土" %>
+      <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
+    <tr><td>7</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info, align: "center" %></td></tr>
+    <% end %>
+  <% end %>
+  <% else %>
+    <tr><td>7</td><td style="width: 100%;"></td></tr>
+  <% end %>
+  </table>
   </div>
+  
   <p class="schedule_sp_add_button" data-num="other">その他</p>
   <div id="other" class="all_schedule_sp">
+    <table>
     <% if @current_member.take_courses.where(take_course_open_time: 8).exists? || @current_member.take_courses.where(take_course_open_time: 9).exists? %>
     <% @current_member.take_courses.each do |take_course| %>
       <% if take_course.take_course_open_time == 8 || take_course.take_course_open_time == 9 %>
         <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
-          <%= link_to take_course.take_course_title, @course_info %>
+        <tr><td>他</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info %></td></tr>
         <% end %>
       <% end %>
     <% else %>
-    <p>まだ、ありません。</p>
+    <p align="center">まだ、ありません。</p>
     <% end %>
+    </table>
   </div>
 </div>
 <% end %>
