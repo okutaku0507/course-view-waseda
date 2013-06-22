@@ -1,4 +1,4 @@
-<p id="course_creater_button" align="center">時間割をつくる！</p>
+<p id="course_creater_button" align="center"><%= image_tag "sakusei.png", :class => "course_creater_button_img" %></p>
 <div id="new_schedule_form">
     <%= form_tag [:new_course_search, :course_infos], method: :get do %>
       <p id="search_str"><%= text_field_tag :course_and_teacher, params[:course_and_teacher], :placeholder => "講義 or 教授", :class => "account_course_and_teacher" %>

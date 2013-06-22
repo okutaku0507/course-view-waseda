@@ -2341,11 +2341,13 @@ div#withdrawal_form input.button:hover {
 
 /* courseを時間割から作る仕組み */
 p#course_creater_button {
- border: 2px solid silver;
- border-radius: 5px;
  cursor: pointer;
- padding: 5px 3px;
- width: 150px;
+ margin-right: 800px;
+}
+
+img.course_creater_button_img {
+ width: 119px;
+ height: 30px;
 }
 
 div#new_schedule_form {
