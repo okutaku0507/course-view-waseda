@@ -7,7 +7,7 @@ body {
 
 img.rabbit {
   position: absolute;
-  margin-left: -40px;
+  margin-left: -35px;
 }
 
 img.rabbit_before_login {
@@ -81,12 +81,14 @@ div#header_title {
 
 img.course_view_title {
   height: 30px;
-  width: 190px; 
+  width: 190px;
+  border: none;
 }
 
 img.iPhone_course_view_title {
-  height: 28px;
-  width: 170px; 
+  height: 25px;
+  width: 150px;
+  border: none;
 }
 
 /* 左の枠(コンテンツ) */
