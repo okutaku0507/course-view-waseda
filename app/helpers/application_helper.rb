@@ -1,4 +1,4 @@
-﻿module ApplicationHelper
+module ApplicationHelper
   def page_title
     title = "Course View"
     title = @page_title + " - " + title if @page_title

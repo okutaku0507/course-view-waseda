@@ -5,24 +5,6 @@
     <p class="account_info"><%= @member.subject %></p>
 </div>
 </div>
-<div id="mypage_buttons">
-    
-    <div id="comment_log_panel">
-    <p id="comment_log_top">タイムライン</p>
-    <div id="comment_log_index">
-    <% if @current_member.responses.exists? %>
-    <% @current_member.responses.each do |response| %>
-    <% @course_view = response.course_view %>
-    <% @course_info = @course_view.course_info %>
-    <p class="comment_log_label"><%= link_to "これ", @course_view %>にコメントしました。(<%= response.created_at.strftime("%Y/%m/%d") %>)</p>
-    <% end %>
-    <% else %>
-    <p class="none_comment_log">まだログがありません。</p>
-    <% end %>
-    </div>
-    </div>
-
-</div>
 
   <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
   <% @current_member.take_courses.each do |take_course| %>

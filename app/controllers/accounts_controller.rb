@@ -53,4 +53,7 @@ class AccountsController < ApplicationController
   def withdrawal
   end
   
+  def timeline
+  end
+  
 end

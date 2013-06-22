@@ -1,4 +1,4 @@
-﻿# coding: utf-8
+# coding: utf-8
 
 class UserMailer < ActionMailer::Base
   default :from => "no-reply@course-view.com"

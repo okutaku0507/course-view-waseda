@@ -35,6 +35,7 @@ Course::Application.routes.draw do
       get :comment, on: :member
       get :setting, on: :member
       get :withdrawal, on: :member
+      get :timeline, on: :member
   end
 
   namespace :admin do

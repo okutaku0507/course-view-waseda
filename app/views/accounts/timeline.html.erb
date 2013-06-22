@@ -1,0 +1,24 @@
+    <div id="timeline">
+    <h1>タイムライン</h1>
+    <div id="comment_log_index">
+    <% if @current_member.responses.exists? %>
+    <% @current_member.responses.each do |response| %>
+    <% @course_view = response.course_view %>
+    <% @course_info = @course_view.course_info %>
+    <p class="comment_log_label"><%= link_to "これ", @course_view %>にコメントしました。(<%= response.created_at.strftime("%Y/%m/%d") %>)</p>
+    <% end %>
+    <% else %>
+      <p class="none_comment_log">まだ返信がありません。</p>
+    <% end %>
+    </div>
+    <div id="like_log_index">
+    <% if @current_member.likes.exists? %>
+      <% @current_member.likes.each do |like| %>
+        <% @course_info = CourseInfo.find(like.course_info_id) %>
+        <p class="like_log_label"><%= link_to "これ", @course_info %>にlikeしました。(<%= like.created_at.strftime("%Y/%m/%d") %>)</p>
+      <% end %>
+    <% else %>
+      <p class="none_like_log">まだlikeがありません。</p>
+    <% end %>
+    </div>
+    </div>
