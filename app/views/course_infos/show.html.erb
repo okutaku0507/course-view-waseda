@@ -8,9 +8,9 @@
         <span>GPA</span>
       <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
       <% if @course_info.teacher_ranks.exists? %>
-        <span class="teacher_rank_point" style="font-size: 3em;"><%= number_with_precision(@average_teacher_rank, :precision => 1) %></span>
+        <span class="teacher_rank_point" style="font-size: 2.5em;"><%= number_with_precision(@average_teacher_rank, :precision => 1) %></span>
       <% else %>
-        <span class="teacher_rank_point" style="font-size: 3em;">-</span>
+        <span class="teacher_rank_point" style="font-size: 2.5em;">-</span>
       <% end %>
       <% else %>
       <% if @course_info.teacher_ranks.exists? %>
