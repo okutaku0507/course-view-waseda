@@ -26,7 +26,11 @@
         <p class="like_log" style="margin-bottom: 10px; margin-top: 0;">goodしました。(<%= like.created_at.strftime("%Y/%m/%d") %>)</p>
       <% end %>
     <% else %>
-      <p class="none_like_log" style="margin-left: 23px;">まだgoodがありません。</p>
+        <% if request.smart_phone? %>
+      <p class="none_like_log" style="margin-left: 27px;">まだgoodがありません。</p>
+      <% else %>
+      <p class="none_like_log">まだgoodがありません。</p>
+      <% end %>
     <% end %>
     </div>
     </div>
