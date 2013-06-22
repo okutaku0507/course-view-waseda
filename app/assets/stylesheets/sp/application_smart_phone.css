@@ -84,6 +84,11 @@ img.course_view_title {
   width: 190px; 
 }
 
+img.iPhone_course_view_title {
+  height: 28px;
+  width: 170px; 
+}
+
 /* 左の枠(コンテンツ) */
 div#content {
   margin-top: 70px;
