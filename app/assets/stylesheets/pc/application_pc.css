@@ -92,7 +92,6 @@ img.course_view_title {
 
 /* 左の枠(コンテンツ) */
 div#content {
-  margin-top: 70px;
   padding: 10px 10px 10px 0;
   box-shadow: 1px 1px 5px 0 #000000;
   background-color: #ffffff;
@@ -1531,7 +1530,7 @@ div.pagination a.next_page {
   font-size: 4em;
   position: absolute;
   padding: 20px;
-  margin-left: 870px;
+  margin-left: 830px;
   margin-top: -300px;
 }
 
@@ -2190,7 +2189,7 @@ input#password_restter_button:hover {
   border: none;
  }
 
- /* settijgページ */
+ /* settigページ */
  div#account_setting {
    padding: 20px;
    width: 200px;

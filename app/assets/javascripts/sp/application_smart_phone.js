@@ -361,6 +361,14 @@ $(document).ready(function(){
   });
 });
 
+// spの時間割の仕組み
+$(document).ready(function(){
+  $('p.schedule_sp_add_button').click(function() {
+    var weekId = $(this).data('num');
+    $("div.all_schedule_sp").slideUp('fast');
+    $('div#' + weekId).slideDown('fast');
+  });
+});
 
 //  likeの非同期通信
   

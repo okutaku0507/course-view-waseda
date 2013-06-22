@@ -5,7 +5,7 @@ Course::Application.routes.draw do
     resources :course_views
   end
 
-  resources :course_infos, only: [ :new, :create, :show, :index ] do
+  resources :course_infos, only: [ :create, :show, :index ] do
     collection { get "search" }
     collection { get "new_course_search" }
     resources :course_views do
