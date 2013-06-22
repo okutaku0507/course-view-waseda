@@ -1,7 +1,9 @@
 /* pc/application_pc.css */
 body {
 }
-
+img {
+  border: none;
+}
 
 img.rabbit {
   position: absolute;
@@ -1096,7 +1098,7 @@ table#teacher_rank td.teacher_rank_prompt {
   font-size: 0.8em;
   font-weight: bold;
   position: absolute;
-  top: 145px;
+  top: 155px;
   right: 10px;
   cursor: pointer;
 }

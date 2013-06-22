@@ -1,7 +1,11 @@
     <div id="timeline">
     <h1>タイムライン</h1>
     <div id="comment_log_index">
+    <% if request.smart_phone? %>
+      <p class="timeline_label" style="background-color: #f39d4a; margin-left: -20px;">コメントへの返信</p>
+    <% else %>
       <p class="timeline_label" style="background-color: #f39d4a">コメントへの返信</p>
+    <% end %>
     <% if @current_member.responses.exists? %>
     <% @current_member.responses.each do |response| %>
     <% @course_view = response.course_view %>
