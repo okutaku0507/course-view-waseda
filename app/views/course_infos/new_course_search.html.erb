@@ -1,9 +1,9 @@
-<div id="course_new_form">
+<div id="search_course_new_form">
 <%= form_for @course_info = CourseInfo.new do |form| %>
 <% @course_info.day_of_the_week = params[:week] %>
 <% @course_info.open_time = params[:time] %>
 <% @course_info.open_term = params[:term] %>
-  <div style="display: none;">
+<div style="display: none;">
 <%= form.select :day_of_the_week, ["月", "火", "水", "木", "金", "土", "日", "無"] %>
 <%= form.select :open_time, [["1時限", 1], ["2時限", 2], ["3時限", 3], ["4時限", 4], ["5時限", 5], ["6時限", 6], ["7時限", 7], ["フルオンデマンド", 8], ["その他", 9]] %>
 <%= form.select :open_term, ["春期", "秋期", "通年", "その他"] %>
@@ -11,13 +11,11 @@
 <div id="course_title">
   <p class="course_form_label">講義名</p>
   <p><%= form.text_field :title, :class => "course_input" %></p>
-  <%= format_error_message(@course_info, :title, form).html_safe %>
 </div>
   
 <div id="course_teacher">
   <p class="course_form_label">教員名</p>
   <p><%= form.text_field :teacher, :class => "course_input" %></p>
-  <%= format_error_message(@course_info, :teacher, form).html_safe %>
 </div>
   
 <div id="course_open_faculty">

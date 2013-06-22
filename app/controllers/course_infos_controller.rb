@@ -214,12 +214,23 @@ class CourseInfosController < ApplicationController
     @teacher_rank.member = @current_member
     @course_info = CourseInfo.find(params[:id])
     @teacher_rank.course_info = @course_info
-    if @teacher_rank.save
-      redirect_to @course_info, notice:  @course_info.teacher + "教授を評価しました！"
+    if @teacher_rank.teacher_rank == nil && TeacherRank.where(course_info_id: @course_info.id, member_id: @current_member.id).exists?
+      @current_member.ranked_teacher.delete(CourseInfo.find(params[:id]))
+      redirect_to @course_info, notice:  @course_info.teacher + "教授の評価を取り消しました！"
+    elsif @teacher_rank.teacher_rank != nil && TeacherRank.where(course_info_id: @course_info.id, member_id: @current_member.id).exists?
+      @current_member.ranked_teacher.delete(CourseInfo.find(params[:id]))
+      if @teacher_rank.save
+        redirect_to @course_info, notice:  @course_info.teacher + "教授を評価を上書きしました！"
+      else
+        redirect_to @course_info, notice: "教授評価の上書きに失敗しました..."
+      end
     else
-      redirect_to @course_info, notice: "教授評価に失敗しました..."
-    end
+      if @teacher_rank.save
+        redirect_to @course_info, notice:  @course_info.teacher + "教授を評価しました！"
+      else
+        redirect_to @course_info, notice: "教授評価に失敗しました..."
+      end
   end
-  
+  end
   
 end

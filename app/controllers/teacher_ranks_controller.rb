@@ -1,4 +1,4 @@
-﻿class TeacherRanksController < ApplicationController
+class TeacherRanksController < ApplicationController
   def new
     @teacher_rank = TeacherRank.new
   end

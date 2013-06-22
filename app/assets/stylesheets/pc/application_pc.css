@@ -983,10 +983,21 @@ div#course_info_view_new p#select_rank, td#add {
   text-align: right;
 }
 
+div.course_info_show_option {
+  position: absolute;
+}
+
+div.course_info_show_option img {
+  height: 62px;
+  width: 50px;
+  margin-left: 10px;
+}
+
 /* viewのクリックする仕組み */
 #course_info_view {
-  width: 600px;
+  width: 450px;
   margin: 0;
+  margin-left: 150px;
   padding: 20px 20px;
   border-left: solid 2px silver;
   border-right: solid 2px silver;
@@ -998,8 +1009,9 @@ div#course_info_view_new p#select_rank, td#add {
 }
 
 #course_info_view_index_top {
-  width: 600px;
+  width: 450px;
   margin: 0;
+  margin-left: 150px;
   padding: 0 20px;
   border-bottom: solid 2px silver;
   border-left: solid 2px silver;
@@ -1080,6 +1092,15 @@ table#teacher_rank td#like{
   margin: 0;
 }
 
+table#teacher_rank td.teacher_rank_prompt {
+  font-size: 0.8em;
+  font-weight: bold;
+  position: absolute;
+  top: 145px;
+  right: 10px;
+  cursor: pointer;
+}
+
 table#teacher_rank td.point{
   font-size: 5em;
   text-align: center;
@@ -1089,7 +1110,7 @@ table#teacher_rank td.point{
 /* course_infoのview */
 
 #course_info_view_new {
-    margin-left: 60px;
+    margin-left: 30px;
   margin-top: 40px;
 }
 
@@ -1101,8 +1122,8 @@ table#teacher_rank td.point{
   padding: 10px;
   margin-bottom: 10px;
   margin-top: 3px;
-  height: 150px;
-  width: 350px;
+  height: 180px;
+  width: 390px;
 }
 
 #course_info_view_new select {
@@ -1970,6 +1991,17 @@ input#button_view_form:hover {
 
 /* レスポンスの仕組み */
 div.response_add {
+  width: 450px;
+  margin: 0;
+  padding: 0 37px 0 3px;
+  border-left: solid 2px silver;
+  border-right: solid 2px silver;
+  border-bottom: solid 2px silver;
+  display: none;
+  margin-left: 150px;
+}
+
+div.show_response_add {
   width: 598px;
   margin: 0;
   padding: 0 37px 0 3px;
@@ -1990,7 +2022,25 @@ div.response_add textarea {
   padding: 5px;
 }
 
-input.response_create_button {
+div.show_response_add textarea {
+  resize: vertical;
+  overflow: auto;
+  margin-left: 30px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: solid 2px skyblue;
+  padding: 5px;
+}
+
+div.response_add input.response_create_button {
+  border: solid 1px silver;
+  margin: 0;
+  margin-left: 380px;
+  margin-bottom: 5px;
+  padding: 2px 3px;
+}
+
+div.show_response_add input.response_create_button {
   border: solid 1px silver;
   margin: 0;
   margin-left: 500px;
@@ -2294,4 +2344,60 @@ div#new_schedule_form input.account_new_schedule_button {
   padding: 5px 3px;
   border-radius: 5px;
   background-color: #ffffff;
+}
+
+/* 時間割から飛んだnew_course */
+div#search_course_new_form input.course_input {
+  font-size: 1.2em;
+  font-weight: 600;
+  width: 250px;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 2px silver;
+  height: 22px;
+}
+
+div#search_course_new_form input.course_input:focus {
+  box-shadow: inset 0 0 3px 0 blue;
+}
+
+div#search_course_new_form select {
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 2px silver;
+  margin-left: 10px;
+}
+
+div#course_create_button {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+div#course_create_button input {
+  border: 2px solid silver;
+  padding: 5px 3px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+/* timeline */
+
+p.timeline_label {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+div#comment_log_index p.comment_log {
+  margin-left: 20px;
+}
+
+div#like_log_index p.like_log {
+  margin-left: 20px;
 }

@@ -1,24 +1,28 @@
     <div id="timeline">
     <h1>タイムライン</h1>
     <div id="comment_log_index">
+      <p class="timeline_label" style="background-color: #f39d4a">コメントへの返信</p>
     <% if @current_member.responses.exists? %>
     <% @current_member.responses.each do |response| %>
     <% @course_view = response.course_view %>
     <% @course_info = @course_view.course_info %>
-    <p class="comment_log_label"><%= link_to "これ", @course_view %>にコメントしました。(<%= response.created_at.strftime("%Y/%m/%d") %>)</p>
+    <p class="comment_log" style="margin-bottom: 2px; margin-left: 23px;"><%= link_to truncate(@course_view.view, :length => 15), @course_view %>に</p>
+    <p class="comment_log" style="margin-bottom: 10px; margin-top: 0;">コメントしました。(<%= response.created_at.strftime("%Y/%m/%d") %>)</p>
     <% end %>
     <% else %>
       <p class="none_comment_log">まだ返信がありません。</p>
     <% end %>
     </div>
     <div id="like_log_index">
+    <p class="timeline_label" style="background-color: #009fc4">Good</p>
     <% if @current_member.likes.exists? %>
       <% @current_member.likes.each do |like| %>
         <% @course_info = CourseInfo.find(like.course_info_id) %>
-        <p class="like_log_label"><%= link_to "これ", @course_info %>にlikeしました。(<%= like.created_at.strftime("%Y/%m/%d") %>)</p>
+        <p class="like_log" style="margin-bottom: 2px; margin-left: 23px;"><%= link_to @course_info.title, @course_info %>に</p>
+        <p class="like_log" style="margin-bottom: 10px; margin-top: 0;">goodしました。(<%= like.created_at.strftime("%Y/%m/%d") %>)</p>
       <% end %>
     <% else %>
-      <p class="none_like_log">まだlikeがありません。</p>
+      <p class="none_like_log">まだgoodがありません。</p>
     <% end %>
     </div>
     </div>

@@ -1,4 +1,4 @@
-﻿class TeacherRank < ActiveRecord::Base
+class TeacherRank < ActiveRecord::Base
   attr_accessible :teacher_rank, :course_info_id
     
   belongs_to :member

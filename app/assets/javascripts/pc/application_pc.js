@@ -121,7 +121,7 @@ $(document).ready(function(){
 });
 // 教授評価がprompt風に出てくる仕組み
 $(document).ready(function(){
-  $("#teacher_rank_open_button").click(function(){
+  $("td.teacher_rank_prompt").click(function(){
      $("#cover").show();
     $("#teacher_rank_prompt")
     .css({

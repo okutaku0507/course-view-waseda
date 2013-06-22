@@ -32,7 +32,7 @@
 </div>
   <div class="response_add" id="response_add_<%= course_view.id %>">
     <%= form_for @response , :url => [:response_create, @course_info, course_view]  do |form| %>
-    <%= form.text_area :view_response, rows: 1, cols: 60, :placeholder => "このコメントについてどう思う？" %>
+    <%= form.text_area :view_response, rows: 1, cols: 43, :placeholder => "このコメントについてどう思う？" %>
     <%= form.submit "コメント", :class => "response_create_button" %>
   <% end %>
 </div>

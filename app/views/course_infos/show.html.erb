@@ -1,29 +1,30 @@
 <div id="course_info">
+<% if request.smart_phone? %>
 <h1 id="course_info_title">「<%= @course_info.title %>」</h1>
 <%= render "shared/errors", obj: @course_view %>
 <div id="course_info_head">
   <div id="course_info_detail">
-
-  <table id="teacher_rank">
-  <tr>
-      <td class="label">GPA</td>
-  </tr>
-  <tr>
+    <div class="course_info_show_option">
+        <span>GPA</span>
       <% if @course_info.teacher_ranks.exists? %>
-      <td class="point"><%= number_with_precision(@average_teacher_rank, :precision => 1) %></td>
+        <span class="teacher_rank_point" style="font-size: 2.5em;"><%= number_with_precision(@average_teacher_rank, :precision => 1) %></span>
       <% else %>
-      <td class="point">-</td>
+        <span class="teacher_rank_point" style="font-size: 2.5em;">-</span>
+<% end %><span class="teacher_rank_prompt" style="font-size: 1.6em;">評価</span>
+      <% if @current_member.take_course_for?(@course_info) %>
+        <%= link_to image_tag("risyuu.png", :class => "risyuu_icon"), [:take_course_create, @course_info], method: :post %>
+      <% else %>
+        <%= link_to image_tag("risyuu2.png", :class => "risyuu_icon"), [:not_take, @course_info], method: :put %>
       <% end %>
-  </tr>
-  <tr>
-     <% if (like_count = @course_info.likes.count) > 0 %>
-       <td id="like">good!&nbsp;<%= like_count %></td>
-     <% else %>
-       <td id="like">good!&nbsp;0</td>
-     <% end %>
-   </tr>
-  </table>
+      
+      <% if @current_member.like_for?(@course_info) %>
+        <%= link_to image_tag("good.png", :class => "good_icon"), [:like, @course_info], method: :put, class: "button" %>
+      <% else %>
+        <%= link_to image_tag("good2.png", :class => "good_icon"), [:unlike, @course_info], method: :put %>
+      <% end %>
+      
 
+    </div>
   </div>
 
 <div id="course_info_view_new">
@@ -32,25 +33,6 @@
 
     <%= form.text_area :view, :placeholder => "この講義どうだった？" %>
       <div id="course_info_view_option">
-         <% if @current_member.teacher_rank_for?(@course_info) %>
-           <p id="teacher_rank_open_button">評価</p>
-         <% else %>
-           <%= link_to "×教授", [:not_teacher_rank, @course_info], method: :put, id: "teacher_rank_button" %>
-         <% end %>
-         <p id="good_button">
-         <% if @current_member.like_for?(@course_info) %>
-           <%= link_to "good!", [:like, @course_info], method: :put, class: "button" %>
-         <% else %>
-            <%= link_to "×good!", [:unlike, @course_info], method: :put %>
-         <% end %>
-         </p>
-         <p id="take_button" data-num="<%= @course_info.id %>">
-         <% if @current_member.take_course_for?(@course_info) %>
-            <%= link_to "履修!", [:take_course_create, @course_info], method: :post %>
-         <% else %>
-            <%= link_to "×履修", [:not_take, @course_info], method: :put %>
-         <% end %>
-         </p>
          <%= form.submit "加筆", :id => "course_view_kahitu_button" %>
     </div>
   <% end %>
@@ -70,6 +52,74 @@
 <% end %>
 </div>
 </div>
+<% else %>
+<h1 id="course_info_title">「<%= @course_info.title %>」</h1>
+<%= render "shared/errors", obj: @course_view %>
+<div id="course_info_head">
+  <div id="course_info_detail">
+
+  <table id="teacher_rank">
+  <tr>
+      <td class="label">GPA</td>
+  </tr>
+  <tr>
+      <% if @course_info.teacher_ranks.exists? %>
+      <td class="point"><%= number_with_precision(@average_teacher_rank, :precision => 1) %></td>
+      <% else %>
+      <td class="point">-</td>
+      <% end %>
+  </tr>
+  <tr><td class="teacher_rank_prompt">評価</td></tr>
+  <tr>
+     <% if (like_count = @course_info.likes.count) > 0 %>
+       <td id="like">good!&nbsp;<%= like_count %></td>
+     <% else %>
+       <td id="like">good!&nbsp;0</td>
+     <% end %>
+   </tr>
+  </table>
+    <div class="course_info_show_option">
+      <% if @current_member.take_course_for?(@course_info) %>
+        <%= link_to image_tag("risyuu.png", :class => "risyuu_icon"), [:take_course_create, @course_info], method: :post %>
+      <% else %>
+        <%= link_to image_tag("risyuu2.png", :class => "risyuu_icon"), [:not_take, @course_info], method: :put %>
+      <% end %>
+      
+      <% if @current_member.like_for?(@course_info) %>
+        <%= link_to image_tag("good.png", :class => "good_icon"), [:like, @course_info], method: :put, class: "button" %>
+      <% else %>
+        <%= link_to image_tag("good2.png", :class => "good_icon"), [:unlike, @course_info], method: :put %>
+      <% end %>
+      
+    </div>
+  </div>
+
+<div id="course_info_view_new">
+<% if @current_member %>
+  <%= form_for @course_view, :url => { :action => "view_create" }  do |form| %>
+
+    <%= form.text_area :view, :placeholder => "この講義どうだった？" %>
+      <div id="course_info_view_option">
+         <%= form.submit "加筆", :id => "course_view_kahitu_button" %>
+    </div>
+  <% end %>
+<% else %>
+    <textarea rows="8" cols="50" placeholder="Course Viewに参加すると講義について自由に加筆できます！" ></textarea>
+      <div id="course_info_view_option">
+         <p id="teacher_rank_open_button">教授</p>
+         <p id="good_button">
+           <a class="biutton" href="#">good!</a>
+         </p>
+         <p id="take_button" data-num="<%= @course_info.id %>">
+           <a href="#">履修!</a>
+         </p>
+         <input id="guest_view_add_button" type="button" value="加筆!" />
+    </div>
+
+<% end %>
+</div>
+</div>
+<% end %>
 <% if @current_member %>
   <%= render "courseinfoview" %>
 <% else %>
@@ -83,10 +133,15 @@
       <p id="teacher_rank_colse_button">×</p>
       <p id="teacher_rank_text"><%= @course_info.teacher %>教授を評価しよう！</p>
       <%= form_for @teacher_rank, :url => { :action => "teacher_rank_create" } do |form| %>
+      <% if TeacherRank.where(course_info_id: @course_info.id, member_id: @current_member.id).exists? %>
+      <p align="center"><%= form.select :teacher_rank, [["取消", nil], ["A+", 4], [ "A", 3], ["B", 2], ["C", 1], ["F", 0]] %></p>
+      <% else %>
       <p align="center"><%= form.select :teacher_rank, [["A+", 4], [ "A", 3], ["B", 2], ["C", 1], ["F", 0]] %></p>
+      <% end %>
       <%= form.submit "評価する!", :id => "teacher_rank_button" %>
       <% end %>
     </div>
+    
     <% else %>
     <div id="teacher_rank_prompt">
       <p id="teacher_rank_colse_button">×</p>
