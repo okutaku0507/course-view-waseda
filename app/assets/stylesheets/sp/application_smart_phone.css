@@ -878,9 +878,6 @@ div#course_info_detail {
 }
 
 div#course_info_view_new {
-  margin-right: 135px;
-  top: 10px;
-  left: 250px;
 }
 
 #course_info_teacher {
@@ -908,8 +905,7 @@ div#course_info_view_new p#select_rank, td#add {
 }
 
 div.course_info_show_option {
-  width: 90%;
-  margin: 0;
+  margin-left: -30px;
 }
 
 div.course_info_show_option span {
