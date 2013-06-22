@@ -270,11 +270,12 @@ div#member_check a {
  
 div#member_password_edit {
   width: 80%;
-  margin-left: 10px;
+  margin-left: 5px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px 0 #000000;
   padding: 20px;
   margin-top: 20px;
+  font-size: 0.85em;
 }
 
 div#password_edit_input {
@@ -300,7 +301,7 @@ div#member_password_edit h1#title {
 div#member_password_edit input.member_password_input {
   font-size: 1.2em;
   font-weight: 600;
-  width: 250px;
+  width: 200px;
   padding: 5px;
   border-radius: 8px;
   border: solid 2px silver;
@@ -318,7 +319,7 @@ p.member_password_label {
   text-align: left;
   font-size: 0.8em;
   margin: 0;
-  margin-left: 20px;
+  margin-left: 40px;
   padding: 0;
   margin-top: 30px;
   margin-bottom: -10px;
@@ -741,7 +742,8 @@ div#course_index  a {
 div#course_index {
   margin-top: 35px;
   padding: 0;
-  height: 700px;
+  height: 800px;
+  margin-bottom: 100px;
 }
 
 table#index_teacher_rank {
@@ -1414,13 +1416,17 @@ p#add_search_close_button {
 
 div.pagination {
   position: absolute;
-  clear: both;
-  bottom: -350px;
-  left: 20px;
+  top: 60px;
+  left: 15px;
 }
 
 div.pagination a, em {
   text-decoration: none;
+  font-style: normal;
+}
+
+div.pagination em.current {
+  font-weight: bold;
 }
 
 div.pagination span {
