@@ -1,5 +1,9 @@
 <div id="header_back"></div>
-<div id="header_title"><%= image_tag "title.png", :class => "course_view_title" %></div>
+<% if request.smart_phone? %>
+<div id="header_title"><%= link_to image_tag("title_sp.png", :class => "course_view_title"), :course_infos %></div>
+<% else %>
+<div id="header_title"><%= link_to image_tag("title.png", :class => "course_view_title"), :course_infos %></div>
+<% end %>
 <% unless @current_member %>
   <div>
     <%= render "shared/login_form" %>

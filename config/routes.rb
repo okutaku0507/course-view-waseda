@@ -7,6 +7,7 @@ Course::Application.routes.draw do
 
   resources :course_infos, only: [ :new, :create, :show, :index ] do
     collection { get "search" }
+    collection { get "new_course_search" }
     resources :course_views do
       resources :responses
       member { post "response_create" }
@@ -24,10 +25,16 @@ Course::Application.routes.draw do
   resources :teacher_ranks
   resources :responses
   resources :take_courses
-  resource :session, only: [:create, :destroy]
+  resource :session, only: [:create, :destroy] do
+    
+  end
   resource :account do 
       resources :course_views
       resources :take_courses
+      get :schedule, on: :member
+      get :comment, on: :member
+      get :setting, on: :member
+      get :withdrawal, on: :member
   end
 
   namespace :admin do

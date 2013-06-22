@@ -215,16 +215,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $("#account_schedule_add_button").click(function(){
-     $("#account_view_cover").fadeIn('fast', function(){
-    $("div#account_schedule")
-    .delay(100)
-    .slideDown('fast');     
-     });
-    $("#account_view_index").css({
-      'position': 'absolute',
-      'top': $(window).scrollTop() + 50 + 'px'
-    });
-
+    $("div#account_schedule").slideDown('fast');
     $("#account_schedule_delete_button").show();
   });
 });

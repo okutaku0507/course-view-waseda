@@ -131,7 +131,7 @@
     <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 2}, :title => "講義を検索しよう！", :class => "Wed2" %>
    <% end %>
 </td>
-<td class="schedule_detail" data-num="">
+<td class="schedule_detail" data-num="Thu2">
   <% if @current_member.take_courses.where(take_course_open_time: 2, take_course_open_week: "木").exists? %>
   <% @current_member.take_courses.each do |take_course| %>
     <% if take_course.take_course_open_time == 2 && take_course.take_course_open_week == "木" %>
@@ -556,10 +556,11 @@
 </tr>
 <% end %>
 </table>
-  
+</div>
+<% if @current_member.take_courses.where(take_course_open_time: 8).exists? || @current_member.take_courses.where(take_course_open_time: 9).exists? %>
+<p id="other_schedule_index_open_button">オンデマンド・その他▼</p>
 <% if @current_member.take_courses.where(take_course_open_time: 8).exists? || @current_member.take_courses.where(take_course_open_time: 9).exists? %>
 <div id="other_schedule_detail">
-  <p id="other_schedule_index_open_button">オンデマンド・その他▼</p>
   <div id="other_schedule_index">
   
   <% if @current_member.take_courses.where(take_course_open_time: 8).exists? %>
@@ -577,6 +578,7 @@
   <% end %>
     
   </div>
+  
 </div>
 <% end %>
-</div>
+<% end %>

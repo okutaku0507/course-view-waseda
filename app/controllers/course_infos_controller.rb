@@ -23,14 +23,6 @@ class CourseInfosController < ApplicationController
     @response = Response.new
   end
 
-  def new
-    if @current_member
-      @course_info = CourseInfo.new
-    else
-      redirect_to :course_infos
-    end
-  end
-
   def edit
     @course_info = CourseInfo.find(params[:id])
   end
@@ -77,7 +69,29 @@ class CourseInfosController < ApplicationController
           .paginate(page: params[:page], per_page: 6)
     render "index"
   end
-
+  
+  def new_course_search
+    if params[:course_and_teacher].present?
+      params[:course_and_teacher] = params[:course_and_teacher].gsub("　", " ")
+    @course_infos = CourseInfo.search(params)
+    if @course_infos.present?
+      flash[:notice] = "このような講義が候補でありますが、なかった場合は作成してください！"
+      render "new_course_search"
+      flash[:notice] = nil
+    else
+      @course_info = CourseInfo.new
+      @course_info.open_time = params[:time]
+      @course_info.day_of_the_week = params[:week]
+      @course_info.open_term = params[:term]
+      @course_info.open_faculty = @current_member.faculty
+      flash[:notice] = "入力欄は正確に入力してください！"
+      render "new"
+      flash[:notice] = nil
+    end
+    else
+      redirect_to :back, notice: "教授名 or 講義名を入力してください！"
+    end
+  end
   # like,bad機能
 
   def like

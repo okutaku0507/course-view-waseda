@@ -52,6 +52,11 @@ class CourseInfo < ActiveRecord::Base
       rel = rel.where("day_of_the_week like ?", "%#{week}%")
     end
     
+    if params[:term].present?
+      term = params[:term]
+      rel = rel.where("open_term like ?", "%#{term}%")
+    end
+    
     rel
   }
 

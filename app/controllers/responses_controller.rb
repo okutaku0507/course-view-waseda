@@ -1,4 +1,4 @@
-﻿class ResponsesController < ApplicationController  
+class ResponsesController < ApplicationController  
   
   def new
     @response = Response.new

@@ -1,8 +1,5 @@
-
 <div style="clear: both">
-  <% if @current_member %>
-      <p id="course_info_new_button"><%= menu_link_to "Add Course",  :new_course_info %></p>
-  <% else %>
+  <% unless @current_member %>
       <p id="course_info_new_button"><%= menu_link_to "Join!",  :new_member %></p>
   <% end %>
 </div>
