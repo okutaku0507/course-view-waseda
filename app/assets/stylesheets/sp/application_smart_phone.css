@@ -837,7 +837,8 @@ div#course_info_head {
 
 h1#course_info_title {
   font-size: 2em;
-  margin: 0;
+  margin-top: -20px;
+  margin-bottom: -20px;
 }
 
 div#course_info table#course_info_table {
@@ -1043,12 +1044,13 @@ table#teacher_rank td.point{
 }
 
 #course_info_view_new input#course_view_kahitu_button {
+  font-weight: bold;
+  font-size: 1.8em;
   margin: 0;
   margin-left: 10px;
   border-radius: 3px;
   padding: 5px;
   text-decoration: none;
-  font-size: 1em;
   background-color: #ffffff;
   border: solid 1px #000000;
 }
@@ -1065,10 +1067,8 @@ table#teacher_rank td.point{
 }
 
 #course_info_view_index {
-  padding: 10px;
-  clear: both;
   margin-left: 5px;
-  margin-top: 70px;
+  margin-top: 10px;
 }
 
 span#writer {
