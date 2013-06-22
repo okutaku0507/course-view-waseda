@@ -15,12 +15,20 @@
   <%= link_to image_tag("timeline_sp.png", :size => "50x50"), :timeline_account %>
   <%= link_to image_tag("setting_sp.png", :size => "50x50"), :setting_account %>
 <% else %>
-  <%= link_to image_tag("account.png", :size => "43x66"), :account %>
-  <%= link_to image_tag("course.png", :size => "43x66"), :course_infos %>
-  <%= link_to image_tag("schedule.png", :size => "43x66"), :schedule_account %>
-  <%= link_to image_tag("comment.png", :size => "43x66"), :comment_account %>
-  <%= link_to image_tag("timeline.png", :size => "43x66"), :timeline_account %>
-  <%= link_to image_tag("setting.png", :size => "43x66"), :setting_account %>
+  <%= link_to image_tag("account.png", :size => "43x66", :class => "before_icon_account"), :account %>
+  <%= link_to image_tag("account2.png", :size => "43x66", :class => "after_icon_account"), :account %>
+  <%= link_to image_tag("course.png", :size => "43x66", :class => "before_icon_course"), :course_infos %>
+  <%= link_to image_tag("course2.png", :size => "43x66", :class => "after_icon_course"), :course_infos %>
+  <%= link_to image_tag("schedule.png", :size => "43x66", :class => "before_icon_schedule"), :schedule_account %>
+  <%= link_to image_tag("schedule2.png", :size => "43x66", :class => "after_icon_schedule"), :schedule_account %>
+  <%= link_to image_tag("comment.png", :size => "43x66", :class => "before_icon_comment"), :comment_account %>
+  <%= link_to image_tag("comment2.png", :size => "43x66", :class => "after_icon_comment"), :comment_account %>
+  <%= link_to image_tag("timeline.png", :size => "43x66", :class => "before_icon_timeline"), :timeline_account %>
+  <%= link_to image_tag("timeline2.png", :size => "43x66", :class => "after_icon_timeline"), :timeline_account %>
+  <%= link_to image_tag("setting.png", :size => "43x66", :class => "before_icon_setting"), :setting_account %>
+  <%= link_to image_tag("setting2.png", :size => "43x66", :class => "after_icon_setting"), :setting_account %>
+
+  </div>
 <% end %>
 </div>
 <% end %>

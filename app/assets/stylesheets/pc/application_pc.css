@@ -121,14 +121,35 @@ div#menu_icons {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   height: 67px;
-  margin-left: 35%;
+  margin-left: 34%;
   margin-top:  5px;
 }
 
 div#footer img {
   border: none;
+  margin: 0 5px;
+  z-index: 3;
+}
+
+img.after_icon_account {
+  display: none;
+}
+img.after_icon_course {
+  display: none;
+}
+img.after_icon_schedule {
+  display: none;
+}
+img.after_icon_comment {
+  display: none;
+}
+img.after_icon_timeline {
+  display: none;
+}
+img.after_icon_setting {
+  display: none;
 }
 
 /* 注意 */

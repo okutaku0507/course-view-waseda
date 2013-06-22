@@ -64,14 +64,7 @@
 <% else %>
     <textarea rows="8" cols="50" placeholder="Course Viewに参加すると講義について自由に加筆できます！" ></textarea>
       <div id="course_info_view_option">
-         <p id="teacher_rank_open_button">教授</p>
-         <p id="good_button">
-           <a class="biutton" href="#">good!</a>
-         </p>
-         <p id="take_button" data-num="<%= @course_info.id %>">
-           <a href="#">履修!</a>
-         </p>
-         <input id="guest_view_add_button" type="button" value="加筆!" />
+  
     </div>
 
 <% end %>
@@ -103,6 +96,7 @@
      <% end %>
    </tr>
   </table>
+    <% if @current_member %>
     <div class="course_info_show_option">
       <% if @current_member.take_course_for?(@course_info) %>
         <%= link_to image_tag("risyuu.png", :class => "risyuu_icon"), [:take_course_create, @course_info], method: :post %>
@@ -117,6 +111,12 @@
       <% end %>
       
     </div>
+    <% else %>
+      <div class="course_info_show_option">
+        <%=  image_tag("risyuu2.png", :class => "risyuu_icon") %>
+        <%=  image_tag("good2.png", :class => "good_icon") %>
+      </div>
+    <% end %>
   </div>
 
 <div id="course_info_view_new">
@@ -130,17 +130,9 @@
   <% end %>
 <% else %>
     <textarea rows="8" cols="50" placeholder="Course Viewに参加すると講義について自由に加筆できます！" ></textarea>
-      <div id="course_info_view_option">
-         <p id="teacher_rank_open_button">教授</p>
-         <p id="good_button">
-           <a class="biutton" href="#">good!</a>
-         </p>
-         <p id="take_button" data-num="<%= @course_info.id %>">
-           <a href="#">履修!</a>
-         </p>
-         <input id="guest_view_add_button" type="button" value="加筆!" />
+    <div id="course_info_view_option">
+      <input id="guest_view_add_button" type="button" value="加筆!" />
     </div>
-
 <% end %>
 </div>
 </div>

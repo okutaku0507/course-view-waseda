@@ -17,7 +17,7 @@
 </div>
 <% @writer_member = Member.find_by_id(course_view.member_id) %>
 <p id="view_footer">
-<span id="create_time" style="margin-left: 350px"><%= course_view.created_at.strftime("%Y/%m/%d") %></span>
+<span id="create_time" style="margin-left: 30px"><%= course_view.created_at.strftime("%Y/%m/%d") %></span>
 <span id="writer"><%= @writer_member.faculty %>生</span></p>
 </div>
 <% end %>
