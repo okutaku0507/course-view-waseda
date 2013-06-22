@@ -126,7 +126,7 @@ $(document).ready(function(){
     .css({
       'position': 'absolute',
       'top': $(window).scrollTop() + 100 + 'px',
-      'left': $(window).width() / 2 - 200+ 'px',
+      'left': $(window).width() / 2 - 150+ 'px',
     })
     .show();
   });
