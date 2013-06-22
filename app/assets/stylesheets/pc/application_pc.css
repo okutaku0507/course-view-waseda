@@ -123,7 +123,7 @@ div#menu_icons {
   width: 100%;
   z-index: 1;
   height: 67px;
-  margin-left: 39%;
+  margin-left: 35%;
   margin-top:  5px;
 }
 
@@ -383,7 +383,7 @@ p.alert {
 
 div#notice {
   margin-top: 55px;
-  margin-left: 370px;
+  margin-left: 270px;
   padding: 5px;
   width: 600px;
   background: rgba(255, 0, 0, 0.5);

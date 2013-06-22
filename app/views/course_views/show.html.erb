@@ -6,8 +6,13 @@
 </div>
 <div class="show_response_add" id="response_add_<%= @course_view.id %>">
   <%= form_for @response , :url => { :action => "response_create", :controller => "course_views" }  do |form| %>
-    <%= form.text_area :view_response, rows: 1, cols: 60, :placeholder => "このコメントについてどう思う？" %>
-    <%= form.submit "コメント", :class => "response_create_button" %>
+    <% if request.smart_phone? %>
+      <%= form.text_area :view_response, rows: 1, cols: 35, :placeholder => "このコメントについてどう思う？" %>
+      <%= form.submit "コメント", :class => "response_create_button" %>
+    <% else %>
+      <%= form.text_area :view_response, rows: 1, cols: 60, :placeholder => "このコメントについてどう思う？" %>
+      <%= form.submit "コメント", :class => "response_create_button" %>
+    <% end %>
   <% end %>
 </div>
 <% @course_view.responses.each do |response| %>
