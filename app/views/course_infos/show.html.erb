@@ -15,19 +15,14 @@
       <td class="point">-</td>
       <% end %>
   </tr>
+  <tr>
+     <% if (like_count = @course_info.likes.count) > 0 %>
+       <td id="like">good!&nbsp;<%= like_count %></td>
+     <% else %>
+       <td id="like">good!&nbsp;0</td>
+     <% end %>
+   </tr>
   </table>
-
-
-<% if @current_member %>
-  <div id="like_counter" >
-    <% if (like_count = @course_info.likes.count) > 0 %>
-      <p id="like">good!&nbsp;<%= like_count %></p>
-    <% else %>
-      <p id="like">good!&nbsp;0</p>
-    <% end %>
-  </div>
-
- <% end %>
 
   </div>
 
@@ -38,7 +33,7 @@
     <%= form.text_area :view, :placeholder => "この講義どうだった？" %>
       <div id="course_info_view_option">
          <% if @current_member.teacher_rank_for?(@course_info) %>
-           <p id="teacher_rank_open_button">教授</p>
+           <p id="teacher_rank_open_button">評価</p>
          <% else %>
            <%= link_to "×教授", [:not_teacher_rank, @course_info], method: :put, id: "teacher_rank_button" %>
          <% end %>

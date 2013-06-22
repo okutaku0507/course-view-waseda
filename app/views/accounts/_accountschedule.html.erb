@@ -1076,20 +1076,19 @@
   </table>
   </div>
   
+  <% if @current_member.take_courses.where(take_course_open_time: 8).exists? || @current_member.take_courses.where(take_course_open_time: 9).exists? %>  
   <p class="schedule_sp_add_button" data-num="other">その他</p>
   <div id="other" class="all_schedule_sp">
     <table>
-    <% if @current_member.take_courses.where(take_course_open_time: 8).exists? || @current_member.take_courses.where(take_course_open_time: 9).exists? %>
     <% @current_member.take_courses.each do |take_course| %>
       <% if take_course.take_course_open_time == 8 || take_course.take_course_open_time == 9 %>
         <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
         <tr><td>他</td><td style="width: 100%;"><%= link_to take_course.take_course_title, @course_info %></td></tr>
         <% end %>
       <% end %>
-    <% else %>
-    <p align="center">まだ、ありません。</p>
-    <% end %>
+   
     </table>
   </div>
+  <% end %>
 </div>
 <% end %>

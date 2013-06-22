@@ -109,22 +109,25 @@ div#sidebar {
 div#footer {
   clear: both;
   position: fixed;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
   width: 100%;
   z-index: 1;
-  height: 67px;
 }
 
 div#menu_icons {
-  margin-left: 15px;
+  width: 100%;
   margin-top:  5px;
+  background-color: #ffffff;
+  z-index: 1;
+  text-align: center;
 }
 
 div#menu_icons img {
   border: none;
   width: 50px;
   height: 50px;
+  z-index: 2;
 }
 
 /* 注意 */
@@ -1989,8 +1992,8 @@ input#password_restter_button {
    border: 1px solid silver;
    border-radius: 5px;
    margin-bottom: 20px;
-   width: 300px;
-   margin-left: 10px;
+   width: 290px;
+   margin-left: 5px;
  }
  
  div#account_setting a {
@@ -2002,12 +2005,12 @@ div#account_setting p {
  }
 
  div#withdrawal_form {
-  width: 60%;
+  width: 90%;
   border-radius: 10px;
   box-shadow: 1px 1px 3px 0 #000000;
   padding: 20px;
   margin-bottom: 20px;
-  margin-left: 10px;
+  margin-left: 5px;
   text-align: center;
  }
  

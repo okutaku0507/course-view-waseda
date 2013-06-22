@@ -1060,20 +1060,24 @@ div#course_info_detail h1 {
 table#teacher_rank {
   margin-bottom: 10px;
   padding: 10px;
-  box-shadow: 1px 1px 3px 0;
   border-radius: 5px;
-  background-color: #e0ffff;
-
+  border: 2px solid #67c1b1;
 }
-
 
 table#teacher_rank td.label{
   font-size: 3em;
   text-align: center;
   padding: 5px 10px 5px 10px;
   border-radius: 5px 5px 0 0;
+}
 
-
+table#teacher_rank td#like{
+  border-top: 2px solid #67c1b1;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 table#teacher_rank td.point{
