@@ -109,7 +109,7 @@ div#sidebar {
 div#footer {
   clear: both;
   position: fixed;
-  bottom: -5px;
+  bottom: -3px;
   left: 0;
   width: 100%;
   z-index: 1;
@@ -125,8 +125,6 @@ div#menu_icons {
 
 div#menu_icons img {
   border: none;
-  width: 50px;
-  height: 50px;
   margin-bottom: 2px;
   z-index: 2;
 }
@@ -1517,7 +1515,7 @@ div.take_course_detail_edit {
   padding: 15px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px 0 #000000;
-  height: 220px;
+  height: 240px;
   margin-left: 20px;
 }
 
@@ -2103,4 +2101,47 @@ div#new_schedule_form input.account_new_schedule_button {
   padding: 5px 3px;
   border-radius: 5px;
   background-color: #ffffff;
+}
+
+/* timeline */
+
+p.timeline_label {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+div#comment_log_index p.comment_log {
+  margin-left: 20px;
+}
+
+div#like_log_index p.like_log {
+ margin-left: 20px;
+}
+
+div#timeline {
+  width: 95%;
+  margin-bottom: 50px;
+  margin-left: 3px;
+}
+
+div#timeline h1 {
+  width: 200px;
+  border-bottom: 2px solid silver;
+}
+
+div#comment_log_index {
+  width: 90%;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+div#like_log_index {
+  width: 90%;
+  margin: 0;
+  margin-bottom: 30px;
 }

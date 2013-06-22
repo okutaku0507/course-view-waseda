@@ -1,19 +1,26 @@
 <% if @current_member %>
 <div id="menu_icons">
-<% unless request.smart_phone? %>
+<% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
+  <%= link_to image_tag("account_sp.png", :size => "45x45"), :account %>
+  <%= link_to image_tag("course_sp.png", :size => "45x45"), :course_infos %>
+  <%= link_to image_tag("schedule_sp.png", :size => "45x45"), :schedule_account %>
+  <%= link_to image_tag("comment_sp.png", :size => "45x45"), :comment_account %>
+  <%= link_to image_tag("timeline_sp.png", :size => "45x45"), :timeline_account %>
+  <%= link_to image_tag("setting_sp.png", :size => "45x45"), :setting_account %>
+<% elsif request.smart_phone? %>
+  <%= link_to image_tag("account_sp.png", :size => "50x50"), :account %>
+  <%= link_to image_tag("course_sp.png", :size => "50x50"), :course_infos %>
+  <%= link_to image_tag("schedule_sp.png", :size => "50x50"), :schedule_account %>
+  <%= link_to image_tag("comment_sp.png", :size => "50x50"), :comment_account %>
+  <%= link_to image_tag("timeline_sp.png", :size => "50x50"), :timeline_account %>
+  <%= link_to image_tag("setting_sp.png", :size => "50x50"), :setting_account %>
+<% else %>
   <%= link_to image_tag("home.png", :size => "35x64"), :account %>
   <%= link_to image_tag("course.png", :size => "35x64"), :course_infos %>
   <%= link_to image_tag("schedule.png", :size => "35x64"), :schedule_account %>
   <%= link_to image_tag("comment.png", :size => "35x64"), :comment_account %>
   <%= link_to image_tag("log.png", :size => "35x64"), :timeline_account %>
   <%= link_to image_tag("setting.png", :size => "35x64"), :setting_account %>
-<% else %>
-  <%= link_to image_tag("account_sp.png"), :account %>
-  <%= link_to image_tag("course_sp.png"), :course_infos %>
-  <%= link_to image_tag("schedule_sp.png"), :schedule_account %>
-  <%= link_to image_tag("comment_sp.png"), :comment_account %>
-  <%= link_to image_tag("timeline_sp.png"), :timeline_account %>
-  <%= link_to image_tag("setting_sp.png"), :setting_account %>
 <% end %>
 </div>
 <% end %>
