@@ -11,6 +11,23 @@
       <% else %>
         <span class="teacher_rank_point" style="font-size: 3.3em;">-</span>
 <% end %><span class="teacher_rank_prompt" style="font-size: 1.4em; border: 2px solid silver; padding: 3px; border-radius: 5px;">評価</span>
+
+
+      <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
+      <% if @current_member.take_course_for?(@course_info) %>
+        <%= link_to image_tag("risyuu.png", :class => "iPhone_risyuu_icon"), [:take_course_create, @course_info], method: :post %>
+      <% else %>
+        <%= link_to image_tag("risyuu2.png", :class => "iPhone_risyuu_icon"), [:not_take, @course_info], method: :put %>
+      <% end %>
+      
+      <% if @current_member.like_for?(@course_info) %>
+        <%= link_to image_tag("good.png", :class => "iPhone_good_icon"), [:like, @course_info], method: :put, class: "button" %>
+      <% else %>
+        <%= link_to image_tag("good2.png", :class => "iPhone_good_icon"), [:unlike, @course_info], method: :put %>
+      <% end %>
+      
+      <% else %>
+      
       <% if @current_member.take_course_for?(@course_info) %>
         <%= link_to image_tag("risyuu.png", :class => "risyuu_icon"), [:take_course_create, @course_info], method: :post %>
       <% else %>
@@ -23,7 +40,7 @@
         <%= link_to image_tag("good2.png", :class => "good_icon"), [:unlike, @course_info], method: :put %>
       <% end %>
       
-
+      <% end %>
     </div>
   </div>
 
