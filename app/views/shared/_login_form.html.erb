@@ -1,5 +1,7 @@
 <div id="login_form">
-
+  <% unless request.smart_phone? %>
+  <p id="header_rabbit"><%= image_tag "rabbit.png", width: 30, :class => "rabbit_before_login" %></p>
+  <% end %>
 <%= form_tag :session do %>
 <table id="login_form">
 <tr>
