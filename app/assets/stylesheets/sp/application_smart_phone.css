@@ -120,7 +120,13 @@ div#footer {
   left: 0;
   width: 100%;
   z-index: 1;
+}
+
+div#sp_footer {
+  clear: both;
+  width: 100%;
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 div#menu_icons {
@@ -758,7 +764,6 @@ table#index_teacher_rank {
   background: -webkit-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
   background: -o-linear-gradient(top, ghostwhite 0%, #e0ffff 100%);
   background: -webkit-gradient(linear, top, bottom, from(ghostwhite), to(#e0ffff));
-
 }
 
 

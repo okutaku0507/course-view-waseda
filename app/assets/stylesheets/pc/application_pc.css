@@ -133,22 +133,22 @@ div#footer img {
   z-index: 3;
 }
 
-img.after_icon_account {
+img.before_icon_account {
   display: none;
 }
-img.after_icon_course {
+img.before_icon_course {
   display: none;
 }
-img.after_icon_schedule {
+img.before_icon_schedule {
   display: none;
 }
-img.after_icon_comment {
+img.before_icon_comment {
   display: none;
 }
-img.after_icon_timeline {
+img.before_icon_timeline {
   display: none;
 }
-img.after_icon_setting {
+img.before_icon_setting {
   display: none;
 }
 
