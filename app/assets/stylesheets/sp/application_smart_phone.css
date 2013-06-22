@@ -906,6 +906,7 @@ div#course_info_view_new p#select_rank, td#add {
 
 div.course_info_show_option {
   margin-left: -30px;
+  margin-top: -20px;
 }
 
 div.course_info_show_option span {
@@ -1020,8 +1021,6 @@ table#teacher_rank td.point{
 /* course_infoのview */
 
 #course_info_view_new {
-    margin-left: 60px;
-  margin-top: 40px;
 }
 
 #course_info_view_new textarea {
@@ -1033,7 +1032,8 @@ table#teacher_rank td.point{
   margin-bottom: 10px;
   margin-top: 3px;
   height: 150px;
-  width: 90%;
+  width: 95%;
+  margin-left: 5px;
 }
 
 #course_info_view_new select {
@@ -1837,7 +1837,7 @@ input.response_create_button {
 
 span.response_add_button {
   font-size: 0.8em;
-  margin-left: 250px;
+  margin-left: 10px;
   cursor: pointer;
   color: blue;
 }
