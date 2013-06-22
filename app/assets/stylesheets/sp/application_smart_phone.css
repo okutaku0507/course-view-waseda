@@ -832,16 +832,12 @@ div#course_info {
 }
 
 div#course_info_head {
-  height: 250px;
   width: 98%;
 }
 
 h1#course_info_title {
   font-size: 2em;
   margin: 0;
-  margin-left: 70px;
-  margin-bottom: -50px;
-  width: 600px;
 }
 
 div#course_info table#course_info_table {

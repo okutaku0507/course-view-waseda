@@ -1,8 +1,8 @@
 <div id="course_info">
 <% if request.smart_phone? %>
-<h1 id="course_info_title">「<%= @course_info.title %>」</h1>
 <%= render "shared/errors", obj: @course_view %>
 <div id="course_info_head">
+<h1 id="course_info_title">「<%= @course_info.title %>」</h1>
   <div id="course_info_detail">
     <div class="course_info_show_option">
         <span>GPA</span>
