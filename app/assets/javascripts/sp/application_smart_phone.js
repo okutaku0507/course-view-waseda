@@ -371,6 +371,16 @@ $(document).ready(function(){
   });
 });
 
+// アカウントの時間割で講義作成の検索が出る仕組み
+
+$(document).ready(function(){
+    $('#course_creater_button').click(function() {
+    $('div#new_schedule_form').show('fast');
+    $(this).hide();
+  });
+});
+
+
 //  likeの非同期通信
   
 //$(document).ready(function(){
