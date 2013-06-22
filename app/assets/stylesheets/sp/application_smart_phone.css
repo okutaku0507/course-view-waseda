@@ -828,8 +828,7 @@ div.gpa_panel {
 /* course_infoのshow */
 
 div#course_info {
-  margin: auto;
-  width: 95%;
+  margin: 0;
 }
 
 div#course_info_head {
@@ -1076,8 +1075,8 @@ table#teacher_rank td.point{
 #course_info_view_index {
   padding: 10px;
   clear: both;
-  margin-left: 70px;
-  margin-top: 50px;
+  margin-left: 5px;
+  margin-top: 70px;
 }
 
 span#writer {
@@ -1846,7 +1845,7 @@ input.response_create_button {
 
 span.response_add_button {
   font-size: 0.8em;
-  margin-left: 300px;
+  margin-left: 250px;
   cursor: pointer;
   color: blue;
 }
