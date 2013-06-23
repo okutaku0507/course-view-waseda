@@ -1,4 +1,4 @@
-﻿class CourseViewsController < ApplicationController
+class CourseViewsController < ApplicationController
    before_filter :login_required
 
   def index

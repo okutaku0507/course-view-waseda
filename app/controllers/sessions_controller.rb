@@ -11,8 +11,14 @@ class SessionsController < ApplicationController
       cookies.signed[:member_id] = { value: member.id, expires: 30.years.from_now }
       redirect_to params[:from] || :account
     else
-      flash.alert = "※メールアドレスとパスワードが一致しません"
+      if request.smart_phone?
+        flash[:notice] = "※メールアドレスとパスワードが一致しません"
+        redirect_to params[:from] || :back
+      else
+        flash.alert = "※メールアドレスとパスワードが一致しません"
           redirect_to params[:from] || :course_infos
+      end
+
     end
   end
 
