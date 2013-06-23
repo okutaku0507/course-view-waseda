@@ -61,7 +61,6 @@ class CourseInfosController < ApplicationController
   end
 
   def search
-    params[:faculty] =  @current_member.faculty
     if params[:course_and_teacher].present?
       params[:course_and_teacher] = params[:course_and_teacher].gsub("　", " ")
     end

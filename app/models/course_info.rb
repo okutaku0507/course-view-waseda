@@ -36,11 +36,10 @@ class CourseInfo < ActiveRecord::Base
       rel = rel.where("teacher like ?", "%#{teacher}%")
     end
     
-   # if params[:all_course].present?
-   # else
-   #   faculty = params[:faculty]
-   #   rel = rel.where("open_faculty like ?", "%#{faculty}%")
-   # end
+    if params[:faculty].present?
+      faculty = params[:faculty]
+      rel = rel.where("open_faculty like ?", "%#{faculty}%")
+    end
     
     if params[:time].present?
       time = params[:time]

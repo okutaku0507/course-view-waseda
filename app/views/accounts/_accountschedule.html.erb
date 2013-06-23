@@ -22,7 +22,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 1}, :title => "講義を検索しよう！", :class => "Mon1" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 1, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Mon1" %>
   <% end %>
   
 </td>
@@ -36,7 +36,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 1}, :title => "講義を検索しよう！", :class => "Tue1" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 1, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Tue1" %>
   <% end %>
  
 </td>
@@ -49,7 +49,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 1}, :title => "講義を検索しよう！", :class => "Wed1" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 1, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Wed1" %>
   <% end %>
 </td>
 
@@ -62,7 +62,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 1}, :title => "講義を検索しよう！", :class => "Thu1" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 1, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Thu1" %>
   <% end %>
 </td>
 
@@ -75,7 +75,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 1}, :title => "講義を検索しよう！", :class => "Fri1" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 1, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Fri1" %>
   <% end %>
 </td>
 
@@ -88,7 +88,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 1}, :title => "講義を検索しよう！", :class => "Sat1" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 1, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Sat1" %>
   <% end %>
 </td>
 </tr>
@@ -104,7 +104,7 @@
     <% end %>
     <% end %>
    <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 2}, :title => "講義を検索しよう！", :class => "Mon2" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 2, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Mon2" %>
    <% end %>
 </td>
 <td class="schedule_detail" data-num="Tue2">
@@ -116,7 +116,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 2}, :title => "講義を検索しよう！", :class => "Tue2" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 2, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Tue2" %>
    <% end %>
 </td>
 <td class="schedule_detail" data-num="Wed2">
@@ -128,7 +128,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 2}, :title => "講義を検索しよう！", :class => "Wed2" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 2, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Wed2" %>
    <% end %>
 </td>
 <td class="schedule_detail" data-num="Thu2">
@@ -140,7 +140,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 2}, :title => "講義を検索しよう！", :class => "Thu2" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 2, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Thu2" %>
    <% end %>
 </td>
 <td class="schedule_detail" data-num="Fri2">
@@ -152,7 +152,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 2}, :title => "講義を検索しよう！", :class => "Fri2" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 2, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Fri2" %>
   <% end %>
 </td>
 
@@ -165,7 +165,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 2}, :title => "講義を検索しよう！", :class => "Sat2" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 2, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Sat2" %>
   <% end %>
 </td>
 </tr>
@@ -181,7 +181,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 3}, :title => "講義を検索しよう！", :class => "Mon3" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 3, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Mon3" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Tue3">
@@ -193,7 +193,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 3}, :title => "講義を検索しよう！", :class => "Tue3" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 3, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Tue3" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Wed3">
@@ -205,7 +205,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 3}, :title => "講義を検索しよう！", :class => "Wed3" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 3, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Wed3" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Thu3">
@@ -217,7 +217,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 3}, :title => "講義を検索しよう！", :class => "Thu3" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 3, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Thu3" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Fri3">
@@ -229,7 +229,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 3}, :title => "講義を検索しよう！", :class => "Fri3" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 3, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Fri3" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Sat3">
@@ -241,7 +241,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 3}, :title => "講義を検索しよう！", :class => "Sat3" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 3, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Sat3" %>
   <% end %>
 </td>
 </tr>
@@ -257,7 +257,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 4}, :title => "講義を検索しよう！", :class => "Mon4" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 4, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Mon4" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Tue4">
@@ -269,7 +269,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 4}, :title => "講義を検索しよう！", :class => "Tue4" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 4, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Tue4" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Wed4">
@@ -281,7 +281,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 4}, :title => "講義を検索しよう！", :class => "Wed4" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 4, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Wed4" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Thu4">
@@ -293,7 +293,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 4}, :title => "講義を検索しよう！", :class => "Thu4" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 4, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Thu4" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Fri4">
@@ -305,7 +305,7 @@
     <% end %>
   <% end %>
     <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 4}, :title => "講義を検索しよう！", :class => "Fri4" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 4, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Fri4" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Sat4">
@@ -317,7 +317,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 4}, :title => "講義を検索しよう！", :class => "Sat4" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 4, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Sat4" %>
   <% end %>
 </td>
 </tr>
@@ -334,7 +334,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 5}, :title => "講義を検索しよう！", :class => "Mon5" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 5, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Mon5" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Tue5">
@@ -346,7 +346,7 @@
     <% end %>
   <% end %>
     <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 5}, :title => "講義を検索しよう！", :class => "Tue5" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 5, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Tue5" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Wed5">
@@ -358,7 +358,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 5}, :title => "講義を検索しよう！", :class => "Wed5" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 5, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Wed5" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Thu5">
@@ -370,7 +370,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 5}, :title => "講義を検索しよう！", :class => "Thu5" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 5, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Thu5" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Fri5">
@@ -382,7 +382,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 5}, :title => "講義を検索しよう！", :class => "Fri5" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 5, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Fri5" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Sat5">
@@ -394,7 +394,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 5}, :title => "講義を検索しよう！", :class => "Sat5" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 5, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Sat5" %>
   <% end %>
 </td>
 </tr>
@@ -412,7 +412,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 6}, :title => "講義を検索しよう！", :class => "Mon6" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 6, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Mon6" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Tue6">
@@ -424,7 +424,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 6}, :title => "講義を検索しよう！", :class => "Tue6" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 6, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Tue6" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Wed6">
@@ -436,7 +436,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 6}, :title => "講義を検索しよう！", :class => "Wed6" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 6, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Wed6" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Thu6">
@@ -448,7 +448,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 6}, :title => "講義を検索しよう！", :class => "Thu6" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 6, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Thu6" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Fri6">
@@ -460,7 +460,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 6}, :title => "講義を検索しよう！", :class => "Fri6" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 6, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Fri6" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Sat6">
@@ -472,7 +472,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 6}, :title => "講義を検索しよう！", :class => "Sat6" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 6, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Sat6" %>
   <% end %>
 </td>
 </tr>
@@ -490,7 +490,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 7}, :title => "講義を検索しよう！", :class => "Mon7" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "月", :time => 7, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Mon7" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Tue7">
@@ -502,7 +502,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 7}, :title => "講義を検索しよう！", :class => "Tue7" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "火", :time => 7, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Tue7" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Wed7">
@@ -514,7 +514,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 7}, :title => "講義を検索しよう！", :class => "Wed7" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "水", :time => 7, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Wed7" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Thu7">
@@ -526,7 +526,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 7}, :title => "講義を検索しよう！", :class => "Thu7" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "木", :time => 7, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Thu7" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Fri7">
@@ -538,7 +538,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 7}, :title => "講義を検索しよう！", :class => "Fri7" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "金", :time => 7, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Fri7" %>
   <% end %>
 </td>
 <td class="schedule_detail" data-num="Sat7">
@@ -550,7 +550,7 @@
     <% end %>
   <% end %>
   <% else %>
-    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 7}, :title => "講義を検索しよう！", :class => "Sat7" %>
+    <%= link_to image_tag("loupe.png", :size => "16x16"), {:controller => "course_infos", :action => "search", :week => "土", :time => 7, :faculty => @current_member.faculty}, :title => "講義を検索しよう！", :class => "Sat7" %>
   <% end %>
 </td>
 </tr>

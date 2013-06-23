@@ -1,7 +1,18 @@
-﻿<div id="course_info_view_index">
+<div id="course_info_view_index">
 <% if @course_info.course_views.exists? %>
   <div id="course_info_view_index_top">
-      <p>コメント</p>
+    <span id="show_course_info_teacher"><%= @course_info.teacher %></span>
+    <span id="course_info_faculty"><%= @course_info.open_faculty %></span>
+  </div>
+<% else %>
+  <div id="course_info_view_index_top">
+      <span id="course_info_faculty"><%= @course_info.open_faculty %></span>
+      <span id="show_course_info_teacher"><%= @course_info.teacher %></span>
+  </div>
+  <div id="course_info_view">
+    <div class="view_text">
+      <p>コメントはまだありません。</p>
+    </div>
   </div>
 <% end %>
 

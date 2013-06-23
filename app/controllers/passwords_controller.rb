@@ -20,7 +20,7 @@ class PasswordsController < ApplicationController
       redirect_to :forgot_password, notice: "メールアドレスと確認が一致しません。"
     end
     else
-      redirect_to :forgot_password, notice: "メールアドレスに誤りがあるか、登録されていませんしません。"
+      redirect_to :forgot_password, notice: "メールアドレスに誤りがあるか、登録されていません。"
    end
   end
   
