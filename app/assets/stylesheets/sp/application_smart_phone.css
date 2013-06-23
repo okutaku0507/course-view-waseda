@@ -162,8 +162,9 @@ div#member_new_form {
 
 div#new_member h1#title {
   margin-bottom: 10px;
+  margin-left: 5px;
   font-weight: bold;
-  font-size: 1.7em;
+  font-size: 1.5em;
 }
 
 div#new_member input.member_input {
@@ -179,7 +180,7 @@ div#new_member input.member_input {
 div#new_member input.member_input_family_name {
   font-size: 1.2em;
   font-weight: 600;
-  width: 115px;
+  width: 100px;
   padding: 5px;
   border-radius: 8px;
   border: solid 2px silver;
@@ -261,7 +262,8 @@ div#member_new_button input {
   background-color: #ffffff;
 }
 
-div#member_check {
+div#iphone_member_check p, a {
+  font-size: 0.95em;
 }
 
 div#member_check a {
@@ -362,14 +364,34 @@ div#sp_login_form {
   text-align: center;
 }
 
-div#sp_login_form img {
-  width: 100px;
-  height: 100px;
+div#sp_login_form img.sp_login_logo {
+  
 }
 
-div#sp_login_form input.password, input.email {
+div#sp_login_form img.sp_login_rabbit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 50px;
+  margin-right: 50px;
+  width: 30px;
+  height: 30px;
+}
+
+p.sp_login_form_label {
+  margin-right: 40%;
+  margin-bottom: -10px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+div#sp_login_form input.sp_login_form_input {
   width: 80%;
-  height: 40px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 1px 0 #000000;
+  font-size: 1.3em;
 }
 
 img.sp_login {
@@ -378,6 +400,11 @@ img.sp_login {
   right: 0;
   margin-top: 10px;
   margin-right: 10px;
+}
+
+img.sp_login_form_session_button {
+  width: 80px;
+  height: 80px;
 }
 
 /* フラッシュ */
@@ -762,7 +789,7 @@ div#course_index  a {
 }
 
 div#course_index {
-  margin-top: 50px;
+  margin-top: 100px;
   padding: 0;
   margin-bottom: 150px;
   margin-left: 5px;

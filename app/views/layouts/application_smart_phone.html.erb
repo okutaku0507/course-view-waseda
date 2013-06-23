@@ -17,7 +17,11 @@
       ga('send', 'pageview');
     </script>
 </head>
+<% if  controller.kind_of?(SessionsController) %>
+  <body id="session">
+<% else %>
 <body>
+<% end %>
 <div id="container">
   <div id="header">
     <%= render "shared/header" %>

@@ -48,7 +48,19 @@
         <%= form.label :gender_1, "女" %>
 </p>
 </div>
-
+<% if request.smart_phone? %>
+<div id="iphone_member_check">
+<% if request.smart_phone? %>
+<p><input type="checkbox" id="check">&nbsp;&nbsp;<%= link_to "利用規約", use_policy_path %>
+/<%= link_to "プライバシーポリシー", privacy_path %>
+</p>
+<p style="margin-left: 100px;">に同意する</p>
+<% else %>
+<p><input type="checkbox" id="check">&nbsp;&nbsp;<%= link_to "利用規約", use_policy_path %>
+/<%= link_to "プライバシーポリシー", privacy_path %>に同意する</p>
+<% end %>
+</div>
+<% else %>
 <div id="member_check">
 <% if request.smart_phone? %>
 <p><input type="checkbox" id="check">&nbsp;&nbsp;<%= link_to "利用規約", use_policy_path %>
@@ -60,5 +72,6 @@
 /<%= link_to "プライバシーポリシー", privacy_path %>に同意する</p>
 <% end %>
 </div>
+<% end %>
 
 </div>
