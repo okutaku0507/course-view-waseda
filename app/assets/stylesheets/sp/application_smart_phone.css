@@ -358,6 +358,28 @@ p.alert {
   font-weight: bold;
 }
 
+div#sp_login_form {
+  text-align: center;
+}
+
+div#sp_login_form img {
+  width: 100px;
+  height: 100px;
+}
+
+div#sp_login_form input.password, input.email {
+  width: 80%;
+  height: 40px;
+}
+
+img.sp_login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
 /* フラッシュ */
 
 div#notice {

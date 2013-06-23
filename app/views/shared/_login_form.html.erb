@@ -18,11 +18,11 @@
 </table>
 <% else %>
 <div id="sp_login_form">
-<p class="sp_login_form_label">メールアドレス</p>
-<p class="sp_login_form_input"><%= text_field_tag "email", "", style: "width: 120px" %></p>
-<p class="sp_login_form_label">パスワード</p>
-<p class="sp_login_form_input"><%= password_field_tag "password", "", style: "width: 120px" %></p>
-<p class="sp_login_form_session_button"><%= submit_tag "login" %></p>
+<p class="sp_login_form_label">ID:</p>
+<p><%= text_field_tag "email", "", :class => "sp_login_form_input" %></p>
+<p class="sp_login_form_label">Pass:</p>
+<p><%= password_field_tag "password", "", :class => "sp_login_form_input" %></p>
+<p class="sp_login_form_session_button"><%= image_submit_tag("loupe.png") %></p>
 </div>
 <% end %>
 <%= hidden_field_tag "form", request.path %>
