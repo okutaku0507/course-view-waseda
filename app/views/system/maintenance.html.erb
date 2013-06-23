@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>メンテナンス中</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/assets/application.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <p>Course Viewは
+      <%= reason || 'メンテナンス' %>のため、サービスを一時的に休止しています。
+    </p>
+    <p>
+      <% if deadline %>
+        サービス再開予定時刻は<%= deadline %>です。
+      <% else %>
+        まもなくサービスは再開されます。
+      <% end %>
+    </p>
+    <p>緊急の連絡は course-view@rabbit-network.com までお願いします。</p>
+  </body>
+</html>
+

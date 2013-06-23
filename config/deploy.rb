@@ -62,3 +62,9 @@ namespace :db do
     end
   end
 end
+
+require "capistrano/maintenance"
+set :maintenance_template_path,
+  File.join(File.dirname(__FILE__),
+  "..", "app", "views", "system", "maintenance.html.erb")
+$VERBOSE = nil

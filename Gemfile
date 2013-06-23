@@ -45,3 +45,7 @@ group :test do
 end
 
 gem 'jpmobile'
+
+group :development do
+  gem "capistrano-maintenance"
+end
