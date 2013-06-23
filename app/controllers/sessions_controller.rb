@@ -2,6 +2,9 @@
 
 class SessionsController < ApplicationController
 
+  def new
+  end
+  
   def create
     member = Member.authenticate(params[:email], params[:password])
     if member
