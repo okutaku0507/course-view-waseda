@@ -400,7 +400,7 @@ p.sp_login_form_label {
 }
 
 div#sp_login_form input.sp_login_form_input {
-  width: 80%;
+  width: 350px;
   height: 30px;
   background-color: #ffffff;
   border-radius: 10px;
