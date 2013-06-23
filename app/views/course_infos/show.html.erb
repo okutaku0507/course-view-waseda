@@ -54,11 +54,11 @@
       <% else %>
         
       <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
-        <%= image_tag("risyuu2.png", :class => "iPhone_risyuu_icon") %>
-        <%= image_tag("good2.png", :class => "iPhone_good_icon") %>      
+        <%= image_tag("risyuu.png", :class => "iPhone_risyuu_icon") %>
+        <%= image_tag("good.png", :class => "iPhone_good_icon") %>      
       <% else %>
-        <%= image_tag("risyuu2.png", :class => "risyuu_icon") %>
-        <%= image_tag("good2.png", :class => "good_icon") %>
+        <%= image_tag("risyuu.png", :class => "risyuu_icon") %>
+        <%= image_tag("good.png", :class => "good_icon") %>
       <% end %>
         
       <% end %>
@@ -125,8 +125,8 @@
     </div>
     <% else %>
       <div class="course_info_show_option">
-        <%=  image_tag("risyuu2.png", :class => "risyuu_icon") %>
-        <%=  image_tag("good2.png", :class => "good_icon") %>
+        <%=  image_tag("risyuu.png", :class => "risyuu_icon") %>
+        <%=  image_tag("good.png", :class => "good_icon") %>
       </div>
     <% end %>
   </div>
