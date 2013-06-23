@@ -1,7 +1,7 @@
 <p id="course_creater_button" align="center"><%= image_tag "sakusei.png", :class => "course_creater_button_img" %></p>
 <div id="new_schedule_form">
     <%= form_tag [:new_course_search, :course_infos], method: :get do %>
-      <p id="search_str"><%= text_field_tag :course_and_teacher, params[:course_and_teacher], :placeholder => "講義 or 教授の一部", :class => "account_course_and_teacher" %>
+    <p id="search_str"><%= text_field_tag :course_and_teacher, params[:course_and_teacher], :placeholder => "講義 or 教授の一部", :class => "account_course_and_teacher" %>
       <p><%= select_tag "week", options_for_select(["月", "火", "水", "木", "金", "土", "日", "無"], params[:week]) %></p>
       <p><%= select_tag "time", options_for_select([["1時限", 1], ["2時限", 2], ["3時限", 3], ["4時限", 4], ["5時限", 5], ["6時限", 6], ["7時限", 7], ["フルオンデマンド", 8], ["その他", 9]], params[:time]) %></p>
       <p style="margin-right: 10px;"><%= select_tag "term", options_for_select(["春期", "秋期", "通年", "その他"], params[:term]) %></p>

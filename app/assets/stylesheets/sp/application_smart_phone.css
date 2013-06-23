@@ -486,10 +486,6 @@ div#new_course {
 
 }
 
-div#course_new_form {
-  margin-left: 100px;
-}
-
 div#new_course h1 {
   text-align: center;
   margin-bottom: 0;
@@ -541,6 +537,7 @@ p.course_form_label {
 
 div#course_title {
   margin-bottom: 15px;
+  width: 100%;
 }
 
 div#course_teacher {
@@ -2162,18 +2159,15 @@ img.course_creater_button_img {
  height: 30px;
 }
 div#new_schedule_form {
-  padding: 30px;
+  margin: 10px 0;
+  padding: 10px;
   display: none;
-}
-
-div#new_schedule_form p {
-  display: inline;
 }
 
 div#new_schedule_form input.account_course_and_teacher {
   font-size: 1.2em;
   font-weight: 600;
-  width: 250px;
+  width: 240px;
   padding: 5px;
   border-radius: 5px;
   border: solid 2px silver;
@@ -2189,7 +2183,7 @@ div#new_schedule_form select {
   border: solid 2px silver;
   padding: 5px;
   border-radius: 5px;
-  margin-left: 10px;
+  width: 250px;
 }
 
 div#new_schedule_form input.account_new_schedule_button {
@@ -2197,6 +2191,7 @@ div#new_schedule_form input.account_new_schedule_button {
   padding: 5px 3px;
   border-radius: 5px;
   background-color: #ffffff;
+  font-size: 1.3em;
 }
 
 /* timeline */
@@ -2257,12 +2252,11 @@ div#search_course_new_form input.course_input:focus {
 }
 
 div#search_course_new_form select {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: 600;
   padding: 5px;
   border-radius: 5px;
   border: solid 2px silver;
-  margin-left: 10px;
 }
 
 div#course_create_button {
@@ -2272,6 +2266,7 @@ div#course_create_button {
 
 div#course_create_button input {
   border: 2px solid silver;
+  font-size: 1.3em;
   padding: 5px 3px;
   border-radius: 5px;
   background-color: #ffffff;
