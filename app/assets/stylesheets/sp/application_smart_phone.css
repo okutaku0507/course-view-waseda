@@ -18,6 +18,21 @@ img.rabbit_before_login {
   margin-top: -15px;
 }
 
+/* before_login */
+div#before_login_menu  {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: -5px;
+  margin-right: 5px;
+  
+}
+
+div#before_login_menu img {
+  width: 65px;
+  height: 35px;
+}
 
 /* title */
 
@@ -372,14 +387,14 @@ div#sp_login_form img.sp_login_rabbit {
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: 50px;
+  margin-top: 60px;
   margin-right: 50px;
   width: 30px;
   height: 30px;
 }
 
 p.sp_login_form_label {
-  margin-right: 40%;
+  margin-right: 70%;
   margin-bottom: -10px;
   font-weight: bold;
   font-size: 1.1em;
@@ -403,8 +418,13 @@ img.sp_login {
 }
 
 img.sp_login_form_session_button {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
+}
+
+img.sp_login_logo {
+  width: 240px;
+  height: 40px;
 }
 
 /* フラッシュ */

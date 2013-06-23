@@ -1,4 +1,10 @@
 <div id="header_back"></div>
+  <% unless @current_member %>
+  <div id="before_login_menu">
+  <p><span style="margin-right: 10px;"><%= link_to image_tag("join.png"), :new_member %></span>
+    <span><%= link_to image_tag("new_login.png"), :new_session %></span></p>
+  </div>
+  <% end %>
 <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
 <div id="header_title"><%= link_to image_tag("title_sp.png", :class => "iPhone_course_view_title"), :course_infos %></div>
 <% elsif request.smart_phone? %>
@@ -12,7 +18,6 @@
     <%= render "shared/login_form" %>
   </div>
 <% else %>
-<p id="login_button"><%= link_to image_tag("rabbit.png", :class => "sp_login"), :new_session %></p>
 <% end %>
 <% else %>
   <% unless controller.kind_of?(Admin::Base) %>
