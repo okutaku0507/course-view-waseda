@@ -394,7 +394,6 @@ div#sp_login_form img.sp_login_rabbit {
 }
 
 p.sp_login_form_label {
-  margin-right: 70%;
   margin-bottom: -10px;
   font-weight: bold;
   font-size: 1.1em;
@@ -417,12 +416,13 @@ img.sp_login {
   margin-right: 10px;
 }
 
-img.sp_login_form_session_button {
-  width: 50px;
-  height: 50px;
+input.sp_login_form_session_button {
+  width: 60px;
+  height: 60px;
 }
 
 img.sp_login_logo {
+  margin-top: 20px;
   width: 240px;
   height: 40px;
 }
