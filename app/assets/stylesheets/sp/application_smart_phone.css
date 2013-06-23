@@ -479,13 +479,10 @@ p.error_message {
 /* 講義追加ページ */
 
 div#new_course {
-  width: 800px;
-  height: 400px;
-  margin-left: 50px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px 0 #000000;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 20px;
 
 }
 
@@ -509,6 +506,7 @@ div#new_course input.course_input {
 
 div#new_course select {
   font-size: 1.2em;
+  width: 265px;
   font-weight: 600;
   padding: 5px;
   border-radius: 8px;
@@ -542,39 +540,26 @@ p.course_form_label {
 }
 
 div#course_title {
-  display: inline-block;
   margin-bottom: 15px;
 }
 
 div#course_teacher {
   margin-bottom: 15px;
-  margin-left: 20px;
-  display: inline-block;
-}
-div#course_teacher .field_with_errors {
-  height: 45px;
+  margin-left: 0;
 }
 
 div#course_open_faculty {
-  display: inline-block;
 }
 
 div#course_day_of_the_week {
   margin-bottom: 15px;
-  margin-left: 20px;
-  display: inline-block;
 }
 
 div#course_open_time {
-  margin-left: 20px;
   margin-bottom: 15px;
-  display: inline-block;
 }
 
 div#course_open_term {
-  margin-bottom: 15px;
-  margin-left: 20px;
-  display: inline-block;
 }
 
 div#course_new_button {
@@ -954,7 +939,7 @@ div#course_info_detail {
 div#course_info_view_new {
 }
 
-#course_info_teacher {
+span#course_info_teacher {
   padding-left: 30px;
   font-size: 1.3em;
   font-weight: bold;
