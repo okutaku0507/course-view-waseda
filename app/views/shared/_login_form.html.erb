@@ -3,6 +3,7 @@
   <p id="header_rabbit"><%= image_tag "rabbit.png", width: 30, :class => "rabbit_before_login" %></p>
   <% end %>
 <%= form_tag :session do %>
+<% unless request.smart_phone? %>
 <table id="login_form">
 <tr>
 <td class="login_label">メールアドレス</td>
@@ -15,6 +16,15 @@
 <td id="bottun"><%= submit_tag "login" %></td>
 </tr>
 </table>
+<% else %>
+<div id="sp_login_form">
+<p class="sp_login_form_label">メールアドレス</p>
+<p class="sp_login_form_input"><%= text_field_tag "email", "", style: "width: 120px" %></p>
+<p class="sp_login_form_label">パスワード</p>
+<p class="sp_login_form_input"><%= password_field_tag "password", "", style: "width: 120px" %></p>
+<p class="sp_login_form_session_button"><%= submit_tag "login" %></p>
+</div>
+<% end %>
 <%= hidden_field_tag "form", request.path %>
 <% end %>
 <% unless controller.kind_of?(MembersController) %>

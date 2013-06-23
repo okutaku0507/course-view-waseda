@@ -21,7 +21,8 @@
       <% end %>
         <span class="teacher_rank_prompt" style="font-size: 1.4em; border: 2px solid silver; padding: 3px; border-radius: 5px;">評価</span>
 
-
+      <% if @current_member %>
+        
       <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
       <% if @current_member.take_course_for?(@course_info) %>
         <%= link_to image_tag("risyuu.png", :class => "iPhone_risyuu_icon"), [:take_course_create, @course_info], method: :post %>
@@ -50,6 +51,17 @@
       <% end %>
       
       <% end %>
+      <% else %>
+        
+      <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
+        <%= image_tag("risyuu2.png", :class => "iPhone_risyuu_icon") %>
+        <%= image_tag("good2.png", :class => "iPhone_good_icon") %>      
+      <% else %>
+        <%= image_tag("risyuu2.png", :class => "risyuu_icon") %>
+        <%= image_tag("good2.png", :class => "good_icon") %>
+      <% end %>
+        
+      <% end %>
     </div>
   </div>
 
@@ -64,7 +76,7 @@
 <% else %>
     <textarea rows="8" cols="50" placeholder="Course Viewに参加すると講義について自由に加筆できます！" ></textarea>
       <div id="course_info_view_option">
-  
+      <input id="course_view_kahitu_button" type="button" value="加筆!" />
     </div>
 
 <% end %>

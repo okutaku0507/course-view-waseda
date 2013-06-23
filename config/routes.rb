@@ -25,7 +25,7 @@ Course::Application.routes.draw do
   resources :teacher_ranks
   resources :responses
   resources :take_courses
-  resource :session, only: [:create, :destroy] do
+  resource :session, only: [:create, :destroy, :new] do
     
   end
   resource :account do 
