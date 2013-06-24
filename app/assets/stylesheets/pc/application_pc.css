@@ -1511,9 +1511,9 @@ div#search p#search_str input{
 div#search p#search_button input{
   height: 20px;
   width: 20px;
-  margin-top: 3px;
+  right: 40px;
+  top: 15px;
   position: absolute;
-  margin-left: -25px;
 }
 
 p#add_search_open_button {
@@ -1595,7 +1595,7 @@ div.pagination a.next_page {
   font-size: 4em;
   position: absolute;
   padding: 20px;
-  margin-left: 830px;
+  margin-left: 900px;
   margin-top: -300px;
 }
 
