@@ -34,6 +34,11 @@ class CourseViewsController < ApplicationController
   def edit
     @course_view = CourseView.find(params[:id])
     @course_info = CourseInfo.find_by_id(@course_view.course_info_id)
+    if @current_member.id == @course_view.member_id
+      redirect_to @course_view
+    else
+      raise Forbidden
+    end
   end
 
   def update
