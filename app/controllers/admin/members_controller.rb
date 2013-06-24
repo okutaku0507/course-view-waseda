@@ -1,4 +1,4 @@
-﻿class Admin::MembersController < Admin::Base
+class Admin::MembersController < Admin::Base
 
   def index
     @members = Member.order("id")

@@ -12,4 +12,10 @@
 <p><%= form.submit "更新", :id => "button_member_password_edit" %></p>
 </div>
 <% end %>
+<%= form_for [:admin, @member] do |form| %>
+<%= render "form", form: form%>
+<div id="member_new_button">
+<p><%= form.submit "Join！", :id => "button_member_new", :disabled => "true" %></p>
+</div>
+<% end %>
 </div>
