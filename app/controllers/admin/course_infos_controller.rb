@@ -1,4 +1,5 @@
-﻿class Admin::CourseInfosController < Admin::Base
+# coding: utf-8
+class Admin::CourseInfosController < Admin::Base
   def index
       @course_infos = CourseInfo.order("id").
                  paginate(page: params[:page], per_page: 6)

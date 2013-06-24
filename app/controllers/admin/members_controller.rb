@@ -1,3 +1,4 @@
+# coding: utf-8
 class Admin::MembersController < Admin::Base
 
   def index

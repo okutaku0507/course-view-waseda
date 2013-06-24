@@ -1,4 +1,4 @@
-﻿ # coding: utf-8
+ # coding: utf-8
 
 class Admin::TopController < Admin::Base
   def index

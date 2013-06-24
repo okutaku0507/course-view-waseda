@@ -1,4 +1,5 @@
-﻿class Admin::CourseViewsController < Admin::Base
+# coding: utf-8
+class Admin::CourseViewsController < Admin::Base
    before_filter :login_required
 
   def index
