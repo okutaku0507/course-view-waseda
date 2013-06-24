@@ -1,3 +1,4 @@
+
 <div id="member_password_edit">
 
 <h1 id="title">パスワードの変更</h1>
@@ -9,12 +10,6 @@
     <p class="member_password_label">パスワード確認</p>
     <p class="member_password"><%= form.password_field :password_confirmation, :class => "member_password_input" %></p>
 <p><%= form.submit "更新", :id => "button_member_password_edit" %></p>
-</div>
-<% end %>
-<%= form_for @member do |form| %>
-<%= render "form", form: form%>
-<div id="member_new_button">
-<p><%= form.submit "変更", :id => "button_member_new", :disabled => "true" %></p>
 </div>
 <% end %>
 </div>
