@@ -11,6 +11,12 @@
 <p><%= form.text_field :first_name, :class => "member_input_first_name", :placeholder => "太郎" %></p>
 <%= format_error_message(@member, :first_name, form).html_safe %>
 </div>
+  
+<div id="member_first_name">
+<p class="member_form_label">フルネーム</p>
+<p><%= form.text_field :full_name, :class => "member_input_first_name", :placeholder => "太郎" %></p>
+<%= format_error_message(@member, :full_name, form).html_safe %>
+</div>
 
 <div id="member_email">
 <p class="member_form_label">メールアドレス</p>
