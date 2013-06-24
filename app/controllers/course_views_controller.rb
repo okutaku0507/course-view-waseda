@@ -1,3 +1,4 @@
+#coding: utf-8
 class CourseViewsController < ApplicationController
    before_filter :login_required
 
