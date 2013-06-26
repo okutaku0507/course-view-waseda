@@ -1,5 +1,7 @@
 <% if request.smart_phone? %>
+<% if @current_member %>
   <%= will_paginate @course_infos, :previous_label => image_tag('previous_page.png'),  :next_label => image_tag('next_page.png') %>
+<% end %>
 <% end %>
 <div style="clear: both">
   <% unless @current_member %>
@@ -55,7 +57,9 @@
 </div>
   <% end %>
     <% unless request.smart_phone? %>
-      <%= will_paginate @course_infos, :previous_label => image_tag('previous_page.png'),  :next_label => image_tag('next_page.png') %>
+      <% if @current_member %>
+        <%= will_paginate @course_infos, :previous_label => image_tag('previous_page.png'),  :next_label => image_tag('next_page.png') %>
+      <% end %>
     <% end %>
 </div>
 <% else %>
