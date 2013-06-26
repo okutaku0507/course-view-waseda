@@ -2247,9 +2247,10 @@ div#like_log_index p.like_log {
 }
 
 div#timeline {
-  width: 95%;
+  width: 92%;
   margin-bottom: 50px;
   margin-left: 3px;
+  margin-top: -10px;
 }
 
 div#timeline h1 {
