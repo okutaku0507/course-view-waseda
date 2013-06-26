@@ -258,7 +258,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#notice")
   .show()
-  .delay(2000)
+  .delay(5000)
   .slideUp('fast');
 });
 
