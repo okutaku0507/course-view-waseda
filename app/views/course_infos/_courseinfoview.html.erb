@@ -17,6 +17,7 @@
 <% end %>
 
 <% @course_info.course_views.each do |course_view| %>
+<% comment_conuter = Response.where(course_view_id: course_view.id).count %>
 <div id="course_info_view">
 <div class="view_text">
 <span class="view_hide_<%= course_view.id %>"><%=hbr course_view.view[0..79] %></span><span class="view_show_<%= course_view.id %>" style="display: none"><%=hbr course_view.view[80..-1] %></span>
@@ -28,10 +29,10 @@
 </div>
 <% @writer_member = Member.find_by_id(course_view.member_id) %>
 <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
-<p id="view_footer"><span class="response_add_button" data-num="<%= course_view.id %>" style="font-size: 0.7em">返信</span><span class="response_comment" style="font-size: 0.7em"><%= link_to 'コメント', course_view %><span style="font-size: 0.7em">(<%= Response.where(course_view_id: course_view.id).count %>)</span></span>
+<p id="view_footer"><span class="response_add_button" data-num="<%= course_view.id %>" style="font-size: 0.7em">返信</span><span class="response_comment"><%= link_to 'コメント' + '(' + comment_conuter.to_s + ')', course_view %></span>
 <span id="create_time" style="font-size: 0.7em"><%= course_view.created_at.strftime("%Y/%m/%d") %></span><span id="writer" style="font-size: 0.7em"><%= @writer_member.faculty %>生</span></p>
 <% else %>
-<p id="view_footer"><span class="response_add_button" data-num="<%= course_view.id %>">返信</span><span class="response_comment"><%= link_to 'コメント', course_view %><span style="font-size: 0.8em">(<%= Response.where(course_view_id: course_view.id).count %>)</span></span>
+<p id="view_footer"><span class="response_add_button" data-num="<%= course_view.id %>">返信</span><span class="response_comment"><%= link_to 'コメント' + '(' + comment_conuter.to_s + ')', course_view %></span>
 <span id="create_time"><%= course_view.created_at.strftime("%Y/%m/%d") %></span><span id="writer"><%= @writer_member.faculty %>生</span></p>
 <% end %>
 </div>

@@ -1467,7 +1467,9 @@ p#add_search_close_button {
 div.pagination {
   margin: 0;
   padding: 0;
-  margin-left: 40px;
+  padding-top: 5px;
+  padding-left: 50px;
+  position: relative;
 }
 
 div.pagination a, em {
@@ -1488,12 +1490,12 @@ div.pagination span {
 
 div.pagination a.previous_page {
   position: absolute;
-  top: 60px;
+  top: -2px;
   left: 5px;
 }
 div.pagination a.next_page {
   position: absolute;
-  top: 60px;
+  top: -2px;
   right: 5px;
 }
 div.pagination img {
