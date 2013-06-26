@@ -1616,6 +1616,12 @@ div#mypage {
   border-bottom: solid 1px silver;  
 }
 
+div#account_info a {
+  color: #000000;
+  font-weight: bold;
+  padding: 0 3px;
+}
+
 div#mypage_buttons {
   position: absolute;
   top: 230px;
