@@ -81,7 +81,7 @@ class CourseInfosController < ApplicationController
       @course_info.day_of_the_week = params[:week]
       @course_info.open_term = params[:term]
       @course_info.open_faculty = @current_member.faculty
-      flash[:notice] = "入力欄は正確に入力してください！"
+      flash[:notice] = "該当する講義はありませんでしたので、新しく作成してください。入力欄は正確に入力してください！"
       render "new"
       flash[:notice] = nil
     end
