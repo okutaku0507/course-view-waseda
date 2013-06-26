@@ -33,8 +33,11 @@
 </div>
 
 <% if @course_infos.present? %>
- <div id="course_index">
-
+<% if request.smart_phone? %>
+<div id="course_index" style="margin-top: 100px;">
+<% else %>
+<div id="course_index">
+<% end %>
  <% @course_infos.each do |course_info| %>
 
 <div class="course_info_panel" data-num="<%= course_info.id %>">

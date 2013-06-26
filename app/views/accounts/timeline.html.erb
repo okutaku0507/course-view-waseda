@@ -1,9 +1,9 @@
     <div id="timeline">
     <div id="comment_log_index">
     <% if request.smart_phone? %>
-      <p class="timeline_label" style="background-color: #f39d4a; margin-left: -30px; width: 80%">コメントへの返信</p>
+      <p class="timeline_label" style="background-color: #f39d4a; margin-left: -30px; width: 86%">コメントへの返信</p>
     <% else %>
-      <p class="timeline_label" style="background-color: #f39d4a; width: 80%">コメントへの返信</p>
+      <p class="timeline_label" style="background-color: #f39d4a; width: 86%">コメントへの返信</p>
     <% end %>
     <% if @current_member.responses.exists? %>
     <% @current_member.responses.each do |response| %>
@@ -17,7 +17,7 @@
     <% end %>
     </div>
     <div id="like_log_index">
-    <p class="timeline_label" style="background-color: #009fc4; width: 80%">Good</p>
+    <p class="timeline_label" style="background-color: #009fc4; width: 86%">Good</p>
     <% if @current_member.likes.exists? %>
       <% @current_member.likes.each do |like| %>
         <% @course_info = CourseInfo.find(like.course_info_id) %>
