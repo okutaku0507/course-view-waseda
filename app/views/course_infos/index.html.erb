@@ -52,7 +52,11 @@
 </div>
   <% end %>
       <% if @current_member %>
+      <% if request.smart_phone? %>
         <%= will_paginate @course_infos, :previous_label => image_tag('previous_page.png'),  :next_label => image_tag('next_page.png'), :inner_window => 2, :outer_window => 0 %>
+      <% else %>
+        <%= will_paginate @course_infos, :previous_label => image_tag('previous_page.png'),  :next_label => image_tag('next_page.png'), :inner_window => 5, :outer_window => 2 %>
+      <% end %>
       <% end %>
 </div>
 <% else %>
