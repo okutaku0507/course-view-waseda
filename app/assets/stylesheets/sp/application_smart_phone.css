@@ -1477,6 +1477,7 @@ div.pagination a, em {
   font-style: normal;
   font-size: 1.3em;
   color: #000000;
+  margin: 0 -5px;
 }
 
 div.pagination em.current {
