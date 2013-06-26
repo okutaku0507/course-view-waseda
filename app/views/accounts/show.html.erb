@@ -5,9 +5,17 @@
     <p class="account_info"><%= @member.subject %></p>
 </div>
 </div>
+
+<% unless @current_member.take_courses.exists? %>
 <div id="account_info">
-<p><%= link_to "時間割", :schedule_account %>から講義を追加し、<strong>"履修"</strong>するとこのページで講義の遅刻/欠席回数・講義についてメモができます！</p>
+<% unless request.smart_phone? %>
+<p><%= link_to "時間割", :schedule_account %>から講義を追加し<strong>"履修"</strong>すると、このページで講義の遅刻/欠席回数・講義についてメモができます！</p>
+<% else %>
+<p><%= link_to "時間割", :schedule_account %>から講義を追加し<strong>"履修"</strong>すると、</p><p>このページで講義の遅刻/欠席回数・講義についてメモができます！</p>
+<% end %>
 </div>
+<% end %>
+
   <% points = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30] %>
   <% @current_member.take_courses.each do |take_course| %>
     <% @course_info = CourseInfo.find_by_id(take_course.course_info_id) %>
