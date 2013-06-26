@@ -11,4 +11,10 @@ body {
   background: url(image_path("okuma.jpg")) left top;
 }
 
+div.pagination a.previous_page {
+  background: transparent url(image_path("")) 0 0 no-repeat;
+
+}
+div.pagination a.next_page {
+}
 

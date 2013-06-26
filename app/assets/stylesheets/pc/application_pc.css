@@ -1571,41 +1571,40 @@ p#add_search_close_button:hover {
 div.pagination {
   position: absolute;
   clear: both;
-  margin-top: 480px;
+  margin-top: 490px;
+  margin-left: 10px;
+  padding: 0;
 }
 
 div.pagination a, em {
   text-decoration: none;
+  font-style: normal;
+  font-size: 1.3em;
+  font-family: serif;
+  font-weight: bold;
+}
+
+div.pagination a:hover {
 }
 
 div.pagination span {
   display: none;
 }
 
-div.pagination a.previous_page {
-  font-size: 4em;
-  position: absolute;
-  font-family: SimSun;
-  padding: 20px;
-  margin-left: -100px;
-  margin-top: -300px;
-}
-div.pagination a.next_page {
-  font-family: SimSun;
-  font-size: 4em;
-  position: absolute;
-  padding: 20px;
-  margin-left: 900px;
-  margin-top: -300px;
+div.pagination em.current {
+  font-weight: bold;
+  color: blue;
 }
 
-div.pagination a.previous_page:hover {
-  box-shadow: inset 1px 1px 3px 0;
-}
-div.pagination a.next_page:hover {
-  box-shadow: inset 1px 1px 3px 0;
+div.pagination img {
+  height: 20px;
+  width: 20px;
 }
 
+div.pagination img:hover {
+  box-shadow: 0 0 3px 0 #000000;
+  border-radius: 30px;
+}
 
 /* accountの時間割 */
 

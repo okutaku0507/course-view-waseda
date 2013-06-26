@@ -791,7 +791,7 @@ div#course_index  a {
 }
 
 div#course_index {
-  margin-top: 100px;
+  margin-top: 5px;
   padding: 0;
   margin-bottom: 150px;
   margin-left: 5px;
@@ -1465,18 +1465,21 @@ p#add_search_close_button {
 /* ページネーション */
 
 div.pagination {
-  position: absolute;
-  top: 60px;
-  left: 15px;
+  margin: 0;
+  padding: 0;
+  margin-left: 40px;
 }
 
 div.pagination a, em {
   text-decoration: none;
   font-style: normal;
+  font-size: 1.3em;
+  color: #000000;
 }
 
 div.pagination em.current {
   font-weight: bold;
+  color: blue;
 }
 
 div.pagination span {
@@ -1484,8 +1487,18 @@ div.pagination span {
 }
 
 div.pagination a.previous_page {
+  position: absolute;
+  top: 60px;
+  left: 5px;
 }
 div.pagination a.next_page {
+  position: absolute;
+  top: 60px;
+  right: 5px;
+}
+div.pagination img {
+  height: 35px;
+  width: 35px;
 }
 
 

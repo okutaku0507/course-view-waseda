@@ -1,4 +1,4 @@
-﻿# codinc: utf-8
+# codinc: utf-8
 class AccountsController < ApplicationController
   before_filter :login_required
 
