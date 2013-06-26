@@ -1507,11 +1507,12 @@ div.pagination img {
 /* accountの時間割 */
 
 div#mypage {
-  width: 97%;
+  width: 92%;
   margin: 0;
   margin-top: 50px;
   padding: 10px;
-  border-bottom: solid 1px silver;  
+  border-bottom: solid 1px silver;
+  margin-left: 3px;
 }
 
 div#account_info a {
@@ -1519,6 +1520,10 @@ div#account_info a {
   font-weight: bold;
   padding: 0 3px;
   color: green;
+}
+
+div#account_info a {
+  width: 92%;
 }
 
 div#account_info p {
