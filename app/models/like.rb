@@ -1,3 +1,4 @@
+#coding: utf-8
 class Like < ActiveRecord::Base
 
   attr_accessible :course_info_id

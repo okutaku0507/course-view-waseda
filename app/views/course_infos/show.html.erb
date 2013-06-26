@@ -99,7 +99,11 @@
       <td class="point">-</td>
       <% end %>
   </tr>
+  <% if request.env['HTTP_USER_AGENT'].match(/\b(MSIE 10)\b/) || request.env['HTTP_USER_AGENT'].match(/\b(MSIE 9)\b/) || request.env['HTTP_USER_AGENT'].match(/\b(MSIE 8)\b/) || request.env['HTTP_USER_AGENT'].match(/\b(MSIE 7)\b/) %>
   <tr><td class="teacher_rank_prompt">評価</td></tr>
+  <% else %>
+  <tr><td class="teacher_rank_prompt" style="top: 145px;">評価</td></tr>
+  <% end %>
   <tr>
      <% if (like_count = @course_info.likes.count) > 0 %>
        <td id="like">good!&nbsp;<%= like_count %></td>

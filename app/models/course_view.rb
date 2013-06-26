@@ -1,4 +1,5 @@
-﻿class CourseView < ActiveRecord::Base
+#coding: utf-8
+class CourseView < ActiveRecord::Base
 
   belongs_to :member, class_name: "Member", foreign_key: "member_id"
   belongs_to :course_info, class_name: "CourseInfo", foreign_key: "course_info_id"

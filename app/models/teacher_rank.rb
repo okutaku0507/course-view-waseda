@@ -1,3 +1,4 @@
+#coding: utf-8
 class TeacherRank < ActiveRecord::Base
   attr_accessible :teacher_rank, :course_info_id
     
