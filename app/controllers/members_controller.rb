@@ -50,7 +50,7 @@ class MembersController < ApplicationController
   private
   def check_subject
     if  @member.faculty == "政治経済学部"
-      unless @member.subject == "政治学科" || @member.subject == "経済学科" || @member.subject == "国際政治経済学部"
+      unless @member.subject == "政治学科" || @member.subject == "経済学科" || @member.subject == "国際政治経済学科"
         flash.alert = "学部と学科が一致しません。"
         return false
       else
