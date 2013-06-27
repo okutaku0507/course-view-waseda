@@ -31,13 +31,6 @@ class MembersController < ApplicationController
 
   # ユーザーの登録内容の更新
   def update
-    @member = Member.find(params[:id])
-    @member.assign_attributes(params[:member])
-    if @member.save
-      redirect_to :account, notice: "パスワードを更新しました。"
-    else
-      render "edit"
-    end
   end
 
   # ユーザーの削除

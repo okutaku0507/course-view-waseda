@@ -16,13 +16,20 @@ class AccountsController < ApplicationController
   # ユーザーの登録内容の更新
   def update
     @member = @current_member
-    @account = @member
-
     @member.assign_attributes(params[:member])
+    params[:email] = @current_member.email
+    params[:password] = params[:current_password]
+    member = Member.authenticate(params[:email], params[:password])
+    if member
     if @member.save
       redirect_to :account, notice: "パスワードを更新しました。"
     else
+      params[:password] = nil
       render "edit"
+    end
+    else
+      redirect_to :edit_account,
+        notice: "現在のパスワードが一致しません。" 
     end
   end
   
