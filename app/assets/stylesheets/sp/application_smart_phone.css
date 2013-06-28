@@ -2177,11 +2177,6 @@ div#withdrawal_form input.button {
   background-color: #ffffff;
 }
 
-div#withdrawal_form input.button:hover {
-  border: none;
-  box-shadow: inset 1px 1px 3px 0 #000000;
-  padding: 7px;
-}
 
 /* courseを時間割から作る仕組み */
 p#course_creater_button {

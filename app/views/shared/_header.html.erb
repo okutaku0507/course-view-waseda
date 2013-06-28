@@ -8,11 +8,11 @@
   <% end %>
   <% end %>
 <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
-<div id="header_title"><%= link_to image_tag("title_sp.png", :class => "iPhone_course_view_title"), :course_infos %></div>
+<div id="header_title"><%= link_to image_tag("title_sp.png", :class => "iPhone_course_view_title"), :root %></div>
 <% elsif request.smart_phone? %>
-<div id="header_title"><%= link_to image_tag("title_sp.png", :class => "course_view_title"), :course_infos %></div>
+<div id="header_title"><%= link_to image_tag("title_sp.png", :class => "course_view_title"), :root %></div>
 <% else %>
-<div id="header_title"><%= link_to image_tag("title_sp.png", :class => "course_view_title"), :course_infos %></div>
+<div id="header_title"><%= link_to image_tag("title_sp.png", :class => "course_view_title"), :root %></div>
 <% end %>
 <% unless @current_member %>
 <% unless request.smart_phone? %>
