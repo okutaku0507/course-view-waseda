@@ -322,7 +322,6 @@
 </td>
 </tr>
 
-<% if @current_member.take_courses.where(take_course_open_time: 5).exists? %>
 <tr>
 <td class="schedule_label">5</td>
 <td class="schedule_detail" data-num="Mon5">
@@ -398,9 +397,7 @@
   <% end %>
 </td>
 </tr>
-<% end %>
 
-<% if @current_member.take_courses.where(take_course_open_time: 6).exists? %>
 <tr>
 <td class="schedule_label">6</td>
 <td class="schedule_detail" data-num="Mon6">
@@ -476,9 +473,7 @@
   <% end %>
 </td>
 </tr>
-<% end %>
 
-<% if @current_member.take_courses.where(take_course_open_time: 7).exists? %>
 <tr>
 <td class="schedule_label">7</td>
 <td class="schedule_detail" data-num="Mon7">
@@ -554,7 +549,6 @@
   <% end %>
 </td>
 </tr>
-<% end %>
 </table>
 </div>
 <% if @current_member.take_courses.where(take_course_open_time: 8).exists? || @current_member.take_courses.where(take_course_open_time: 9).exists? %>
