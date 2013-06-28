@@ -2133,7 +2133,7 @@ input#password_restter_button {
  }
  
  a.logout_button {
-   padding-right: 72%;
+   padding-right: 25%;
    font-size: 1.3em;
    border-bottom: 2px solid silver;
    cursor: pointer;
@@ -2146,6 +2146,7 @@ input#password_restter_button {
  }
 
  div#withdrawal_form {
+  margin-top: -20px;
   width: 90%;
   padding: 5px 20px;
   margin-bottom: 20px;
