@@ -16,21 +16,6 @@ class CourseViewsController < ApplicationController
     @course_view = CourseView.new
   end
 
-#  def create    
-#    @course_view = CourseView.new(params[:course_view])
-#    @course_view.member = @current_member
-#    @course_info = CourseInfo.find_by_id(session[:course_info_id])
-#    @course_view.title_of_course = @course_info.title
-#    @course_view.id_course = @course_info.id
-#    @course_view.course_info = @course_info
-#    @course_view.id_member = @current_member.id
-#    if @course_view.save
-#      redirect_to @course_info, notice: "コメントを追加しました"
-#    else
-#      redirect_to @course_info, notice: "コメントに誤りがあります"
-#    end
-#  end
-
   def edit
     @course_view = CourseView.find(params[:id])
     @course_info = CourseInfo.find_by_id(@course_view.course_info_id)
@@ -69,8 +54,12 @@ class CourseViewsController < ApplicationController
     @course_info = @course_view.course_info
     @member = Member.find(@course_view.member_id)
     if @response.save
-      UserMailer.response_email(@response).deliver
-      redirect_to @course_view, notice: "コメントを追加しました"
+      unless @response.member_id == @course_view.member_id
+        UserMailer.response_email(@response).deliver
+        redirect_to @course_view, notice: "コメントを追加しました"
+      else
+        redirect_to @course_view, notice: "コメントを追加しました"
+      end
     else
       redirect_to @course_view, notice: "コメントに誤りがあります"
     end
