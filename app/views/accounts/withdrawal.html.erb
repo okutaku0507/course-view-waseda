@@ -1,9 +1,0 @@
-<%= render "setting_form" %>
-<div id="withdrawal_form">
-<h1 id="title">退会</h1>
-<%= form_tag :account, method: :delete do %>
-  <p class="member_password_label" style="margin-left: 120px;">パスワード</p>
-  <p><%= password_field_tag :password %></p>
-  <%= submit_tag "退会する", class: "button" %>
-<% end %> 
-</div>

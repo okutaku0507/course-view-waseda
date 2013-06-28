@@ -380,6 +380,21 @@ $(document).ready(function(){
   });
 });
 
+// パスワードの変更がプルダウン
+
+$(document).ready(function(){
+    $('p.password_setting_button').click(function() {
+    $('div#member_password_edit').slideDown('fast');
+    $('div#withdrawal_form').slideUp('fast');
+  });
+});
+
+$(document).ready(function(){
+      $('p.withdrawal_setting_button').click(function() {
+      $('div#member_password_edit').slideUp('fast');
+      $('div#withdrawal_form').slideDown('fast');
+  });
+});
 
 //  likeの非同期通信
   

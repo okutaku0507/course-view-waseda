@@ -289,9 +289,7 @@ div#member_check a {
 div#member_password_edit {
   width: 80%;
   margin-left: 5px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 3px 0 #000000;
-  padding: 20px;
+  padding: 5px 20px;
   margin-top: 20px;
   font-size: 0.85em;
 }
@@ -345,7 +343,7 @@ p.member_password_label {
 }
 
 input#button_member_password_edit {
-  margin-top: 50px;
+  margin-top: 10px;
   margin-left: 100px;
   border-radius: 5px;
   font-size: 1.5em;
@@ -2124,28 +2122,32 @@ input#password_restter_button {
  
 /* settijgページ */
  div#account_setting {
-   padding: 20px;
-   box-shadow: 3px 3px 5px 0 #000000;
-   border: 1px solid silver;
-   border-radius: 5px;
-   margin-bottom: 20px;
-   width: 280px;
-   margin-left: 2px;
+  width: 92%;
+  margin: auto;
+  margin-top: 50px;
+  padding-bottom: 150px;
  }
  
  div#account_setting a {
    color: #000000;
  }
  
-div#account_setting p {
-   display: inline;
+ a.logout_button {
+   padding-right: 430px;
+   font-size: 1.3em;
+   border-bottom: 2px solid silver;
+   cursor: pointer;
+ }
+ 
+ div#sp_account_setting p.password_setting_button, p.withdrawal_setting_button, a.logout_button {
+   font-size: 1.3em;
+   border-bottom: 2px solid silver;
+   cursor: pointer;
  }
 
  div#withdrawal_form {
   width: 90%;
-  border-radius: 10px;
-  box-shadow: 1px 1px 3px 0 #000000;
-  padding: 20px;
+  padding: 5px 20px;
   margin-bottom: 20px;
   margin-left: 5px;
   text-align: center;

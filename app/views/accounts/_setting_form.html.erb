@@ -1,11 +1,19 @@
 <div id="account_setting">
 <% if request.smart_phone? %>
-  <p style="border-right: 1px solid silver; padding-right: 5px;"><%= link_to "パスワードの変更", :edit_account %></p>
-  <p style="border-right: 1px solid silver; padding-right: 5px;"><%= link_to "ログアウト", :session, method: :delete, confirm: "ログアウトしますか？" %></p>
-  <p><%= link_to "退会", :withdrawal_account %></p>
+  <div id="sp_account_setting">
+      <p class="password_setting_button">パスワードの変更</p>
+      <%= render "password" %>
+      <p class="withdrawal_setting_button">退会</p>
+      <%= render "withdrawal" %>
+      <p class="logout_button"><%= link_to "ログアウトする", :session, method: :delete, confirm: "本当にログアウトしますか？", :class => "logout_button" %></p>
+  </div>
 <% else %>
-    <p><%= link_to "パスワードの変更", :edit_account %></p>
-  <p><%= link_to "ログアウト", :session, method: :delete, confirm: "ログアウトしますか？" %></p>
-  <p><%= link_to "退会", :withdrawal_account %></p>
+    <div id="pc_account_setting">
+      <p class="password_setting_button">パスワードの変更</p>
+      <%= render "password" %>
+      <p class="withdrawal_setting_button">退会</p>
+      <%= render "withdrawal" %>
+      <p class="logout_button"><%= link_to "ログアウトする", :session, method: :delete, confirm: "本当にログアウトしますか？", :class => "logout_button" %></p>
+    </div>
 <% end %>
 </div>

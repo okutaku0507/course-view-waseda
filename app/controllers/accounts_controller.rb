@@ -25,10 +25,12 @@ class AccountsController < ApplicationController
       redirect_to :account, notice: "パスワードを更新しました。"
     else
       params[:password] = nil
-      render "edit"
+      params[:password_switch] = "on"
+      render "setting"
     end
     else
-      redirect_to :edit_account,
+      params[:password_switch] = "on"
+      redirect_to :setting_account,
         notice: "現在のパスワードが一致しません。" 
     end
   end
@@ -41,7 +43,7 @@ class AccountsController < ApplicationController
       @member.destroy
       redirect_to :course_infos, notice: "ユーザーアカウントを削除しました。今までご利用ありがとうございました。(´；ω；｀)"
     else
-      redirect_to :back, notice: "パスワードが一致しません。"
+      redirect_to :setting_account, notice: "パスワードが一致しません。"
     end
   end
 
@@ -55,6 +57,8 @@ class AccountsController < ApplicationController
   end
   
   def setting
+    @member = @current_member
+    @account = @member
   end
   
   def withdrawal

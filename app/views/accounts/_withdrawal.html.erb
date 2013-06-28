@@ -1,0 +1,15 @@
+<% if flash[:notice] == "パスワードが一致しません。" %>
+<div id="withdrawal_form">
+<% else %>
+<div id="withdrawal_form" style="display: none">
+<% end %>
+<%= form_tag :account, method: :delete do %>
+<% if request.smart_phone? %>
+  <p class="member_password_label" style="margin-left: 26%;">パスワード</p>
+<% else %>
+  <p class="member_password_label" style="margin-left: 170px;">パスワード</p>
+<% end %>
+  <p><%= password_field_tag :password %></p>
+  <%= submit_tag "退会する", class: "button" %>
+<% end %> 
+</div>
