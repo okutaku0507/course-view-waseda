@@ -288,9 +288,9 @@ div#member_check a {
  
 div#member_password_edit {
   width: 80%;
-  margin-left: 5px;
+  margin-left: -15px;
   padding: 5px 20px;
-  margin-top: 20px;
+  margin-top: -20px;
   font-size: 0.85em;
 }
 
@@ -317,7 +317,7 @@ div#member_password_edit h1#title {
 div#member_password_edit input.member_password_input {
   font-size: 1.2em;
   font-weight: 600;
-  width: 200px;
+  width: 250px;
   padding: 5px;
   border-radius: 8px;
   border: solid 2px silver;
@@ -335,7 +335,7 @@ p.member_password_label {
   text-align: left;
   font-size: 0.8em;
   margin: 0;
-  margin-left: 40px;
+  margin-left: 30px;
   padding: 0;
   margin-top: 30px;
   margin-bottom: -10px;
@@ -346,7 +346,7 @@ input#button_member_password_edit {
   margin-top: 10px;
   margin-left: 100px;
   border-radius: 5px;
-  font-size: 1.5em;
+  font-size: 1.7em;
   outline: medium none;
   border: solid 1px #000000;
   padding: 6px;
@@ -2133,7 +2133,7 @@ input#password_restter_button {
  }
  
  a.logout_button {
-   padding-right: 38%;
+   padding-right: 45%;
    font-size: 1.3em;
    border-bottom: 2px solid silver;
    cursor: pointer;
@@ -2150,7 +2150,7 @@ input#password_restter_button {
   width: 90%;
   padding: 5px 20px;
   margin-bottom: 20px;
-  margin-left: 5px;
+  margin-left: -15px;
   text-align: center;
  }
  
