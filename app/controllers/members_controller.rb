@@ -25,7 +25,9 @@ class MembersController < ApplicationController
       redirect_to :course_infos,
         notice: "ユーザーの登録が完了しました。登録されたメールアドレスに仮パスワードをお送りします。"
     else
-      render "new"
+      params[:new_member_switch] = "on"
+      render "top/top", layout: "before_login"
+      params[:new_member_switch] = nil
     end
   end
 

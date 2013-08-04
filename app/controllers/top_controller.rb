@@ -5,7 +5,8 @@ class TopController < ApplicationController
     if @current_member
       redirect_to :account
     else
-      redirect_to :course_infos
+      @member = Member.new
+      render "top", layout: "before_login"
     end
   end
 

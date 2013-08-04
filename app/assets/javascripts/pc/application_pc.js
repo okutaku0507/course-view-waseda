@@ -378,6 +378,22 @@ $(document).ready(function(){
   });
 });
 
+// 講義検索結果が講義がみつからなかったとき
+
+$(document).ready(function(){
+      $('#search_info_title').click(function() {
+      $('div#search_info').slideDown('fast');
+  });
+});
+
+$(document).ready(function(){
+      $('.new_course_info_button').click(function() {
+      $('#search_no_course').hide();
+      $('div#new_course').slideDown('slow');
+  });
+});
+
+
 //  likeの非同期通信
   
 //$(document).ready(function(){

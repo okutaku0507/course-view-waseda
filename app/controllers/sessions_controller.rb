@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
         redirect_to params[:from] || :back
       else
         flash.alert = "※メールアドレスとパスワードが一致しません"
-          redirect_to params[:from] || :course_infos
+        redirect_to params[:from] || :back
       end
 
     end

@@ -1,0 +1,81 @@
+<div id="title">
+  <h1><%= link_to "Course View", :root %></h1>
+</div>
+
+<% if  flash[:alert] == "※メールアドレスとパスワードが一致しません" || params[:new_member_switch] == "on" %>
+<div id="concept" style="display: none">
+<% else %>
+<div id="concept">
+<% end %>
+<div id="concept_box1">
+  <span class="number">1</span><p class="concept">オンリー早稲田</p>
+  <p class="concept_txt">Waseda-netメールで早稲田生だけが参加できる</p>
+</div>
+
+<div id="concept_box2">
+  <span class="number">2</span><p class="concept">講義</p>
+  <p class="concept_txt">講義情報を共有できる</p>
+</div>
+
+<div id="concept_box3">
+  <span class="number">3</span><p class="concept">サークル</p>
+  <p class="concept_txt">サークル情報を発信できる</p>
+</div>
+
+<div id="account_box">
+  <p><span id="member_new_form_button">アカウント登録</span></p>
+  <p><span id="login_form_button">ログイン</span></p>
+</div>
+</div>
+
+<% if params[:new_member_switch] == "on" %>
+<div id="new_member">
+<% else %>
+<div id="new_member" style="display: none">
+<% end %>
+<div id="user_form">
+<%= form_for @member do |form| %>
+<%= render "/members/form", form: form%>
+<div id="member_new_button">
+<p><%= form.submit "Join！", :id => "button_member_new", :disabled => "true" %></p>
+</div>
+<% end %>
+</div>
+</div>
+
+<% if flash[:alert] == "※メールアドレスとパスワードが一致しません" %>
+<div id="login_form">
+<% else %>
+<div id="login_form" style="display: none">
+<% end %>
+<%= form_tag :session do %>
+<% unless request.smart_phone? %>
+<table id="login_form">
+<tr>
+<td><%= text_field_tag "email", "", class: "login_input",:placeholder => "メールアドレス" %></td>
+<td><%= password_field_tag "password", "", class: "login_input",:placeholder => "パスワード" %></td>
+<td id="bottun"><%= submit_tag "login", class: "login_button" %></td>
+</tr>
+</table>
+<% else %>
+<div id="sp_login_form">
+  <p><%= image_tag("rabbit.png", :class => "sp_login_rabbit") %></p>
+  <p><%= image_tag("course_view_login.png", :class => "sp_login_logo") %></p>
+  <p class="sp_login_form_label" style="margin-right: 120px;">メールアドレス:</p>
+  <p><%= text_field_tag "email", "", :class => "sp_login_form_input" %></p>
+  <p class="sp_login_form_label" style="margin-right: 208px;">Pass:</p>
+  <p><%= password_field_tag "password", "", :class => "sp_login_form_input" %></p>
+  <p><%= image_submit_tag("login.png", :class => "sp_login_form_session_button") %></p>
+</div>
+<% end %>
+<%= hidden_field_tag "form", request.path %>
+<% end %>
+<% unless controller.kind_of?(MembersController) %>
+<% if flash.alert %>
+<p class="alert"><%= flash.alert %></p>
+
+<% end %>
+<% end %>
+<p class="forgot_password" align="center" style="margin-top: 50px"><%= link_to "パスワードを忘れてしまった場合", :forgot_password %></p>
+</div>
+</div>

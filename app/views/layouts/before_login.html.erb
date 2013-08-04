@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title><%= page_title %></title>
-  <%= stylesheet_link_tag "smart_phone" %>
-  <%= javascript_include_tag "smart_phone" %>
+  <%= stylesheet_link_tag "application_pc_before_login" %>
+  <%= javascript_include_tag "application_pc_before_login" %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'rabbit-icon.ico' %>
   <meta name="keywords" content="早稲田,waseda,講義,サークル,プラットフォーム" />
   <meta name="description" content="Course Viewは早稲田生が参加できる、講義情報を共有でき、サークル情報を発信・閲覧できるプラットフォームです。時間割やメモなどの自己管理機能もあり、学生生活に欠かせないwebサービスを目指しています。" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -19,27 +18,18 @@
       ga('send', 'pageview');
     </script>
 </head>
-<% if  controller.kind_of?(SessionsController) %>
-  <body id="session">
-<% else %>
 <body>
-<% end %>
 <div id="container">
   <div id="header">
-    <%= render "shared/header" %>
   </div>
-
-
-  <%= yield %>
-
-  <% if request.smart_phone? %>
-    <div id="sp_footer"></div>
-  <% end %>
+  <div id="main">
+    <%= yield %>
+  </div>
   <div id="footer">
-    <%= render "shared/footer" %>
+    <p align="center"><%= link_to "利用規約", use_policy_path %>&nbsp;&nbsp;
+      <%= link_to "プライバシーポリシー", privacy_path %>&nbsp;&nbsp;
+      Copyright &copy; 2013 <%= link_to "Rabbit Network", "http://rabbit-network.com/" %></p>
   </div>
 </div>
-
 </body>
 </html>
-

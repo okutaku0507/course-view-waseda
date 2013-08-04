@@ -1,9 +1,4 @@
 <div style="clear: both">
-  <% unless @current_member %>
-  <% unless request.smart_phone? %>
-      <p id="course_info_new_button"><%= menu_link_to "Join!",  :new_member %></p>
-  <% end %>
-  <% end %>
 </div>
 <% if @course_infos.present? %>
 <div id="course_index">
@@ -60,8 +55,31 @@
       <% end %>
 </div>
 <% else %>
-<div>
-<p>お探しの講義が見つかりません。</p>
+<div id="search_no_course">
+  <p id="no_course">申し訳ありません、お探しの講義が見つかりませんでした。</p>
+  <p id="search_info_title">講義検索のヒント▼</p>
+  <div id="search_info">  
+    <p id="search_info_input">田中 数学 or 数学　田中<%= image_tag ("loupe.png"), :size => "20x20" %></p>
+    <p>右上の検索ボックスで<strong>教授名の一部と講義名の一部を順番はどちらでもいい</strong>ので、<strong>半角スペースか全角スペース区切って</strong>検索すると、</p>
+    <p>上の例では教授名で「田中」とつき、講義名で「数学」とつく講義が絞り込まれます。</p>
+    <p>また、<strong>教授名、講義名を複数ハッシュ</strong>することで、それらを含む講義を絞り込むことができます。</p>
+  </div>
+  <div id="new_course_info">
+    <p id="no_course">講義は追加することができます！</p>
+    <p id="no_course">Course Viewをよりよくするために、ご協力ください！</p>
+    <p><%= image_tag "sakusei.png", :size => "90x25", :class => "new_course_info_button" %></p>
+  </div>
+</div>
+
+<div id="new_course" style="display: none">
+  <h1>講義追加</h1>
+  <% @course_info = CourseInfo.new %>
+  <%= form_for @course_info do |form| %>
+  <%= render "form", form: form %>
+  <div id="course_new_button">
+    <p><%= form.submit "Add！" %></p>
+  </div>
+  <% end %>
 </div>
 <% end %>
     

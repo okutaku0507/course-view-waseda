@@ -10,6 +10,10 @@ class CourseInfosController < ApplicationController
     end
   end
 
+  def new
+    @course_info = CourseInfo.new
+  end
+  
   def show
     @course_info = CourseInfo.find(params[:id])
     @course_views = @course_info.course_views
@@ -32,7 +36,7 @@ class CourseInfosController < ApplicationController
     @course_info.text_for_search = @course_info.title + " " + @course_info.teacher
     if !CourseInfo.where(title: @course_info.title, teacher: @course_info.teacher, day_of_the_week: @course_info.day_of_the_week, open_time: @course_info.open_time, open_term: @course_info.open_term, open_faculty: @course_info.open_faculty).exists?
       if @course_info.save
-        redirect_to @course_info, notice: "講義を新規追加しました！"
+        redirect_to @course_info, notice: "講義を新規追加しました、ありがとうございました！"
       else
         render "new"
       end
@@ -81,7 +85,7 @@ class CourseInfosController < ApplicationController
       @course_info.day_of_the_week = params[:week]
       @course_info.open_term = params[:term]
       @course_info.open_faculty = @current_member.faculty
-      flash[:notice] = "該当する講義はありませんでしたので、新しく作成してください。入力欄は正確に入力してください！"
+      flash[:notice] = "該当する講義はありませんでしたので、お手数ですが新しく作成してください。"
       render "new"
       flash[:notice] = nil
     end

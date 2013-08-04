@@ -1,5 +1,5 @@
 /* pc/application_pc.css */
-body {
+body { overflow-x: hidden ;
 }
 img {
   border: none;
@@ -64,7 +64,8 @@ div#course_view_title h5 {
   height: 30px;
   padding-bottom: 30px;
   position: fixed;
-  width: 100%;
+  width:100%;
+  min-width:1250px;
   top: 0;
   left: 0;
   z-index: 2;
@@ -82,12 +83,93 @@ div#course_view_title h5 {
 div#header_title {
   float: left;
   margin-top: 10px;
-  margin-left: 38%;
+  margin-left: 200px;
 }
 
 img.course_view_title {
   height: 30px;
   width: 200px;
+}
+
+/* 検索 */
+div#search {
+  float: right;
+  position: relative;
+  margin-top: 10px;
+  margin-right: 120px;
+}
+
+input#course_and_teacher {
+  width: 200px;
+  height: 20px;
+}
+
+
+div#search p#add_search_open_button, p#search_str, p#search_button, p#header_rabbit {
+  display: inline;
+}
+
+div#search p#search_str input{
+  border-radius: 10px;
+  padding: 2px;
+  font-size: 0.8em;
+}
+
+div#search p#search_button input{
+  height: 20px;
+  width: 20px;
+  right: 8px;
+  top: 4px;
+  position: absolute;
+}
+
+p#add_search_open_button {
+  font-weight: bold;
+  padding: 0 2px;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 0 #000000;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+p#add_search_open_button:hover {
+  box-shadow: inset 0 0 1px 0 #000000;
+}
+
+p#add_search_close_button {
+  font-weight: bold;
+  padding: 0 2px;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 0 #000000;
+  cursor: pointer;
+  display: inline;
+  background-color: #ffffff;
+}
+
+p#add_search_close_button:hover {
+  box-shadow: inset 0 0 1px 0 #000000;
+}
+
+#add_search {
+  position: absolute;
+  margin-top: 20px;
+  padding: 5px;
+  box-shadow: 0 0 5px 0 #000000;
+  border-radius: 5px;
+  background-color: skyblue;
+  z-index: 1;
+  margin-left: -8px;
+  display: none;
+}
+ 
+#add_search:after {
+  content: '';
+  position: absolute;
+  border-bottom: 20px solid skyblue;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  top: -20px;
+  left: 2px;
 }
 
 /* 左の枠(コンテンツ) */
@@ -100,6 +182,8 @@ div#content {
   clear: both;
   border: solid 1px silver;
 }
+
+/* header_menu_bar */
 
 /* 右の枠(サイドバー) */
 div#login_form {
@@ -415,7 +499,7 @@ p.alert {
 }
 
 .login_label {
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-weight: bold;
 }
 
@@ -485,12 +569,12 @@ div#new_course {
 }
 
 div#course_new_form {
-  margin-left: 100px;
+  margin-left: 130px;
 }
 
 div#new_course h1 {
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 40px;
 }
 
 div#new_course input.course_input {
@@ -616,7 +700,48 @@ div#course_new_button input:hover {
   font-weight: bold;
 }
 
+p#no_course {
+  font-size: 1.2em;
+  font-weight: bold;
+}
 
+/* 検索のヒント */
+
+div#search_info {
+  width: 950px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 10px;
+  display: none;
+}
+
+p#search_info_title {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-top: -10px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: rgb(123, 123, 123);
+}
+
+P#search_info_input {
+  border: 2px solid silver;
+  border-radius: 7px;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 5px;
+  width: 270px;
+}
+
+div#search_info img {
+  margin-left: 10px;
+  margin-bottom: -5px;
+}
+
+div#new_course_info {
+  margin-top: 50px;
+}
 
 /* menu_box */
 
@@ -765,12 +890,14 @@ p.admin_menu_label {
 input#email {
   border-radius: 5px;
   padding: 2px;
+  margin-top: -30px;
 }
 
 input#password {
   border-radius: 5px;
   margin-left: 3px;
   padding: 2px;
+  margin-top: -30px;
 
 }
 
@@ -1485,86 +1612,6 @@ p.comment_log_label:hover  {
 }
 
 p.like_log_label:hover {
-}
-
-/* 検索 */
-div#search {
-  float: right;
-  margin-top: 10px;
-  margin-right: 30px;
-}
-
-input#course_and_teacher {
-  width: 200px;
-  height: 20px;
-}
-
-
-div#search p#add_search_open_button, p#search_str, p#search_button, p#header_rabbit {
-  display: inline;
-}
-
-div#search p#search_str input{
-  border-radius: 10px;
-  padding: 2px;
-  font-size: 0.8em;
-}
-
-div#search p#search_button input{
-  height: 20px;
-  width: 20px;
-  right: 40px;
-  top: 15px;
-  position: absolute;
-}
-
-p#add_search_open_button {
-  font-weight: bold;
-  padding: 0 2px;
-  border-radius: 5px;
-  box-shadow: 0 0 1px 0 #000000;
-  cursor: pointer;
-  background-color: #ffffff;
-}
-
-p#add_search_open_button:hover {
-  box-shadow: inset 0 0 1px 0 #000000;
-}
-
-p#add_search_close_button {
-  font-weight: bold;
-  padding: 0 2px;
-  border-radius: 5px;
-  box-shadow: 0 0 1px 0 #000000;
-  cursor: pointer;
-  display: inline;
-  background-color: #ffffff;
-}
-
-p#add_search_close_button:hover {
-  box-shadow: inset 0 0 1px 0 #000000;
-}
-
-#add_search {
-  position: absolute;
-  margin-top: 20px;
-  padding: 5px;
-  box-shadow: 0 0 5px 0 #000000;
-  border-radius: 5px;
-  background-color: skyblue;
-  z-index: 1;
-  margin-left: -8px;
-  display: none;
-}
- 
-#add_search:after {
-  content: '';
-  position: absolute;
-  border-bottom: 20px solid skyblue;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-  top: -20px;
-  left: 2px;
 }
 
 /* footerのアカウント設定 */
