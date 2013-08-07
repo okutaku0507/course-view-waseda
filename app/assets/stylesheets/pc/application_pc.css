@@ -5,6 +5,14 @@ img {
   border: none;
 }
 
+/* loading画面 */
+div#loader {
+  text-align: center;
+  margin: auto;
+  margin-top: 200px;
+  display: none;
+}
+
 img.rabbit {
   position: absolute;
   margin-left: -40px;

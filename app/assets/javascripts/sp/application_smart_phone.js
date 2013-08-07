@@ -1,4 +1,15 @@
 // application_smart_phone.js
+
+// loadingの時の挙動
+$('head').append(
+	'<style type="text/css">#container { display: none; } div#loader { display: block; }</style>'
+);
+
+jQuery.event.add(window,"load",function() { // 全ての読み込み完了後に呼ばれる関数
+  $("#loader").hide();
+  $("#container").css("display", "block");
+});
+
 // ゲストのタイトルがcourse_infoに飛ぶ
 $(document).ready(function(){
   $("#course_view_title").click(function(){

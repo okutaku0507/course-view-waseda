@@ -4,6 +4,13 @@
 body {
 }
 
+/* loading画面 */
+div#loader {
+  text-align: center;
+  margin: auto;
+  margin-top: 100px;
+  display: none;
+}
 
 img.rabbit {
   position: absolute;
