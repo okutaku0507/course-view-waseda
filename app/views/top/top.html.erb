@@ -58,7 +58,11 @@
 </tr>
 </table>
 <% else %>
+<% if flash[:alert] == "※メールアドレスとパスワードが一致しません" %>
 <div id="sp_login_form">
+<% else %>
+<div id="sp_login_form" style="display: none">
+<% end %>
   <p><%= image_tag("rabbit.png", :class => "sp_login_rabbit") %></p>
   <p class="sp_login_form_label" style="margin-right: 120px;">メールアドレス:</p>
   <p><%= text_field_tag "email", "", :class => "sp_login_form_input" %></p>

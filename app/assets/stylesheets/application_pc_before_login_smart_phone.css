@@ -12,6 +12,14 @@ div#loader {
   display: none;
 }
 
+/* loading画面 */
+div#loader {
+  text-align: center;
+  margin: auto;
+  margin-top: 150px;
+  display: none;
+}
+
 img.rabbit {
   position: absolute;
   margin-left: -35px;
@@ -232,6 +240,7 @@ span#member_new_form_button, span#login_form_button {
 div#new_member {
   width: 98%;
   margin: 0;
+  margin-bottom: 45px;
 }
 
 div#member_new_form {
@@ -327,7 +336,6 @@ div#member_subject {
 div#member_gender {
   text-align: center;
   margin: 0;
-  margin-right: 220px;
 }
 
 div#member_new_button {
