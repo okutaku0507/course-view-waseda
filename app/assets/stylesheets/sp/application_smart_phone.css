@@ -174,7 +174,6 @@ div.attention {
 /* ユーザーの新規登録ページ */
 div#new_member {
   border-radius: 10px;
-  box-shadow: 1px 1px 3px 0 #000000;
   padding: 20px;
   margin-top: 20px;
 }
@@ -2053,11 +2052,9 @@ div.admin_course_info_panel {
 
 /* passowrd_resetter */
 div.forgot_password {
-  width: 780px;
-  margin-left: 80px;
+  width: 98%;
   border-radius: 10px;
-  box-shadow: 1px 1px 3px 0 #000000;
-  padding: 20px;
+  padding: 0;
   margin-top: 50px;
 }
 

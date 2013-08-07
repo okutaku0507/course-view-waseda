@@ -39,7 +39,8 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#login_form_button").click(function(){
     $("#concept").hide('slow', function() {
-    $("#login_form").slideDown('slow');
+    $("#login_form").show();
+    $("#sp_login_form").slideDown('slow');
   });
 });
 });
