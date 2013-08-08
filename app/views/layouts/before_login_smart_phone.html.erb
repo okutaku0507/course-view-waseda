@@ -34,6 +34,11 @@
       <%= link_to "プライバシーポリシー", privacy_path %></p>
     <p align="center">Copyright &copy; 2013 <%= link_to "Rabbit Network", "http://rabbit-network.com/" %></p>
   </div>
+    <% if flash.notice %>
+    <div id="notice" style="display: none">
+      <p class="notice"><%= flash.notice %></p>
+    </div>
+  <% end %>
 </div>
 </body>
 </html>

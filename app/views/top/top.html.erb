@@ -2,7 +2,7 @@
   <h1><%= link_to "Course View", :root %></h1>
 </div>
 
-<% if  flash[:alert] == "※メールアドレスとパスワードが一致しません" || params[:new_member_switch] == "on" %>
+<% if  flash[:alert] == "※メールアドレスとパスワードが一致しません" || params[:new_member_switch] == "on" || flash[:notice] == "※メールアドレスとパスワードが一致しません" %>
 <div id="concept" style="display: none">
 <% else %>
 <div id="concept">
@@ -43,7 +43,7 @@
 </div>
 </div>
 
-<% if flash[:alert] == "※メールアドレスとパスワードが一致しません" %>
+<% if flash[:alert] == "※メールアドレスとパスワードが一致しません" || flash[:notice] == "※メールアドレスとパスワードが一致しません" %>
 <div id="login_form">
 <% else %>
 <div id="login_form" style="display: none">
@@ -58,7 +58,7 @@
 </tr>
 </table>
 <% else %>
-<% if flash[:alert] == "※メールアドレスとパスワードが一致しません" %>
+<% if flash[:alert] == "※メールアドレスとパスワードが一致しません" || flash[:notice] == "※メールアドレスとパスワードが一致しません" %>
 <div id="sp_login_form">
 <% else %>
 <div id="sp_login_form" style="display: none">
