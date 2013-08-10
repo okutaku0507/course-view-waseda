@@ -9,7 +9,11 @@
 <% if @circles.present? %>
 <% @circles.each do |circle| %>
 <div class="circle_panel">
+  <% if CircleTopImage.where(circle_id: circle.id).exists? %>
+  <%= circle_image_tag circle, size: "150x150" %>
+    <% else %>
   <%= image_tag "noImage.jpg", size: "150x150" %>
+  <% end %>
   <div class="circle_introduction">
     <p><%= link_to circle.title, circle, :class => "circle_title" %></p>
     <p class="circle_headline"><%= circle.headline %></p>

@@ -2433,7 +2433,7 @@ div.circle_image {
 }
 
 div.circle_image img {
-  width: 45%;
+  width: 85%;
 }
 
 div.circle_baseinfo {
@@ -2462,7 +2462,7 @@ p.circle_info {
 div.circle_detail {
   clear: both;
   width: 95%;
-  margin-top: 350px;
+  margin-top: 30px;
   font-size: 1em;
   font-weight: 600;
   color: #333333;
@@ -2511,7 +2511,7 @@ input.circle_new_edit_submit {
   padding: 3px 5px;
   margin-left: 20px;
   cursor: pointer;
-  margin-left: 720px;
+  margin-left: 80%;
 }
 
 input.input_circle_genre {
