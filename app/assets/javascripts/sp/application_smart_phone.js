@@ -422,4 +422,11 @@ $(document).ready(function(){
   });
 });
 
+// circleのshowからeditに移動するときのパスワード入力フォーム
 
+$(document).ready(function(){
+      $('.circle_edit_link').click(function() {
+      $(this).hide();
+      $('.circle_password_confirm').slideDown('slow');
+  });
+});
