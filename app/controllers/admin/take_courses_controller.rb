@@ -1,4 +1,4 @@
-﻿class Admin::TakeCoursesController < Admin::Base
+class Admin::TakeCoursesController < Admin::Base
 
 #  def create
 #    @take_course = TakeCourse.new

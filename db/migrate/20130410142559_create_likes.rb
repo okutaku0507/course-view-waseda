@@ -1,4 +1,4 @@
-﻿class CreateLikes < ActiveRecord::Migration
+class CreateLikes < ActiveRecord::Migration
   def change
     create_table :likes do |t|
       t.references :member, null: false             # memberの外部キー

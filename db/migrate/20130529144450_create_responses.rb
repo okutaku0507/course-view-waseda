@@ -1,4 +1,4 @@
-﻿class CreateResponses < ActiveRecord::Migration
+class CreateResponses < ActiveRecord::Migration
   def change
     create_table :responses do |t|
       t.references :member, null: false           # memberの外部キー

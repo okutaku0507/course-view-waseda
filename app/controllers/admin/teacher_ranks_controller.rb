@@ -1,4 +1,4 @@
-﻿class Admin::TeacherRanksController < Admin::Base
+class Admin::TeacherRanksController < Admin::Base
   def new
     @teacher_rank = TeacherRank.new
   end

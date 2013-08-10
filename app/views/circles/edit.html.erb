@@ -1,0 +1,8 @@
+<% @page_title = @circle.title + "の編集" %>
+
+<div>
+  <%= form_for @circle do |form| %>
+  <%= render "form", form: form %>
+  <%= form.submit "更新", :class => "circle_new_edit_submit" %>
+  <% end %>
+</div>

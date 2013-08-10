@@ -1,50 +1,34 @@
-<% if @current_member %>
+<% unless request.smart_phone? %>
+<div id="footer">
+  <div id="agreement">
+  <p><%= link_to "利用規約", use_policy_path %>&nbsp;&nbsp;
+  <%= link_to "プライバシーポリシー", privacy_path %>&nbsp;&nbsp;
+  Copyright &copy; 2013 <%= link_to "Rabbit Network", "http://rabbit-network.com/" %></p>
+  <% if @current_member %>
+
+  <% end %>
+</div>
+</div>
+<% end %>
+<% if @current_member && request.smart_phone? %>
 <div id="menu_icons">
 <% if request.env['HTTP_USER_AGENT'].match(/\b(iPhone)\b/) %>
   <%= link_to image_tag("account_sp.png", :size => "45x45"), :account %>
   <%= link_to image_tag("course_sp.png", :size => "45x45"), :course_infos %>
   <%= link_to image_tag("schedule_sp.png", :size => "45x45"), :schedule_account %>
   <%= link_to image_tag("comment_sp.png", :size => "45x45"), :comment_account %>
-  <%= link_to image_tag("timeline_sp.png", :size => "45x45"), :timeline_account %>
+  <%= link_to image_tag("sa-kuru_t.png", :size => "45x45"), :circles %>
   <%= link_to image_tag("setting_sp.png", :size => "45x45"), :setting_account %>
-<% elsif request.smart_phone? %>
+<% else %>
   <%= link_to image_tag("account_sp.png", :size => "50x50"), :account %>
   <%= link_to image_tag("course_sp.png", :size => "50x50"), :course_infos %>
   <%= link_to image_tag("schedule_sp.png", :size => "50x50"), :schedule_account %>
   <%= link_to image_tag("comment_sp.png", :size => "50x50"), :comment_account %>
-  <%= link_to image_tag("timeline_sp.png", :size => "50x50"), :timeline_account %>
+  <%= link_to image_tag("sa-kuru_t.png", :size => "50x50"), :circles %>
   <%= link_to image_tag("setting_sp.png", :size => "50x50"), :setting_account %>
-<% else %>
-  <%= link_to image_tag("account.png", :size => "43x66", :class => "before_icon_account"), :account %>
-  <%= link_to image_tag("account2.png", :size => "43x66", :class => "after_icon_account"), :account %>
-  <%= link_to image_tag("course.png", :size => "43x66", :class => "before_icon_course"), :course_infos %>
-  <%= link_to image_tag("course2.png", :size => "43x66", :class => "after_icon_course"), :course_infos %>
-  <%= link_to image_tag("schedule.png", :size => "43x66", :class => "before_icon_schedule"), :schedule_account %>
-  <%= link_to image_tag("schedule2.png", :size => "43x66", :class => "after_icon_schedule"), :schedule_account %>
-  <%= link_to image_tag("comment.png", :size => "43x66", :class => "before_icon_comment"), :comment_account %>
-  <%= link_to image_tag("comment2.png", :size => "43x66", :class => "after_icon_comment"), :comment_account %>
-  <%= link_to image_tag("timeline.png", :size => "43x66", :class => "before_icon_timeline"), :timeline_account %>
-  <%= link_to image_tag("timeline2.png", :size => "43x66", :class => "after_icon_timeline"), :timeline_account %>
-  <%= link_to image_tag("setting.png", :size => "43x66", :class => "before_icon_setting"), :setting_account %>
-  <%= link_to image_tag("setting2.png", :size => "43x66", :class => "after_icon_setting"), :setting_account %>
   </div>
 <% end %>
 </div>
 <% end %>
-<% unless request.smart_phone? %>
-<div id="footer">
-  <div id="agreement">
-  <p><%= link_to "利用規約", use_policy_path %> | 
-  <%= link_to "プライバシーポリシー", privacy_path %>
-  <% if @current_member %>
-  <% if @current_member.try(:administrator?) %> | 
-  <%= menu_link_to "管理者", :admin_root %></p>
-  <% else %>
-  </p>
-  <% end %>
-  <% end %>
-  <p align="center">Copyright &copy; 2013 <%= link_to "Rabbit Network", "http://rabbit-network.com/" %> All rights reserved.</p>
-</div>
-</div>
-<% end %>
+
                                              

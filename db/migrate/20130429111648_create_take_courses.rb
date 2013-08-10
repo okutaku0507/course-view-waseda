@@ -1,4 +1,4 @@
-﻿class CreateTakeCourses < ActiveRecord::Migration
+class CreateTakeCourses < ActiveRecord::Migration
   def change
     create_table :take_courses do |t|
       t.references :member, null: false                             # メンバーの外部キー

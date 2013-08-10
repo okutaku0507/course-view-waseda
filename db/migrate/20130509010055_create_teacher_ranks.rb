@@ -1,4 +1,4 @@
-﻿class CreateTeacherRanks < ActiveRecord::Migration
+class CreateTeacherRanks < ActiveRecord::Migration
   def change
     create_table :teacher_ranks do |t|
       t.references :member, null: false                             # メンバーの外部キー

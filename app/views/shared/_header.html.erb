@@ -14,9 +14,15 @@
 <% else %>
 <div id="header_title"><%= link_to image_tag("title_sp.png", :class => "course_view_title"), :root %></div>
 <% end %>
-
-<% if @current_member %>
-<div id="header_menu_bar" style="display: none;">
+<% if @current_member && !request.smart_phone? %>
+<div id="header_menu_bar">
+  <%= link_to image_tag("home_pcicon.png", :size => "50x50"), :account %>
+  <%= link_to image_tag("course_pcicon.png", :size => "50x50"), :course_infos %>
+  <%= link_to image_tag("sa-kuru_pcicon.png", :size => "50x50"), :circles %>
+  <%= link_to image_tag("schedule_pcicon.png", :size => "50x50"), :schedule_account %>
+  <%= link_to image_tag("comment_pcicon.png", :size => "50x50"), :comment_account %>
+  <%= link_to image_tag("timeline_pcicon.png", :size => "50x50"), :timeline_account %>
+  <%= link_to image_tag("setting_pcicon.png", :size => "50x50"), :setting_account %>
 </div>
 <% end %>
 

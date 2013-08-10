@@ -407,34 +407,19 @@ $(document).ready(function(){
   });
 });
 
-//  likeの非同期通信
-  
-//$(document).ready(function(){
-//  $("#good_button").click(function(){
-//    var infoId = $(this).data('num');
-//    $.ajax({
-//    type: "PUT",
-//    url: "/course_infos/" + infoId + "/like",
-//    data: "",
-//    success: function(){
-//    alert('points');
-//    }
-//    });
-//  });
-//});
+// 講義検索結果が講義がみつからなかったとき
 
-//$(document).ready(function(){
-//  $("#no_good").click(function(){
-//    var infoId = $(this).data('num');
-//    $.ajax({
-//    type: "PUT",
-//    url: "/course_infos/" + infoId + "/unlike",
-//    data: "",
-//    success: function(){
-//    alert('points');
-//    }
-//    });
-//  });
-//});
+$(document).ready(function(){
+      $('#search_info_title').click(function() {
+      $('div#search_info').slideDown('fast');
+  });
+});
+
+$(document).ready(function(){
+      $('.new_course_info_button').click(function() {
+      $('#search_no_course').hide();
+      $('div#new_course').slideDown('slow');
+  });
+});
 
 

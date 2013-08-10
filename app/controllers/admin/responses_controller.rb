@@ -1,4 +1,4 @@
-﻿class Admin::ResponsesController < Admin::Base
+class Admin::ResponsesController < Admin::Base
   
   def new
     @response = Response.new

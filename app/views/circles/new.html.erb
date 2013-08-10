@@ -1,0 +1,8 @@
+<% @page_title = "サークル作成" %>
+
+<div>
+  <%= form_for @circle do |form| %>
+  <%= render "form", form: form %>
+  <%= form.submit "作成！", :class => "circle_new_edit_submit" %>
+  <% end %>
+</div>

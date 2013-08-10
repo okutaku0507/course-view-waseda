@@ -1,0 +1,34 @@
+<div class="circle">
+<% @page_title =  @circle.title %>
+<div class="circle_header">
+  <h1><%= @circle.title %></h1>
+  <p class="circle_headline_show"><%= @circle.headline %></p>
+</div>
+<div class="circle_image">
+  <% if CircleTopImage.where(circle_id: @circle.id).exists? %>
+    <%= circle_image_tag @circle %>
+    <p><%= @circle.image.description %></p>
+  <% else %>
+    <%= image_tag "noImage.jpg", :class => "top" %>
+  <% end %>
+</div>
+<div class="circle_baseinfo">
+  <p class="circle_base">基本情報</p>
+  <p class="circle_info">タイプ：<%= @circle.circle_type %></p>
+  <p class="circle_info">所属：<%= @circle.belong %></p>
+  <p class="circle_info">ジャンル：<%= @circle.genre %></p>
+  <p class="circle_info">サークル員：<%= @circle.open %></p>
+</div>
+<div class="circle_detail">
+  <p class="circle_base">サークル詳細</p>
+  <div style="padding: 10px 20px; line-height: 20px;">
+    <%=hbr @circle.detail %>
+  </div>
+</div>
+<p class="circle_edit_link">サークルページの編集▼</p>
+<div class="circle_password_confirm" style="display: none;">
+  <%= form_tag [:edit, @circle], method: :get do |form| %>
+    <p style="font-size: 1.2em; font-weight: 600;">パスワード：<%= password_field_tag :password, params[:password], :class => "circle_password_input", :placeholder => "パスワード", :type => "password" %><%= submit_tag "Go", :class => "circle_show_submit" %></p>
+  <% end %>
+</div>
+</div>

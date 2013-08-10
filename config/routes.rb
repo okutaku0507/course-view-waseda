@@ -22,6 +22,11 @@ Course::Application.routes.draw do
     resources :responses
   end
   
+  resources :circles do
+    collection { get "search" }
+    get :password_confirm, on: :member
+  end
+  
   resources :teacher_ranks
   resources :responses
   resources :take_courses

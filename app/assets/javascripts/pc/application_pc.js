@@ -1,13 +1,24 @@
 // application_pc.js
 
+// containarがウィンドウよりも小さい時 => footerを右下におくため
+jQuery.event.add(window,"load",function(){
+  if($('#container').height() < $(window).height()){
+     $("#container")
+     .css({
+       'height': $(window).height() - 180 + 'px'
+     });
+    }
+});
+
 // loadingの時の挙動
 $('head').append(
-	'<style type="text/css">#container { display: none; } div#loader { display: block; }</style>'
+	'<style type="text/css">#container { display: none; } div#loader { display: block; } div#footer { display: none; }</style>'
 );
 
 jQuery.event.add(window,"load",function() { // 全ての読み込み完了後に呼ばれる関数
   $("#loader").hide();
   $("#container").css("display", "block");
+  $("div#footer").css("display", "block");
 });
 
 
@@ -404,6 +415,14 @@ $(document).ready(function(){
   });
 });
 
+// circleのshowからeditに移動するときのパスワード入力フォーム
+
+$(document).ready(function(){
+      $('.circle_edit_link').click(function() {
+      $(this).hide();
+      $('.circle_password_confirm').slideDown('slow');
+  });
+});
 
 //  likeの非同期通信
   

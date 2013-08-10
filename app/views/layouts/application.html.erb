@@ -20,7 +20,7 @@
 </head>
 <body>
   <div id="loader">
-    <%= image_tag "loader.gif", width: 30, :alt => "Loading..." %>
+    <%= image_tag "loader.gif", width: 50, :alt => "Loading..." %>
   </div>
 <div id="container">
   <div id="header">
@@ -30,11 +30,11 @@
 
 <%= yield %>
 
-
-  <div id="footer">
-<%= render "shared/footer" %>
-  </div>
 </div>
+<div id="footer">
+  <%= render "shared/footer" %>
+</div>
+
 
 </body>
 </html>

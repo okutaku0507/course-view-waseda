@@ -1,0 +1,53 @@
+<div class="circle">
+<div class="circle_header">
+  <%= form.text_field :title, :class => "input_circle_title", :placeholder => "サークル名" %>
+  <%= form.text_field :headline, :class => "input_circle_headline", :placeholder => "何か一言！" %>
+</div>
+  
+<div class="circle_image">
+  <%= form.fields_for :image do |imgf| %>
+    <% if CircleTopImage.where(circle_id: @circle.id).exists? %>
+      <div>
+        <%= circle_image_tag @circle, size: "300x300" %>
+        <%= imgf.check_box :_destroy %>
+        <%= imgf.label :_destroy %>
+        <%= imgf.hidden_field :id %>
+      </div>
+    <% else %>
+        <%= image_tag "noImage.jpg", :class => "top" %>
+    <% end %>
+    <%= imgf.label "Top画像" %>
+    <%= imgf.file_field :uploaded_image %>
+    <%= imgf.text_field :description, :placeholder => "画像の説明" %>
+  <% end %>
+</div>
+
+<div class="circle_baseinfo">
+  <p class="circle_base">基本情報</p>
+  <p class="circle_info">タイプ：&nbsp;&nbsp;
+    <%= form.label :circle_type_all_waseda, "オール早稲田：" %><%= form.radio_button :circle_type, "all_waseda", :checked => "checked" %>&nbsp;&nbsp;
+    <%= form.label :circle_type_inter_college, "インカレ：" %><%= form.radio_button :circle_type, "inter_college" %>
+  </p>
+  <p class="circle_info">所属：
+    <%= form.label :belong_center, "本キャン：" %><%= form.radio_button :belong, "center", :checked => "checked" %>
+    <%= form.label :belong_science, "理工：" %><%= form.radio_button :belong, "science" %><br />
+    <%= form.label :belong_literature, "文キャン：", :style => "margin-left: 58px;" %><%= form.radio_button :belong, "literature" %>
+    <%= form.label :belong_sport, "所沢：" %><%= form.radio_button :belong, "sport" %>
+  </p>
+    <%= form.text_field :genre, :class => "input_circle_genre", :placeholder => "ジャンル" %>
+  <p class="circle_info">サークル員：
+    <%= form.label :open_yes, "募集中：" %><%= form.radio_button :open, "yes", :checked => "checked" %><br />
+    <%= form.label :open_no, "募集はしていない：", :style => "margin-left: 112px;" %><%= form.radio_button :open, "no" %>
+  </p>
+</div>
+<div class="circle_detail">
+  <p class="circle_base">サークル詳細</p>
+  <div style="padding: 10px 20px; line-height: 20px;">
+    <%= form.text_area :detail, :placeholder => "サークルの詳細をお書きください", :class => "circle_detail" %>
+  </div>
+</div>
+<div class="circle_password">
+    <p>パスワード(8桁-16桁の半角英数字)：<%= form.password_field :password, :class => "circle_password_input" %></p>
+    <p>パスワード確認：<%= form.password_field :password_confirmation, :class => "circle_password_input" %></p>
+</div>
+</div>

@@ -1,4 +1,3 @@
-﻿
 # coding: utf-8
 %w(佐藤 鈴木 高橋).each do |family_name|
 member = Member.find_by_family_name(family_name)

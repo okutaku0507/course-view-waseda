@@ -20,6 +20,9 @@ class Member < ActiveRecord::Base
 
   has_many :responses, dependent: :destroy
   has_many :response_view, through: :responses, source: :course_view
+  
+  has_many :circle_creaters, dependent: :destroy
+  has_many :create_circle, through: :circle_creaters, source: :circle
 
    attr_accessor :password, :password_confirmation, :initial_password
 

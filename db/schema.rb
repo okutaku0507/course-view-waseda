@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529144450) do
+ActiveRecord::Schema.define(:version => 20130809222534) do
 
   create_table "bads", :force => true do |t|
     t.integer  "member_id",      :null => false
@@ -22,6 +22,40 @@ ActiveRecord::Schema.define(:version => 20130529144450) do
 
   add_index "bads", ["course_info_id"], :name => "index_bads_on_course_info_id"
   add_index "bads", ["member_id"], :name => "index_bads_on_member_id"
+
+  create_table "circle_creaters", :force => true do |t|
+    t.integer  "circle_id",  :null => false
+    t.integer  "member_id",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "circle_creaters", ["circle_id"], :name => "index_circle_creaters_on_circle_id"
+  add_index "circle_creaters", ["member_id"], :name => "index_circle_creaters_on_member_id"
+
+  create_table "circle_top_images", :force => true do |t|
+    t.integer  "circle_id",                          :null => false
+    t.binary   "data",         :limit => 2147483647
+    t.string   "content_type"
+    t.string   "description",                        :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  add_index "circle_top_images", ["circle_id"], :name => "index_circle_top_images_on_circle_id"
+
+  create_table "circles", :force => true do |t|
+    t.string   "title",           :null => false
+    t.string   "headline",        :null => false
+    t.string   "circle_type",     :null => false
+    t.string   "belong",          :null => false
+    t.string   "genre",           :null => false
+    t.string   "open",            :null => false
+    t.text     "detail",          :null => false
+    t.string   "hashed_password", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "course_infos", :force => true do |t|
     t.string   "title",           :null => false

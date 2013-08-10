@@ -4,6 +4,18 @@ body {
   margin: 0;
 }
 
+/* loading画面 */
+div#loader {
+  text-align: center;
+  margin: auto;
+  margin-top: 200px;
+  display: none;
+}
+
+a, p {
+  font-family: sans-serif;
+}
+
 div#container {
   margin: 0;
   width: 100%;

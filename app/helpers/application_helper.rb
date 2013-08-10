@@ -32,4 +32,13 @@ module ApplicationHelper
     text
   end
   
+  def circle_image_tag(circle, options = {})
+    if circle.image.present?
+      path = circle_path(circle, format: circle.image.extension)
+      link_to(image_tag(path, { alt: circle.title }.merge(options)), path)
+    else
+      ""
+    end
+  end
+  
 end

@@ -1,0 +1,24 @@
+<% @page_title = "サークル" %>
+  <div class="circle_search">
+    <%= form_tag :search_circles, method: :get do %>
+      <%= text_field_tag :circle_keywords, params[:circle_keywords], :placeholder => "あなたは何に興味がありますか？", :class => "circle_search_input" %>
+      <%= submit_tag "検索", :class => "circle_search_submit" %>
+    <% end %>
+    <p style="margin-top: 5px; margin-left: 5px;"><%= link_to "あなたのサークルページを作成しませんか？", :new_circle, :class => "new_circle_link" %></p>
+  </div>
+<% if @circles.present? %>
+<% @circles.each do |circle| %>
+<div class="circle_panel">
+  <%= image_tag "noImage.jpg", size: "150x150" %>
+  <div class="circle_introduction">
+    <p><%= link_to circle.title, circle, :class => "circle_title" %></p>
+    <p class="circle_headline"><%= circle.headline %></p>
+  </div>
+</div>
+<% end %>
+<div style="margin-left: 150px">
+  <%= will_paginate @circles, :previous_label => image_tag('previous_page.png'),  :next_label => image_tag('next_page.png'), :inner_window => 5, :outer_window => 2 %>
+</div>
+<% else %>
+<p>お探しのサークルは見つかりませんでした。</p>
+<% end %>

@@ -115,14 +115,11 @@ img.iPhone_course_view_title {
 
 /* 左の枠(コンテンツ) */
 div#content {
-  margin-top: 70px;
-  padding: 10px 10px 10px 0;
-  box-shadow: 1px 1px 5px 0 #000000;
+  margin-top: -50px;
   background-color: #ffffff;
-  padding: 50px;
+  padding: 10px 10px;
   border-radius: 10px;
   clear: both;
-  border: solid 1px silver;
 }
 
 /* 右の枠(サイドバー) */
@@ -484,8 +481,7 @@ p.error_message {
 
 div#new_course {
   border-radius: 10px;
-  box-shadow: 1px 1px 3px 0 #000000;
-  padding: 20px;
+  padding: 10px;
   margin-top: 20px;
 
 }
@@ -2305,4 +2301,274 @@ div#course_create_button input {
   padding: 5px 3px;
   border-radius: 5px;
   background-color: #ffffff;
+}
+
+/* 検索のヒント */
+
+div#search_no_course {
+  margin-left: 5px;
+  width: 98%;
+}
+
+div#search_info {
+  width: 90%;
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  display: none;
+}
+
+p#search_info_title {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-top: -10px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: rgb(123, 123, 123);
+}
+
+P#search_info_input {
+  border: 2px solid silver;
+  border-radius: 7px;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 5px;
+  width: 300px;
+}
+
+div#search_info img {
+  margin-left: 10px;
+  margin-bottom: -5px;
+}
+
+div#new_course_info {
+  margin-top: 50px;
+}
+
+/* circle */
+
+div.circle_search {
+  width: 98%;
+  margin: 10px auto;
+}
+
+input.circle_search_input {
+  border: 2px solid silver;
+  border-radius: 5px;
+  padding: 5px;
+  width: 200px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+input.circle_search_submit {
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #0271bf;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 3px 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+div.circle_panel {
+  width: 98%;
+  height: 180px;
+  border-bottom: 2px solid silver;
+  margin: 0 auto 10px;
+  position: relative;
+}
+
+div.circle_panel img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+div.circle_introduction {
+  position: absolute;
+  top: 0;
+  left: 190px;
+  width: 200px;
+}
+
+a.circle_title {
+  color: #333333;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+p.circle_headline {
+  font-size: 1.1em;
+  color: rgb(244, 170, 41);
+}
+
+/* circleのshow */
+div.circle {
+  width: 98%;
+  position: relative;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+div.circle_header h1 {
+  margin-left: 20px;
+  color: #333333;
+  font-size: 2em;
+}
+
+p.circle_headline_show {
+  color: rgb(244, 170, 41);
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+div.circle_image {
+  float: left;
+  height: 400px;
+  width: 300px;
+}
+
+div.circle_image img {
+  width: 45%;
+}
+
+div.circle_baseinfo {
+  float: left;
+  margin-left: 10px;
+  width: 45%;
+}
+
+p.circle_base {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #333333;
+  background-color: #0271bf;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+p.circle_info {
+  font-size: 1.2em;
+  font-weight: 700;
+  border-bottom: 1px solid silver;
+}
+
+div.circle_detail {
+  clear: both;
+  width: 95%;
+  margin-top: 350px;
+  font-size: 1em;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* circleのform */
+
+input.input_circle_title {
+  border: 2px solid silver;
+  border-radius: 3px;
+  color: #333333;
+  width: 80%;
+  padding: 5px;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+input.input_circle_headline {
+  border: 2px solid silver;
+  border-radius: 3px;
+  color: #333333;
+  width: 80%;
+  padding: 5px;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+textarea.circle_detail {
+  width: 95%;
+  border: 2px solid silver;
+  border-radius: 3px;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 5px;
+}
+
+input.circle_new_edit_submit {
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #0271bf;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 3px 5px;
+  margin-left: 20px;
+  cursor: pointer;
+  margin-left: 720px;
+}
+
+input.input_circle_genre {
+  border: 2px solid silver;
+  border-radius: 3px;
+  color: #333333;
+  width: 100px;
+  padding: 5px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+div.circle_password {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+input.circle_password_input {
+  border: 2px solid silver;
+  border-radius: 3px;
+  width: 250px;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+a.new_circle_link {
+ font-size: 0.8em;
+ font-weight: 600;
+ color: #333333;
+}
+
+div.circle_password_confirm {
+  text-align: center;
+  border-top: 1px solid silver;
+  width: 700px;
+}
+
+p.circle_edit_link {
+  position: absolute;
+  right: 100px;
+  bottom: 0;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #333333;
+  width: 150px;
+  cursor: pointer;
+  text-align: right;
+}
+
+input.circle_show_submit {
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #0271bf;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 1px 5px;
+  margin-left: 20px;
+  cursor: pointer;
 }

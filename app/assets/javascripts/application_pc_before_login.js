@@ -1,8 +1,18 @@
 //= require jquery
 //= require jquery_ujs
-//= require_tree ./pc
 //= require ./skOuterClick.js
+
 // application_pc_before_login.js
+
+// loadingの時の挙動
+$('head').append(
+	'<style type="text/css">#container { display: none; } div#loader { display: block; }</style>'
+);
+
+jQuery.event.add(window,"load",function() { // 全ての読み込み完了後に呼ばれる関数
+  $("#loader").hide();
+  $("#container").css({"display": "block"});
+});
 
 /* checkされないと送信されない仕組み */
 $(function() {
