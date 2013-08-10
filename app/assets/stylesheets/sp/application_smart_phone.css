@@ -2428,8 +2428,8 @@ p.circle_headline_show {
 
 div.circle_image {
   float: left;
-  height: 400px;
-  width: 300px;
+  height: 250px;
+  width: 98%;
 }
 
 div.circle_image img {
@@ -2437,9 +2437,10 @@ div.circle_image img {
 }
 
 div.circle_baseinfo {
-  float: left;
-  margin-left: 10px;
-  width: 45%;
+  clear: both;
+  margin-top: 370px;
+  margin-left: 5px;
+  width: 95%;
 }
 
 p.circle_base {
