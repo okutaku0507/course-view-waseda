@@ -73,7 +73,9 @@ Course::Application.configure do
    :port => 587,
    :authentication => :login,
    :user_name => 'okutaku0507',
-   :password => 'monsterg'
+   :password => 'monsterg',
+   :enable_starttls_auto => true
+
  }
   #config.action_mailer.perform_deliveries = false
 
