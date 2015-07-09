@@ -45,7 +45,7 @@ group :test do
   gem 'factory_girl_rails', '~> 1.4.0'
 end
 
-gem 'jpmobile'
+gem 'jpmobile', '3.0.7'
 
 group :development do
   gem "capistrano-maintenance"
