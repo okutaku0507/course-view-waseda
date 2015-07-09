@@ -47,7 +47,7 @@ Course::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += ['smart_phone.js', 'smart_phone.css', 'application_pc_before_login.css', 'application_pc_before_login.js', 'application_pc_before_login_smart_phone.css', 'application_pc_before_login_smart_phone.js']
-  
+
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
@@ -65,11 +65,18 @@ Course::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.action_mailer.default_url_options = { :host => "course-view.com" }
-  config.action_mailer.smtp_settings = { :enable_starttls_auto => false }
+  # config.action_mailer.smtp_settings = { :enable_starttls_auto => false }
+  # :smtpモードを利用する設定
+ config.action_mailer.delivery_method = :smtp
+ config.action_mailer.smtp_settings = {
+   :address => 'smtp.mail.yahoo.co.jp',
+   :port => 587,
+   :authentication => :login,
+   :user_name => 'okutaku0507',
+   :password => 'monsterg'
+ }
   #config.action_mailer.perform_deliveries = false
 
-  
+
 end
 Course::MailFrom = "shunsuke"
-
-
