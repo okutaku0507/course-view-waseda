@@ -72,8 +72,8 @@ Course::Application.configure do
    :address => 'smtp.mail.yahoo.co.jp',
    :port => 587,
    :authentication => :login,
-   :user_name => 'okutaku0507',
-   :password => 'monsterg',
+   :user_name => ENV['MAIL_USER_NAME'],
+   :password => ENV['MAIL_PASSWORD'],
    :enable_starttls_auto => true
 
  }
