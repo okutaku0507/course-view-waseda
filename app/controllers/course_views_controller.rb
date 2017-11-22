@@ -55,7 +55,6 @@ class CourseViewsController < ApplicationController
     @member = Member.find(@course_view.member_id)
     if @response.save
       unless @response.member_id == @course_view.member_id
-        UserMailer.response_email(@response).deliver
         redirect_to @course_view, notice: "コメントを追加しました"
       else
         redirect_to @course_view, notice: "コメントを追加しました"
