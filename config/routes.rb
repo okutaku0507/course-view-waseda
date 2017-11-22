@@ -1,5 +1,5 @@
 Course::Application.routes.draw do
-  root to: "top#index"
+  root "top#index"
 
   resources :members, only: [ :new, :create, :edit, :update, :destroy ] do
     resources :course_views
@@ -21,19 +21,19 @@ Course::Application.routes.draw do
     member { post "response_create" }
     resources :responses
   end
-  
+
   resources :circles do
     collection { get "search" }
     get :password_confirm, on: :member
   end
-  
+
   resources :teacher_ranks
   resources :responses
   resources :take_courses
   resource :session, only: [:create, :destroy, :new] do
-    
+
   end
-  resource :account do 
+  resource :account do
       resources :course_views
       resources :take_courses
       get :schedule, on: :member
@@ -60,12 +60,12 @@ Course::Application.routes.draw do
     resources :responses
     resources :take_courses
   end
-  
+
   resource :password, only: [] do
       get :forgot, :send_mail
       post :start_resetting
   end
-    
+
   match "use_policy" => "top#use_policy", as: "use_policy"
   match "privacy" => "top#privacy", as: "privacy"
   match "rabbit" => "top#rabbit", as: "rabbit"
