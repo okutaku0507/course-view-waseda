@@ -1,5 +1,5 @@
 Course::Application.routes.draw do
-  root "top#index"
+  root to: "top#index"
 
   resources :members, only: [ :new, :create, :edit, :update, :destroy ] do
     resources :course_views
