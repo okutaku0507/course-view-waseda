@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.2.0'
 
 gem 'rails', '3.2.12'
 
@@ -42,6 +42,8 @@ gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'test-unit'
 
 group :test do
   gem 'factory_girl_rails', '~> 1.4.0'
