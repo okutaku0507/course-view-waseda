@@ -12,7 +12,7 @@ Course::Application.routes.draw do
       resources :responses
       member { post "response_create" }
     end
-    member { put "like", "unlike", "take", "not_take", "not_teacher_rank"}
+    member { post "like", "unlike", "take", "not_take", "not_teacher_rank"}
     member { post "view_create", "take_course_create", "teacher_rank_create", "response_create" }
     collection { get "voted", "taked", "ranked" }
   end
@@ -51,7 +51,7 @@ Course::Application.routes.draw do
     resources :course_infos do
       collection { get "search" }
       member { post "view_create", "take_course_create", "teacher_rank_create", "response_create" }
-      member { put "like", "unlike", "take", "not_take", "not_teacher_rank"}
+      member { post "like", "unlike", "take", "not_take", "not_teacher_rank"}
     end
       resources :course_views do
     end
