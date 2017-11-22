@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.0.0-p645'
+ruby '2.0.0-p648'
 
 gem 'rails', '3.2.12'
 
