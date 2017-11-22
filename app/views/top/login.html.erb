@@ -2,7 +2,7 @@
 
   <% if flash.notice %>
   <p class="notice"><%= flash.notice %></p>
-  <p class="notice_top" align=center><%= link_to "トップページ(ログインフォーム)へ", root_path %></p>
+  <p class="notice_top" align=center><%= link_to "トップページ(ログインフォーム)へ", :root %></p>
 <% else %>
 
 
@@ -22,5 +22,3 @@
 </div>
 
  <% end %>
-
-
