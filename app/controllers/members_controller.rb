@@ -20,10 +20,14 @@ class MembersController < ApplicationController
     @member.university = 1 # 大学番号1は早稲田大学を指す
     check_subject
     if check_subject && @member.save
-      UserMailer.welcome_email(@member).deliver
       flash.alert = nil
+      @member = @member.reload
+      cookies.signed[:member_id] = {
+        value: @member.id,
+        expires: 30.years.from_now
+      }
       redirect_to :course_infos,
-        notice: "ユーザーの登録が完了しました。登録されたメールアドレスに仮パスワードをお送りします。"
+        notice: "ユーザーの登録が完了しました。"
     else
       params[:new_member_switch] = "on"
       render "top/top", layout: "before_login"

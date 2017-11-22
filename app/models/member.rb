@@ -20,7 +20,7 @@ class Member < ActiveRecord::Base
 
   has_many :responses, dependent: :destroy
   has_many :response_view, through: :responses, source: :course_view
-  
+
   has_many :circle_creaters, dependent: :destroy
   has_many :create_circle, through: :circle_creaters, source: :circle
 
@@ -58,41 +58,41 @@ class Member < ActiveRecord::Base
     self.initial_password = random_password
     self.hashed_password = BCrypt::Password.create(initial_password)
   end
-  
- before_create :before_create  
+
+ before_create :before_create
 
   # like機能
     def like_for?(course_info)
       !likes.exists?(course_info_id: course_info.id)
     end
-    
+
   # bad機能
-  
+
     def bad_for?(course_info)
       !bads.exists?(course_info_id: course_info.id)
     end
-    
+
   # take_course機能
     def take_course_for?(course_info)
       !take_courses.exists?(course_info_id: course_info.id)
     end
-    
+
   # teacher_rank
     def teacher_rank_for?(course_info)
       !teacher_ranks.exists?(course_info_id: course_info.id)
     end
-    
+
   private
   def check_email
     if email.present?
-        errors.add(:email, :invalid) unless 
+        errors.add(:email, :invalid) unless
            well_formed_as_email_address(email)
     end
   end
 
   def check_password
     if password.present?
-        errors.add(:password, :invalid) unless 
+        errors.add(:password, :invalid) unless
            well_formed_as_password(password)
     end
   end
