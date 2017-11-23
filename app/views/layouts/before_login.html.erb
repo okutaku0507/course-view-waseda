@@ -9,6 +9,12 @@
   <%= favicon_link_tag 'rabbit-icon.ico' %>
   <meta name="keywords" content="早稲田,waseda,講義,サークル,プラットフォーム" />
   <meta name="description" content="Course Viewは早稲田生が参加できる、講義情報を共有でき、サークル情報を発信・閲覧できるプラットフォームです。時間割やメモなどの自己管理機能もあり、学生生活に欠かせないwebサービスを目指しています。" />
+  <meta property="og:title" content="Waseda Course View" />
+  <meta property="og:description" content="Course Viewは早稲田生が参加できる、講義情報を共有でき、サークル情報を発信・閲覧できるプラットフォームです。時間割やメモなどの自己管理機能もあり、学生生活に欠かせないwebサービスを目指しています。" />
+  <meta property="og:image" content="<%= image_path('background.jpg') %>"/>
+  <meta property="og:url" content="<%= request.url %>"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Waseda Course View"/>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
